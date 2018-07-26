@@ -1,0 +1,808 @@
+2018-02-28 22:54:01	-->	fschuindt (~fschuindt@179.35.108.22) has joined #alpine-linux
+2018-02-28 22:54:01	--	Topic for #alpine-linux is "Alpine Linux, the secure lightweight distro | release 3.7.0 is out! | Also available on matrix: #support:alpinelinux.org"
+2018-02-28 22:54:01	--	Topic set by clandmeter (clandmet1@alpine/clandmeter) on Mon, 18 Dec 2017 08:35:58
+2018-02-28 22:54:01	--	Channel #alpine-linux: 333 nicks (5 ops, 0 voices, 328 normals)
+2018-02-28 22:54:03	--	Channel created on Tue, 27 Jan 2009 03:32:04
+2018-02-28 22:54:04	fschuindt	Hi there, folks. Any tip on why I'm getting "ERROR: unsatisfiable constraints: pugixml-dev (missing)" when trying to install this package? https://pkgs.alpinelinux.org/package/edge/testing/s390x/pugixml-dev
+2018-02-28 22:54:35	nixuser	Ah, I guess I just need to use the rpi instructions?
+2018-02-28 22:54:54	<--	herrbischoff (~herrbisch@134.101.204.252) has quit (Ping timeout: 256 seconds)
+2018-02-28 22:57:12	-->	herrbischoff (~herrbisch@port-23188.pppoe.wtnet.de) has joined #alpine-linux
+2018-02-28 23:00:41	<--	theLambda (~theLambda@mue-88-130-62-124.dsl.tropolys.de) has quit (Ping timeout: 256 seconds)
+2018-02-28 23:02:06	<--	Tyresc (~Tyresc@173.208.95.76) has quit (Quit: Leaving)
+2018-02-28 23:02:07	duncan^	Well, no?
+2018-02-28 23:02:13	duncan^	Well, I guess.
+2018-02-28 23:02:15	duncan^	https://wiki.alpinelinux.org/wiki/Alpine_on_ARM
+2018-02-28 23:02:29	duncan^	But the instructions are generic.
+2018-02-28 23:02:39	-->	theLambda (~theLambda@i577BCD27.versanet.de) has joined #alpine-linux
+2018-02-28 23:05:11	nixuser	Honestly, I've no idea what that page is talking about :/
+2018-02-28 23:06:38	duncan^	The downloadable archive on the downloads oage should be unpacked onto a partition on an SD card/boot medium of choice
+2018-02-28 23:08:19	duncan^	It should "just work" for the given SoC if the given device is able to load the bootloader from this partition's fikesystem
+2018-02-28 23:08:26	duncan^	filesystem*
+2018-02-28 23:09:35	nixuser	ah ok, so the same as for pi roughly.. I'll give that a go thanks
+2018-02-28 23:10:27	duncan^	Nit familiar with the Pi; it should be less fussy
+2018-02-28 23:10:39	duncan^	[bbb]
+2018-02-28 23:13:52	-->	Maxpm (~Maxpm@2604:2000:1404:4d8:2e68:b1c6:a5ce:3f6a) has joined #alpine-linux
+2018-02-28 23:17:51	<--	grayhemp (~grayhemp@162.244.4.2) has quit (Remote host closed the connection)
+2018-02-28 23:19:01	-->	ghostbar (~ghostbar@191.109.254.12) has joined #alpine-linux
+2018-02-28 23:24:43	nixuser	hm I guess I need serial access to the board for arm?
+2018-02-28 23:28:22	duncan^	not necessarilly but it may be if use instead of connecting a disolay
+2018-02-28 23:28:28	duncan^	display*
+2018-02-28 23:28:53	<--	ghostbar (~ghostbar@191.109.254.12) has quit (Remote host closed the connection)
+2018-02-28 23:35:22	-->	keithy (~keithy@95.151.252.88) has joined #alpine-linux
+2018-03-01 09:02:53	-->	fschuindt (~fschuindt@179.35.108.22) has joined #alpine-linux
+2018-03-01 09:02:53	--	Topic for #alpine-linux is "Alpine Linux, the secure lightweight distro | release 3.7.0 is out! | Also available on matrix: #support:alpinelinux.org"
+2018-03-01 09:02:53	--	Topic set by clandmeter (clandmet1@alpine/clandmeter) on Mon, 18 Dec 2017 08:35:58
+2018-03-01 09:02:53	--	Channel #alpine-linux: 344 nicks (5 ops, 0 voices, 339 normals)
+2018-03-01 09:02:55	--	Channel created on Tue, 27 Jan 2009 03:32:04
+2018-03-01 09:03:49	fschuindt	Hi there, folks. Any tip on why I'm getting "ERROR: unsatisfiable constraints: pugixml-dev (missing)" when trying to install this package? https://pkgs.alpinelinux.org/package/edge/testing/s390x/pugixml-dev
+2018-03-01 09:04:04	fschuindt	apk updated, system upgraded, even added some more apk mirrors :/
+2018-03-01 09:08:43	-->	Latrina (Latrina@gateway/shell/panicbnc/x-xofutxguwmzimjuk) has joined #alpine-linux
+2018-03-01 09:08:44	<--	Latrina (Latrina@gateway/shell/panicbnc/x-xofutxguwmzimjuk) has quit (Excess Flood)
+2018-03-01 09:09:37	<--	fekepp (~Thunderbi@2a02:8071:31ac:c00:221:ccff:fed4:6de7) has quit (Quit: fekepp)
+2018-03-01 09:12:46	-->	farosas (~fabiano@32.104.18.202) has joined #alpine-linux
+2018-03-01 09:14:38	-->	Latrina (Latrina@gateway/shell/panicbnc/x-xiipwveaqagxsuez) has joined #alpine-linux
+2018-03-01 09:14:55	<--	Latrina (Latrina@gateway/shell/panicbnc/x-xiipwveaqagxsuez) has quit (Client Quit)
+2018-03-01 09:18:38	<--	fugitive__ (~fugitive@95.211.147.186) has quit (Ping timeout: 268 seconds)
+2018-03-01 09:19:28	TBB	either a missing @testing in your apk add or the testing repository disabled in your repositories file
+2018-03-01 09:19:35	TBB	typically those two
+2018-03-01 09:21:19	fschuindt	TBB: thanks, mate. I'm going to fix it.
+2018-03-01 09:25:28	<--	minimalism (~none@unaffiliated/minimalism) has quit (Quit: minimalism)
+2018-03-01 09:26:17	TBB	azarus, I experimented at some point with multiple wifi networks; typically your wpa supplicant should be able to handle that so you should probably configure those there... another alternative could be to do it a bit more Gentoo style, by separating configs for each network and maybe even using a gentoo-like init script, one symlink per interface or so
+2018-03-01 09:26:45	--	feuerteufel|afk is now known as feuerteufel
+2018-03-01 09:32:17	-->	Rolfs (~rolf@cm-84.208.215.211.getinternet.no) has joined #alpine-linux
+2018-03-01 09:34:09	-->	fugitive__ (~fugitive@95.211.147.186) has joined #alpine-linux
+2018-03-01 09:37:45	-->	fekepp (~Thunderbi@2a00:1398:9:fb00:2db7:f2ce:6a92:f34c) has joined #alpine-linux
+2018-03-01 09:41:43	<--	xfbs (~xfbs@dslb-188-097-250-113.188.097.pools.vodafone-ip.de) has quit
+2018-03-01 09:46:00	-->	cyteen (~cyteen@146.66.58.48) has joined #alpine-linux
+2018-03-01 09:50:41	<--	fugitive__ (~fugitive@95.211.147.186) has quit (Ping timeout: 248 seconds)
+2018-03-01 09:55:15	-->	fugitive__ (~fugitive@93-86-169-227.dynamic.isp.telekom.rs) has joined #alpine-linux
+2018-03-01 10:03:27	<--	fugitive__ (~fugitive@93-86-169-227.dynamic.isp.telekom.rs) has quit (Ping timeout: 240 seconds)
+2018-03-01 10:03:46	-->	fugitive__ (~fugitive@95.211.147.186) has joined #alpine-linux
+2018-03-01 10:10:44	-->	Latrina (Latrina@gateway/shell/panicbnc/x-wmgxtagkqoihbsrt) has joined #alpine-linux
+2018-03-01 10:10:44	<--	Latrina (Latrina@gateway/shell/panicbnc/x-wmgxtagkqoihbsrt) has quit (Excess Flood)
+2018-03-01 10:15:32	<--	VartiWork (97084fa4@gateway/web/freenode/ip.151.8.79.164) has quit (Quit: Page closed)
+2018-03-01 10:16:22	-->	mjh (~Matthew@95.150.177.97) has joined #alpine-linux
+2018-03-01 10:20:07	<--	rosa (~rosa@2405:7f00:8a17:3200:bd34:1ba1:bbd3:c65a) has quit (Quit: rosa)
+2018-03-01 10:25:44	-->	fabled (~tteras@208.74.142.117) has joined #alpine-linux
+2018-03-01 10:34:02	-->	ams__ (uid48118@gateway/web/irccloud.com/x-paaapwzmqymygduv) has joined #alpine-linux
+2018-03-01 10:46:59	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-01 10:49:50	-->	arnotixe (~Thunderbi@188.95.246.75) has joined #alpine-linux
+2018-03-01 10:51:51	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Ping timeout: 256 seconds)
+2018-03-01 11:03:43	-->	knutix (~textual@HSI-KBW-091-089-011-201.hsi2.kabelbw.de) has joined #alpine-linux
+2018-03-01 11:04:00	-->	la_putin_ (~exec@2405:7f00:8a17:3200:744c:d0a1:4de9:a7cc) has joined #alpine-linux
+2018-03-01 11:04:20	<--	la_putin (~exec@cpe-172-192-211-107.qld.foxtel.net.au) has quit (Read error: Connection reset by peer)
+2018-03-01 11:47:56	<--	afics (~afics@unaffiliated/-x-/x-5730914) has quit (Quit: afics)
+2018-03-01 11:49:30	-->	afics (~afics@unaffiliated/-x-/x-5730914) has joined #alpine-linux
+2018-03-01 11:49:55	<--	afics (~afics@unaffiliated/-x-/x-5730914) has quit (Client Quit)
+2018-03-01 11:51:28	-->	aielima (~aielima@gateway/tor-sasl/aielima) has joined #alpine-linux
+2018-03-01 11:52:43	-->	afics (~afics@unaffiliated/-x-/x-5730914) has joined #alpine-linux
+2018-03-01 12:02:07	<--	PeteK (~PeteK@32.215.179.33) has quit (Ping timeout: 256 seconds)
+2018-03-01 12:03:36	<--	arnotixe (~Thunderbi@188.95.246.75) has quit (Quit: arnotixe)
+2018-03-01 12:06:06	JeanScotch	tzdrask: after quite a bit of reading; my conclusion is that to write a custom ACF module and give access to it with propoer ACL configuration is what I need.
+2018-03-01 12:07:03	-->	Lochnair (~Lochnair@hh-sto03.svee.in) has joined #alpine-linux
+2018-03-01 12:07:13	JeanScotch	I need to let the user select a static IP or dhcp for eth1,
+2018-03-01 12:07:30	JeanScotch	chose the ESSID for wlan0
+2018-03-01 12:07:57	JeanScotch	chose the APN for ppp (4G modem) if present
+2018-03-01 12:08:04	JeanScotch	(wlan0 if present)
+2018-03-01 12:08:22	JeanScotch	(eth1 if present)
+2018-03-01 12:09:24	<--	holgersson (~quassel@unaffiliated/holgersson) has quit (Remote host closed the connection)
+2018-03-01 12:13:17	JeanScotch	but I dunno where to start...
+2018-03-01 12:13:41	-->	holgersson (~quassel@unaffiliated/holgersson) has joined #alpine-linux
+2018-03-01 12:17:36	<--	mps (~mps@static-213-198-238-194.adsl.eunet.rs) has quit (Quit: leaving)
+2018-03-01 12:17:57	<--	czart (~czart@cmk231.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 240 seconds)
+2018-03-01 12:19:22	-->	mps (~mps@static-213-198-238-194.adsl.eunet.rs) has joined #alpine-linux
+2018-03-01 12:20:02	-->	czart (~czart@cmk231.neoplus.adsl.tpnet.pl) has joined #alpine-linux
+2018-03-01 12:23:51	<--	Lochnair (~Lochnair@hh-sto03.svee.in) has quit (Quit: The Lounge - https://thelounge.github.io)
+2018-03-01 12:24:37	<--	borntraeger (borntraege@nat/ibm/x-idgyqldnukncwsxj) has quit (Ping timeout: 260 seconds)
+2018-03-01 12:26:00	tdtrask	JeanScotch: all of this would take place in the same one form submission?
+2018-03-01 12:26:22	JeanScotch	if possible yes
+2018-03-01 12:26:53	JeanScotch	but at least to have the functionality even in three modules could fit the bill
+2018-03-01 12:27:11	tdtrask	you would create one new controller and model
+2018-03-01 12:27:28	tdtrask	the controller defines a single action for the form and uses handle_form to call the model
+2018-03-01 12:27:40	JeanScotch	from the user point of view; all 3 are to connect the box to the internet...
+2018-03-01 12:27:47	tdtrask	the model defines two functions - one to create the CFE defining the form
+2018-03-01 12:28:07	tdtrask	and the other to take the submitted form CFE, validate the input, and perform the action
+2018-03-01 12:28:24	-->	Lochnair (~Lochnair@hh-sto03.svee.in) has joined #alpine-linux
+2018-03-01 12:29:18	JeanScotch	It doesn't look too difficult
+2018-03-01 12:29:44	<--	Lochnair (~Lochnair@hh-sto03.svee.in) has quit (Client Quit)
+2018-03-01 12:29:45	tdtrask	https://wiki.alpinelinux.org/wiki/ACF_how_to_write probably makes it look a little more difficult than it is
+2018-03-01 12:29:59	tdtrask	most coding goes into the model
+2018-03-01 12:29:59	-->	Lochnair (~Lochnair@hh-sto03.svee.in) has joined #alpine-linux
+2018-03-01 12:29:59	-->	czart_ (~czart@acfd134.neoplus.adsl.tpnet.pl) has joined #alpine-linux
+2018-03-01 12:30:28	tdtrask	the get function must determine the available options and generate the corresponding CFE structure
+2018-03-01 12:30:48	tdtrask	and set function implements the change
+2018-03-01 12:33:13	<--	tayfun26 (~Thunderbi@213.254.156.248) has quit (Remote host closed the connection)
+2018-03-01 12:33:17	<--	czart (~czart@cmk231.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 256 seconds)
+2018-03-01 12:34:08	-->	la_putin (~exec@2405:7f00:8a17:3200:744c:d0a1:4de9:a7cc) has joined #alpine-linux
+2018-03-01 12:34:11	JeanScotch	ok; will first try some sort of "helloworld!" app...
+2018-03-01 12:34:20	JeanScotch	I'm new to lua
+2018-03-01 12:34:59	<--	czart_ (~czart@acfd134.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 256 seconds)
+2018-03-01 12:35:14	tdtrask	JeanScotch: have fun!
+2018-03-01 12:36:18	<--	la_putin_ (~exec@2405:7f00:8a17:3200:744c:d0a1:4de9:a7cc) has quit (Read error: Connection reset by peer)
+2018-03-01 12:36:29	-->	czart (~czart@acgg108.neoplus.adsl.tpnet.pl) has joined #alpine-linux
+2018-03-01 12:36:35	-->	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has joined #alpine-linux
+2018-03-01 12:38:50	skyroveRR	Heya guys, I'm compiling a custom distro for the raspberry pi 3, and I'm trying to get the wlan0 (wifi) interface activated using the cfg80211. What would be the simplest way to get that interface without calling crda? Whenever I load the cfg80211 module using modprobe, it complains about not finding crda binary (which is true, there isn't one I've compiled due to too many dependencies)...
+2018-03-01 12:42:13	tdtrask	JeanScotch: other reference to keep in mind is https://wiki.alpinelinux.org/wiki/ACF_core_principles - Play around with creating a CFE with the various types to see how they display on a web page. Your best reference, as always, is the source. Try adding other acf modules to your system to see how they work.
+2018-03-01 12:44:57	JeanScotch	tdrask: thanks
+2018-03-01 12:47:43	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-01 12:48:24	Lochnair	skyroveRR: a quick grep of the kernel tree gave this: https://www.mjmwired.net/kernel/Documentation/networking/regulatory.txt
+2018-03-01 12:48:29	Lochnair	see the last section
+2018-03-01 12:48:42	skyroveRR	Okay
+2018-03-01 12:49:35	skyroveRR	So I use "iw", Lochnair ?
+2018-03-01 12:53:11	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Ping timeout: 276 seconds)
+2018-03-01 12:56:35	Lochnair	skyroveRR: better docs here: https://wireless.wiki.kernel.org/en/developers/regulatory/crda#config_cfg80211_internal_regdb
+2018-03-01 12:57:23	<--	fekepp (~Thunderbi@2a00:1398:9:fb00:2db7:f2ce:6a92:f34c) has quit (Quit: fekepp)
+2018-03-01 13:16:19	-->	FergusL54 (~FergusL@49.107.12.109.rev.sfr.net) has joined #alpine-linux
+2018-03-01 13:22:44	-->	borntraeger (~borntraeg@HSI-KBW-078-042-018-169.hsi3.kabel-badenwuerttemberg.de) has joined #alpine-linux
+2018-03-01 13:31:05	<--	borntraeger (~borntraeg@HSI-KBW-078-042-018-169.hsi3.kabel-badenwuerttemberg.de) has quit (Ping timeout: 256 seconds)
+2018-03-01 13:31:16	-->	fekepp (~Thunderbi@2a02:8071:31ac:c00:221:ccff:fed4:6de7) has joined #alpine-linux
+2018-03-01 13:32:50	skyroveRR	Lochnair: I placed the regulatory.db file in /lib/firmware, and then loaded the cfg80211 module. I then proceeded to set the REG domain to US using "iw reg set US", and the kernel still seems to be calling crda..
+2018-03-01 13:37:13	<--	fekepp (~Thunderbi@2a02:8071:31ac:c00:221:ccff:fed4:6de7) has quit (Remote host closed the connection)
+2018-03-01 13:37:33	-->	fekepp (~Thunderbi@2a02:8071:31ac:c00:fcca:8106:b03f:cc) has joined #alpine-linux
+2018-03-01 13:40:37	<--	FergusL54 (~FergusL@49.107.12.109.rev.sfr.net) has quit (Remote host closed the connection)
+2018-03-01 13:44:07	<--	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has quit (Remote host closed the connection)
+2018-03-01 13:44:55	-->	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has joined #alpine-linux
+2018-03-01 13:45:27	-->	rosa (~rosa@2405:7f00:8a17:3200:bd34:1ba1:bbd3:c65a) has joined #alpine-linux
+2018-03-01 13:45:51	-->	FergusL54 (~FergusL@49.107.12.109.rev.sfr.net) has joined #alpine-linux
+2018-03-01 13:47:52	<--	rosa (~rosa@2405:7f00:8a17:3200:bd34:1ba1:bbd3:c65a) has quit (Client Quit)
+2018-03-01 13:49:46	-->	rcw (~rwoolley@128.224.252.2) has joined #alpine-linux
+2018-03-01 13:51:58	<--	clemens3 (~clemens@mx.eniso-partners.com) has quit (Ping timeout: 240 seconds)
+2018-03-01 13:54:00	duncan^	Not sure if this is a bug
+2018-03-01 13:54:21	duncan^	apk add --virtual --help installs a virtual pqckage called "--help"
+2018-03-01 13:54:37	duncan^	(This was a mistake on my part)
+2018-03-01 13:54:47	duncan^	But I am not sure how to delete this package.
+2018-03-01 13:56:17	duncan^	I tried apk del --virtual --help, but this just gives me, well, help.
+2018-03-01 13:56:53	duncan^	It's now listed in world.
+2018-03-01 13:58:22	azarus	TBB: Thanks for the information. I have all my networks configured in wpa_supplicant.conf. Any guide on configuring the init system to fit around it?
+2018-03-01 13:59:07	azarus	I created a new wiki article: https://wiki.alpinelinux.org/wiki/Setting_up_ZFS_on_LUKS
+2018-03-01 13:59:07	<--	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has quit (Read error: Connection reset by peer)
+2018-03-01 13:59:23	azarus	(it borrowed a bit from: https://wiki.alpinelinux.org/wiki/LVM_on_LUKS)
+2018-03-01 14:03:43	-->	grayhemp (~grayhemp@2601:646:8301:844b:a0b4:e37c:2f15:99b) has joined #alpine-linux
+2018-03-01 14:06:41	-->	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has joined #alpine-linux
+2018-03-01 14:09:34	-->	clemens3 (~clemens@80-218-38-71.dclient.hispeed.ch) has joined #alpine-linux
+2018-03-01 14:16:45	<--	jay-v (~jay-v@62.182.241.4) has quit (Remote host closed the connection)
+2018-03-01 14:18:44	<--	JeanScotch (~jch@bed84-1-78-229-93-5.fbx.proxad.net) has quit (Remote host closed the connection)
+2018-03-01 14:19:17	<--	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has quit (Quit: skyroveRR)
+2018-03-01 14:25:01	-->	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has joined #alpine-linux
+2018-03-01 14:25:22	<--	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has quit (Client Quit)
+2018-03-01 14:31:42	<--	cyteen (~cyteen@146.66.58.48) has quit (Quit: Leaving)
+2018-03-01 14:36:26	-->	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has joined #alpine-linux
+2018-03-01 14:42:49	-->	Latrina (Latrina@gateway/shell/panicbnc/x-urcysmooesklxzru) has joined #alpine-linux
+2018-03-01 14:44:20	<--	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has quit (Quit: skyroveRR)
+2018-03-01 14:48:33	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-01 14:49:19	-->	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has joined #alpine-linux
+2018-03-01 14:52:53	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Ping timeout: 252 seconds)
+2018-03-01 14:54:22	paradoxspiral	In which package is perf?
+2018-03-01 14:54:59	<--	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has quit (Quit: I'M MELTING !!!!!!!!!!!!!!)
+2018-03-01 15:10:58	-->	Tyresc (~Tyresc@173.208.95.76) has joined #alpine-linux
+2018-03-01 15:11:06	<--	Fusl (fusl@opennic/fusl) has quit (Remote host closed the connection)
+2018-03-01 15:11:31	-->	borntraeger (~borntraeg@HSI-KBW-078-042-018-169.hsi3.kabel-badenwuerttemberg.de) has joined #alpine-linux
+2018-03-01 15:12:00	-->	Fusl (fusl@opennic/fusl) has joined #alpine-linux
+2018-03-01 15:17:14	zacts	hello
+2018-03-01 15:17:31	zacts	how can I connect my alpine wifi to a hotspot that requires a sign-in page to get a dhcp lease?
+2018-03-01 15:17:44	zacts	a GUI web browser sign in page
+2018-03-01 15:18:07	zacts	namely, starbucks wifi. [I agree to the terms of the wifi connection button] <--- this kind of idea?
+2018-03-01 15:21:40	<--	mfrinnstrom_ (~mfrinnstr@2a04:92c7:e:47e::83c4) has quit (Read error: Connection reset by peer)
+2018-03-01 15:21:50	scv	elinks with javascript maybe?
+2018-03-01 15:21:50	-->	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has joined #alpine-linux
+2018-03-01 15:24:10	zacts	scv: no I think that the issue is that: ifup wlan0 <-- this doesn't get a dhcp lease, so I can't even connect to the login page in the first place
+2018-03-01 15:24:33	scv	oh, well typically you need to get the lease before the portal page :p
+2018-03-01 15:25:33	zacts	so how can I get that lease?
+2018-03-01 15:26:59	<--	borntraeger (~borntraeg@HSI-KBW-078-042-018-169.hsi3.kabel-badenwuerttemberg.de) has quit (Ping timeout: 252 seconds)
+2018-03-01 15:27:16	duncan^	That sounds like a captive portal
+2018-03-01 15:27:49	duncan^	What happens is: you get the DHCP lease via WiFi, but the hostpot restricts you from doing much until you agree to the T&Cs
+2018-03-01 15:27:56	duncan^	the logic is on the hotspot
+2018-03-01 15:28:22	scv	right
+2018-03-01 15:28:49	scv	typically the hotspot will either assign itself as the dns server or perform hijacking (can be problematic)
+2018-03-01 15:28:55	scv	and redirect your initial requests to itself
+2018-03-01 15:29:15	-->	mfrinnstrom (~mfrinnstr@185.164.136.235) has joined #alpine-linux
+2018-03-01 15:29:28	duncan^	the hotspot is probably WPA2
+2018-03-01 15:29:38	duncan^	so just connect to it with the instructions they provide
+2018-03-01 15:31:00	-->	borntraeger (~borntraeg@HSI-KBW-078-042-018-169.hsi3.kabel-badenwuerttemberg.de) has joined #alpine-linux
+2018-03-01 15:38:19	-->	jimlei (~quassel@189.137.34.95.customer.cdi.no) has joined #alpine-linux
+2018-03-01 15:38:46	<--	grayhemp (~grayhemp@2601:646:8301:844b:a0b4:e37c:2f15:99b) has quit (Remote host closed the connection)
+2018-03-01 15:51:03	zacts	this connection is WPA2 free
+2018-03-01 15:51:06	zacts	no WPA2
+2018-03-01 15:51:11	zacts	it's totally an open connection
+2018-03-01 16:03:44	-->	grayhemp (~grayhemp@162.244.4.2) has joined #alpine-linux
+2018-03-01 16:04:20	<--	grayhemp (~grayhemp@162.244.4.2) has quit (Remote host closed the connection)
+2018-03-01 16:04:39	-->	grayhemp (~grayhemp@162.244.4.2) has joined #alpine-linux
+2018-03-01 16:15:16	-->	mortis304 (q@8-220.ptpg.oregonstate.edu) has joined #alpine-linux
+2018-03-01 16:20:06	--	feuerteufel is now known as feuerteufel|afk
+2018-03-01 16:29:24	-->	pmcg (~quassel@draft.adepti.com) has joined #alpine-linux
+2018-03-01 16:35:24	-->	Manis (~Manis@84-73-20-163.dclient.hispeed.ch) has joined #alpine-linux
+2018-03-01 16:36:02	Manis	Hi. Is it possible in Alpine Linux to get system users from LDAP?
+2018-03-01 16:36:59	dalias	manis, see https://github.com/pikhq/musl-nscd
+2018-03-01 16:37:21	dalias	i don't think it's packaged
+2018-03-01 16:37:30	dalias	but you can do it
+2018-03-01 16:38:06	Manis	dalias: Looks good. Do I also need nss-pam-ldapd?
+2018-03-01 16:38:36	dalias	yeah something like that
+2018-03-01 16:42:51	Manis	dalias: When I start nslcd I get "Warning: NSS_LDAP module not loaded: Error loading shared library libnss_ldap.so.2: No such file or directory"
+2018-03-01 16:43:47	dalias	you need to build & install the libnss_ldap module wherever that comes from.
+2018-03-01 16:44:33	dalias	i'm sorry i haven't used it myself so i'm not sure on all the details but i know the person who wrote it (musl-nscd) and know others have used it successfully for what you want to do
+2018-03-01 16:49:19	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-01 16:49:40	Manis	OK. I can start nslcd but it cannot find any LDAP users :-/
+2018-03-01 16:52:20	dalias	nslcd?
+2018-03-01 16:54:21	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Ping timeout: 268 seconds)
+2018-03-01 16:58:42	Manis	https://wiki.samba.org/index.php/Nslcd
+2018-03-01 16:59:07	detha	you shouldn't need nslcd (maybe except in some case with mozilla stuff, thunderbird iirc) to just get users from ldap
+2018-03-01 16:59:58	dalias	you do however need musl-nscd and an nss_ldap module
+2018-03-01 17:00:00	Manis	OK. I also tried nscd but it just reports "syntax error"
+2018-03-01 17:00:06	dalias	wherever you get the latter from
+2018-03-01 17:03:19	Manis	Hmm ok. nslcd includes a PAM plugin
+2018-03-01 17:04:28	-->	Maxpm (~Maxpm@2604:2000:1404:4d8:2e68:b1c6:a5ce:3f6a) has joined #alpine-linux
+2018-03-01 17:06:13	<--	ams__ (uid48118@gateway/web/irccloud.com/x-paaapwzmqymygduv) has quit (Quit: Connection closed for inactivity)
+2018-03-01 17:10:55	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-01 17:18:57	-->	minimalism (~none@unaffiliated/minimalism) has joined #alpine-linux
+2018-03-01 17:26:36	-->	tercenya (~tercenya@mwynn.afpc.tamu.edu) has joined #alpine-linux
+2018-03-01 17:30:32	<--	aielima (~aielima@gateway/tor-sasl/aielima) has quit (Quit: Leaving)
+2018-03-01 17:51:50	-->	stephend (sid84@gateway/web/mozilla/x-giskpohaizjaofri) has joined #alpine-linux
+2018-03-01 18:01:26	<--	tridactyla (~tridactyl@exherbo/developer/tridactyla) has quit (Remote host closed the connection)
+2018-03-01 18:03:39	<--	farosas (~fabiano@32.104.18.202) has quit (Ping timeout: 260 seconds)
+2018-03-01 18:03:53	<--	t0mmy (~tprrt@217.114.201.133) has quit (Ping timeout: 240 seconds)
+2018-03-01 18:05:37	-->	arnotixe (~Thunderbi@102.109-247-144.customer.lyse.net) has joined #alpine-linux
+2018-03-01 18:06:59	-->	tridactyla (~tridactyl@exherbo/developer/tridactyla) has joined #alpine-linux
+2018-03-01 18:12:14	stephend	howdy, everyone
+2018-03-01 18:12:51	@_ikke_	ohai
+2018-03-01 18:13:04	stephend	we started getting errors about both libicui18n.so.60 and libicuuc.so.60 as missing
+2018-03-01 18:13:22	stephend	our Dockerfile is this: https://github.com/mozilla/fxapom/blob/1793e87c5d6a07d50582a01c2875e957d3baa622/Dockerfile
+2018-03-01 18:13:22	@_ikke_	for what binary?
+2018-03-01 18:13:39	<--	rcw (~rwoolley@128.224.252.2) has quit (Quit: Leaving)
+2018-03-01 18:13:40	stephend	firefox-58.0.1-r2
+2018-03-01 18:13:55	stephend	just recently happened - Travis CI noticed it first
+2018-03-01 18:14:09	stephend	I've tried apk update && apk upgrade
+2018-03-01 18:14:10	@_ikke_	what version of icu-libs is installed?
+2018-03-01 18:14:29	stephend	then apk add libicu60, but no dice
+2018-03-01 18:14:42	@_ikke_	apk add icu-libs
+2018-03-01 18:14:46	stephend	hmm, we don't specify that
+2018-03-01 18:14:50	stephend	thanks, will try!
+2018-03-01 18:15:48	@_ikke_	firefox does depend on icu-libs
+2018-03-01 18:15:56	stephend	still no dice
+2018-03-01 18:15:57	@_ikke_	so it should be installed as a depdeny
+2018-03-01 18:16:06	@_ikke_	apk version icu-libs
+2018-03-01 18:16:16	stephend	https://pastebin.mozilla.org/9078906
+2018-03-01 18:17:18	@_ikke_	I think it's because you have a tagged firefox from testing, but not the dependencies
+2018-03-01 18:17:55	stephend	sorry, yeah, this is my coworker's code, and he's not around ATM
+2018-03-01 18:18:28	stephend	I see he's using @testing for Firefox, and @edge for dependencies - so that's the mismatch, you're saying?
+2018-03-01 18:18:35	stephend	and we were getting lucky, before?
+2018-03-01 18:18:48	@_ikke_	soyes
+2018-03-01 18:18:50	@_ikke_	yes
+2018-03-01 18:19:09	@_ikke_	if v3.7 contains the version of icu-libs that firefox needs, it's working
+2018-03-01 18:19:26	@_ikke_	but firefox probably was updated with a newer version of icu-libs
+2018-03-01 18:19:41	@_ikke_	v3.7 contains /usr/lib/libicui18n.so.59
+2018-03-01 18:19:46	@_ikke_	not so.60
+2018-03-01 18:19:52	stephend	oh
+2018-03-01 18:20:01	@_ikke_	https://pkgs.alpinelinux.org/contents?file=libicui18n.so.*&path=&name=&branch=v3.7
+2018-03-01 18:20:08	<--	arnotixe (~Thunderbi@102.109-247-144.customer.lyse.net) has quit (Quit: arnotixe)
+2018-03-01 18:20:27	stephend	so is the right fix to pull from @edge in both cases?  apk repo and for firefox?
+2018-03-01 18:20:42	stephend	or tag dependencies, rather?
+2018-03-01 18:21:06	<--	cb1 (~cb1@unaffiliated/cb1) has quit (Remote host closed the connection)
+2018-03-01 18:21:33	@_ikke_	tagging like this is rather fragile
+2018-03-01 18:21:37	@_ikke_	as you notice
+2018-03-01 18:21:41	 *	stephend nods
+2018-03-01 18:22:18	@_ikke_	so you probably want to switch to full edge
+2018-03-01 18:25:36	<--	Manis (~Manis@84-73-20-163.dclient.hispeed.ch) has quit (Quit: WeeChat 2.0.1)
+2018-03-01 18:26:38	-->	tercenya_ (~tercenya@mwynn.afpc.tamu.edu) has joined #alpine-linux
+2018-03-01 18:29:05	<--	tercenya (~tercenya@mwynn.afpc.tamu.edu) has quit (Ping timeout: 248 seconds)
+2018-03-01 18:29:11	-->	t0mmy (~tprrt@ram31-1-82-234-79-177.fbx.proxad.net) has joined #alpine-linux
+2018-03-01 18:29:17	--	StarWarsFan is now known as StarWarsFan|afk
+2018-03-01 18:32:20	<--	fabled (~tteras@208.74.142.117) has quit (Quit: Leaving)
+2018-03-01 18:34:57	stephend	thx; looks like one of the key changes was https://git.alpinelinux.org/cgit/aports/commit/testing/firefox/APKBUILD?id=b6ef816bf9226880f7543327efaaef09b8d58e04
+2018-03-01 18:37:41	-->	cb1 (~cb1@unaffiliated/cb1) has joined #alpine-linux
+2018-03-01 18:38:19	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Remote host closed the connection)
+2018-03-01 18:38:55	<--	alazare619 (uid194739@gateway/web/irccloud.com/x-qlpsaytnldnpvwkj) has quit (Disconnected by services)
+2018-03-01 18:39:27	<--	borntraeger (~borntraeg@HSI-KBW-078-042-018-169.hsi3.kabel-badenwuerttemberg.de) has quit (Ping timeout: 240 seconds)
+2018-03-01 18:45:04	<--	fugitive__ (~fugitive@95.211.147.186) has quit (Ping timeout: 260 seconds)
+2018-03-01 18:50:11	<--	epony (~nym@79-100-131-47.ip.btc-net.bg) has quit (Remote host closed the connection)
+2018-03-01 18:52:31	<--	keithy (~keithy@95.151.252.88) has quit (Quit: keithy)
+2018-03-01 18:58:17	-->	keithy (~keithy@95.151.252.88) has joined #alpine-linux
+2018-03-01 19:13:21	<--	keithy (~keithy@95.151.252.88) has quit (Quit: keithy)
+2018-03-01 19:19:33	-->	keithy (~keithy@95.151.252.88) has joined #alpine-linux
+2018-03-01 19:19:47	<--	jimlei (~quassel@189.137.34.95.customer.cdi.no) has quit (Ping timeout: 245 seconds)
+2018-03-01 19:21:42	-->	la_putin_ (~exec@2405:7f00:8a17:3200:744c:d0a1:4de9:a7cc) has joined #alpine-linux
+2018-03-01 19:24:09	<--	la_putin (~exec@2405:7f00:8a17:3200:744c:d0a1:4de9:a7cc) has quit (Read error: Connection reset by peer)
+2018-03-01 19:30:12	-->	jimlei (~quassel@189.137.34.95.customer.cdi.no) has joined #alpine-linux
+2018-03-01 19:48:21	<--	keithy (~keithy@95.151.252.88) has quit (Quit: keithy)
+2018-03-01 19:53:29	--	tercenya_ is now known as tercenya
+2018-03-01 19:53:39	-->	keithy (~keithy@95.151.252.88) has joined #alpine-linux
+2018-03-01 19:54:22	<--	tercenya (~tercenya@mwynn.afpc.tamu.edu) has left #alpine-linux
+2018-03-01 20:07:18	-->	pickfire (~ivan@unaffiliated/pickfire) has joined #alpine-linux
+2018-03-01 20:11:57	<--	tmh1999__ (~tmh1999@unaffiliated/tmh1999) has quit (Ping timeout: 240 seconds)
+2018-03-01 20:20:14	-->	tmh1999 (~tmh1999@148.100.143.54) has joined #alpine-linux
+2018-03-01 20:20:14	<--	tmh1999 (~tmh1999@148.100.143.54) has quit (Changing host)
+2018-03-01 20:20:14	-->	tmh1999 (~tmh1999@unaffiliated/tmh1999) has joined #alpine-linux
+2018-03-01 20:20:19	<--	specing (~specing@unaffiliated/specing) has quit (Quit: ZNC - http://znc.in)
+2018-03-01 20:47:15	<--	mps (~mps@static-213-198-238-194.adsl.eunet.rs) has quit (Quit: Lost terminal)
+2018-03-01 20:51:12	-->	ghostbar (~ghostbar@191.109.254.12) has joined #alpine-linux
+2018-03-01 20:51:41	-->	mps (~mps@static-213-198-238-194.adsl.eunet.rs) has joined #alpine-linux
+2018-03-01 21:01:16	<--	Tyresc (~Tyresc@173.208.95.76) has quit (Ping timeout: 265 seconds)
+2018-03-01 21:30:29	<--	Maxpm (~Maxpm@2604:2000:1404:4d8:2e68:b1c6:a5ce:3f6a) has quit (Ping timeout: 276 seconds)
+2018-03-01 21:33:39	<--	ghostbar (~ghostbar@191.109.254.12) has quit
+2018-03-01 21:34:42	-->	jakogut_ (~jakogut_@162.251.69.147) has joined #alpine-linux
+2018-03-01 21:35:38	--	jakogut_ is now known as jakogut
+2018-03-01 21:47:18	<--	keithy (~keithy@95.151.252.88) has quit (Quit: keithy)
+2018-03-01 22:01:17	-->	fugitive (~fugitive@79-101-182-160.dynamic.isp.telekom.rs) has joined #alpine-linux
+2018-03-01 22:01:28	<--	tmh1999 (~tmh1999@unaffiliated/tmh1999) has quit (Ping timeout: 268 seconds)
+2018-03-01 22:25:20	-->	Maxpm (~Maxpm@2604:2000:1404:4d8:2e68:b1c6:a5ce:3f6a) has joined #alpine-linux
+2018-03-01 22:29:01	<--	mjh (~Matthew@95.150.177.97) has quit (Ping timeout: 252 seconds)
+2018-03-01 22:54:37	<--	herrbischoff (~herrbisch@port-23188.pppoe.wtnet.de) has quit (Ping timeout: 260 seconds)
+2018-03-01 22:54:47	-->	herrbischoff (~herrbisch@134.101.193.211) has joined #alpine-linux
+2018-03-01 22:59:27	<--	theLambda (~theLambda@i577BCD27.versanet.de) has quit (Ping timeout: 240 seconds)
+2018-03-01 23:01:23	-->	theLambda (~theLambda@i577BCD42.versanet.de) has joined #alpine-linux
+2018-03-01 23:02:17	<--	fugitive (~fugitive@79-101-182-160.dynamic.isp.telekom.rs) has quit (Ping timeout: 256 seconds)
+2018-03-01 23:05:18	<--	grayhemp (~grayhemp@162.244.4.2) has quit (Remote host closed the connection)
+2018-03-01 23:17:06	-->	tmh1999 (~tmh1999@unaffiliated/tmh1999) has joined #alpine-linux
+2018-03-01 23:19:08	-->	grayhemp (~grayhemp@162.244.4.2) has joined #alpine-linux
+2018-03-01 23:23:27	<--	grayhemp (~grayhemp@162.244.4.2) has quit (Ping timeout: 240 seconds)
+2018-03-01 23:33:13	<--	BitL0G1c (~BitL0G1c@cpc91758-watf12-2-0-cust537.15-2.cable.virginm.net) has quit (Ping timeout: 240 seconds)
+2018-03-02 00:04:03	-->	emacsomancer (user@gateway/vpn/privateinternetaccess/emacsomancer) has joined #alpine-linux
+2018-03-02 00:07:27	-->	keithy (~keithy@95.151.252.88) has joined #alpine-linux
+2018-03-02 00:11:24	<--	minimalism (~none@unaffiliated/minimalism) has quit (Quit: minimalism)
+2018-03-02 00:16:55	-->	minimalism (~none@unaffiliated/minimalism) has joined #alpine-linux
+2018-03-02 00:22:34	<--	keithy (~keithy@95.151.252.88) has quit (Quit: keithy)
+2018-03-02 00:40:29	-->	polysci (~weechat@c-67-180-85-42.hsd1.ca.comcast.net) has joined #alpine-linux
+2018-03-02 00:57:24	-->	jzono1 (~jo@148-252-89.157.3p.ntebredband.no) has joined #alpine-linux
+2018-03-02 01:01:51	<--	jimlei (~quassel@189.137.34.95.customer.cdi.no) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:02:46	-->	jimlei (~quassel@189.137.34.95.customer.cdi.no) has joined #alpine-linux
+2018-03-02 01:10:33	<--	Lloyd (sid85767@gateway/web/irccloud.com/x-nozwmjqmtuyzbhaf) has quit (Ping timeout: 240 seconds)
+2018-03-02 01:10:33	<--	krainboltgreene (sid5202@gateway/web/irccloud.com/x-esappqixgouvwjmc) has quit (Ping timeout: 240 seconds)
+2018-03-02 01:10:36	<--	patrickeast (sid107413@gateway/web/irccloud.com/x-terahgpaddtbqciq) has quit (Write error: Connection reset by peer)
+2018-03-02 01:10:47	<--	savantgarde (sid256535@gateway/web/irccloud.com/x-kfbjregksmxplecb) has quit (Read error: Connection reset by peer)
+2018-03-02 01:10:53	<--	wycats (sid79@gateway/web/irccloud.com/x-llwbqwnmxfrngrbx) has quit (Read error: Connection reset by peer)
+2018-03-02 01:10:53	<--	jyc (sid40911@gateway/web/irccloud.com/x-jvxkcgtaaxloqbow) has quit (Ping timeout: 240 seconds)
+2018-03-02 01:10:53	<--	serverascode (sid28313@gateway/web/irccloud.com/x-izbeifflcoszpbls) has quit (Ping timeout: 240 seconds)
+2018-03-02 01:10:53	<--	ahills (sid82586@gateway/web/irccloud.com/x-zpsgqspeyzyhgjmd) has quit (Ping timeout: 240 seconds)
+2018-03-02 01:10:53	<--	Tritlo (sid58727@gateway/web/irccloud.com/x-txgjdikqkgkzhsvy) has quit (Read error: Connection reset by peer)
+2018-03-02 01:10:57	<--	feepo (sid28508@gateway/web/irccloud.com/x-aowtglxbwnrdbwwo) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:00	<--	kolev (sid18119@gateway/web/irccloud.com/x-znbshttmxxrrrcnh) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:06	<--	sugarpuff (sid92283@gateway/web/irccloud.com/x-kqgaqsuiuqnwkiqe) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:11	<--	ryanlelek (sid116603@gateway/web/irccloud.com/x-nwmqivklcjcfvzpy) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:15	<--	aemadrid (sid2703@gateway/web/irccloud.com/x-gjmyehusnykpiqta) has quit (Ping timeout: 255 seconds)
+2018-03-02 01:11:15	<--	grepory (sid29799@gateway/web/irccloud.com/x-ciehrvfsiuxeefqd) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:22	<--	colstrom (sid12858@gateway/web/irccloud.com/x-ejysvktiiiwavbcx) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:22	<--	leepa (sid1000@gateway/web/irccloud.com/x-izvileqysoobjadq) has quit (Write error: Connection reset by peer)
+2018-03-02 01:11:24	<--	odc (sid197788@gateway/web/irccloud.com/x-ggyfstyzrjbdcdbh) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:25	<--	roolebo (sid64806@gateway/web/irccloud.com/x-efngubzyslfkgopa) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:25	<--	vectr0n|cloud (uid25562@gateway/web/irccloud.com/x-nnhobbtrtbzdekgj) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:25	<--	sital (sid254758@gateway/web/irccloud.com/x-oaydffhjsxgsnvkk) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:25	<--	cttttt (sid135570@gateway/web/irccloud.com/x-jdjnftopoqfjwaqu) has quit (Write error: Connection reset by peer)
+2018-03-02 01:11:25	<--	LyndsySimon (sid34452@gateway/web/irccloud.com/x-afxohpluqxokqauq) has quit (Write error: Connection reset by peer)
+2018-03-02 01:11:26	<--	saintdev (sid25343@gateway/web/irccloud.com/x-xmjtndurqyhnvhao) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:27	<--	terrorjack (sid225236@gateway/web/irccloud.com/x-uggbjjimxdqdwwov) has quit (Read error: Connection reset by peer)
+2018-03-02 01:11:49	<--	dave0x6d (uid190567@gateway/web/irccloud.com/x-tkwthmknuapukmde) has quit (Ping timeout: 252 seconds)
+2018-03-02 01:11:57	<--	victorbjelkholm (sid208353@gateway/web/irccloud.com/x-gzstswabdebxvqmm) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:11:57	<--	EnTeQuAk (sid121987@pdpc/supporter/bronze/entequak) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:11:57	<--	metalrain_ (sid29983@gateway/web/irccloud.com/x-qksldnrnrtyzgvyk) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:12:23	-->	feepo (sid28508@gateway/web/irccloud.com/x-vpzidscalsfsynef) has joined #alpine-linux
+2018-03-02 01:12:31	<--	yo61 (sid15293@gateway/web/irccloud.com/x-kfofqhpveidolsmh) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:12:31	<--	ovf (sid19068@gateway/web/irccloud.com/x-vravrrgmgvfykmci) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:12:31	<--	moul (sid65256@gateway/web/irccloud.com/x-mucqdrwvtrsicpzk) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:12:31	-->	wycats (sid79@gateway/web/irccloud.com/x-jajknbdcxicvxyjg) has joined #alpine-linux
+2018-03-02 01:12:32	-->	krainboltgreene (sid5202@gateway/web/irccloud.com/x-bivojasikwfhuonv) has joined #alpine-linux
+2018-03-02 01:12:37	-->	Tritlo (sid58727@gateway/web/irccloud.com/x-auucqgeqkpvmphwl) has joined #alpine-linux
+2018-03-02 01:12:49	<--	squaremo (sid4714@gateway/web/irccloud.com/x-axuizmvjehbhqyma) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:13:24	-->	aemadrid (sid2703@gateway/web/irccloud.com/x-qtklaczhnolljptm) has joined #alpine-linux
+2018-03-02 01:13:35	-->	sital (sid254758@gateway/web/irccloud.com/x-ywxahobcuivxomiq) has joined #alpine-linux
+2018-03-02 01:13:45	-->	sugarpuff (sid92283@gateway/web/irccloud.com/x-psfelmtixsmxmcgl) has joined #alpine-linux
+2018-03-02 01:13:54	-->	EnTeQuAk (sid121987@pdpc/supporter/bronze/entequak) has joined #alpine-linux
+2018-03-02 01:14:09	-->	victorbjelkholm (sid208353@gateway/web/irccloud.com/x-zhkfktpszryqtxiv) has joined #alpine-linux
+2018-03-02 01:14:14	-->	serverascode (sid28313@gateway/web/irccloud.com/x-dbpfoyzmrpjwqjui) has joined #alpine-linux
+2018-03-02 01:14:17	-->	yo61 (sid15293@gateway/web/irccloud.com/x-ibcgsmhdmodjesrg) has joined #alpine-linux
+2018-03-02 01:14:55	-->	patrickeast (sid107413@gateway/web/irccloud.com/x-rjpuaategepzyoiw) has joined #alpine-linux
+2018-03-02 01:15:57	-->	Lloyd (sid85767@gateway/web/irccloud.com/x-eqwropwcpqbpxhmv) has joined #alpine-linux
+2018-03-02 01:16:10	-->	squaremo (sid4714@gateway/web/irccloud.com/x-wclmpmxyuqngwccq) has joined #alpine-linux
+2018-03-02 01:16:10	-->	LyndsySimon (sid34452@gateway/web/irccloud.com/x-bwfxzhnduxkohcqn) has joined #alpine-linux
+2018-03-02 01:16:37	-->	savantgarde (sid256535@gateway/web/irccloud.com/x-lmcxxgeeiscwyhcc) has joined #alpine-linux
+2018-03-02 01:17:08	-->	grepory (sid29799@gateway/web/irccloud.com/x-gxtcgdhyljgdiqco) has joined #alpine-linux
+2018-03-02 01:17:14	-->	roolebo (sid64806@gateway/web/irccloud.com/x-wmdredknokocpdwg) has joined #alpine-linux
+2018-03-02 01:17:16	-->	moul (sid65256@gateway/web/irccloud.com/x-eldcctcnrbkmaksf) has joined #alpine-linux
+2018-03-02 01:17:19	-->	dave0x6d (uid190567@gateway/web/irccloud.com/x-ggcltxulnkdxkdpw) has joined #alpine-linux
+2018-03-02 01:17:43	-->	ahills (sid82586@gateway/web/irccloud.com/x-dwlfrkbjawysjwve) has joined #alpine-linux
+2018-03-02 01:17:57	-->	ovf (sid19068@gateway/web/irccloud.com/x-adphfuevdevizugg) has joined #alpine-linux
+2018-03-02 01:18:33	-->	kolev (sid18119@gateway/web/irccloud.com/x-rmeyxmybaubauasd) has joined #alpine-linux
+2018-03-02 01:18:56	-->	jyc (sid40911@gateway/web/irccloud.com/x-xwmsgzmhnasskdnw) has joined #alpine-linux
+2018-03-02 01:19:00	-->	vectr0n|cloud (uid25562@gateway/web/irccloud.com/x-gqqyuxnoorxufxpe) has joined #alpine-linux
+2018-03-02 01:29:10	-->	ryanlelek (sid116603@gateway/web/irccloud.com/x-icgompukyeyaubkn) has joined #alpine-linux
+2018-03-02 01:29:15	-->	odc (sid197788@gateway/web/irccloud.com/x-uwdlvvhtrprvrxzk) has joined #alpine-linux
+2018-03-02 01:29:22	-->	leepa (sid1000@gateway/web/irccloud.com/x-zvwgcjmpooncywuz) has joined #alpine-linux
+2018-03-02 01:38:34	<--	tmh1999 (~tmh1999@unaffiliated/tmh1999) has quit (Read error: Connection reset by peer)
+2018-03-02 01:39:27	-->	tmh1999 (~tmh1999@cpe-204-210-145-127.hvc.res.rr.com) has joined #alpine-linux
+2018-03-02 01:39:27	<--	tmh1999 (~tmh1999@cpe-204-210-145-127.hvc.res.rr.com) has quit (Changing host)
+2018-03-02 01:39:27	-->	tmh1999 (~tmh1999@unaffiliated/tmh1999) has joined #alpine-linux
+2018-03-02 01:39:45	-->	keithy (~keithy@95.151.252.88) has joined #alpine-linux
+2018-03-02 01:39:56	-->	colstrom (sid12858@gateway/web/irccloud.com/x-kbsfazbrukprvynd) has joined #alpine-linux
+2018-03-02 01:41:15	-->	grayhemp (~grayhemp@2601:646:8301:844b:7958:c211:493b:2858) has joined #alpine-linux
+2018-03-02 01:44:23	<--	jzono1 (~jo@148-252-89.157.3p.ntebredband.no) has quit (Quit: leaving)
+2018-03-02 01:45:56	<--	grayhemp (~grayhemp@2601:646:8301:844b:7958:c211:493b:2858) has quit (Ping timeout: 276 seconds)
+2018-03-02 01:46:28	<--	tmh1999 (~tmh1999@unaffiliated/tmh1999) has quit (Read error: Connection reset by peer)
+2018-03-02 01:47:23	-->	tmh1999 (~tmh1999@cpe-204-210-145-127.hvc.res.rr.com) has joined #alpine-linux
+2018-03-02 01:47:23	<--	tmh1999 (~tmh1999@cpe-204-210-145-127.hvc.res.rr.com) has quit (Changing host)
+2018-03-02 01:47:23	-->	tmh1999 (~tmh1999@unaffiliated/tmh1999) has joined #alpine-linux
+2018-03-02 01:50:22	-->	metalrain_ (sid29983@gateway/web/irccloud.com/x-wahsxlckwzllwcia) has joined #alpine-linux
+2018-03-02 01:50:25	-->	cttttt (sid135570@gateway/web/irccloud.com/x-enospebdjskyfnmo) has joined #alpine-linux
+2018-03-02 01:54:56	<--	keithy (~keithy@95.151.252.88) has quit (Quit: keithy)
+2018-03-02 01:58:57	<--	mepholic (~mepholic@unaffiliated/mepholic) has quit (Ping timeout: 245 seconds)
+2018-03-02 01:59:05	<--	systo (~systo@159.203.23.83) has quit (Ping timeout: 256 seconds)
+2018-03-02 01:59:19	-->	mepholic (~mepholic@unaffiliated/mepholic) has joined #alpine-linux
+2018-03-02 01:59:35	<--	bontibon (~bontibon@unaffiliated/bontibon) has quit (Ping timeout: 276 seconds)
+2018-03-02 02:00:02	-->	systo (~systo@159.203.23.83) has joined #alpine-linux
+2018-03-02 02:00:20	-->	bontibon (~bontibon@layeh.com) has joined #alpine-linux
+2018-03-02 02:00:20	<--	bontibon (~bontibon@layeh.com) has quit (Changing host)
+2018-03-02 02:00:20	-->	bontibon (~bontibon@unaffiliated/bontibon) has joined #alpine-linux
+2018-03-02 02:01:01	-->	terrorjack (sid225236@gateway/web/irccloud.com/x-phtdfydifgiakcty) has joined #alpine-linux
+2018-03-02 02:06:41	<--	hackerhercules (~hackerher@unafilliated/hackerhercules) has quit (Read error: Connection reset by peer)
+2018-03-02 02:12:25	-->	hackerhercules (~hackerher@unafilliated/hackerhercules) has joined #alpine-linux
+2018-03-02 02:19:44	-->	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has joined #alpine-linux
+2018-03-02 02:22:52	-->	nixuser (~sion@185.206.227.180) has joined #alpine-linux
+2018-03-02 02:24:17	<--	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has quit (Ping timeout: 276 seconds)
+2018-03-02 02:26:35	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-02 03:15:01	<--	t0mmy (~tprrt@ram31-1-82-234-79-177.fbx.proxad.net) has quit (Ping timeout: 256 seconds)
+2018-03-02 03:18:45	-->	arnotixe (~Thunderbi@188.95.246.75) has joined #alpine-linux
+2018-03-02 03:29:47	-->	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has joined #alpine-linux
+2018-03-02 03:31:58	<--	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has quit (Remote host closed the connection)
+2018-03-02 03:33:09	<--	nixuser (~sion@185.206.227.180) has quit (Quit: leaving)
+2018-03-02 03:38:48	-->	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has joined #alpine-linux
+2018-03-02 03:51:07	<--	tmh1999 (~tmh1999@unaffiliated/tmh1999) has quit (Quit: Leaving)
+2018-03-02 03:52:41	-->	tmh1999 (~tmh1999@cpe-204-210-145-127.hvc.res.rr.com) has joined #alpine-linux
+2018-03-02 03:52:41	<--	tmh1999 (~tmh1999@cpe-204-210-145-127.hvc.res.rr.com) has quit (Changing host)
+2018-03-02 03:52:41	-->	tmh1999 (~tmh1999@unaffiliated/tmh1999) has joined #alpine-linux
+2018-03-02 03:53:25	<--	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has quit (Remote host closed the connection)
+2018-03-02 03:56:38	-->	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has joined #alpine-linux
+2018-03-02 04:10:34	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Remote host closed the connection)
+2018-03-02 04:12:33	<--	arnotixe (~Thunderbi@188.95.246.75) has quit (Ping timeout: 248 seconds)
+2018-03-02 04:15:12	<--	Maxpm (~Maxpm@2604:2000:1404:4d8:2e68:b1c6:a5ce:3f6a) has quit (Ping timeout: 245 seconds)
+2018-03-02 04:18:14	-->	wener (~wener@101.81.230.171) has joined #alpine-linux
+2018-03-02 04:19:52	@_ikke_	stephend: right, a pure pkgrel release often indicates that the dependencies have been updated and a new package build is required
+2018-03-02 04:20:16	wener	please help, what's the answer of SPECIAL ANNOUNCEMENT: IRC.SUPERNETS.ORG #SUPERBOWL IS HAVING A SUPERBOWL WATCH PARTY ON FEB. 4TH. MESSAGE CHRONO FOR DETAILS!!
+2018-03-02 04:20:25	wener	sorry,
+2018-03-02 04:20:58	wener	exit
+2018-03-02 04:21:00	<--	wener (~wener@101.81.230.171) has quit (Client Quit)
+2018-03-02 04:22:37	-->	t0mmy (~tprrt@217.114.201.133) has joined #alpine-linux
+2018-03-02 04:40:15	<--	fekepp (~Thunderbi@2a02:8071:31ac:c00:fcca:8106:b03f:cc) has quit (Quit: fekepp)
+2018-03-02 04:51:35	<--	clemens3 (~clemens@80-218-38-71.dclient.hispeed.ch) has quit (Ping timeout: 240 seconds)
+2018-03-02 04:53:08	-->	arnotixe (~Thunderbi@148122135023.sia.telenor.net) has joined #alpine-linux
+2018-03-02 04:54:47	-->	LowJack (~cojack@ip-151-165.freevpn.me) has joined #alpine-linux
+2018-03-02 04:55:06	LowJack	Whats so great about this distro?
+2018-03-02 04:55:40	Roserin	Low size
+2018-03-02 04:55:40	@_ikke_	LowJack: small and fast
+2018-03-02 04:55:46	Roserin	Good for vms
+2018-03-02 04:56:01	@_ikke_	"Small. Simple. Secure.
+2018-03-02 04:56:04	@_ikke_	"
+2018-03-02 04:56:34	LowJack	so isnt a minimal ubuntu install
+2018-03-02 04:58:35	LowJack	I C its more like gentoo
+2018-03-02 05:03:49	-->	tarkus (~tarkus@2a02:ab88:2407:1d80:f0db:7d9e:e08c:57fd) has joined #alpine-linux
+2018-03-02 05:03:52	<--	arnotixe (~Thunderbi@148122135023.sia.telenor.net) has quit (Ping timeout: 268 seconds)
+2018-03-02 05:07:20	TBB	I'll get a slap for this, but imagine it's like an rpm based gentoo except that it isn't neither
+2018-03-02 05:14:35	-->	borntraeger (borntraege@nat/ibm/x-msojfsafhkddnhuf) has joined #alpine-linux
+2018-03-02 05:19:21	-->	VartiWork (97084fa4@gateway/web/freenode/ip.151.8.79.164) has joined #alpine-linux
+2018-03-02 05:20:57	<--	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has quit (Quit: I'M MELTING !!!!!!!!!!!!!!)
+2018-03-02 05:33:05	-->	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has joined #alpine-linux
+2018-03-02 05:45:53	<--	elevated (~elevated@unaffiliated/elevated) has quit (Quit: bye)
+2018-03-02 05:48:14	-->	elevated (~elevated@unaffiliated/elevated) has joined #alpine-linux
+2018-03-02 05:48:50	<--	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has quit (Remote host closed the connection)
+2018-03-02 05:53:49	<--	tarkus (~tarkus@2a02:ab88:2407:1d80:f0db:7d9e:e08c:57fd) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-03-02 05:59:03	<--	LowJack (~cojack@ip-151-165.freevpn.me) has quit (Quit: AnacønÐa · "It is impossible to make anything foolproof because fools are so ingenious")
+2018-03-02 06:00:18	-->	arnotixe (~Thunderbi@188.95.241.148) has joined #alpine-linux
+2018-03-02 06:19:08	-->	patanga (d995a8e9@gateway/web/freenode/ip.217.149.168.233) has joined #alpine-linux
+2018-03-02 06:23:11	<--	patanga (d995a8e9@gateway/web/freenode/ip.217.149.168.233) has quit (Quit: Page closed)
+2018-03-02 06:36:19	-->	fugitive (~fugitive@79-101-182-160.dynamic.isp.telekom.rs) has joined #alpine-linux
+2018-03-02 06:37:06	-->	argulp (~argulp@95.129.116.160) has joined #alpine-linux
+2018-03-02 06:40:37	<--	jimlei (~quassel@189.137.34.95.customer.cdi.no) has quit (Ping timeout: 245 seconds)
+2018-03-02 06:43:28	scv	TBB: lol.
+2018-03-02 06:48:19	-->	jimlei (~quassel@189.137.34.95.customer.cdi.no) has joined #alpine-linux
+2018-03-02 06:50:04	<--	mixi (~mixi@exherbo/developer/mixi) has quit (Quit: mixi)
+2018-03-02 06:50:22	-->	mixi (~mixi@shadowice.org) has joined #alpine-linux
+2018-03-02 06:51:16	<--	mixi (~mixi@shadowice.org) has quit (Client Quit)
+2018-03-02 06:51:36	-->	mixi (~mixi@shadowice.org) has joined #alpine-linux
+2018-03-02 06:51:40	<--	mixi (~mixi@shadowice.org) has quit (Client Quit)
+2018-03-02 06:52:22	-->	mixi (~mixi@shadowice.org) has joined #alpine-linux
+2018-03-02 06:53:47	<--	mixi (~mixi@shadowice.org) has quit (Client Quit)
+2018-03-02 06:53:56	-->	mixi (~mixi@exherbo/developer/mixi) has joined #alpine-linux
+2018-03-02 06:58:54	<--	fugitive (~fugitive@79-101-182-160.dynamic.isp.telekom.rs) has quit (Remote host closed the connection)
+2018-03-02 07:08:08	--	StarWarsFan|afk is now known as StarWarsFan
+2018-03-02 07:14:50	<--	elevated (~elevated@unaffiliated/elevated) has quit (Quit: bye)
+2018-03-02 07:20:23	<--	greguu (~greguu@46.246.6.2) has quit (Ping timeout: 256 seconds)
+2018-03-02 07:27:26	<--	knutix (~textual@HSI-KBW-091-089-011-201.hsi2.kabelbw.de) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-03-02 07:34:04	-->	greguu (~greguu@46.246.6.40) has joined #alpine-linux
+2018-03-02 07:37:26	-->	knutix (~textual@HSI-KBW-091-089-222-215.hsi2.kabel-badenwuerttemberg.de) has joined #alpine-linux
+2018-03-02 07:47:13	<--	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has quit (Quit: I'M MELTING !!!!!!!!!!!!!!)
+2018-03-02 07:49:29	-->	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has joined #alpine-linux
+2018-03-02 07:54:22	<--	grayhemp (~grayhemp@2601:646:8301:844b:6cc4:c7e1:7c8e:3178) has quit (Ping timeout: 245 seconds)
+2018-03-02 07:57:42	-->	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has joined #alpine-linux
+2018-03-02 08:00:00	<--	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has quit (Client Quit)
+2018-03-02 08:05:16	-->	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has joined #alpine-linux
+2018-03-02 08:11:39	-->	tarkus (~tarkus@2a02:ab88:2407:1d80:f0db:7d9e:e08c:57fd) has joined #alpine-linux
+2018-03-02 08:12:54	-->	elevated (~elevated@unaffiliated/elevated) has joined #alpine-linux
+2018-03-02 08:18:57	<--	cb1 (~cb1@unaffiliated/cb1) has quit (Remote host closed the connection)
+2018-03-02 08:38:16	-->	cb1 (~cb1@unaffiliated/cb1) has joined #alpine-linux
+2018-03-02 08:41:27	-->	justrying (uid44037@gateway/web/irccloud.com/x-awcjkjhpmifqyhbx) has joined #alpine-linux
+2018-03-02 08:46:51	-->	grayhemp (~grayhemp@2601:646:8301:844b:1992:3b6f:99ab:b1d2) has joined #alpine-linux
+2018-03-02 08:51:02	<--	grayhemp (~grayhemp@2601:646:8301:844b:1992:3b6f:99ab:b1d2) has quit (Ping timeout: 245 seconds)
+2018-03-02 08:53:33	-->	la_putin (~exec@2405:7f00:8803:fc00:34de:4d48:c566:dda4) has joined #alpine-linux
+2018-03-02 08:55:57	<--	la_putin_ (~exec@2405:7f00:8a17:3200:744c:d0a1:4de9:a7cc) has quit (Read error: Connection reset by peer)
+2018-03-02 08:58:13	<--	arnotixe (~Thunderbi@188.95.241.148) has quit (Ping timeout: 240 seconds)
+2018-03-02 09:18:47	-->	arnotixe (~Thunderbi@188.95.246.75) has joined #alpine-linux
+2018-03-02 09:35:36	-->	farosas (~fabiano@189-69-39-189.dsl.telesp.net.br) has joined #alpine-linux
+2018-03-02 09:42:12	<--	tarkus (~tarkus@2a02:ab88:2407:1d80:f0db:7d9e:e08c:57fd) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-03-02 09:43:14	-->	aielima (~aielima@gateway/tor-sasl/aielima) has joined #alpine-linux
+2018-03-02 09:48:49	<--	minimalism (~none@unaffiliated/minimalism) has quit (Quit: minimalism)
+2018-03-02 09:50:00	-->	grayhemp (~grayhemp@2601:646:8301:844b:9537:b438:52f1:681a) has joined #alpine-linux
+2018-03-02 09:54:22	<--	grayhemp (~grayhemp@2601:646:8301:844b:9537:b438:52f1:681a) has quit (Ping timeout: 245 seconds)
+2018-03-02 09:54:50	-->	clemens3 (~clemens@mx.eniso-partners.com) has joined #alpine-linux
+2018-03-02 10:14:54	-->	idint (~idint@gateway/tor-sasl/hazwan) has joined #alpine-linux
+2018-03-02 10:15:36	idint	is it possible to install only 1 package from edge-testing but keep everything else on stable?
+2018-03-02 10:16:49	bernhardgruen[m]	idint: yes - this is possible. This is called repository pinning: https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management#Repository_pinning
+2018-03-02 10:17:13	--	feuerteufel|afk is now known as feuerteufel
+2018-03-02 10:17:17	mps	idint: it should be, if that package from  doesn't depend from the package and version in testing
+2018-03-02 10:17:35	mps	s/from /from testing/
+2018-03-02 10:17:39	bernhardgruen[m]	idint: a bit down in the text there is also an example how to download a package (cherokee in the example) without adding an repository.
+2018-03-02 10:19:04	idint	oh it's exactly what i needed, thank you!
+2018-03-02 10:24:34	-->	czart_ (~czart@acgg108.neoplus.adsl.tpnet.pl) has joined #alpine-linux
+2018-03-02 10:28:47	<--	czart (~czart@acgg108.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 252 seconds)
+2018-03-02 10:35:38	<--	argulp (~argulp@95.129.116.160) has quit (Ping timeout: 268 seconds)
+2018-03-02 10:40:07	-->	czart__ (~czart@dlr42.neoplus.adsl.tpnet.pl) has joined #alpine-linux
+2018-03-02 10:40:28	-->	cyteen (~cyteen@146.66.58.48) has joined #alpine-linux
+2018-03-02 10:41:32	<--	czart_ (~czart@acgg108.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 276 seconds)
+2018-03-02 10:51:59	idint	hum it seems that when i put "net.ipv6.conf.all.forwarding = 1" to /etc/sysctl.conf or /etc/sysctl.d/00-alpine.conf is not applying on boot for unknown reason, but once i do `service sysctl restart` the value is applying normally. is there anything that could override sysctl settings on boot? I am using extended 3.7 release
+2018-03-02 10:53:32	bernhardgruen[m]	idint: Is the service sysctl enabled as boot service? you can check it with rc-update
+2018-03-02 10:54:51	idint	it shows:               sysctl | boot
+2018-03-02 10:55:01	idint	i suppose it is enabled
+2018-03-02 10:56:27	bernhardgruen[m]	seems so. One thing I could remotely imagine is that it runs before network is there.
+2018-03-02 10:59:08	bernhardgruen[m]	I assume that you already have some other values in 00-alpine.conf. You could for example set 'kernel.panic=123' (normally 120) and see if this value is set correctly after reboot.
+2018-03-02 11:03:58	<--	arnotixe (~Thunderbi@188.95.246.75) has quit (Quit: arnotixe)
+2018-03-02 11:16:55	<--	tugrik (~username@war.funkyjesus.org) has quit (Quit: WeeChat 2.0.1)
+2018-03-02 11:35:13	idint	humm, /etc/sysctl.d/00-alpine.conf are being set on boot, but net.ipv6.conf.all.forwarding is ignored and it is on the same file
+2018-03-02 11:37:07	idint	https://hastebin.com/qasenamagu.go
+2018-03-02 11:37:09	<--	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has quit (Remote host closed the connection)
+2018-03-02 11:37:23	idint	every value is being set on boot excluding the last one
+2018-03-02 11:37:57	-->	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has joined #alpine-linux
+2018-03-02 11:38:27	bernhardgruen[m]	so it seems that you have to load network before sysctl. I think this could work with a /etc/conf.d/sysctl file. Only Content
+2018-03-02 11:38:30	bernhardgruen[m]	rc_need="net"
+2018-03-02 11:38:38	bernhardgruen[m]	Another point: do you have a \n (new line) at the end of the last line?
+2018-03-02 11:39:20	bernhardgruen[m]	You should try my second answer first.
+2018-03-02 11:41:34	idint	oh yes i have
+2018-03-02 11:42:48	<--	mksully22 (~sully@cpe-24-55-19-17.austin.res.rr.com) has quit (Read error: Connection reset by peer)
+2018-03-02 11:42:53	bernhardgruen[m]	This newline is needed in most cases.
+2018-03-02 11:43:15	idint	for sure i have even 3
+2018-03-02 11:43:24	idint	an old habit
+2018-03-02 11:43:46	bernhardgruen[m]	;-)
+2018-03-02 11:44:06	bernhardgruen[m]	So the next try should be this conf.d/sysctl file.
+2018-03-02 11:44:15	idint	it mostly looks the network starting issue yes trying now
+2018-03-02 11:44:25	bernhardgruen[m]	On my systems this file does not exist.
+2018-03-02 11:44:35	bernhardgruen[m]	with rc_need you can configure special needs
+2018-03-02 11:46:52	idint	damn, didn't work
+2018-03-02 11:47:52	idint	i will try with net.ipv6
+2018-03-02 11:48:08	--	feuerteufel is now known as feuerteufel|afk
+2018-03-02 11:48:37	idint	neigher
+2018-03-02 11:48:52	bernhardgruen[m]	I am not entirely sure with the syntax. You could also etc /etc/init.d/sysctl (make a copy before - just in case) and define the needs there. There are other services that also define needs.
+2018-03-02 11:50:53	idint	yeah it will be the latest measure, i will try the rc_need still
+2018-03-02 11:59:20	<--	justrying (uid44037@gateway/web/irccloud.com/x-awcjkjhpmifqyhbx) has quit (Quit: Connection closed for inactivity)
+2018-03-02 12:18:07	<--	jimlei (~quassel@189.137.34.95.customer.cdi.no) has quit (Ping timeout: 245 seconds)
+2018-03-02 12:20:05	-->	arnotixe (~Thunderbi@102.109-247-144.customer.lyse.net) has joined #alpine-linux
+2018-03-02 12:20:38	-->	rcw (~rwoolley@128.224.252.2) has joined #alpine-linux
+2018-03-02 12:26:29	-->	jimlei (~quassel@189.137.34.95.customer.cdi.no) has joined #alpine-linux
+2018-03-02 12:26:39	<--	arnotixe (~Thunderbi@102.109-247-144.customer.lyse.net) has quit (Quit: arnotixe)
+2018-03-02 12:30:45	<--	kolev (sid18119@gateway/web/irccloud.com/x-rmeyxmybaubauasd) has quit (Read error: Connection reset by peer)
+2018-03-02 12:31:06	<--	ahills (sid82586@gateway/web/irccloud.com/x-dwlfrkbjawysjwve) has quit (Read error: Connection reset by peer)
+2018-03-02 12:33:37	-->	kolev (sid18119@gateway/web/irccloud.com/x-zfvuyxdnliwqeenm) has joined #alpine-linux
+2018-03-02 12:35:55	-->	ahills (sid82586@gateway/web/irccloud.com/x-caabpgrxzzivsgya) has joined #alpine-linux
+2018-03-02 12:47:55	-->	grayhemp (~grayhemp@2601:646:8301:844b:7521:e6f6:2ba0:4a06) has joined #alpine-linux
+2018-03-02 12:49:33	-->	pax_rhos (~irc@unaffiliated/pax-rhos/x-4280385) has joined #alpine-linux
+2018-03-02 12:49:36	pax_rhos	hello
+2018-03-02 12:50:03	pax_rhos	could someone, please, help me with making a dockerfile of php-fpm with memcache and php-mysql?
+2018-03-02 12:51:35	pax_rhos	here's my current Dockerfile https://paste.fedoraproject.org/paste/yin9YrNbkah8J6Udf8llHA/
+2018-03-02 12:52:17	<--	grayhemp (~grayhemp@2601:646:8301:844b:7521:e6f6:2ba0:4a06) has quit (Ping timeout: 245 seconds)
+2018-03-02 13:05:29	<--	cyteen (~cyteen@146.66.58.48) has quit (Quit: Leaving)
+2018-03-02 13:13:30	<--	feinerer (~feinerer@firewall.fhwn.ac.at) has left #alpine-linux
+2018-03-02 13:15:37	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-02 13:24:33	<--	clemens3 (~clemens@mx.eniso-partners.com) has quit (Ping timeout: 240 seconds)
+2018-03-02 13:41:30	<--	VartiWork (97084fa4@gateway/web/freenode/ip.151.8.79.164) has quit (Quit: Page closed)
+2018-03-02 14:04:04	-->	tarkus (~tarkus@2a02:ab88:2407:1d80:e92c:d9a1:98e6:ee8f) has joined #alpine-linux
+2018-03-02 14:08:59	<--	borntraeger (borntraege@nat/ibm/x-msojfsafhkddnhuf) has quit (Ping timeout: 276 seconds)
+2018-03-02 14:15:25	-->	keithy (~keithy@95.151.252.88) has joined #alpine-linux
+2018-03-02 14:17:13	-->	grayhemp (~grayhemp@2601:646:8301:844b:9c6:4a3b:6081:3dc) has joined #alpine-linux
+2018-03-02 14:29:10	-->	Tyresc (~Tyresc@37.235.55.188) has joined #alpine-linux
+2018-03-02 14:31:05	<--	keithy (~keithy@95.151.252.88) has quit (Quit: keithy)
+2018-03-02 14:37:14	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Remote host closed the connection)
+2018-03-02 14:45:37	-->	saintdev (sid25343@gateway/web/irccloud.com/x-azqojbghoxmocflb) has joined #alpine-linux
+2018-03-02 14:51:10	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-02 14:53:55	<--	tarkus (~tarkus@2a02:ab88:2407:1d80:e92c:d9a1:98e6:ee8f) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-03-02 14:58:14	-->	clemens3 (~clemens@80-218-38-71.dclient.hispeed.ch) has joined #alpine-linux
+2018-03-02 14:58:51	-->	fekepp (~Thunderbi@2a02:8071:31ac:c00:221:ccff:fed4:6de7) has joined #alpine-linux
+2018-03-02 14:59:45	<--	jimlei (~quassel@189.137.34.95.customer.cdi.no) has quit (Ping timeout: 252 seconds)
+2018-03-02 15:05:18	bernhardgruen[m]	idint: did you solve your problem?
+2018-03-02 15:05:48	-->	jimlei (~quassel@189.137.34.95.customer.cdi.no) has joined #alpine-linux
+2018-03-02 15:06:36	<--	grayhemp (~grayhemp@2601:646:8301:844b:9c6:4a3b:6081:3dc) has quit (Remote host closed the connection)
+2018-03-02 15:11:27	idint	bernhardgruen[m], unfortunately no, i even tried to modify sysctl init script
+2018-03-02 15:11:29	idint	i also found a bug
+2018-03-02 15:12:24	idint	when you try to use "net-online" service with rc_need or just service ocmmand, it enters a loop with an error
+2018-03-02 15:12:28	idint	https://my.mixtape.moe/asjqas.png
+2018-03-02 15:12:41	idint	it may stuck at boot for 10 minutes if used
+2018-03-02 15:13:27	bernhardgruen[m]	Ok, strange. This is something that should get fixed soon.
+2018-03-02 15:14:18	-->	epony (~nym@77-85-130-61.ip.btc-net.bg) has joined #alpine-linux
+2018-03-02 15:14:35	idint	for me 'service net-online start' results in that loop even when used from mornal runlevel
+2018-03-02 15:14:37	idint	normal*
+2018-03-02 15:17:25	bernhardgruen[m]	I will test this on my system. There are already some new openrc versions available. Maybe they already fix that problem. But they are not yet available for AlpineLinux
+2018-03-02 15:18:54	-->	cyteen (~cyteen@146.66.58.48) has joined #alpine-linux
+2018-03-02 15:25:14	-->	BitL0G1c (~BitL0G1c@cpc91758-watf12-2-0-cust537.15-2.cable.virginm.net) has joined #alpine-linux
+2018-03-02 15:27:02	-->	jn__ (~nope@ip-37-201-96-118.hsi13.unitymediagroup.de) has joined #alpine-linux
+2018-03-02 15:28:09	-->	ams__ (uid48118@gateway/web/irccloud.com/x-grmlmrnrisdaplfw) has joined #alpine-linux
+2018-03-02 15:31:12	-->	rcwoolley_ (~rwoolley@128.224.252.2) has joined #alpine-linux
+2018-03-02 15:34:43	<--	rcw (~rwoolley@128.224.252.2) has quit (Ping timeout: 268 seconds)
+2018-03-02 15:37:03	-->	borntraeger (~borntraeg@HSI-KBW-078-042-018-169.hsi3.kabel-badenwuerttemberg.de) has joined #alpine-linux
+2018-03-02 15:43:04	-->	grayhemp (~grayhemp@162.244.4.2) has joined #alpine-linux
+2018-03-02 15:50:14	@kaniini	our openrc is a bit modified ;p
+2018-03-02 15:50:32	bernhardgruen[m]	I just found that out the hard way :-D
+2018-03-02 15:52:57	bernhardgruen[m]	I try to find out why this problem that idint
+2018-03-02 15:53:02	bernhardgruen[m]	has exists.
+2018-03-02 15:54:29	bernhardgruen[m]	idint: At least there is an easy workaround: load the module ipv6 in either /etc/modules or /etc/modules-load.d/*.conf
+2018-03-02 15:55:30	idint	wew i thought it is loaded automatically, i was trying rc_need with "modules" as well and that's why it wasn't oading
+2018-03-02 15:55:34	idint	i mean setting
+2018-03-02 15:55:35	TBB	openrc also acts a bit weird wrt service dependencies; "before" and "after" don't quite work the way you'd suppose them to
+2018-03-02 15:55:59	bernhardgruen[m]	I am not sure if this can also be seen as resolution of the ticket (#8599).
+2018-03-02 15:56:56	bernhardgruen[m]	I don't know which start script at the end is responsible for loading the ipv6 module. But this way it works for me.
+2018-03-02 15:57:10	<--	rafalcpp (~racalcppp@84-10-11-234.static.chello.pl) has quit (Remote host closed the connection)
+2018-03-02 15:58:45	bernhardgruen[m]	It is unfortunately not "straight forward". So you can decide if you like to close ticket #8599 with this hint or not. idint
+2018-03-02 15:58:58	danieli	#8599
+2018-03-02 15:59:03	danieli	dammit, algitbot pls
+2018-03-02 15:59:12	danieli	found it
+2018-03-02 15:59:21	@_ikke_	algitbt is not here
+2018-03-02 15:59:30	danieli	it's here, but doesn't reply
+2018-03-02 15:59:45	bernhardgruen[m]	Bug #8599: sysctl doesn't set net.ipv6.conf.all.forwarding - Alpine Linux - Alpine Linux Development
+2018-03-02 16:00:05	danieli	yes, I found it
+2018-03-02 16:00:42	-->	rwoolley__ (~rwoolley@128.224.252.2) has joined #alpine-linux
+2018-03-02 16:02:17	-->	rcw (~rwoolley@128.224.252.2) has joined #alpine-linux
+2018-03-02 16:02:21	<--	rwoolley__ (~rwoolley@128.224.252.2) has quit (Read error: Connection reset by peer)
+2018-03-02 16:04:10	<--	aielima (~aielima@gateway/tor-sasl/aielima) has quit (Quit: Leaving)
+2018-03-02 16:04:19	<--	rcwoolley_ (~rwoolley@128.224.252.2) has quit (Ping timeout: 268 seconds)
+2018-03-02 16:12:22	<--	knutix (~textual@HSI-KBW-091-089-222-215.hsi2.kabel-badenwuerttemberg.de) has quit (Ping timeout: 260 seconds)
+2018-03-02 16:12:38	-->	rcwoolley_ (~rwoolley@128.224.252.2) has joined #alpine-linux
+2018-03-02 16:12:59	<--	rcw (~rwoolley@128.224.252.2) has quit (Read error: Connection reset by peer)
+2018-03-02 16:13:56	<--	scv (~solar@kraid.brinstar.org) has quit (Ping timeout: 256 seconds)
+2018-03-02 16:14:32	-->	scv (~solar@kraid.brinstar.org) has joined #alpine-linux
+2018-03-02 16:14:40	idint	bernhardgruen[m], i am okay to close it, but probably there should be a ticket that suggests loading ipv6 by default then? ipv6 isn't a module that should be avoided in a basic distro with network functionality
+2018-03-02 16:16:45	bernhardgruen[m]	I agree.
+2018-03-02 16:16:55	<--	fekepp (~Thunderbi@2a02:8071:31ac:c00:221:ccff:fed4:6de7) has quit (Remote host closed the connection)
+2018-03-02 16:21:17	-->	knutix (~textual@HSI-KBW-091-089-011-201.hsi2.kabelbw.de) has joined #alpine-linux
+2018-03-02 16:23:16	-->	fekepp (~Thunderbi@2a02:8071:31ac:c00:fcca:8106:b03f:cc) has joined #alpine-linux
+2018-03-02 16:29:14	<--	scv (~solar@kraid.brinstar.org) has quit (Ping timeout: 256 seconds)
+2018-03-02 16:30:41	<--	t0mmy (~tprrt@217.114.201.133) has quit (Ping timeout: 248 seconds)
+2018-03-02 16:32:22	-->	scv (~solar@kraid.brinstar.org) has joined #alpine-linux
+2018-03-02 16:39:26	<--	scv (~solar@kraid.brinstar.org) has quit (Ping timeout: 256 seconds)
+2018-03-02 16:40:22	-->	scv (~solar@kraid.brinstar.org) has joined #alpine-linux
+2018-03-02 16:43:35	<--	nixdork (dork@gateway/shell/elitebnc/x-ioposgscsywtlohj) has quit (Remote host closed the connection)
+2018-03-02 16:52:30	<--	borntraeger (~borntraeg@HSI-KBW-078-042-018-169.hsi3.kabel-badenwuerttemberg.de) has quit (Quit: Verlassend)
+2018-03-02 16:59:43	<--	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has quit (Ping timeout: 256 seconds)
+2018-03-02 17:02:36	-->	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has joined #alpine-linux
+2018-03-02 17:11:52	<--	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has quit (Remote host closed the connection)
+2018-03-02 17:12:57	-->	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has joined #alpine-linux
+2018-03-02 17:13:12	<--	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has quit (Remote host closed the connection)
+2018-03-02 17:14:38	-->	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has joined #alpine-linux
+2018-03-02 17:28:44	<--	idint (~idint@gateway/tor-sasl/hazwan) has quit (Remote host closed the connection)
+2018-03-02 17:29:31	-->	idint (~idint@gateway/tor-sasl/hazwan) has joined #alpine-linux
+2018-03-02 17:31:55	-->	tmh1999_ (~tmh1999@unaffiliated/tmh1999) has joined #alpine-linux
+2018-03-02 17:34:09	<--	tmh1999 (~tmh1999@unaffiliated/tmh1999) has quit (Ping timeout: 260 seconds)
+2018-03-02 17:37:07	<--	x9p_ (~x9p@x9p.org) has left #alpine-linux
+2018-03-02 17:38:09	<--	jimlei (~quassel@189.137.34.95.customer.cdi.no) has quit (Ping timeout: 252 seconds)
+2018-03-02 17:41:19	<--	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has quit (Remote host closed the connection)
+2018-03-02 17:41:43	-->	jimlei (~quassel@189.137.34.95.customer.cdi.no) has joined #alpine-linux
+2018-03-02 17:42:57	<--	cyteen (~cyteen@146.66.58.48) has quit (Ping timeout: 265 seconds)
+2018-03-02 17:43:17	<--	fekepp (~Thunderbi@2a02:8071:31ac:c00:fcca:8106:b03f:cc) has quit (Remote host closed the connection)
+2018-03-02 17:48:12	-->	nixdork (dork@gateway/shell/elitebnc/x-buiykckrzjtplyvi) has joined #alpine-linux
+2018-03-02 17:49:02	<--	idint (~idint@gateway/tor-sasl/hazwan) has quit (Remote host closed the connection)
+2018-03-02 17:50:09	-->	emacsomancer_ (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-02 17:50:09	-->	idint (~idint@gateway/tor-sasl/hazwan) has joined #alpine-linux
+2018-03-02 17:50:36	<--	emacsomancer_ (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has quit (Client Quit)
+2018-03-02 17:51:23	-->	emacsomancer_ (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-02 17:53:46	<--	emacsomancer_ (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has quit (Client Quit)
+2018-03-02 17:54:02	-->	emacsoma1 (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-02 17:55:21	<--	emacsoma1 (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has quit (Client Quit)
+2018-03-02 17:56:38	-->	emacsoma1 (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-02 17:57:12	-->	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has joined #alpine-linux
+2018-03-02 17:58:17	<--	emacsoma1 (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has quit (Client Quit)
+2018-03-02 18:06:35	<--	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has quit (Remote host closed the connection)
+2018-03-02 18:09:52	<--	ams__ (uid48118@gateway/web/irccloud.com/x-grmlmrnrisdaplfw) has quit (Quit: Connection closed for inactivity)
+2018-03-02 18:10:20	-->	untoreh (~untoreh@host120-173-dynamic.21-79-r.retail.telecomitalia.it) has joined #alpine-linux
+2018-03-02 18:10:21	mps	neovim segfaults in st (suckless term) if the TERM set st-256color but if the TERM is something else (xterm, screen-256color, ...) it works
+2018-03-02 18:11:55	mps	also, neovim segfaults in urxvt if the TERM set to stterm-256color
+2018-03-02 18:12:32	mps	azarus noticed that bug yesterday, IIRC
+2018-03-02 18:14:17	mps	question is: where to look for bug, in neovim or terminfo definition of the stterm-256color, st-256color etc..
+2018-03-02 18:15:49	<--	felixsanz_ (~felixsanz@unaffiliated/felixsanz) has quit (Ping timeout: 265 seconds)
+2018-03-02 18:19:40	-->	felixsanz (~felixsanz@unaffiliated/felixsanz) has joined #alpine-linux
+2018-03-02 18:20:57	-->	Maxpm (~Maxpm@2604:2000:1404:4d8:2e68:b1c6:a5ce:3f6a) has joined #alpine-linux
+2018-03-02 18:25:02	<--	rcwoolley_ (~rwoolley@128.224.252.2) has quit (Quit: Leaving)
+2018-03-02 18:25:20	<--	Alchemic (~al@unaffiliated/alchemical) has quit (Quit: .)
+2018-03-02 18:26:02	<--	felixsanz (~felixsanz@unaffiliated/felixsanz) has quit (Ping timeout: 245 seconds)
+2018-03-02 18:27:53	-->	Alchemical (~al@unaffiliated/alchemical) has joined #alpine-linux
+2018-03-02 18:28:44	-->	felixsanz (~felixsanz@unaffiliated/felixsanz) has joined #alpine-linux
+2018-03-02 18:36:32	-->	cyteen (~cyteen@146.66.58.48) has joined #alpine-linux
+2018-03-02 18:42:33	<--	cyteen (~cyteen@146.66.58.48) has quit (Ping timeout: 276 seconds)
+2018-03-02 18:50:07	<--	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has quit (Quit: I'M MELTING !!!!!!!!!!!!!!)
+2018-03-02 18:53:49	-->	emacsoma1 (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-02 18:54:14	<--	emacsomancer (user@gateway/vpn/privateinternetaccess/emacsomancer) has quit (Quit: ERC (IRC client for Emacs 25.3.1))
+2018-03-02 18:54:27	<--	emacsoma1 (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has quit (Client Quit)
+2018-03-02 19:00:30	-->	sparklyballs (~sparklyba@unaffiliated/sparklyballs) has joined #alpine-linux
+2018-03-02 19:10:36	-->	minimalism (~none@unaffiliated/minimalism) has joined #alpine-linux
+2018-03-02 19:20:46	Aerdan[m]	does st even have a terminfo file?
+2018-03-02 19:22:37	mps	Aerdan[m]: yes, \/usr/share/terminfo/s/st-256color etc
+2018-03-02 19:23:18	mps	it is from  ncurses-terminfo package
+2018-03-02 19:24:28	Aerdan[m]	okay, I'd suggest filing a bug with neovim
+2018-03-02 19:26:37	mps	well, I thought so, but I had another crash with tmux in st, but cannot reproduce it
+2018-03-02 19:27:30	mps	some combo of the random Ctrl- keys, which I forgot
+2018-03-02 19:28:15	-->	classict (b5a8d10c@gateway/web/freenode/ip.181.168.209.12) has joined #alpine-linux
+2018-03-02 19:28:34	classict	hi, newbie here :-)
+2018-03-02 19:29:12	classict	I run this command----->apk add gstreamer1 and get this error-------------->ERROR: unsatisfiable constraints:   gstreamer1 (missing):     required by: world[gstreamer1]
+2018-03-02 19:31:22	mps	classict: gstreamer (without 1) maybe?
+2018-03-02 19:32:19	classict	yes, it works
+2018-03-02 19:32:39	classict	now how I can install packages with wildcard like gst*
+2018-03-02 19:32:42	classict	??
+2018-03-02 19:33:33	mps	classict: can't remember, but think just like you say: apk add gst*
+2018-03-02 19:34:25	classict	doesn't work
+2018-03-02 19:34:28	mps	but I prefer to install packages one by one, to not make some unintetional mess
+2018-03-02 19:34:59	classict	I search a package, but when I try to installit appear missing error....
+2018-03-02 19:35:23	TBB	try piping a search result to xargs
+2018-03-02 19:35:32	mps	can't remember, but I think I did once just with "apk add 'pkg*'"
+2018-03-02 19:36:42	TBB	apk search something* | xargs apk add
+2018-03-02 19:36:44	classict	If i put package without version, it works
+2018-03-02 19:36:50	classict	maybe some cache
+2018-03-02 19:36:57	<--	Tyresc (~Tyresc@37.235.55.188) has quit (Quit: Leaving)
+2018-03-02 19:38:48	mps	classict: apk handles dependency quite well, maybe you do not need to use wildcard
+2018-03-02 19:39:10	<--	azarus (~azarus@unaffiliated/azarus) has quit (Ping timeout: 240 seconds)
+2018-03-02 19:40:08	-->	holgersson_ (~quassel@unaffiliated/holgersson) has joined #alpine-linux
+2018-03-02 19:40:56	<--	holgersson (~quassel@unaffiliated/holgersson) has quit (Ping timeout: 255 seconds)
+2018-03-02 19:51:11	--	stephend is now known as stephend|afk
+2018-03-02 19:52:10	-->	keithy (~keithy@95.151.252.88) has joined #alpine-linux
+2018-03-02 19:55:59	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Remote host closed the connection)
+2018-03-02 20:02:09	-->	jzono1 (~jo@148-252-89.157.3p.ntebredband.no) has joined #alpine-linux
+2018-03-02 20:09:51	-->	cyteen (~cyteen@146.66.58.48) has joined #alpine-linux
+2018-03-02 20:15:45	<--	cyteen (~cyteen@146.66.58.48) has quit (Ping timeout: 248 seconds)
+2018-03-02 20:25:23	--	holgersson_ is now known as holgersson
+2018-03-02 20:30:41	<--	tmh1999_ (~tmh1999@unaffiliated/tmh1999) has quit (Ping timeout: 248 seconds)
+2018-03-02 21:14:30	<--	grayhemp (~grayhemp@162.244.4.2) has quit (Remote host closed the connection)
+2018-03-02 21:15:25	-->	grayhemp (~grayhemp@162.244.4.2) has joined #alpine-linux
+2018-03-02 21:31:25	-->	PeteK (~PeteKelle@32.215.179.33) has joined #alpine-linux
+2018-03-02 21:43:05	<--	classict (b5a8d10c@gateway/web/freenode/ip.181.168.209.12) has quit (Ping timeout: 260 seconds)
+2018-03-02 21:56:53	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-02 22:01:27	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Ping timeout: 240 seconds)
+2018-03-02 22:02:46	<--	mortis304 (q@8-220.ptpg.oregonstate.edu) has quit (Read error: Connection reset by peer)
+2018-03-02 22:06:27	-->	mortis304 (q@8-220.ptpg.oregonstate.edu) has joined #alpine-linux
+2018-03-02 22:08:29	<--	mortis304 (q@8-220.ptpg.oregonstate.edu) has quit (Read error: Connection reset by peer)
+2018-03-02 22:20:59	-->	cjburchfield (~cjburchfi@24-197-26-62.static.leds.al.charter.com) has joined #alpine-linux
+2018-03-02 22:25:41	-->	nrxr (~nrxr@atlas.resnullius.co) has joined #alpine-linux
+2018-03-02 22:26:08	-->	emacsomancer (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-02 22:26:18	<--	emacsomancer (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has quit (Client Quit)
+2018-03-02 22:27:15	<--	bpye (~quassel@unaffiliated/bpye) has quit (Remote host closed the connection)
+2018-03-02 22:27:22	-->	emacsomancer (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-02 22:28:09	<--	Alchemical (~al@unaffiliated/alchemical) has quit (Ping timeout: 260 seconds)
+2018-03-02 22:28:23	-->	bpye (~quassel@unaffiliated/bpye) has joined #alpine-linux
+2018-03-02 22:34:22	<--	nrxr (~nrxr@atlas.resnullius.co) has quit (Quit: leaving)
+2018-03-02 22:34:31	-->	nrxr (~nrxr@atlas.resnullius.co) has joined #alpine-linux
+2018-03-02 22:46:27	<--	farosas (~fabiano@189-69-39-189.dsl.telesp.net.br) has quit (Ping timeout: 245 seconds)
+2018-03-02 22:50:52	-->	Alchemical (~al@unaffiliated/alchemical) has joined #alpine-linux
+2018-03-02 22:53:49	<--	herrbischoff (~herrbisch@134.101.193.211) has quit (Ping timeout: 260 seconds)
+2018-03-02 22:53:51	-->	herrbischoff_ (~herrbisch@port-45139.pppoe.wtnet.de) has joined #alpine-linux
+2018-03-02 22:54:15	--	herrbischoff_ is now known as herrbischoff
+2018-03-02 22:55:42	<--	grayhemp (~grayhemp@162.244.4.2) has quit (Remote host closed the connection)
+2018-03-02 22:58:15	<--	theLambda (~theLambda@i577BCD42.versanet.de) has quit (Ping timeout: 252 seconds)
+2018-03-02 23:00:11	-->	theLambda (~theLambda@mue-88-130-62-110.dsl.tropolys.de) has joined #alpine-linux
+2018-03-02 23:04:20	-->	grayhemp (~grayhemp@162.244.4.2) has joined #alpine-linux
+2018-03-02 23:08:32	<--	grayhemp (~grayhemp@162.244.4.2) has quit (Ping timeout: 245 seconds)
+2018-03-02 23:09:55	-->	bill_ (~bill@h69-131-95-87.mdsnwi.dsl.dynamic.tds.net) has joined #alpine-linux
+2018-03-02 23:10:57	<--	Alchemical (~al@unaffiliated/alchemical) has quit (Ping timeout: 240 seconds)
+2018-03-02 23:12:11	<--	bill_ (~bill@h69-131-95-87.mdsnwi.dsl.dynamic.tds.net) has quit (Client Quit)
+2018-03-02 23:26:27	-->	grayhemp (~grayhemp@2601:646:8301:844b:3010:f654:7b9f:5d2) has joined #alpine-linux
+2018-03-02 23:27:04	-->	Alchemical (~al@unaffiliated/alchemical) has joined #alpine-linux
+2018-03-02 23:28:39	<--	polysci (~weechat@c-67-180-85-42.hsd1.ca.comcast.net) has quit (Quit: WeeChat 2.0.1)
+2018-03-02 23:31:02	<--	grayhemp (~grayhemp@2601:646:8301:844b:3010:f654:7b9f:5d2) has quit (Ping timeout: 260 seconds)
+2018-03-02 23:48:07	<--	Maxpm (~Maxpm@2604:2000:1404:4d8:2e68:b1c6:a5ce:3f6a) has quit (Ping timeout: 245 seconds)
+2018-03-02 23:50:22	-->	Maxpm (~Maxpm@2604:2000:1404:4d8:2e68:b1c6:a5ce:3f6a) has joined #alpine-linux
+2018-03-02 23:57:48	-->	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has joined #alpine-linux
+2018-03-02 23:59:10	<--	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has quit (Quit: skyroveRR)
+2018-03-02 23:59:19	<--	epony (~nym@77-85-130-61.ip.btc-net.bg) has quit (Remote host closed the connection)
+2018-03-03 00:02:39	<--	idontneedanick (~idontneed@h-184-235.A189.priv.bahnhof.se) has quit (Ping timeout: 260 seconds)
+2018-03-03 00:05:20	<--	emacsomancer (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has quit (Quit: WeeChat 2.0.1)
+2018-03-03 00:06:13	-->	emacsomancer (~emacsoman@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-03 00:07:52	-->	skyroveRR (~skyroveRR@unaffiliated/skyroverr) has joined #alpine-linux
+2018-03-03 00:14:45	<--	emacsomancer (~emacsoman@c-73-131-230-249.hsd1.ut.comcast.net) has quit (Quit: ZNC 1.6.5 - http://znc.in)
+2018-03-03 00:16:49	-->	emacsomancer (~bouncer@c-73-131-230-249.hsd1.ut.comcast.net) has joined #alpine-linux
+2018-03-03 00:18:17	-->	epony (~nym@77-85-130-61.ip.btc-net.bg) has joined #alpine-linux

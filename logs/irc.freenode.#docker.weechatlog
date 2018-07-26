@@ -1,0 +1,62 @@
+2018-06-08 06:22:39	-->	fschuindt (~fschuindt@179.35.100.64) has joined #docker
+2018-06-08 06:22:39	--	Topic for #docker is "Docker: Open platform for distributed applications | http://docker.com | Certifications https://success.docker.com/certification | http://github.com/moby/moby | Current Status: http://status.docker.com/ | Logged at https://botbot.me/freenode/docker | https://forums.docker.com/ | Registration with NickServ required: https://freenode.net/kb/answer/registration"
+2018-06-08 06:22:39	--	Topic set by programmerq (~jeff@unaffiliated/programmerq) on Mon, 19 Mar 2018 11:19:26
+2018-06-08 06:22:39	--	Channel #docker: 886 nicks (2 ops, 0 voices, 884 normals)
+2018-06-08 06:22:41	--	Channel created on Tue, 15 Jan 2013 00:32:16
+2018-06-08 06:23:59	-->	agowa338 (~agowa338@cb-8021x-nat-134-106.net.uni-frankfurt.de) has joined #docker
+2018-06-08 06:24:29	fschuindt	Hi there, folks. I'm trying to fetch "http://dl-cdn.alpinelinux.org" from a container and it just times out. But in my host it fetches with no problem. It's a Fedora host. Any clue? Thanks.
+2018-06-08 06:25:46	fschuindt	Other addresses seems to work just fine.
+2018-06-08 06:25:47	-->	dharmin (~dharmin@79.173.138.117) has joined #docker
+2018-06-08 06:26:47	-->	zerocoolback (~zerocoolb@49.207.56.136) has joined #docker
+2018-06-08 06:27:18	<--	enzoebs (56fc1629@gateway/web/freenode/ip.86.252.22.41) has quit (Quit: Page closed)
+2018-06-08 06:28:53	<--	cmuller (~cmuller@134.117.39.62.rev.sfr.net) has quit (Ping timeout: 276 seconds)
+2018-06-08 06:29:43	-->	aielima (~aielima@gateway/tor-sasl/aielima) has joined #docker
+2018-06-08 06:30:35	-->	Oatmeal (Suzeanne@gateway/vpn/privateinternetaccess/suzeanne) has joined #docker
+2018-06-08 06:30:39	-->	DevAntoine (~DevAntoin@46.29.126.206) has joined #docker
+2018-06-08 06:35:02	-->	schmity (~schmity@c-24-143-97-133.customer.broadstripe.net) has joined #docker
+2018-07-02 13:58:02	-->	fschuindt (~fschuindt@179.35.100.64) has joined #docker
+2018-07-02 13:58:02	--	Topic for #docker is "Docker: Open platform for distributed applications | http://docker.com | Certifications https://success.docker.com/certification | http://github.com/moby/moby | Current Status: http://status.docker.com/ | Logged at https://botbot.me/freenode/docker | https://forums.docker.com/ | Registration with NickServ required: https://freenode.net/kb/answer/registration"
+2018-07-02 13:58:02	--	Topic set by programmerq (~jeff@unaffiliated/programmerq) on Mon, 19 Mar 2018 11:19:26
+2018-07-02 13:58:02	--	Channel #docker: 922 nicks (3 ops, 0 voices, 919 normals)
+2018-07-02 13:58:04	--	Channel created on Tue, 15 Jan 2013 00:32:16
+2018-07-02 13:59:47	hink	how do i undo the systemd overrides `docker-machine create --driver generic` does to docker.service?
+2018-07-02 13:59:58	<--	minionofgozer_ (~minionofg@136.62.5.236) has quit (Quit: terminated!)
+2018-07-02 14:01:15	-->	thursdaddy (~thursdadd@ip70-176-20-99.ph.ph.cox.net) has joined #docker
+2018-07-02 14:01:27	-->	camsbury (~camsbury@static-96-239-100-245.nycmny.fios.verizon.net) has joined #docker
+2018-07-02 14:01:52	-->	minionofgozer (~minionofg@136.62.5.236) has joined #docker
+2018-07-02 14:01:57	fschuindt	Hello there, folks. Currently on my Fedora host, building a Alpine image it hangs during the fetching the APK index for installing Git. It runs ok if I stop the firewalld service. I've added Docker services to the firewall, as well the ports. But the problem persists. I can wget/curl some URLs but others just fails. Probably something related to DNS. Any clue? Thanks;
+2018-07-02 14:02:14	-->	dbugger_ (~Dbugger@2001:16b8:55e1:2b00:3452:224a:43c6:7a1d) has joined #docker
+2018-07-02 14:03:19	-->	sdwrage (~textual@64.247.67.53) has joined #docker
+2018-07-02 14:04:32	<--	cdaley (~cdaley@cpe-74-128-202-87.kya.res.rr.com) has quit (Quit: Leaving)
+2018-07-02 14:05:08	SuperSeriousCat	Can you make firewalld log blocks and tail -f | grep git?
+2018-07-02 14:06:17	<--	ziyourenxiang (~ZiYouRenX@unaffiliated/ziyourenxiang) has quit (Ping timeout: 256 seconds)
+2018-07-02 14:06:17	-->	Bideford (AdiIRC@unaffiliated/bideford) has joined #docker
+2018-07-02 14:07:07	<--	msh3iny (~mike@gateway/tor-sasl/sh3iny) has quit (Ping timeout: 250 seconds)
+2018-07-02 14:07:25	-->	sh3iny (~mike@gateway/tor-sasl/sh3iny) has joined #docker
+2018-07-02 14:08:59	-->	sunil_bansal (~sunil_ban@183.82.16.215) has joined #docker
+2018-07-02 14:09:15	<--	DMmd (~|DM|@93.87.158.60) has quit (Read error: Connection reset by peer)
+2018-07-02 14:09:45	<--	antgel (~topdog@141.226.120.30) has quit (Ping timeout: 255 seconds)
+2018-07-02 14:10:18	-->	dpyro (~dpyro@66-169-160-49.dhcp.ftwo.tx.charter.com) has joined #docker
+2018-07-02 14:10:56	<--	themurph (themurph@nat/redhat/x-yphplwtuyfklgoll) has quit (Quit: I'll Sleep When I'm Dead.......)
+2018-07-02 14:11:26	@ada	fschuindt: disable firewalld, and then restart docker;
+2018-07-02 14:11:48	@ada	docker really wants to talk to iptables directly, and managing it with firewalld out-of-band can mess up Docker's chains
+2018-07-02 14:11:58	-->	grayhemp (~grayhemp@162.244.4.2) has joined #docker
+2018-07-02 14:12:23	-->	|DM| (~|DM|@93.87.158.60) has joined #docker
+2018-07-02 14:13:40	<--	sunil_bansal (~sunil_ban@183.82.16.215) has quit (Ping timeout: 260 seconds)
+2018-07-02 14:13:43	<--	zerocoolback (~zerocoolb@49.207.61.223) has quit (Remote host closed the connection)
+2018-07-02 14:14:14	<--	fl4sh_ (~fl4sh@2a01:4f8:171:1ac5::2) has quit (Ping timeout: 276 seconds)
+2018-07-02 14:14:16	-->	zerocoolback (~zerocoolb@49.207.61.223) has joined #docker
+2018-07-02 14:14:47	<--	ThiefMaster (~thief@indico/developer/thiefmaster) has quit (Ping timeout: 256 seconds)
+2018-07-02 14:14:47	<--	AlHafoudh (~AlHafoudh@echo.freevision.sk) has quit (Ping timeout: 256 seconds)
+2018-07-02 14:16:05	<--	grayhemp (~grayhemp@162.244.4.2) has quit (Ping timeout: 240 seconds)
+2018-07-02 14:18:51	<--	zerocoolback (~zerocoolb@49.207.61.223) has quit (Ping timeout: 256 seconds)
+2018-07-02 14:19:44	-->	grayhemp (~grayhemp@162.244.4.2) has joined #docker
+2018-07-02 14:20:44	<--	_ADN_ (~username@5.148.34.186) has quit (Ping timeout: 276 seconds)
+2018-07-02 14:21:18	-->	themurph (themurph@nat/redhat/x-mfqqxwdeatgfguxx) has joined #docker
+2018-07-02 14:21:28	-->	ThiefMaster (thief@indico/developer/thiefmaster) has joined #docker
+2018-07-02 14:21:43	-->	fl4sh_ (~fl4sh@trinity.jsje.de) has joined #docker
+2018-07-02 14:22:34	<--	njbair (~njbair@2605:a000:122d:c254:227:eff:fe0a:b289) has quit (Max SendQ exceeded)
+2018-07-02 14:23:02	-->	njbair (~njbair@2605:a000:122d:c254:227:eff:fe0a:b289) has joined #docker
+2018-07-02 14:23:32	<--	thursdaddy (~thursdadd@ip70-176-20-99.ph.ph.cox.net) has quit (Ping timeout: 245 seconds)
+2018-07-02 14:24:03	-->	henriquev (uid36682@gateway/web/irccloud.com/x-qdgevdpvwhnsgoph) has joined #docker
+2018-07-02 14:25:02	-->	AlHafoudh (~AlHafoudh@echo.freevision.sk) has joined #docker

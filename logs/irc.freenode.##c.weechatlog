@@ -1,0 +1,86 @@
+2018-06-19 09:18:05	-->	fschuindt (~fschuindt@179.35.100.64) has joined ##C
+2018-06-19 09:18:05	--	Topic for ##C is "C Programming | PASTE (>3 lines): http://ideone.com/ | WIKI: http://www.iso-9899.info/ | BOOKS: http://www.iso-9899.info/wiki/Books | C2X Charter: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n2086.htm | C11 is the current C standard: http://iso-9899.info/wiki/The_Standard | Off-topic: ##c-offtopic | Test your C knowledge in #cjeopardy"
+2018-06-19 09:18:05	--	Topic set by e (e@enucs/spy.edk) on Fri, 16 Feb 2018 22:20:42
+2018-06-19 09:18:06	--	Channel ##C: 952 nicks (1 op, 0 voices, 951 normals)
+2018-06-19 09:18:06	--	PvNotice(ChanServ): Welcome to ##c! We engage in C programming discussions at all levels of expertise; don't hesitate to ask your question. If applicable, please prepare a testcase and paste it at http://ideone.com. We don't know about C++ (##c++) or C# (##csharp).
+2018-06-19 09:18:06	--	URL for ##c: http://www.iso-9899.info/
+2018-06-19 09:18:07	--	Channel created on Sun, 26 Nov 2006 04:42:39
+2018-06-19 09:18:09	fschuindt	Hi there, folks. Given this picture of a math formula: https://s30.postimg.cc/ndks6gohd/fib_formula.jpg I'm wondering which numerical type should I use when performing the aritmetic. Any tip?
+2018-06-19 09:18:26	azarus	fschuindt: double
+2018-06-19 09:18:40	fschuindt	azarus: not long double?
+2018-06-19 09:19:08	azarus	depends, on my platform they're the same size
+2018-06-19 09:19:32	fschuindt	azarus: huum, thank you. I'm really a noob in C stuff.
+2018-06-19 09:20:11	fschuindt	there's any known/good Decimal implementation like in other languages?
+2018-06-19 09:20:15	azarus	fschuindt: no problem. in c, data types depend heavily on the architecture you're developing for
+2018-06-19 09:20:35	azarus	do you mean arbitrary precision floating point arithmetic?
+2018-06-19 09:20:52	azarus	for that, GMP, libtommath, libzahl and such are good
+2018-06-19 09:21:11	fschuindt	azarus: I'm going to run it in x86 only. Yes. Nice, I will take a look. Thank you, sir!
+2018-06-19 09:21:21	dp	I haven't looked at libzahl since its early days, how's it doing?
+2018-06-19 09:21:30	azarus	ah. but keep in mind; x86 != x86_64
+2018-06-19 09:21:47	azarus	fschuindt: you're welcome
+2018-06-19 09:21:52	fschuindt	azarus: huum, good. yea, it's x86_64. thanks! :)
+2018-06-19 09:23:04	dp	Oh right zahl still only does integer arithmetic
+2018-06-19 09:23:58	<--	sibyakin (~sibyakin@188.162.238.154) has quit
+2018-06-19 09:24:13	azarus	dp: yup
+2018-06-19 09:24:22	dp	That's good I guess
+2018-06-19 09:24:29	azarus	didn't remember correctly /o\
+2018-06-19 09:24:39	fschuindt	Anything but IEEE 754 please :x
+2018-06-19 09:24:45	dp	Oh, it's in the name, of course!
+2018-06-19 09:25:01	azarus	dp: hm? zahl = number
+2018-06-19 09:25:02	dp	ℤ comes from German zahlen
+2018-06-19 09:25:03	azarus	in german
+2018-06-19 09:25:21	dp	and ℤ is the set of all integers in mathematics
+2018-06-19 09:25:31	azarus	ah! now it makes sense
+2018-06-19 09:25:50	dp	https://git.suckless.org/libzahl/tree/README#n5
+2018-06-19 09:25:52	@candide	Title of dp's link: README - libzahl - big integer library
+2018-06-19 09:26:30	<--	f1nalpr1m3 (~dengaleug@77.233.229.226) has quit (Read error: Connection reset by peer)
+2018-06-19 09:26:57	azarus	well, libzahl for ints, hebimath for floats, maybe
+2018-06-19 09:26:57	<--	Greatgib (~flo@unaffiliated/greatgib) has quit (Ping timeout: 240 seconds)
+2018-06-19 09:27:09	fschuindt	ℕ natural, ℤ integers, ∏ prime, ℚ rational, ℝ real, ℙ irrational, iℝ imaginary, ℂ complex, 𝔸 algebraic, ℝ−𝔸 transcendental
+2018-06-19 09:27:19	fschuindt	I took it from a math book I was writing last year
+2018-06-19 09:28:40	dp	We used 𝕀 for imaginary iirc
+2018-06-19 09:28:48	dp	Wait, no. ℂ
+2018-06-19 09:28:50	 *	othias is transcendented
+2018-06-19 09:29:02	dp	Off-topic, but How is iℝ different from ℂ
+2018-06-19 09:29:30	 *	azarus is afraid of advanced maths, and advanced maths in C -.-
+2018-06-19 09:29:47	dp	Closest I got was doing mandelbrot fractals in C
+2018-06-19 09:30:00	dp	Making use of `complex double` types
+2018-06-19 09:30:08	-->	Imoed_g (~George@154.113.89.170) has joined ##C
+2018-06-19 09:32:10	<--	chbama (~qq@91.162.170.192) has quit (Read error: Connection reset by peer)
+2018-06-19 09:32:11	<--	oxymoron93 (d43e266a@gateway/web/cgi-irc/kiwiirc.com/ip.212.62.38.106) has quit (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+2018-06-19 09:35:28	-->	MarderIII (~MarderIII@188.204.212.178) has joined ##C
+2018-06-19 09:36:22	-->	Greatgib (~flo@unaffiliated/greatgib) has joined ##C
+2018-06-19 09:36:47	-->	kugutsv (056459b1@gateway/web/freenode/ip.5.100.89.177) has joined ##C
+2018-06-19 09:39:42	-->	Mattiaslndstrm (~Mattiasln@2806:103e:9:2c2b:5ce3:5a3:2fe5:2a6e) has joined ##C
+2018-06-19 09:39:51	-->	chbama (~qq@91-162-170-192.subs.proxad.net) has joined ##C
+2018-06-19 09:40:34	<--	kugutsv (056459b1@gateway/web/freenode/ip.5.100.89.177) has left ##C
+2018-06-19 09:44:51	<--	Greatgib (~flo@unaffiliated/greatgib) has quit (Ping timeout: 240 seconds)
+2018-06-19 09:45:17	-->	Aquazi (~Aquazi@host130-235-dynamic.43-79-r.retail.telecomitalia.it) has joined ##C
+2018-06-19 09:46:50	<--	pweb_ (~pweb@p5B07E4CB.dip0.t-ipconnect.de) has quit (Quit: Leaving)
+2018-06-19 09:47:28	-->	Greatgib (~flo@unaffiliated/greatgib) has joined ##C
+2018-06-19 09:49:38	<--	HarveyPwca (~HarveyPwc@99-89-221-140.lightspeed.cicril.sbcglobal.net) has quit (Quit: Leaving)
+2018-06-19 09:50:08	<--	Mayurvpatil (~mayurvpat@202.149.218.202) has quit (Read error: Connection reset by peer)
+2018-06-19 09:56:34	-->	bolt (~r00t@unaffiliated/bolt) has joined ##C
+2018-06-19 09:58:08	<--	PSUdaemon (~psudaemon@apache/committer/sorber) has quit (Remote host closed the connection)
+2018-06-19 09:58:13	<--	MarderIII (~MarderIII@188.204.212.178) has quit (Quit: Leaving)
+2018-06-19 09:59:32	-->	lbart__ (~quassel@LFbn-ANN-1-185-237.w86-200.abo.wanadoo.fr) has joined ##C
+2018-06-19 09:59:44	<--	WeiJunLi (~weijunli@154.0.70.215) has quit (Remote host closed the connection)
+2018-06-19 10:00:18	-->	WeiJunLi (~weijunli@154.0.70.215) has joined ##C
+2018-06-19 10:02:20	-->	GraysonBriggs (~GraysonBr@2600:1:91ab:ec9b:a0bf:9a8a:4f8c:f55c) has joined ##C
+2018-06-19 10:03:03	<--	lbart__ (~quassel@LFbn-ANN-1-185-237.w86-200.abo.wanadoo.fr) has left ##C
+2018-06-19 10:03:13	-->	lbart (~quassel@LFbn-ANN-1-185-237.w86-200.abo.wanadoo.fr) has joined ##C
+2018-06-19 10:08:17	<--	m0j0dj0dj0 (~punk3r@unaffiliated/m0j0dj0dj0) has quit (Ping timeout: 248 seconds)
+2018-06-19 10:08:33	-->	brad_mssw (~brad@66.129.88.50) has joined ##C
+2018-06-19 10:08:47	<--	phinxy (~ted@unaffiliated/phinxy) has quit (Ping timeout: 260 seconds)
+2018-06-19 10:12:00	<--	leerg319 (~alexey@94.19.176.250) has quit (Remote host closed the connection)
+2018-06-19 10:14:32	-->	banshi (~banshi@85.115.248.51) has joined ##C
+2018-06-19 10:15:32	-->	pzp (uid11754@gateway/web/irccloud.com/x-frjiaocdopwlcswk) has joined ##C
+2018-06-19 10:15:51	banshi	hello all
+2018-06-19 10:15:52	banshi	ho knows, how to generate html from cflow output?
+2018-06-19 10:16:13	othias	,notc
+2018-06-19 10:16:13	banshi	like this: www.gnu.org/software/cflow/sample.html
+2018-06-19 10:16:13	@candide	That is not a C issue. This channel exists for discussion of the Standard C Language itself; not tools such as Makefiles, IDEs, compilers (see ##workingset for these things) or random libraries (including OS-specific ones such as POSIX or Windows; see ##posix or #winapi).
+2018-06-19 10:18:44	-->	m0j0dj0dj0 (~punk3r@unaffiliated/m0j0dj0dj0) has joined ##C
+2018-06-19 10:19:19	-->	learningc (~User@210.195.71.190) has joined ##C
+2018-06-19 10:20:59	-->	Farad41 (~Thunderbi@2604:6000:140a:c009:2037:9a64:3c3c:4c8f) has joined ##C
+2018-06-19 10:21:05	<--	mrtnt (~martint@martint.data.ee) has quit (Quit: WeeChat 1.6)

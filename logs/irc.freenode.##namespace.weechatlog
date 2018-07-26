@@ -1,0 +1,81 @@
+2018-02-28 22:51:54	-->	fschuindt (~fschuindt@179.35.108.22) has joined ##namespace
+2018-02-28 22:51:54	--	Topic for ##namespace is "You've tried to join an unavailable channel. The channel you may be  attempting to join may be in a different namespace (try ##channel) or not on this network. Please see https://freenode.net/policies for more information about on-topic usage and channel naming, and '/msg ALIS help' for help with finding channels on freenode."
+2018-02-28 22:51:54	--	Topic set by Myrtti on Thu, 19 May 2016 11:26:57
+2018-02-28 22:51:54	--	Channel ##namespace: 394 nicks (1 op, 0 voices, 393 normals)
+2018-02-28 22:51:54	--	PvNotice(ChanServ): You've been forwarded to ##namespace by attempting to join a channel which doesn't exist on freenode. This may be because the channel has moved to the correct namespace or off the network. Please see https://freenode.net/policies for our channel naming policy.
+2018-02-28 22:51:56	--	Channel created on Fri, 08 May 2009 08:15:07
+2018-02-28 22:52:35	<--	Laie (~User@121.131.184.208) has quit (Read error: Connection reset by peer)
+2018-02-28 22:52:48	fschuindt	Hi there, folks. Any tip on why I'm getting "ERROR: unsatisfiable constraints: pugixml-dev (missing)" when trying to install this package? https://pkgs.alpinelinux.org/package/edge/testing/s390x/pugixml-dev
+2018-02-28 22:52:49	--	##namespace: Cannot send to channel
+2018-02-28 22:53:06	-->	Laie (~User@121.131.184.208) has joined ##namespace
+2018-02-28 22:53:37	<--	slimetrap (~slimetrap@c-66-41-69-232.hsd1.mn.comcast.net) has quit (Ping timeout: 248 seconds)
+2018-02-28 22:56:30	-->	fission6 (~textual@cpe-67-244-114-41.nyc.res.rr.com) has joined ##namespace
+2018-02-28 23:03:06	-->	sudonim (~mackeral@2600:1700:d500:2340:3ad5:47ff:fe79:e400) has joined ##namespace
+2018-02-28 23:03:40	<--	sudonim (~mackeral@2600:1700:d500:2340:3ad5:47ff:fe79:e400) has left ##namespace
+2018-02-28 23:09:02	-->	ni291187 (~u931732@92.186.247.83) has joined ##namespace
+2018-02-28 23:09:36	<--	ni291187 (~u931732@92.186.247.83) has left ##namespace
+2018-02-28 23:10:21	-->	interstate8 (~aaronthro@pool-108-4-60-186.rcmdva.fios.verizon.net) has joined ##namespace
+2018-02-28 23:11:24	-->	ni291187 (~u931732@92.186.247.83) has joined ##namespace
+2018-02-28 23:11:40	-->	kapil___ (uid36151@gateway/web/irccloud.com/x-lzllqsyyepfcxqly) has joined ##namespace
+2018-02-28 23:12:09	<--	ni291187 (~u931732@92.186.247.83) has quit (Client Quit)
+2018-02-28 23:13:50	-->	dosty (uid103016@gateway/web/irccloud.com/x-wnxldvylamjeejcd) has joined ##namespace
+2018-02-28 23:14:51	<--	interstate8 (~aaronthro@pool-108-4-60-186.rcmdva.fios.verizon.net) has quit (Ping timeout: 256 seconds)
+2018-02-28 23:16:04	<--	michal9151 (~michal915@178.43.135.219.ipv4.supernova.orange.pl) has quit (Ping timeout: 260 seconds)
+2018-02-28 23:16:16	<--	rackj (4947e743@gateway/web/freenode/ip.73.71.231.67) has quit (Quit: Page closed)
+2018-02-28 23:22:53	<--	drymer_ (~drymer@unaffiliated/drymer) has quit (Max SendQ exceeded)
+2018-02-28 23:23:28	-->	drymer_ (~drymer@unaffiliated/drymer) has joined ##namespace
+2018-02-28 23:28:55	-->	michal9151 (~michal915@178.43.117.79.ipv4.supernova.orange.pl) has joined ##namespace
+2018-02-28 23:32:53	<--	nacsurte_ (~nacsurte@72.34.99.58) has quit (Ping timeout: 256 seconds)
+2018-02-28 23:35:10	-->	ldl (~ldl@125.71.75.100) has joined ##namespace
+2018-02-28 23:36:49	<--	ldl (~ldl@125.71.75.100) has quit (Remote host closed the connection)
+2018-02-28 23:37:16	-->	Crusher (~lind@52.165.230.207) has joined ##namespace
+2018-02-28 23:37:24	<--	Crusher (~lind@52.165.230.207) has left ##namespace
+2018-02-28 23:39:13	-->	slimetrap (~slimetrap@c-66-41-69-232.hsd1.mn.comcast.net) has joined ##namespace
+2018-02-28 23:42:53	<--	drymer_ (~drymer@unaffiliated/drymer) has quit (Max SendQ exceeded)
+2018-02-28 23:43:27	-->	drymer_ (~drymer@unaffiliated/drymer) has joined ##namespace
+2018-06-19 09:12:39	-->	fschuindt (~fschuindt@179.35.100.64) has joined ##namespace
+2018-06-19 09:12:39	--	Topic for ##namespace is "You've tried to join an unavailable channel. The channel you may be  attempting to join may be in a different namespace (try ##channel) or not on this network. Please see https://freenode.net/policies for more information about on-topic usage and channel naming, and '/msg ALIS help' for help with finding channels on freenode."
+2018-06-19 09:12:39	--	Topic set by Myrtti on Thu, 19 May 2016 11:26:57
+2018-06-19 09:12:39	--	Channel ##namespace: 401 nicks (1 op, 0 voices, 400 normals)
+2018-06-19 09:12:39	--	PvNotice(ChanServ): You've been forwarded to ##namespace by attempting to join a channel which doesn't exist on freenode. This may be because the channel has moved to the correct namespace or off the network. Please see https://freenode.net/policies for our channel naming policy.
+2018-06-19 09:12:41	--	Channel created on Fri, 08 May 2009 08:15:07
+2018-06-19 09:14:44	fschuindt	Hi there, folks. Given this picture of a math formula: https://s30.postimg.cc/ndks6gohd/fib_formula.jpg I'm wondering which numerical type should I use to get it right when performing the aritmetic. Any tip? Thanks.
+2018-06-19 09:14:44	--	##namespace: Cannot send to channel
+2018-06-19 09:16:07	-->	logistic (50711793@gateway/web/cgi-irc/kiwiirc.com/ip.80.113.23.147) has joined ##namespace
+2018-06-19 09:17:45	-->	mindCrime (~mindCrime@cpe-98-27-61-219.nc.res.rr.com) has joined ##namespace
+2018-06-19 09:24:36	-->	`slikts (~nelabs@wikipedia/reinis) has joined ##namespace
+2018-06-19 09:24:58	<--	mindCrime (~mindCrime@cpe-98-27-61-219.nc.res.rr.com) has quit (Ping timeout: 264 seconds)
+2018-06-19 09:27:27	<--	gokulnk (~gokulnk@106.51.37.227) has quit (Remote host closed the connection)
+2018-06-19 09:29:17	-->	PUMARYS21 (~PUMARYS21@2606:6000:d98e:7a00:b596:3105:df78:c60e) has joined ##namespace
+2018-06-19 09:30:50	-->	Orka (023184d0@gateway/web/freenode/ip.2.49.132.208) has joined ##namespace
+2018-06-19 09:31:03	<--	bfabio (~fabio@62.97.41.203) has quit (Quit: Lost terminal)
+2018-06-19 09:31:24	<--	roxlu (~roxlu@2a01:7c8:aac0:286:8c3a:b01c:3830:245b) has left ##namespace
+2018-06-19 09:31:24	<--	tomfarr (~textual@broadband-178-140-178-192.ip.moscow.rt.ru) has quit (Read error: Connection reset by peer)
+2018-06-19 09:31:32	<--	Orka (023184d0@gateway/web/freenode/ip.2.49.132.208) has left ##namespace
+2018-06-19 09:33:44	<--	PUMARYS21 (~PUMARYS21@2606:6000:d98e:7a00:b596:3105:df78:c60e) has quit (Ping timeout: 256 seconds)
+2018-06-19 09:35:58	<--	m00dy (~m00dy@152.115.138.166) has quit (Remote host closed the connection)
+2018-06-19 09:37:28	-->	m00dy (~m00dy@152.115.138.166) has joined ##namespace
+2018-06-19 09:39:14	<--	gloomy (~Gloomy@nata113.ugent.be) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-06-19 09:39:26	-->	protocol_hive (~spektre@99-33-178-191.lightspeed.simica.sbcglobal.net) has joined ##namespace
+2018-06-19 09:40:19	-->	gloomy (~Gloomy@nata113.ugent.be) has joined ##namespace
+2018-06-19 09:43:09	-->	maluco (~maluco123@177-185-77-138.vianorte.tv.br) has joined ##namespace
+2018-06-19 09:45:49	-->	gokulnk (~gokulnk@106.51.37.227) has joined ##namespace
+2018-06-19 09:47:44	<--	Cavedude (~Cavedude@unaffiliated/cavedude) has quit (Ping timeout: 276 seconds)
+2018-06-19 09:49:51	<--	protocol_hive (~spektre@99-33-178-191.lightspeed.simica.sbcglobal.net) has quit (Ping timeout: 240 seconds)
+2018-06-19 09:53:35	-->	elichai2 (uid212594@gateway/web/irccloud.com/x-hdbplnbmtxoxzlye) has joined ##namespace
+2018-06-19 09:56:21	<--	pbrewczynski (uid172802@gateway/web/irccloud.com/x-msvcueupgjvepjel) has quit (Quit: Connection closed for inactivity)
+2018-06-19 09:58:05	-->	Bookn_Clerk (~root@softbank060122019055.bbtec.net) has joined ##namespace
+2018-06-19 09:58:11	--	dcantrell_away is now known as dcantrell
+2018-06-19 09:59:06	-->	stargrass1 (~stargrass@bb121-7-123-195.singnet.com.sg) has joined ##namespace
+2018-06-19 10:00:05	<--	stargrass1 (~stargrass@bb121-7-123-195.singnet.com.sg) has left ##namespace
+2018-06-19 10:04:26	<--	gokulnk (~gokulnk@106.51.37.227) has quit (Remote host closed the connection)
+2018-06-19 10:06:01	-->	stargrass1 (~stargrass@bb121-7-123-195.singnet.com.sg) has joined ##namespace
+2018-06-19 10:06:26	<--	m00dy (~m00dy@152.115.138.166) has quit (Remote host closed the connection)
+2018-06-19 10:08:51	<--	stargrass1 (~stargrass@bb121-7-123-195.singnet.com.sg) has quit (Quit: Leaving)
+2018-06-19 10:09:09	-->	m00dy (~m00dy@152.115.138.166) has joined ##namespace
+2018-06-19 10:13:58	-->	rt555 (586ef84a@gateway/web/freenode/ip.88.110.248.74) has joined ##namespace
+2018-06-19 10:14:07	<--	rt555 (586ef84a@gateway/web/freenode/ip.88.110.248.74) has left ##namespace
+2018-06-19 10:14:22	-->	rt555 (586ef84a@gateway/web/freenode/ip.88.110.248.74) has joined ##namespace
+2018-06-19 10:14:26	<--	rt555 (586ef84a@gateway/web/freenode/ip.88.110.248.74) has left ##namespace
+2018-06-19 10:15:56	<--	dakk (~dakk@62-11-225-66.dialup.tiscali.it) has quit (Quit: Leaving)
+2018-06-19 10:21:05	<--	mrtnt (~martint@martint.data.ee) has quit (Quit: WeeChat 1.6)

@@ -1,0 +1,293 @@
+2016-11-08 23:36:13		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2016-11-08 23:36:33	=!=	You can not write text in this buffer
+2016-11-09 08:24:54		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2016-11-09 12:26:42		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2016-11-09 12:26:47	=!=	irc: unable to add temporary server "freenode" because the addition of temporary servers with command /connect is currently disabled
+2016-11-09 12:26:47	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-11-10 11:29:18		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2016-11-10 11:29:21	=!=	You can not write text in this buffer
+2016-11-10 18:28:10		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2016-11-16 19:05:28		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-29 22:27:36		Plugins carregados: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-29 22:27:40	=!=	irc: n?o foi poss?vel adicionar o servidor tempor?rio "freenode" porque a adi??o de servidores tempor?rios pelo comando /connect est? atualmente desativada
+2017-01-29 22:27:40	=!=	irc: se deseja adicionar um servidor normal, use o comando "/server add" (ver /help server); se deseja mesmo adicionar um servidor tempor?rio (N?O GUARDADO), ative a op??o irc.look.temporary_servers
+2017-01-29 22:27:47	=!=	Argumentos insuficientes no comando "/query" (ajuda do comando: /help query)
+2017-01-30 22:01:18		Plugins carregados: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:01:21	=!=	Erro: comando desconhecido: "/add" (escreva /help para obter ajuda)
+2017-01-30 22:01:28	=!=	N?o pode escrever texto neste buffer
+2017-01-30 22:01:29	=!=	Argumentos insuficientes no comando "/query" (ajuda do comando: /help query)
+2017-01-30 22:03:18		Plugins carregados: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:03:30	=!=	N?o pode escrever texto neste buffer
+2017-01-30 22:05:55	=!=	Aviso: /Users/fschuindt/.weechat/irc.conf, linha 118: op??o desconhecida na sec??o "server_default": default_msg_kick = ""
+2017-01-30 22:05:55	=!=	Aviso: /Users/fschuindt/.weechat/irc.conf, linha 119: op??o desconhecida na sec??o "server_default": default_msg_part = "WeeChat %v"
+2017-01-30 22:05:55	=!=	Aviso: /Users/fschuindt/.weechat/irc.conf, linha 120: op??o desconhecida na sec??o "server_default": default_msg_quit = "WeeChat %v"
+2017-01-30 22:05:55		Plugins carregados: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:10:09		Plugins carregados: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:10:11		Plugins carregados:
+2017-01-30 22:10:11		  alias: Comandos de alias
+2017-01-30 22:10:11		  charset: Convers?es de conjunto de carateres
+2017-01-30 22:10:11		  exec: Execu??o de comandos externos no WeeChat
+2017-01-30 22:10:11		  fifo: pipe FIFO para controlo remoto
+2017-01-30 22:10:11		  irc: Protocolo IRC (Internet Relay Chat)
+2017-01-30 22:10:11		  logger: Registar buffers em ficheiros
+2017-01-30 22:10:11		  relay: Reencaminhar dados do WeeChat para aplica??es remotas (protocolos irc/weechat)
+2017-01-30 22:10:11		  script: Gestor de scripts
+2017-01-30 22:10:11		  tcl: Suporte de scripts tcl
+2017-01-30 22:10:11		  trigger: Substitui??o de texto e execu??o de comandos por eventos acionados pelo WeeChat/plugins
+2017-01-30 22:10:11		  xfer: transfer?ncia DCC de ficheiros e chat direto
+2017-01-30 22:11:46		charset: terminal: US-ASCII, interno: UTF-8
+2017-01-30 22:19:36		Plugins carregados: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:19:42		charset: terminal: US-ASCII, interno: UTF-8
+2017-01-30 22:21:49		Plugins carregados: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:36:17		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:37:57	=!=	irc: unable to add temporary server "freenode" because the addition of temporary servers with command /connect is currently disabled
+2017-01-30 22:37:57	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2017-01-30 22:38:05	=!=	Too few arguments for command "/server add" (help on command: /help server)
+2017-01-30 22:40:10		irc: server freenode added
+2017-01-30 22:40:38		Option changed: irc.server.freenode.autoconnect = on  (default if null: off)
+2017-01-30 22:40:46		Option changed: irc.server.freenode.addresses = "chat.freenode.net/7000"  (default if null: "")
+2017-01-30 22:40:51		Option changed: irc.server.freenode.ssl = on  (default if null: off)
+2017-01-30 22:41:36		Option changed: irc.server.freenode.sasl_username = "fschuindt"  (default if null: "")
+2017-01-30 22:41:53		Option changed: irc.server.freenode.sasl_password = "headshot722"  (default if null: "")
+2017-01-30 22:43:21		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:51:46		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:52:04		Option changed: weechat.network.gnutls_ca_file = "= "~/.weechat/certs/ca-bundle.crt""  (default: "/etc/ssl/certs/ca-certificates.crt")
+2017-01-30 22:52:13		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:52:19		Option changed: weechat.network.gnutls_ca_file = "= "~/.weechat/certs/ca-bundle.crt""  (default: "/etc/ssl/certs/ca-certificates.crt")
+2017-01-30 22:55:26		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 22:55:27		Option changed: weechat.network.gnutls_ca_file = "= "~/.weechat/certs/ca-bundle.crt""  (default: "/etc/ssl/certs/ca-certificates.crt")
+2017-01-30 22:55:29		Option changed: weechat.network.gnutls_ca_file = "= "~/.weechat/certs/ca-bundle.crt""  (default: "/etc/ssl/certs/ca-certificates.crt")
+2017-01-30 22:55:52		Option changed: weechat.network.gnutls_ca_file = "~/.weechat/certs/ca-bundle.crt"  (default: "/etc/ssl/certs/ca-certificates.crt")
+2017-01-30 22:56:45		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-30 23:02:30		Filter "joinquit" added:
+2017-01-30 23:02:30		  [joinquit] buffer: * / tags: irc_join,irc_part,irc_quit / regex: * 
+2017-01-31 18:35:57		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-31 18:41:27		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-31 23:06:22		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-01-31 23:25:07		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-02-02 21:24:08		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-02-05 10:28:06		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-02-06 12:11:07	=!=	Error: unknown command "/exiy" (type /help for help)
+2017-02-06 12:11:14		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-02-11 20:54:19		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-02-15 16:23:25		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-02-20 21:21:48		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-03-22 23:11:27		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-03-27 23:30:39		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-03-31 21:04:44		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-03 15:09:47		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-10 18:09:40		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-13 23:24:06		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-17 22:09:43		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-19 00:07:32		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-20 14:17:24		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-21 21:44:48		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-26 18:41:51		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-29 22:46:33		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-04-29 22:46:38	=!=	irc: command "join" must be executed on connected irc server
+2017-04-30 20:09:16		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-05-03 00:17:04		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-05-07 11:46:22		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-05-07 11:47:26		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-05-07 11:48:40		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-05-31 18:15:37		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-06-01 15:28:19		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-06-20 19:39:39		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-06-22 16:10:24		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-06-29 22:39:20		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-01 21:13:11		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-02 22:48:10		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-03 23:32:04		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-04 23:04:01		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-06 22:15:50		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-10 22:09:00		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-11 20:35:57		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-12 22:49:41		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-15 22:04:55		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-16 22:11:52		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-17 22:49:20		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-20 22:11:36		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-25 22:19:36		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-07-30 03:01:24		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-01 22:06:12		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-02 21:18:48		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-06 22:09:37		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-06 22:11:27		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-10 19:17:42		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-21 15:43:13		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-23 21:04:39		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-29 21:54:58		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-08-31 21:16:37		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-09-02 04:31:42	=!=	Error: WeeChat main buffer can't be closed
+2017-09-02 04:31:54		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-09-02 05:01:35		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-09-02 05:01:42		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-09-14 22:46:45		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-09-18 00:01:12		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-09-19 11:46:25		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-09-23 23:46:24	=!=	irc: command "join" must be executed on irc buffer (server or channel)
+2017-09-23 23:46:32	=!=	irc: unable to add temporary server "irc.freenode.net" because the addition of temporary servers with command /connect is currently disabled
+2017-09-23 23:46:32	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2017-10-02 22:58:22	=!=	Error: WeeChat main buffer can't be closed
+2017-10-02 22:58:28		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-10-03 20:33:37		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-10-07 23:10:33		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-10-15 00:41:30		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-10-28 18:23:20		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-11-03 20:58:20		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-11-13 13:45:54		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-05 09:47:07		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-07 09:31:10		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-07 13:32:30		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-08 10:33:19		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-08 10:50:55	=!=	irc: unable to add temporary server "127.0.0.1" because the addition of temporary servers with command /connect is currently disabled
+2017-12-08 10:50:55	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2017-12-08 10:51:06	=!=	Too few arguments for command "/server add" (help on command: /help server)
+2017-12-08 10:51:12		[irc]  /server  list|listfull [<server>]
+2017-12-08 10:51:12		                add <server> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2017-12-08 10:51:12		                copy|rename <server> <new_name>
+2017-12-08 10:51:12		                reorder <server> [<server>...]
+2017-12-08 10:51:12		                del|keep <server>
+2017-12-08 10:51:12		                deloutq|jump|raw
+2017-12-08 10:51:12		list, add or remove IRC servers
+2017-12-08 10:51:12		    list: list servers (without argument, this list is displayed)
+2017-12-08 10:51:12		listfull: list servers with detailed info for each server
+2017-12-08 10:51:12		     add: add a new server
+2017-12-08 10:51:12		  server: server name, for internal and display use
+2017-12-08 10:51:12		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2017-12-08 10:51:12		   -temp: add a temporary server (not saved)
+2017-12-08 10:51:12		  option: set option for server (for boolean option, value can be omitted)
+2017-12-08 10:51:12		nooption: set boolean option to 'off' (for example: -nossl)
+2017-12-08 10:51:12		    copy: duplicate a server
+2017-12-08 10:51:12		  rename: rename a server
+2017-12-08 10:51:12		 reorder: reorder list of servers
+2017-12-08 10:51:12		    keep: keep server in config file (for temporary servers only)
+2017-12-08 10:51:12		     del: delete a server
+2017-12-08 10:51:12		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2017-12-08 10:51:12		    jump: jump to server buffer
+2017-12-08 10:51:12		     raw: open buffer with raw IRC data
+2017-12-08 10:51:12		Examples:
+2017-12-08 10:51:12		  /server listfull
+2017-12-08 10:51:12		  /server add freenode chat.freenode.net
+2017-12-08 10:51:12		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2017-12-08 10:51:12		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2017-12-08 10:51:12		  /server copy freenode freenode-test
+2017-12-08 10:51:12		  /server rename freenode-test freenode2
+2017-12-08 10:51:12		  /server reorder freenode2 freenode
+2017-12-08 10:51:12		  /server del freenode
+2017-12-08 10:51:12		  /server deloutq
+2017-12-08 10:51:39		irc: server bitlbee added
+2017-12-08 11:04:40	=!=	Error: unknown command "/rexpense" (type /help for help)
+2017-12-08 11:12:33	=!=	Error: unknown command "/code" (type /help for help)
+2017-12-08 11:13:03	=!=	Error: unknown command "/code" (type /help for help)
+2017-12-08 11:55:19		Plugins loaded: alias, charset, exec, fifo, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-09 13:06:20		New key binding (context "default"): meta-meta-OQ => /bar scroll buflist * e
+2017-12-09 13:06:20		New key binding (context "default"): meta-meta-OP => /bar scroll buflist * b
+2017-12-09 13:06:20		New key binding (context "default"): meta-OQ => /bar scroll buflist * +100%
+2017-12-09 13:06:20		New key binding (context "default"): meta-OP => /bar scroll buflist * -100%
+2017-12-09 13:06:20	=!=	Warning: /Users/fschuindt/.weechat/script.conf, line 57: unknown option for section "scripts": url_force_https = on
+2017-12-09 13:06:20		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-11 09:12:45		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-11 15:47:02		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-12 09:44:54		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-13 08:45:54		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-13 15:46:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-14 09:51:52		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-14 10:24:50		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-15 10:28:06		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-17 19:29:46		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-17 19:30:03		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-18 09:50:25		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-19 10:22:41		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-20 09:11:11		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-20 15:30:21		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-20 15:30:30	=!=	irc: command "join" must be executed on connected irc server
+2017-12-21 10:08:36		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-22 14:08:57		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-24 22:41:18		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-26 09:12:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-26 19:19:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-26 19:24:55	=!=	Error: unknown command "/\" (type /help for help)
+2017-12-28 10:33:50		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2017-12-29 10:16:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-02 10:39:38		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-03 09:28:51		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-04 09:24:06		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-04 14:27:51		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-05 10:01:20		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-06 01:19:59		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-08 10:24:42		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-09 10:46:45		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-10 09:42:29		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-10 20:02:25		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-11 09:08:37		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-11 14:45:45		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-12 08:58:41		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-13 20:23:57		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-15 10:19:19		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-15 17:14:15	=!=	Error with command "/ignore akrykk" (help on command: /help ignore)
+2018-01-15 17:14:19	=!=	Error with command "/ignore akryll" (help on command: /help ignore)
+2018-01-16 10:45:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-16 15:34:41		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-17 10:39:01		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-18 08:54:03		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-19 10:18:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-20 12:13:44		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-20 12:14:15		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-22 09:13:42		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-22 10:56:56		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-23 10:06:42		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-24 17:34:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-25 14:42:08		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-25 14:42:17	=!=	irc: command "join" must be executed on connected irc server
+2018-01-25 21:31:46		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-26 12:48:11		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-01-31 18:13:35		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-08 19:05:37		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-08 19:08:07		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-08 19:11:31		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-08 19:32:12		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-11 03:19:33		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-20 14:57:54		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-20 16:47:26		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-23 17:08:47		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-26 19:07:47		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-02-28 22:51:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-01 08:33:13		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-05 10:13:56		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-08 12:58:48		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-18 13:07:05		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-19 16:55:57		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-20 16:09:17		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-21 11:45:11		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-24 22:57:15		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-25 18:15:58		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, relay, script, tcl, trigger, xfer
+2018-03-29 23:02:54		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-03-30 05:55:13		fifo: pipe closed
+2018-03-30 21:51:55		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-03-30 21:52:08	=!=	irc: command "join" must be executed on connected irc server
+2018-03-30 23:58:50		fifo: pipe closed
+2018-04-01 22:36:43		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-04-02 03:45:58		fifo: pipe closed
+2018-04-06 17:38:29		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-04-06 21:56:16		fifo: pipe closed
+2018-04-29 19:47:17		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-04-30 00:05:42		fifo: pipe closed
+2018-05-26 22:55:19		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-05-27 01:45:08		fifo: pipe closed
+2018-06-05 04:35:37		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-06-05 10:01:08		fifo: pipe closed
+2018-06-08 06:22:20		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-06-08 06:36:17		fifo: pipe closed
+2018-06-14 07:17:48		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-06-14 11:57:09		fifo: pipe closed
+2018-06-19 09:12:17		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-06-19 10:21:11		fifo: pipe closed
+2018-06-19 18:20:51		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-06-19 18:30:41		fifo: pipe closed
+2018-06-20 22:38:56		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-06-21 16:46:51		fifo: pipe closed
+2018-06-21 20:26:25		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-06-21 21:06:37		fifo: pipe closed
+2018-07-02 13:57:42		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2018-07-02 14:25:46		fifo: pipe closed

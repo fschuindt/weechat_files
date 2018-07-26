@@ -1,0 +1,120 @@
+2018-03-26 00:18:12	-->	fschuindt (~fschuindt@179.35.90.142) has joined #fedora
+2018-03-26 00:18:12	--	Topic for #fedora is "Fedora 26,27 end-user support || Please READ: http://tinyurl.com/chanfaq || Common bugs: http://tinyurl.com/F26bugs  http://tinyurl.com/F27bugs ||Only Use Fedora,rpmfusion and Copr Repos || IRC Feedback: http://tinyurl.com/fedoraircsig || Updated F27 Live isos: http://tinyurl.com/Live-respins2 || Default to OPEN: http://tinyurl.com/default-open"
+2018-03-26 00:18:12	--	Topic set by N3LRX (~n3lrx@fedora/N3LRX) on Fri, 16 Feb 2018 18:09:09
+2018-03-26 00:18:12	--	Channel #fedora: 689 nicks (2 ops, 0 voices, 687 normals)
+2018-03-26 00:18:13	--	PvNotice(ChanServ): "Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Freenode, Fedora or Red Hat. This channel may be logged"
+2018-03-26 00:18:14	--	Channel created on Sun, 01 Feb 2004 02:59:18
+2018-03-26 00:20:36	-->	timj1 (~timj@i59F57BD8.versanet.de) has joined #fedora
+2018-03-26 00:21:16	fschuindt	Folks, I recently installed Fedora 27 on my brand new desktop. But the onboard ethernet isn't working on it. Works just fine on other OS. My ethernet controlle is a Intel I219-V. As Fedors 27 comes with the kernel 4.13 and this issue suggests upgrading it: https://bugzilla.redhat.com/show_bug.cgi?id=1525523 I upgraded to the kernel 4.15.10 but the error persists. My ethernet keeps "connecting", nothing
+2018-03-26 00:21:16	fschuindt	happens then it shut down. Any help?
+2018-03-26 00:22:21	<--	timj (~timj@i577BB489.versanet.de) has quit (Ping timeout: 240 seconds)
+2018-03-26 00:26:08	<--	cemotyz09 (~cemotyz09@cpe-70-121-157-202.satx.res.rr.com) has quit (Quit: cemotyz09)
+2018-03-26 00:27:21	<--	jrabe (jrabe@janikrabe.com) has quit (Ping timeout: 240 seconds)
+2018-03-26 00:28:43	<--	diogenese (diogenese@12.172.164.68) has quit (Quit: Leaving)
+2018-03-26 00:29:21	<--	Luissen (luissen@gateway/vpn/privateinternetaccess/luissen) has quit (Ping timeout: 240 seconds)
+2018-03-26 00:29:26	drakonis	the other OS being what?
+2018-03-26 00:29:50	<--	giesen (~ggiesen@ego.giesen.me) has quit (Ping timeout: 255 seconds)
+2018-03-26 00:29:51	<--	OverandOops (~overand@unaffiliated/overand) has quit (Ping timeout: 255 seconds)
+2018-03-26 00:30:04	{Panther}	fschuindt, I suggest posting in that bug report
+2018-03-26 00:30:04	-->	jrabe (jrabe@janikrabe.com) has joined #fedora
+2018-03-26 00:30:21	<--	ptx0 (~cheesus_c@unaffiliated/ptx0) has quit (Ping timeout: 240 seconds)
+2018-03-26 00:30:22	<--	weld (~weld@p5493C968.dip0.t-ipconnect.de) has quit (Quit: weld)
+2018-03-26 00:30:31	fschuindt	drakonis: Win10, I haven't tested with Linux yet. 
+2018-03-26 00:30:36	fschuindt	{Panther}: thank you
+2018-03-26 00:31:05	drakonis	that's windows 10 though
+2018-03-26 00:31:19	-->	ptx0 (~cheesus_c@unaffiliated/ptx0) has joined #fedora
+2018-03-26 00:31:24	-->	OverandOops (~overand@unaffiliated/overand) has joined #fedora
+2018-03-26 00:31:39	-->	giesen (~ggiesen@ego.giesen.me) has joined #fedora
+2018-03-26 00:32:10	{Panther}	You could try this - https://unix.stackexchange.com/questions/294753/intel-ethernet-connection-i219-v-not-working-under-linux-on-an-asuspro-b-laptop/295052#295052
+2018-03-26 00:33:22	-->	Luissen (luissen@gateway/vpn/privateinternetaccess/luissen) has joined #fedora
+2018-03-26 00:37:07	fschuindt	{Panther}: looks tricky, I will try it later, thank you
+2018-03-26 00:50:11	-->	skitt (~skitt@redhat/skitt) has joined #fedora
+2018-03-26 00:52:06	<--	coderphive (~coderphiv@unaffiliated/coderphive) has quit (Quit: coderphive)
+2018-03-26 00:54:39	-->	sudhir (~sudhir@223.186.237.97) has joined #fedora
+2018-03-26 01:01:44	<--	ratskin (~jeebus@cpc82943-enfi22-2-0-cust126.20-2.cable.virginm.net) has quit (Remote host closed the connection)
+2018-03-26 01:01:44	-->	sibyakin (~sibyakin@83.234.69.145) has joined #fedora
+2018-03-26 01:02:40	-->	ariel[m] (arielmatri@gateway/shell/matrix.org/x-dumcxehsbwskprtg) has joined #fedora
+2018-03-26 01:03:12	ariel[m]	finally
+2018-03-26 01:03:53	-->	ratskin (~jeebus@cpc82943-enfi22-2-0-cust126.20-2.cable.virginm.net) has joined #fedora
+2018-03-26 01:08:48	<--	p3n (~p3n@94.204.68.168) has quit (Remote host closed the connection)
+2018-03-26 01:18:41	<--	v^ (~v@unaffiliated/v/x-9868131) has quit (Ping timeout: 248 seconds)
+2018-03-26 01:25:34	<--	fathurhoho (~Thunderbi@202.124.203.170) has quit (Ping timeout: 264 seconds)
+2018-03-26 01:35:37	<--	Hobbyboy (Hobbyboy@gateway/shell/panicbnc/x-orqawsdsjukhkjon) has quit (Ping timeout: 245 seconds)
+2018-03-26 01:35:42	<--	altendky (uid135382@gateway/web/irccloud.com/x-qnyjkysceshwhcvw) has quit (Quit: Connection closed for inactivity)
+2018-03-26 01:40:47	-->	ollien (~ollien@ollien.com) has joined #fedora
+2018-03-26 01:46:52	<--	drakonis (~drakonis@unaffiliated/drakonis) has quit (Remote host closed the connection)
+2018-03-26 01:55:20	-->	onlyabyte (~onlyabyte@unaffiliated/onlyabyte) has joined #fedora
+2018-03-26 01:57:17	-->	ConkyAxis (~ConkyAxis@cpc82865-enfi22-2-0-cust482.20-2.cable.virginm.net) has joined #fedora
+2018-03-26 01:58:30	<--	ConkyAxis (~ConkyAxis@cpc82865-enfi22-2-0-cust482.20-2.cable.virginm.net) has quit (Client Quit)
+2018-03-26 01:58:34	<--	fatalhalt (~fatalhalt@c-67-163-60-93.hsd1.il.comcast.net) has quit (Remote host closed the connection)
+2018-03-26 02:00:58	-->	fatalhalt (~fatalhalt@c-67-163-60-93.hsd1.il.comcast.net) has joined #fedora
+2018-03-26 02:08:20	<--	mtoman (~mtoman@ip-78-45-139-201.net.upcbroadband.cz) has quit (Quit: Leaving.)
+2018-03-26 02:10:00	-->	kallesbar (~kallesbar@192.130.252.44) has joined #fedora
+2018-03-26 02:13:33	-->	valerio (~valerio@unaffiliated/valerio/x-9242161) has joined #fedora
+2018-03-26 02:18:29	-->	Motoko (~maoyama@simplemachines/serverteam/Motoko) has joined #fedora
+2018-03-26 02:19:21	<--	kallesbar (~kallesbar@192.130.252.44) has quit (Ping timeout: 240 seconds)
+2018-03-26 02:19:24	-->	kallesbar_ (~kallesbar@192.130.252.44) has joined #fedora
+2018-03-26 02:21:18	<--	onlyabyte (~onlyabyte@unaffiliated/onlyabyte) has quit (Remote host closed the connection)
+2018-03-26 02:21:51	-->	onlyabyte (~onlyabyte@unaffiliated/onlyabyte) has joined #fedora
+2018-03-26 02:22:36	<--	sudhir (~sudhir@223.186.237.97) has quit (Remote host closed the connection)
+2018-03-26 02:23:27	<--	SuperLag (~akulbe@unaffiliated/superlag) has quit (Remote host closed the connection)
+2018-03-26 02:24:32	-->	SuperLag (~akulbe@unaffiliated/superlag) has joined #fedora
+2018-03-26 02:27:29	-->	dabzse (~dabzse@cpc1-finc16-2-0-cust1311.4-2.cable.virginm.net) has joined #fedora
+2018-03-26 02:32:36	-->	ndhandre (~ndhandre@103.56.41.220) has joined #fedora
+2018-03-26 02:32:46	-->	mtoman (~mtoman@81.19.11.61) has joined #fedora
+2018-03-26 02:33:31	-->	fathurhoho (~Thunderbi@202.124.203.170) has joined #fedora
+2018-03-26 02:34:05	<--	gentunian (~seba@unaffiliated/gentunian) has quit (Ping timeout: 240 seconds)
+2018-03-26 02:36:46	-->	freyrd (uid202114@gateway/web/irccloud.com/x-xhulomuwaaaikkqk) has joined #fedora
+2018-03-26 02:37:08	-->	aev (~aev@dgsv34yyyyyyyyyyyyyyt-3.rev.dnainternet.fi) has joined #fedora
+2018-03-26 02:37:30	<--	malucious (~malucious@c-66-177-195-76.hsd1.ga.comcast.net) has left #fedora ("Leaving")
+2018-03-26 02:38:45	<--	nullcollision (~nullcolli@91-154-245-128.elisa-laajakaista.fi) has quit (Quit: Leaving)
+2018-03-26 02:39:21	-->	srisri (~srisri@202.95.77.70) has joined #fedora
+2018-03-26 02:41:46	-->	juril (~juril@151.15.243.46) has joined #fedora
+2018-03-26 02:42:20	-->	fabior (~fabior@wikipedia/fabior1984) has joined #fedora
+2018-03-26 02:43:10	<--	plarsen (~plarsen@redhat/jboss/pdpc.professional.plarsen) has quit (Remote host closed the connection)
+2018-03-26 02:44:22	-->	eclipseo (~bob@225.86.205.77.rev.sfr.net) has joined #fedora
+2018-03-26 02:45:15	<--	srisri (~srisri@202.95.77.70) has quit (Quit: WeeChat 2.0.1)
+2018-03-26 02:45:22	<--	dabzse (~dabzse@cpc1-finc16-2-0-cust1311.4-2.cable.virginm.net) has quit (Ping timeout: 264 seconds)
+2018-03-26 02:45:34	-->	agurenko (agurenko@nat/redhat/x-bgycjpjzdjngkvwo) has joined #fedora
+2018-03-26 02:46:08	-->	Captain_Awesome (d@cpe-66-69-238-176.austin.res.rr.com) has joined #fedora
+2018-03-26 02:47:25	-->	diogenese (diogenese@12.172.164.68) has joined #fedora
+2018-03-26 02:47:25	<--	CyberTrekker (~quassel@unaffiliated/cybertrekker) has quit (Read error: Connection reset by peer)
+2018-03-26 02:47:41	-->	jaap_ (~jaap@2001:980:c868:1:b4cd:60ed:c490:22ac) has joined #fedora
+2018-03-26 02:48:10	<--	jimmylu2333-sr (~jimmylu23@2604:a880:2:d0::1a95:1001) has quit (Ping timeout: 246 seconds)
+2018-03-26 02:48:57	-->	CyberTrekker (~quassel@unaffiliated/cybertrekker) has joined #fedora
+2018-03-26 02:50:44	<--	raynold (uid201163@gateway/web/irccloud.com/x-tfmbkpesrmcgvxrl) has quit (Quit: Connection closed for inactivity)
+2018-03-26 02:51:10	-->	c0mrad3 (uid26809@fedora/dhanvi) has joined #fedora
+2018-03-26 02:51:32	-->	Hobbyboy (Hobbyboy@gateway/shell/panicbnc/x-tvyrareotetwimae) has joined #fedora
+2018-03-26 02:59:55	-->	carl- (~carl-@h-213-136-53-77.NA.cust.bahnhof.se) has joined #fedora
+2018-03-26 03:05:29	-->	anton-z-s (c3ce2f60@gateway/web/freenode/ip.195.206.47.96) has joined #fedora
+2018-03-26 03:05:41	<--	fabior (~fabior@wikipedia/fabior1984) has quit (Remote host closed the connection)
+2018-03-26 03:16:39	-->	Ricardo1000 (~ricardo10@91.198.140.16) has joined #fedora
+2018-03-26 03:18:49	<--	allizom (~Thunderbi@95.234.167.154) has quit (Quit: allizom)
+2018-03-26 03:19:11	<--	GrannyGoose (~GrannyGoo@CPE-101-160-6-88.lnse6.lon.bigpond.net.au) has quit (Quit: Leaving)
+2018-03-26 03:21:49	-->	GrannyGoose (~GrannyGoo@CPE-101-160-6-88.lnse6.lon.bigpond.net.au) has joined #fedora
+2018-03-26 03:22:50	<--	amosbird (~amosbird@123.206.66.49) has quit (Quit: ZNC 1.6.5 - http://znc.in)
+2018-03-26 03:23:06	-->	amosbird (~amosbird@123.206.66.49) has joined #fedora
+2018-03-26 03:23:37	-->	ericzolf (ericzolf@nat/redhat/x-yfdbhgvzubsrdkug) has joined #fedora
+2018-03-26 03:24:48	-->	aiduss (~aiduss@91.105.16.117) has joined #fedora
+2018-03-26 03:29:16	-->	gauravsitlani (~gauravsit@45.117.48.149) has joined #fedora
+2018-03-26 03:29:31	-->	je (~je@5.103.37.226) has joined #fedora
+2018-03-26 03:31:19	-->	sudhir (~sudhir@223.186.237.97) has joined #fedora
+2018-03-26 03:31:28	-->	akahat (~amolkahat@125.16.97.122) has joined #fedora
+2018-03-26 03:31:57	-->	srisri (~srisri@202.95.77.70) has joined #fedora
+2018-03-26 03:33:15	<--	aev (~aev@dgsv34yyyyyyyyyyyyyyt-3.rev.dnainternet.fi) has quit (Quit: Leaving)
+2018-03-26 03:35:53	-->	Venemo (~venemo@fedora/Venemo) has joined #fedora
+2018-03-26 03:36:22	<--	Captain_Awesome (d@cpe-66-69-238-176.austin.res.rr.com) has quit (Ping timeout: 264 seconds)
+2018-03-26 03:36:29	-->	gb00s (uid99359@gateway/web/irccloud.com/x-kanfvlnlahrfmhoh) has joined #fedora
+2018-03-26 03:36:39	<--	srisri (~srisri@202.95.77.70) has quit (Ping timeout: 260 seconds)
+2018-03-26 03:37:44	-->	srisri (~srisri@202.95.77.83) has joined #fedora
+2018-03-26 03:46:28	-->	phreak (~ordeith@unaffiliated/phreak) has joined #fedora
+2018-03-26 03:47:06	-->	HerbY_NL2 (~HerbY_NL2@2001:67c:2564:518:35cf:3124:c8bc:3323) has joined #fedora
+2018-03-26 03:48:01	<--	jaap_ (~jaap@2001:980:c868:1:b4cd:60ed:c490:22ac) has quit (Remote host closed the connection)
+2018-03-26 03:48:34	-->	AnilV4 (~AnilV4@125.16.97.124) has joined #fedora
+2018-03-26 03:49:49	<--	aiduss (~aiduss@91.105.16.117) has quit (Remote host closed the connection)
+2018-03-26 03:51:45	-->	B4S1L3 (~basile@AStrasbourg-651-1-115-203.w90-48.abo.wanadoo.fr) has joined #fedora
+2018-03-26 03:51:55	<--	B4S1L3 (~basile@AStrasbourg-651-1-115-203.w90-48.abo.wanadoo.fr) has left #fedora
+2018-03-26 03:53:20	-->	dminca (~dminca@85.9.8.148) has joined #fedora
+2018-03-26 03:53:36	-->	mariosp (mariosp@nat/redhat/x-dbbxcltmimciufwl) has joined #fedora
+2018-03-26 03:57:08	-->	onosek (onosek@nat/redhat/x-cesyhdydcxihtnfs) has joined #fedora
+2018-03-26 03:57:53	-->	rkratky (~rkratky@ip-62-245-112-127.net.upcbroadband.cz) has joined #fedora

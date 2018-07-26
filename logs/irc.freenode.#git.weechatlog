@@ -1,0 +1,113 @@
+2017-02-15 16:23:43	-->	fschuindt (~fschuindt@189-71-215-221.user.veloxzone.com.br) has joined #git
+2017-02-15 16:23:43	--	Topic for #git is "Welcome to #git, the place for git help and a bag of wheeee | Public logs at http://jk.gs/glog | First visit? Read: http://jk.gs/git | Current stable version: 2.11.0 | Getting "cannot send to channel"? /msg gitinfo .voice | Are you even reading this? Prove it by submitting to https://madeitwor.se/git-jokes"
+2017-02-15 16:23:43	--	Topic set by Eugene (eugene@stretchmyan.us) on Wed, 08 Feb 2017 03:15:43
+2017-02-15 16:23:43	--	Channel #git: 1260 nicks (1 op, 7 voices, 1252 normals)
+2017-02-15 16:23:44	--	Channel created on Sun, 26 Nov 2006 03:42:45
+2017-02-15 16:24:58	-->	webstrand (~webstrand@23.94.139.105) has joined #git
+2017-02-15 16:26:15	fschuindt	I have merged master in a working branch and introduced some changes after it. How can I remove the merge commit from my branch and keep the changes? I've changed different files from those merged.
+2017-02-15 16:26:22	-->	suttonwilliamd_ (~suttonwil@73.58.154.174) has joined #git
+2017-02-15 16:26:25	<--	freddymungo (~freddymun@gpool-193-68.open.roch.edu) has quit (Ping timeout: 268 seconds)
+2017-02-15 16:26:27	-->	m4sk1n (uid206209@gateway/web/irccloud.com/x-vucgiodpdmwsljnp) has joined #git
+2017-02-15 16:26:39	<--	webstrand (~webstrand@23.94.139.105) has quit (Client Quit)
+2017-02-15 16:28:26	-->	webstrand (~webstrand@23.94.139.105) has joined #git
+2017-02-15 16:28:38	jmesmon	fschuindt: you can use git rebase with some arguments (depending on your setup) to remove the merge.
+2017-02-15 16:29:28	salamanderrake	can you see an difference here that would cause git to refuse to switch branches?
+2017-02-15 16:29:40	<--	duderonomy (~duderonom@2620:149:5:1b04:310b:cdf9:4b47:607f) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2017-02-15 16:29:44	<--	suttonwilliamd__ (~suttonwil@73.58.154.174) has quit (Ping timeout: 256 seconds)
+2017-02-15 16:30:44	salamanderrake	could this be causing it, *.bat eol=crlf , inside the .gitattributes file?
+2017-02-15 16:31:20	-->	duderonomy (~duderonom@2620:149:5:1b04:310b:cdf9:4b47:607f) has joined #git
+2017-02-15 16:33:00	-->	HardlySeen (~Gathering@unaffiliated/gatheringknowleg) has joined #git
+2017-02-15 16:33:15	-->	cdg (~cdg@157.166.173.4) has joined #git
+2017-02-15 16:33:57	<--	sbulage (~sbulage@103.8.195.26) has quit (Ping timeout: 240 seconds)
+2017-02-15 16:36:28	-->	b100s (~b100s@broadband-90-154-75-152.moscow.rt.ru) has joined #git
+2017-02-15 16:36:33	<--	cdg_ (~cdg@157.166.173.4) has quit (Ping timeout: 260 seconds)
+2017-02-15 16:38:01	<--	cdg (~cdg@157.166.173.4) has quit (Ping timeout: 260 seconds)
+2017-02-15 16:39:32	-->	ecuanaso (~textual@pool-98-115-49-224.phlapa.fios.verizon.net) has joined #git
+2017-02-15 16:40:13	--	rawburt_ is now known as rawburt
+2017-02-15 16:40:59	-->	bomb-on (~bomb-on@139-142-17-89.fiber.hringdu.is) has joined #git
+2017-02-15 16:41:44	-->	manuelschneid3r (~manuelsch@p20030072AF387200479DF35B5F54CDCF.dip0.t-ipconnect.de) has joined #git
+2017-02-15 16:42:55	-->	thebope (~thebope@pdpc/supporter/student/thebope) has joined #git
+2017-02-15 16:42:58	-->	Zarthus (zarthus@trivialand/guesser/zarthus) has joined #git
+2017-02-15 16:43:13	-->	venmx (~pactadmin@cpc8-camd15-2-0-cust699.20-2.cable.virginm.net) has joined #git
+2017-02-15 16:43:37	<--	MrLawrence (~MrLawrenc@unaffiliated/mrlawrence) has quit (Quit: Leaving)
+2017-02-15 16:44:28	<--	Gustavo6046 (~Gustavo60@unaffiliated/gustavo6046) has quit (Ping timeout: 256 seconds)
+2017-02-15 16:44:45	<--	Rodya_ (~Rodya_@2601:46:4001:e0b4:7096:d258:8a53:665c) has quit (Remote host closed the connection)
+2017-02-15 16:45:06	<--	ResidentBiscuit (9f8cfe62@gateway/web/cgi-irc/kiwiirc.com/ip.159.140.254.98) has quit (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+2017-02-15 16:45:19	-->	ResidentBiscuit (9f8cfe62@gateway/web/cgi-irc/kiwiirc.com/ip.159.140.254.98) has joined #git
+2017-02-15 16:45:53	-->	bathtub_shark (zarthus@trivialand/guesser/zarthus) has joined #git
+2017-02-15 16:46:51	-->	Rodya_ (~Rodya_@2601:46:4001:e0b4:2c52:1497:2654:427b) has joined #git
+2017-02-15 16:46:51	-->	Gustavo6046 (~Gustavo60@unaffiliated/gustavo6046) has joined #git
+2017-02-15 16:47:24	<--	digidog (~digidog@x55b60e6a.dyn.telefonica.de) has quit (Quit: leaving)
+2017-02-15 16:47:56	<--	jbitdrop (~jbitdrop@x55b60e6a.dyn.telefonica.de) has quit (Quit: leaving)
+2017-02-15 16:48:12	<--	venmx (~pactadmin@cpc8-camd15-2-0-cust699.20-2.cable.virginm.net) has quit (Ping timeout: 260 seconds)
+2017-02-15 16:49:15	-->	fatalhalt (~fatalhalt@c-73-246-193-29.hsd1.il.comcast.net) has joined #git
+2017-02-15 16:49:43	-->	cr34ton (~cr34ton@185.145.66.251) has joined #git
+2017-02-15 16:50:14	<--	kyan (~kyan@cpe-24-198-97-231.maine.res.rr.com) has quit (Ping timeout: 252 seconds)
+2017-02-15 16:52:51	<--	b100s (~b100s@broadband-90-154-75-152.moscow.rt.ru) has quit (Ping timeout: 245 seconds)
+2017-02-15 16:53:24	<--	Rodya_ (~Rodya_@2601:46:4001:e0b4:2c52:1497:2654:427b) has quit (Remote host closed the connection)
+2017-02-15 16:53:47	-->	Rodya_ (~Rodya_@2601:46:4001:e0b4:2c52:1497:2654:427b) has joined #git
+2017-02-15 16:54:44	-->	robotroll (~robotroll@unaffiliated/robotroll) has joined #git
+2017-02-15 16:55:02	-->	systemovich (~systemovi@197.93.164.139) has joined #git
+2017-02-15 16:55:36	<--	jstimm (~jstimm@unaffiliated/jstimm) has quit (Ping timeout: 240 seconds)
+2017-02-15 16:57:46	<--	Gsham (~textual@pool-100-33-121-112.nycmny.fios.verizon.net) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2017-02-15 16:57:51	<--	pihpah (~pihpah@leased-line-195-222-77-234.telecom.by) has quit (Ping timeout: 260 seconds)
+2017-02-15 16:59:02	-->	Gsham (~textual@pool-100-33-121-112.nycmny.fios.verizon.net) has joined #git
+2017-02-15 16:59:42	<--	thebope (~thebope@pdpc/supporter/student/thebope) has quit (Remote host closed the connection)
+2017-02-15 17:00:00	-->	thebope (~thebope@pdpc/supporter/student/thebope) has joined #git
+2017-02-15 17:01:25	<--	zzz (~zzz@2001:8a0:ca1a:3901:8d99:aa0c:e046:b1b) has quit (Quit: zzz)
+2017-02-15 17:02:30	-->	kyan (~kyan@cpe-24-198-97-231.maine.res.rr.com) has joined #git
+2017-02-15 17:02:41	<--	aw1 (~aw1@unaffiliated/aw1) has quit (Ping timeout: 260 seconds)
+2017-02-15 17:04:28	<--	grym (~grym@unaffiliated/grym) has left #git
+2017-02-15 17:04:47	-->	ash_workz (~chatzilla@50-243-5-153-static.hfc.comcastbusiness.net) has joined #git
+2017-02-15 17:05:00	-->	WaReZ (~warez@LFbn-1-8591-185.w92-141.abo.wanadoo.fr) has joined #git
+2017-02-15 17:06:36	<--	SirOliver (~SirOliver@cable-89-216-154-159.dynamic.sbb.rs) has quit (Quit: ZZZzzz…)
+2017-02-15 17:07:32	-->	invisbl (~invisbl@74.3.135.94) has joined #git
+2017-02-15 17:08:13	-->	veki (~chatzilla@79-101-203-184.dynamic.isp.telekom.rs) has joined #git
+2017-02-15 17:10:43	<--	z1haze_work (4ada260a@gateway/web/cgi-irc/kiwiirc.com/ip.74.218.38.10) has quit (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+2017-02-15 17:12:06	-->	thebope_ (~thebope@pdpc/supporter/student/thebope) has joined #git
+2017-02-15 17:13:02	<--	thebope (~thebope@pdpc/supporter/student/thebope) has quit (Read error: Connection reset by peer)
+2017-02-15 17:15:18	-->	nowhere_man (~pierre@ede67-h01-176-150-3-2.dsl.sta.abo.bbox.fr) has joined #git
+2017-02-15 17:16:21	-->	b100s (~b100s@broadband-90-154-75-152.moscow.rt.ru) has joined #git
+2017-02-15 17:16:26	-->	aw1 (~aw1@unaffiliated/aw1) has joined #git
+2017-02-15 17:19:04	<--	todd_dsm_ (~todd_dsm@173-16-140-207.client.mchsi.com) has quit (Read error: Connection reset by peer)
+2017-02-15 17:19:17	-->	shgysk8zer0_ (~czuber@173-20-221-99.client.mchsi.com) has joined #git
+2017-02-15 17:22:11	-->	freddymungo (~freddymun@96-42-218-124.dhcp.roch.mn.charter.com) has joined #git
+2017-02-15 17:22:27	-->	SirOliver (~SirOliver@cable-89-216-154-159.dynamic.sbb.rs) has joined #git
+2017-02-15 17:24:15	-->	aidalgol (~aidalgol@pdpc/supporter/student/aidalgol) has joined #git
+2017-02-15 17:24:49	-->	tvw (~tv@2a02:2028:735:b601:3c32:9e9a:f3e4:3141) has joined #git
+2017-02-15 17:25:08	<--	thebird (~thebird@124.40.246.86) has quit (Ping timeout: 240 seconds)
+2017-02-15 17:25:28	-->	todd_dsm (~todd_dsm@173-16-140-207.client.mchsi.com) has joined #git
+2017-02-15 17:26:04	-->	acetakwas (~acetakwas@105.112.32.134) has joined #git
+2017-02-15 17:28:21	-->	thebird (~thebird@124.40.246.86) has joined #git
+2017-02-15 17:29:16	-->	bz (c600ae39@gateway/web/freenode/ip.198.0.174.57) has joined #git
+2017-02-15 17:30:53	<--	dfas (~unknown@c83-251-120-163.bredband.comhem.se) has quit
+2017-02-15 17:30:59	-->	cygn9128d (~cygn9128d@78-67-235-138-no2205.tbcn.telia.com) has joined #git
+2017-02-15 17:31:42	<--	cygn9128d (~cygn9128d@78-67-235-138-no2205.tbcn.telia.com) has left #git
+2017-02-15 17:32:06	<--	cr34ton (~cr34ton@185.145.66.251) has quit (Remote host closed the connection)
+2017-02-15 17:32:34	<--	acetakwas (~acetakwas@105.112.32.134) has quit (Read error: Connection reset by peer)
+2017-02-15 17:34:06	<--	GodGinrai (~msterritt@unaffiliated/godginrai) has quit (Ping timeout: 245 seconds)
+2017-02-15 17:34:06	<--	nettoweb (~nettoweb@191.191.44.18) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2017-02-15 17:36:27	-->	Gloomy (~Gloomy@78-22-186-208.access.telenet.be) has joined #git
+2017-02-15 17:37:36	<--	marc_v92 (~marc_v92@unaffiliated/marc-v92/x-6202358) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2017-02-15 17:40:00	-->	marc_v92 (~marc_v92@unaffiliated/marc-v92/x-6202358) has joined #git
+2017-02-15 17:40:04	<--	[ADN] (~Test@euf3300163-pip.sys.ntt.eu) has quit (Read error: Connection reset by peer)
+2017-02-15 17:40:28	-->	[ADN] (~Test@euf3300163-pip.sys.ntt.eu) has joined #git
+2017-02-15 17:40:32	-->	jorgevidaurre (~jorgevida@181-160-13-30.baf.movistar.cl) has joined #git
+2017-02-15 17:40:56	<--	veki (~chatzilla@79-101-203-184.dynamic.isp.telekom.rs) has left #git
+2017-02-15 17:42:05	<--	thebope_ (~thebope@pdpc/supporter/student/thebope) has quit (Read error: Connection reset by peer)
+2017-02-15 17:42:23	-->	venmx (~pactadmin@cpc8-camd15-2-0-cust699.20-2.cable.virginm.net) has joined #git
+2017-02-15 17:42:52	-->	thebope (~thebope@pdpc/supporter/student/thebope) has joined #git
+2017-02-15 17:43:05	-->	Anja (~Anja@49.50.252.82) has joined #git
+2017-02-15 17:43:20	<--	strugee (~strugee@strugee.net) has quit (Quit: ZNC - http://znc.in)
+2017-02-15 17:45:52	<--	thebope (~thebope@pdpc/supporter/student/thebope) has quit (Read error: Connection reset by peer)
+2017-02-15 17:45:59	-->	thebope_ (~thebope@pdpc/supporter/student/thebope) has joined #git
+2017-02-15 17:47:11	-->	madhur (~madcodes@103.27.8.110) has joined #git
+2017-02-15 17:47:49	<--	venmx (~pactadmin@cpc8-camd15-2-0-cust699.20-2.cable.virginm.net) has quit (Ping timeout: 268 seconds)
+2017-02-15 17:48:03	<--	shurnormal (~uprego@unaffiliated/ushiu) has quit (Ping timeout: 258 seconds)
+2017-02-15 17:48:37	-->	SuprDewd (~quassel@2001:41d0:8:1754::) has joined #git
+2017-02-15 17:49:25	-->	[Brain] (~brain@cpc4-mfld16-2-0-cust466.13-1.cable.virginm.net) has joined #git
+2017-02-15 17:49:36	<--	b100s (~b100s@broadband-90-154-75-152.moscow.rt.ru) has quit (Ping timeout: 240 seconds)
+2017-02-15 17:50:20	-->	pooby (~pooby@wkstn102-145.reiss.georgetown.edu) has joined #git
+2017-02-15 17:50:45	-->	strugee (~strugee@strugee.net) has joined #git
+2017-02-15 17:52:05	-->	cdg (~cdg@c-69-94-206-50.hs.gigamonster.net) has joined #git
+2017-02-15 17:52:13	<--	diogenese (diogenese@diogenese.velotech.net) has quit (Read error: Connection reset by peer)

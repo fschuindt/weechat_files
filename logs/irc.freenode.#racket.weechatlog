@@ -1,0 +1,293 @@
+2017-01-31 23:25:21	-->	fschuindt (~fschuindt@189-71-169-172.user.veloxzone.com.br) has joined #racket
+2017-01-31 23:25:21	--	Topic for #racket is "Racket -- https://racket-lang.org -- https://pkgs.racket-lang.org -- Paste at http://pasterack.org -- logs at https://botbot.me/freenode/racket/"
+2017-01-31 23:25:21	--	Topic set by samth (sid14502@racket/samth) on Sun, 27 Nov 2016 14:45:08
+2017-01-31 23:25:22	--	Channel #racket: 196 nicks (1 op, 0 voices, 195 normals)
+2017-01-31 23:25:23	--	Channel created on Thu, 04 Feb 2010 16:44:58
+2017-01-31 23:34:53	-->	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has joined #racket
+2017-01-31 23:34:54	<--	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has quit (Changing host)
+2017-01-31 23:34:54	-->	jeapostrophe (~jay@racket/jeapostrophe) has joined #racket
+2017-01-31 23:37:21	<--	peatmoss (~peter@c-24-18-85-234.hsd1.wa.comcast.net) has quit (Ping timeout: 248 seconds)
+2017-01-31 23:39:40	<--	jeapostrophe (~jay@racket/jeapostrophe) has quit (Ping timeout: 240 seconds)
+2017-01-31 23:48:44	<--	jao (~jao@pdpc/supporter/professional/jao) has quit (Ping timeout: 276 seconds)
+2017-02-01 00:57:18	--	irc: disconnected from server
+2017-02-01 00:57:47	-->	fschuindt (~fschuindt@189-71-169-172.user.veloxzone.com.br) has joined #racket
+2017-02-01 00:57:47	--	Topic for #racket is "Racket -- https://racket-lang.org -- https://pkgs.racket-lang.org -- Paste at http://pasterack.org -- logs at https://botbot.me/freenode/racket/"
+2017-02-01 00:57:47	--	Topic set by samth (sid14502@racket/samth) on Sun, 27 Nov 2016 14:45:08
+2017-02-01 00:57:47	--	Channel #racket: 193 nicks (1 op, 0 voices, 192 normals)
+2017-02-01 00:57:48	--	Channel created on Thu, 04 Feb 2010 16:44:58
+2017-02-01 00:57:56	lexi-lambda	I am very confused. (port->string (get-pure-port (string->url "https://pkgs.racket-lang.org/pkg/compatibility-lib"))) hangs for me but the equivalent curl command returns immediately.
+2017-02-01 00:58:40	<--	ArneBab (~quassel@freenet/developer/arnebab) has quit (Ping timeout: 240 seconds)
+2017-02-01 06:26:37	--	irc: disconnected from server
+2017-02-01 06:28:41	-->	fschuindt (~fschuindt@189-71-169-172.user.veloxzone.com.br) has joined #racket
+2017-02-01 06:28:41	--	Topic for #racket is "Racket -- https://racket-lang.org -- https://pkgs.racket-lang.org -- Paste at http://pasterack.org -- logs at https://botbot.me/freenode/racket/"
+2017-02-01 06:28:41	--	Topic set by samth (sid14502@racket/samth) on Sun, 27 Nov 2016 14:45:08
+2017-02-01 06:28:42	--	Channel #racket: 190 nicks (1 op, 0 voices, 189 normals)
+2017-02-01 06:28:43	--	Channel created on Thu, 04 Feb 2010 16:44:58
+2017-02-01 06:35:15	<--	soegaard (~soegaard@internet.vgt.dk) has quit (Quit: soegaard)
+2017-02-01 06:40:05	<--	Fooster (~textual@89-190-90-103.nsys.cz) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2017-02-01 07:08:06	-->	FreeFull (~freefull@defocus/sausage-lover) has joined #racket
+2017-02-01 08:45:34	--	irc: disconnected from server
+2017-02-01 08:46:01	-->	fschuindt (~fschuindt@189-71-169-172.user.veloxzone.com.br) has joined #racket
+2017-02-01 08:46:01	--	Topic for #racket is "Racket -- https://racket-lang.org -- https://pkgs.racket-lang.org -- Paste at http://pasterack.org -- logs at https://botbot.me/freenode/racket/"
+2017-02-01 08:46:01	--	Topic set by samth (sid14502@racket/samth) on Sun, 27 Nov 2016 14:45:08
+2017-02-01 08:46:02	--	Channel #racket: 190 nicks (1 op, 0 voices, 189 normals)
+2017-02-01 08:46:02	--	Channel created on Thu, 04 Feb 2010 16:44:58
+2017-02-01 08:51:16	-->	ziyourenxiang (~ziyourenx@unaffiliated/ziyourenxiang) has joined #racket
+2017-02-01 08:57:53	-->	jao (~jao@pdpc/supporter/professional/jao) has joined #racket
+2017-02-01 09:02:32	-->	cemerick (~cemerick@c-24-34-140-98.hsd1.ma.comcast.net) has joined #racket
+2017-02-01 09:22:56	-->	UserJosh (~jshjsh@172.58.94.222) has joined #racket
+2017-02-01 09:25:40	<--	jshjsh (~jshjsh@172.58.94.222) has quit (Ping timeout: 240 seconds)
+2017-02-01 09:40:12	-->	badkins (~badkins@cpe-2606-A000-111B-6B-E051-72-AC44-704.dyn6.twc.com) has joined #racket
+2017-02-01 09:40:28	<--	jao (~jao@pdpc/supporter/professional/jao) has quit (Ping timeout: 240 seconds)
+2017-02-01 09:41:47	--	niklasl2 is now known as niklasl
+2017-02-01 09:49:10	-->	lambda-smith (~smith@p790383ee.kngwnt01.ap.so-net.ne.jp) has joined #racket
+2017-02-01 09:51:07	<--	jeapostrophe (~jay@racket/jeapostrophe) has quit (Ping timeout: 260 seconds)
+2017-02-01 09:51:40	<--	bjz_ (~bjz@104.222.140.84) has quit (Ping timeout: 240 seconds)
+2017-02-01 09:52:35	-->	bjz (~bjz@14-201-215-168.tpgi.com.au) has joined #racket
+2017-02-01 09:52:40	<--	lisp99 (75c99622@gateway/web/freenode/ip.117.201.150.34) has quit (Ping timeout: 260 seconds)
+2017-02-01 09:54:35	profmakx	blah
+2017-02-01 09:55:16	profmakx	I wonder if I can somehow find anyone who tells me how this continuation-mark-set->context works
+2017-02-01 09:55:27	profmakx	though I see there's documetnation on the webpage
+2017-02-01 09:55:30	profmakx	i might start with that
+2017-02-01 09:58:50	<--	ziyourenxiang (~ziyourenx@unaffiliated/ziyourenxiang) has quit (Quit: Leaving)
+2017-02-01 10:03:14	-->	nomicflux (~nomicflux@cpe-174-103-183-220.wi.res.rr.com) has joined #racket
+2017-02-01 10:04:38	-->	ziyourenxiang (~ziyourenx@unaffiliated/ziyourenxiang) has joined #racket
+2017-02-01 10:05:35	<--	corvicorax (sid113086@gateway/web/irccloud.com/x-pisttkzecczcpuqe) has quit (Ping timeout: 240 seconds)
+2017-02-01 10:07:27	<--	Intensity (ee2KV9FN4K@panix5.panix.com) has quit (Ping timeout: 256 seconds)
+2017-02-01 10:07:43	<--	drdo (~drdo@overlord0.drdo.eu) has quit (Quit: ZNC 1.6.3 - http://znc.in)
+2017-02-01 10:08:32	-->	corvicorax (sid113086@gateway/web/irccloud.com/x-limmhqxbahvetlji) has joined #racket
+2017-02-01 10:15:17	<--	stamourv (~stamourv@racket/stamourv) has quit (Ping timeout: 255 seconds)
+2017-02-01 10:16:13	-->	stamourv (~stamourv@racket/stamourv) has joined #racket
+2017-02-01 10:17:27	<--	Codaraxis__ (~Codaraxis@ip72-197-1-54.sd.sd.cox.net) has quit (Read error: Connection timed out)
+2017-02-01 10:19:38	-->	Codaraxis__ (~Codaraxis@ip72-197-1-54.sd.sd.cox.net) has joined #racket
+2017-02-01 10:19:58	-->	jessiepuls (~jessiepul@173-22-58-18.client.mchsi.com) has joined #racket
+2017-02-01 10:25:19	-->	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has joined #racket
+2017-02-01 10:25:19	<--	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has quit (Changing host)
+2017-02-01 10:25:19	-->	jeapostrophe (~jay@racket/jeapostrophe) has joined #racket
+2017-02-01 10:28:36	-->	Intensity (wrP_yL4ThK@panix5.panix.com) has joined #racket
+2017-02-01 10:30:17	<--	jeapostrophe (~jay@racket/jeapostrophe) has quit (Ping timeout: 245 seconds)
+2017-02-01 10:31:40	<--	nomicflux (~nomicflux@cpe-174-103-183-220.wi.res.rr.com) has quit (Quit: nomicflux)
+2017-02-01 10:32:57	<--	Intensity (wrP_yL4ThK@panix5.panix.com) has quit (Ping timeout: 256 seconds)
+2017-02-01 10:36:34	-->	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has joined #racket
+2017-02-01 10:36:34	<--	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has quit (Changing host)
+2017-02-01 10:36:34	-->	jeapostrophe (~jay@racket/jeapostrophe) has joined #racket
+2017-02-01 10:36:46	nyaacarD	soegaard, this one's a dead link: http://emr.cs.iit.edu/~reingold/tidier-drawings.pdf
+2017-02-01 10:36:51	nyaacarD	I'm going over the others, thanks
+2017-02-01 10:37:14	<--	slack-irc-bot (~slack-irc@ec2-54-205-17-121.compute-1.amazonaws.com) has quit (Remote host closed the connection)
+2017-02-01 10:37:33	-->	slack-irc-bot (~slack-irc@ec2-54-227-28-225.compute-1.amazonaws.com) has joined #racket
+2017-02-01 10:44:01	-->	Intensity (dyBSeewVSD@panix5.panix.com) has joined #racket
+2017-02-01 10:48:09	-->	JoshS (~jshjsh@172.58.94.222) has joined #racket
+2017-02-01 10:51:17	<--	UserJosh (~jshjsh@172.58.94.222) has quit (Ping timeout: 255 seconds)
+2017-02-01 11:02:13	-->	drdo (~drdo@overlord0.drdo.eu) has joined #racket
+2017-02-01 11:08:55	-->	kefin_ (~kefin@2001:700:300:4107:a047:1c59:ce2b:696b) has joined #racket
+2017-02-01 11:10:13	slack-irc-bot	<thinkmoore> answer to my earlier question about namespaces and eval is to just use `namespace-require` after parameterizing the current namespace. still not sure why my previous wasn’t working though (maybe something about scopes?)
+2017-02-01 11:13:23	stamourv	bremner: Yeah, still using 1st edition too. I kind of like using explicit substitution as a stepping stone, though. Will need to read over 2nd, to decide whether to upgrade.
+2017-02-01 11:16:10	<--	jeapostrophe (~jay@racket/jeapostrophe) has quit (Ping timeout: 240 seconds)
+2017-02-01 11:17:04	<--	jessiepuls (~jessiepul@173-22-58-18.client.mchsi.com) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2017-02-01 11:29:55	<--	kefin_ (~kefin@2001:700:300:4107:a047:1c59:ce2b:696b) has quit (Ping timeout: 258 seconds)
+2017-02-01 11:32:09	-->	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has joined #racket
+2017-02-01 11:32:09	<--	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has quit (Changing host)
+2017-02-01 11:32:09	-->	jeapostrophe (~jay@racket/jeapostrophe) has joined #racket
+2017-02-01 11:36:57	<--	jeapostrophe (~jay@racket/jeapostrophe) has quit (Ping timeout: 245 seconds)
+2017-02-01 11:37:29	<--	soegaard (~soegaard@188-183-250-62-static.dk.customer.tdc.net) has quit (Quit: soegaard)
+2017-02-01 11:38:00	-->	YuGiOhJCJ (~YuGiOhJCJ@bur64-4-78-199-90-154.fbx.proxad.net) has joined #racket
+2017-02-01 11:42:41	<--	cromachina (~cro@71-47-20-51.res.bhn.net) has quit (Ping timeout: 240 seconds)
+2017-02-01 11:45:19	-->	cromachina (~cro@71-47-20-51.res.bhn.net) has joined #racket
+2017-02-01 11:45:41	-->	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has joined #racket
+2017-02-01 11:45:41	<--	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has quit (Changing host)
+2017-02-01 11:45:41	-->	jeapostrophe (~jay@racket/jeapostrophe) has joined #racket
+2017-02-01 11:55:00	-->	rekahsoft (~rekahsoft@208.72.125.2) has joined #racket
+2017-02-01 11:59:38	-->	jessiepuls (~jessiepul@65.152.58.10) has joined #racket
+2017-02-01 12:02:56	-->	shwouchkster (uid154201@gateway/web/irccloud.com/x-eaqgzsmesaggfrel) has joined #racket
+2017-02-01 12:04:08	--	shwouchkster is now known as shwouchk
+2017-02-01 12:06:39	<--	cromachina (~cro@71-47-20-51.res.bhn.net) has quit (Read error: Connection reset by peer)
+2017-02-01 12:09:18	-->	pi- (~Ohmu@181.53.219.55) has joined #racket
+2017-02-01 12:09:36	pi-	http://download.racket-lang.org/releases/6.8/doc/quick/index.html#%28part._.Local_.Binding%29 <-- I'm struggling with section 7
+2017-02-01 12:09:55	pi-	(define (rgb-series mk)
+2017-02-01 12:09:55	pi-	  (vc-append
+2017-02-01 12:09:55	pi-	   (series (lambda (sz) (colorize (mk sz) "red")))
+2017-02-01 12:11:00	-->	jao (~jao@pdpc/supporter/professional/jao) has joined #racket
+2017-02-01 12:11:04	pi-	Looking at the prior definition of `series`, ..
+2017-02-01 12:12:34	pi-	oh I think I get it.  `series` takes a 1-param function (size) which will return a shape of that size.
+2017-02-01 12:12:56	pi-	yep gottit
+2017-02-01 12:13:03	pi-	</spam>
+2017-02-01 12:16:07	pi-	Just how useful is learning Racket if my goal is to understand LISP?
+2017-02-01 12:16:57	bremner	depends what you mean by LISP I guess. If your primary goal is to learn Common Lisp, the obvious thing to do is to learn that.
+2017-02-01 12:17:34	bremner	if you mean the whole family of lisp-like languages (including scheme) then racket is a reasonable place to start.
+2017-02-01 12:20:09	pi-	I'm working with Julia, which uses its own flavour of LISP to parse syntax
+2017-02-01 12:20:47	pi-	'FemtoLisp'
+2017-02-01 12:21:42	pi-	I'm choosing Racket as the tutorial is nice and visual, and will help me get my head around the LISP way of thinking.
+2017-02-01 12:22:21	profmakx	though not entirely clear which bit of that you need to use julia?
+2017-02-01 12:22:30	pi-	Just slightly concerned that it might start diverging from FemtoLisp
+2017-02-01 12:22:58	pi-	It's really to help me understand how Julia works under the hood.
+2017-02-01 12:23:16	pi-	As a simple Julia user, one would never see this machinery.
+2017-02-01 12:24:09	<--	dan_f (~dan@24-148-32-207.c3-0.grn-ubr1.chi-grn.il.cable.rcn.com) has quit (Quit: dan_f)
+2017-02-01 12:31:34	pi-	https://github.com/JeffBezanson/femtolisp "femtolisp is a simple, elegant Scheme dialect. It is a lisp-1 with lexical scope. The core is 12 builtin special forms and 33 builtin functions."
+2017-02-01 12:36:33	<--	cemerick (~cemerick@c-24-34-140-98.hsd1.ma.comcast.net) has quit (Ping timeout: 248 seconds)
+2017-02-01 12:50:35	<--	jeapostrophe (~jay@racket/jeapostrophe) has quit (Ping timeout: 240 seconds)
+2017-02-01 12:56:21	<--	pi- (~Ohmu@181.53.219.55) has quit (Remote host closed the connection)
+2017-02-01 13:24:08	<--	ziyourenxiang (~ziyourenx@unaffiliated/ziyourenxiang) has quit (Quit: Leaving)
+2017-02-01 13:24:34	-->	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has joined #racket
+2017-02-01 13:26:49	-->	dbmikus_ (~dbmikus@cpe-74-66-251-252.nyc.res.rr.com) has joined #racket
+2017-02-01 13:27:02	<--	dbmikus_ (~dbmikus@cpe-74-66-251-252.nyc.res.rr.com) has quit (Client Quit)
+2017-02-01 13:28:04	-->	endobson (~textual@c-24-4-5-182.hsd1.ca.comcast.net) has joined #racket
+2017-02-01 13:37:58	-->	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has joined #racket
+2017-02-01 13:40:31	<--	FreeFull (~freefull@defocus/sausage-lover) has quit (Quit: Off for now)
+2017-02-01 13:41:14	-->	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has joined #racket
+2017-02-01 13:41:14	<--	jeapostrophe (~jay@pool-98-118-113-97.bstnma.fios.verizon.net) has quit (Changing host)
+2017-02-01 13:41:14	-->	jeapostrophe (~jay@racket/jeapostrophe) has joined #racket
+2017-02-01 13:41:45	-->	adeohluwa (~rabbi@197.211.59.122) has joined #racket
+2017-02-01 13:42:06	-->	georges-duperon (~georges-d@2a01:e35:2e07:c9c0:40af:73fc:2846:d6b6) has joined #racket
+2017-02-01 13:46:10	<--	jeapostrophe (~jay@racket/jeapostrophe) has quit (Ping timeout: 240 seconds)
+2017-02-01 13:47:25	<--	lambda-smith (~smith@p790383ee.kngwnt01.ap.so-net.ne.jp) has quit (Quit: Konversation terminated!)
+2017-02-01 13:56:25	-->	cemerick (~cemerick@c-24-34-140-98.hsd1.ma.comcast.net) has joined #racket
+2017-02-01 14:15:38	-->	jeapostrophe (~jay@tern-pc.cs.uml.edu) has joined #racket
+2017-02-01 14:15:39	<--	jeapostrophe (~jay@tern-pc.cs.uml.edu) has quit (Changing host)
+2017-02-01 14:15:39	-->	jeapostrophe (~jay@racket/jeapostrophe) has joined #racket
+2017-02-01 14:15:40	<--	adeohluwa (~rabbi@197.211.59.122) has quit (Quit: Lost terminal)
+2017-02-01 14:21:00	kefin	In (read (open-input-string "(+ 1 2")) (the error is intentional), how can I first check if it's a valid datum?
+2017-02-01 14:21:23	samth	kefin: what do you mean?
+2017-02-01 14:21:44	samth	all you can really do is call `read` and see if it works
+2017-02-01 14:22:12	kefin	samth: I need to reliably tell if a string can actually be read at all
+2017-02-01 14:25:22	<--	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has quit (Quit: dan_f)
+2017-02-01 14:29:09	-->	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has joined #racket
+2017-02-01 14:37:32	cojy	kefin: that is the only check if it can be read
+2017-02-01 14:37:39	cojy	catch the error
+2017-02-01 14:40:53	-->	slemonide (~Thunderbi@dhcp-206-87-121-227.ubcsecure.wireless.ubc.ca) has joined #racket
+2017-02-01 14:41:07	<--	slemonide (~Thunderbi@dhcp-206-87-121-227.ubcsecure.wireless.ubc.ca) has quit (Client Quit)
+2017-02-01 14:44:29	georges-duperon	kefin: if you want to only check which part of the string can be read, e.g. know that in "(+ 1 2) blahblah" the first read will consume 7 characters, use peeking-input-port and file-position (note that there's a bug with those and unicode which got fixed yesterday by mflatt)
+2017-02-01 14:45:07	<--	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has quit (Quit: dan_f)
+2017-02-01 14:45:43	georges-duperon	kefin: otherwise (with-handlers ([exn:fail:read? (λ (e) #f)]) (list 'worked (read (open-input-string "(+ 1 2"))))
+2017-02-01 14:46:07	georges-duperon	(I hope I'm using the right exception type there)
+2017-02-01 14:59:37	-->	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has joined #racket
+2017-02-01 15:10:16	-->	adeohluwa (~rabbi@197.211.59.122) has joined #racket
+2017-02-01 15:28:02	<--	georges-duperon (~georges-d@2a01:e35:2e07:c9c0:40af:73fc:2846:d6b6) has quit (Ping timeout: 252 seconds)
+2017-02-01 15:41:13	<--	adeohluwa (~rabbi@197.211.59.122) has quit (Quit: Lost terminal)
+2017-02-01 15:42:31	-->	soegaard (~soegaard@188-183-250-62-static.dk.customer.tdc.net) has joined #racket
+2017-02-01 15:42:31	<--	soegaard (~soegaard@188-183-250-62-static.dk.customer.tdc.net) has quit (Client Quit)
+2017-02-01 15:49:37	<--	jessiepuls (~jessiepul@65.152.58.10) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2017-02-01 15:50:48	-->	jessiepuls (~jessiepul@65.152.58.10) has joined #racket
+2017-02-01 15:56:34	<--	badkins (~badkins@cpe-2606-A000-111B-6B-E051-72-AC44-704.dyn6.twc.com) has quit (Remote host closed the connection)
+2017-02-01 15:57:12	-->	badkins (~badkins@cpe-2606-A000-111B-6B-E051-72-AC44-704.dyn6.twc.com) has joined #racket
+2017-02-01 15:59:39	<--	jeapostrophe (~jay@racket/jeapostrophe) has quit (Ping timeout: 240 seconds)
+2017-02-01 16:01:47	<--	badkins (~badkins@cpe-2606-A000-111B-6B-E051-72-AC44-704.dyn6.twc.com) has quit (Ping timeout: 255 seconds)
+2017-02-01 16:06:42	-->	lambda-smith (~smith@p790383ee.kngwnt01.ap.so-net.ne.jp) has joined #racket
+2017-02-01 16:09:37	-->	montanonic (~nicholas@209.216.165.145) has joined #racket
+2017-02-01 16:10:52	-->	pilne (~pilne@75-132-212-62.dhcp.stls.mo.charter.com) has joined #racket
+2017-02-01 16:11:24	-->	manualcrank (~manualcra@mtrlpq2718w-lp130-05-76-65-55-210.dsl.bell.ca) has joined #racket
+2017-02-01 16:14:11	<--	bocaneri (~bocaneri@about/linux/staff/sauvin) has quit (Remote host closed the connection)
+2017-02-01 16:18:00	<--	shwouchk (uid154201@gateway/web/irccloud.com/x-eaqgzsmesaggfrel) has quit (Quit: Connection closed for inactivity)
+2017-02-01 16:19:47	-->	georges-duperon (~georges-d@2a01:e35:2e07:c9c0:40af:73fc:2846:d6b6) has joined #racket
+2017-02-01 16:27:36	-->	soegaard (~soegaard@188-183-250-62-static.dk.customer.tdc.net) has joined #racket
+2017-02-01 16:32:22	<--	soegaard (~soegaard@188-183-250-62-static.dk.customer.tdc.net) has quit (Ping timeout: 255 seconds)
+2017-02-01 16:33:20	-->	badkins (~badkins@2602:306:bc59:eb10:19a3:a731:47e0:6281) has joined #racket
+2017-02-01 16:36:48	<--	cpup (~cpup@32.218.114.68) has quit (Ping timeout: 240 seconds)
+2017-02-01 16:37:36	-->	cpup (~cpup@32.218.114.68) has joined #racket
+2017-02-01 16:39:37	-->	badkins_ (~badkins@2602:306:bc59:eb10:3c23:4fc6:6a18:15b4) has joined #racket
+2017-02-01 16:42:43	<--	badkins (~badkins@2602:306:bc59:eb10:19a3:a731:47e0:6281) has quit (Ping timeout: 255 seconds)
+2017-02-01 16:46:51	-->	soegaard (~soegaard@188-183-250-62-static.dk.customer.tdc.net) has joined #racket
+2017-02-01 16:53:53	<--	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has quit (Quit: dan_f)
+2017-02-01 16:54:57	<--	jaffachief (uid41113@gateway/web/irccloud.com/x-fgfjuxglmyowxzsl) has quit (Quit: Connection closed for inactivity)
+2017-02-01 17:06:30	<--	YuGiOhJCJ (~YuGiOhJCJ@bur64-4-78-199-90-154.fbx.proxad.net) has quit (Quit: YuGiOhJCJ)
+2017-02-01 17:11:10	-->	dented42 (~textual@174-23-44-2.slkc.qwest.net) has joined #racket
+2017-02-01 17:17:31	-->	YuGiOhJCJ (~YuGiOhJCJ@bur64-4-78-199-90-154.fbx.proxad.net) has joined #racket
+2017-02-01 17:27:13	<--	acarrico (~acarrico@pppoe-68-142-49-130.gmavt.net) has quit (Ping timeout: 248 seconds)
+2017-02-01 17:29:02	pseudonymous	soegaard: I tried compiling my toy racket webserver as you suggested yesterday (when I was asking whether there were any obvious optimisations I might look into) - turns out, compiling racket code doesn't actually lead to a speed benefit. The program is (possibly) loaded a bit faster, but it runs the same.
+2017-02-01 17:30:26	soegaard	pseudonymous: True - it's the loading times that improves.
+2017-02-01 17:31:25	pseudonymous	btw - noting your nationality - do we have any places in Denmark where racket is spoken of ? Meetups or the like ?
+2017-02-01 17:31:41	soegaard	If one accidently gets Racket installed without compiling the standard libraries, then you will see a big difference.
+2017-02-01 17:31:56	soegaard	pseudonymous: Not that I know of.
+2017-02-01 17:32:18	<--	montanonic (~nicholas@209.216.165.145) has quit (Ping timeout: 256 seconds)
+2017-02-01 17:32:33	soegaard	I'd like to hear about it if you find a meetup.
+2017-02-01 17:32:48	pseudonymous	Maybe we should just hijack the Clojure one ;)
+2017-02-01 17:33:12	soegaard	There could be some overlap in interest ;-)
+2017-02-01 17:44:55	<--	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has quit (Quit: Leaving.)
+2017-02-01 17:46:01	-->	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has joined #racket
+2017-02-01 17:54:07	-->	montanonic (~nicholas@209.216.165.145) has joined #racket
+2017-02-01 17:57:38	<--	georges-duperon (~georges-d@2a01:e35:2e07:c9c0:40af:73fc:2846:d6b6) has quit (Ping timeout: 252 seconds)
+2017-02-01 17:59:57	<--	YuGiOhJCJ (~YuGiOhJCJ@bur64-4-78-199-90-154.fbx.proxad.net) has quit (Remote host closed the connection)
+2017-02-01 18:00:50	<--	dented42 (~textual@174-23-44-2.slkc.qwest.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2017-02-01 18:01:46	-->	adeohluwa (~rabbi@197.211.59.122) has joined #racket
+2017-02-01 18:09:10	kefin	georges-duperon, thanks, that's quite useful
+2017-02-01 18:13:05	-->	jshjsh (~jshjsh@172.58.94.222) has joined #racket
+2017-02-01 18:13:57	-->	wtetzner (~wtetzner@129.63.253.71) has joined #racket
+2017-02-01 18:16:49	<--	JoshS (~jshjsh@172.58.94.222) has quit (Ping timeout: 248 seconds)
+2017-02-01 18:17:27	<--	cpup (~cpup@32.218.114.68) has quit (Ping timeout: 260 seconds)
+2017-02-01 18:19:02	<--	adeohluwa (~rabbi@197.211.59.122) has quit (Ping timeout: 245 seconds)
+2017-02-01 18:19:40	-->	cpup (~cpup@32.218.114.68) has joined #racket
+2017-02-01 18:20:17	<--	endobson (~textual@c-24-4-5-182.hsd1.ca.comcast.net) has quit (Quit: Computer has gone to sleep.)
+2017-02-01 18:27:20	-->	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has joined #racket
+2017-02-01 18:35:29	<--	z88 (~z88@122.82-130-205.dynamic.clientes.euskaltel.es) has quit (Quit: leaving)
+2017-02-01 18:36:00	-->	z88 (~z88@122.82-130-205.dynamic.clientes.euskaltel.es) has joined #racket
+2017-02-01 18:36:32	-->	unbalanced (~unbalance@190.191.216.249) has joined #racket
+2017-02-01 18:44:27	-->	develope_ (~developer@173-25-18-116.client.mchsi.com) has joined #racket
+2017-02-01 18:44:38	<--	develope_ (~developer@173-25-18-116.client.mchsi.com) has quit (Client Quit)
+2017-02-01 18:47:20	-->	developernotes (~developer@173-25-18-116.client.mchsi.com) has joined #racket
+2017-02-01 18:50:28	<--	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has quit (Quit: dan_f)
+2017-02-01 18:51:00	-->	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has joined #racket
+2017-02-01 19:01:37	<--	jshjsh (~jshjsh@172.58.94.222) has quit (Ping timeout: 248 seconds)
+2017-02-01 19:02:16	<--	teruyo (~pyon@unaffiliated/pyon) has quit (Quit: Stupid Emacs.)
+2017-02-01 19:02:53	-->	teruyo (~pyon@unaffiliated/pyon) has joined #racket
+2017-02-01 19:09:30	-->	georges-duperon (~georges-d@2a01:e35:2e07:c9c0:40af:73fc:2846:d6b6) has joined #racket
+2017-02-01 19:09:35	<--	jmiven (~vpm@woodcarver.algeb.re) has quit (Remote host closed the connection)
+2017-02-01 19:10:26	-->	jmiven (~vpm@woodcarver.algeb.re) has joined #racket
+2017-02-01 19:27:45	<--	cemerick (~cemerick@c-24-34-140-98.hsd1.ma.comcast.net) has quit (Ping timeout: 248 seconds)
+2017-02-01 19:28:39	<--	unbalanced (~unbalance@190.191.216.249) has quit (Quit: WeeChat 1.6)
+2017-02-01 19:42:50	-->	dented42 (~textual@174-23-44-2.slkc.qwest.net) has joined #racket
+2017-02-01 19:52:29	<--	badkins_ (~badkins@2602:306:bc59:eb10:3c23:4fc6:6a18:15b4) has quit (Remote host closed the connection)
+2017-02-01 19:54:50	<--	bjz (~bjz@14-201-215-168.tpgi.com.au) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2017-02-01 20:02:03	<--	developernotes (~developer@173-25-18-116.client.mchsi.com) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2017-02-01 20:11:34	-->	JoshS (~jshjsh@172.58.91.212) has joined #racket
+2017-02-01 20:14:02	<--	wtetzner (~wtetzner@129.63.253.71) has quit (Remote host closed the connection)
+2017-02-01 20:18:28	<--	rekahsoft (~rekahsoft@208.72.125.2) has quit (Remote host closed the connection)
+2017-02-01 20:19:01	<--	soegaard (~soegaard@188-183-250-62-static.dk.customer.tdc.net) has quit (Quit: soegaard)
+2017-02-01 20:19:24	-->	badkins (~badkins@cpe-2606-A000-111B-6B-D52D-F510-CCD0-650B.dyn6.twc.com) has joined #racket
+2017-02-01 20:19:54	<--	dan_f (~dan_f@wireless-165-124-144-136.nuwlan.northwestern.edu) has quit (Quit: dan_f)
+2017-02-01 20:20:10	-->	badkins_ (~badkins@cpe-2606-A000-111B-6B-B48C-D4FD-CD0D-AE3D.dyn6.twc.com) has joined #racket
+2017-02-01 20:23:40	<--	badkins (~badkins@cpe-2606-A000-111B-6B-D52D-F510-CCD0-650B.dyn6.twc.com) has quit (Ping timeout: 255 seconds)
+2017-02-01 20:37:52	-->	jshjsh (~jshjsh@172.58.91.212) has joined #racket
+2017-02-01 20:40:42	<--	JoshS (~jshjsh@172.58.91.212) has quit (Ping timeout: 245 seconds)
+2017-02-01 20:50:51	-->	imu96 (~imran@207.107.159.62) has joined #racket
+2017-02-01 21:09:00	-->	mizu_no_oto (~textual@73.114.35.25) has joined #racket
+2017-02-01 21:11:40	<--	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has quit (Quit: Leaving.)
+2017-02-01 21:12:22	-->	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has joined #racket
+2017-02-01 21:14:26	<--	imu96 (~imran@207.107.159.62) has quit (Quit: Leaving)
+2017-02-01 21:16:04	-->	badkins (~badkins@cpe-2606-A000-111B-6B-C104-2665-8B86-F72A.dyn6.twc.com) has joined #racket
+2017-02-01 21:16:21	-->	dan_f (~dan@24-148-32-207.c3-0.grn-ubr1.chi-grn.il.cable.rcn.com) has joined #racket
+2017-02-01 21:17:40	<--	badkins_ (~badkins@cpe-2606-A000-111B-6B-B48C-D4FD-CD0D-AE3D.dyn6.twc.com) has quit (Ping timeout: 255 seconds)
+2017-02-01 21:18:54	-->	acarrico (~acarrico@pppoe-68-142-49-130.gmavt.net) has joined #racket
+2017-02-01 21:24:05	-->	lisp99 (75f88eef@gateway/web/freenode/ip.117.248.142.239) has joined #racket
+2017-02-01 21:28:21	<--	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has quit (Quit: Leaving.)
+2017-02-01 21:29:25	-->	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has joined #racket
+2017-02-01 21:31:15	-->	cromachina (~cro@71-47-20-51.res.bhn.net) has joined #racket
+2017-02-01 21:36:03	-->	slemonide (~Thunderbi@dhcp-206-87-122-127.ubcsecure.wireless.ubc.ca) has joined #racket
+2017-02-01 21:53:53	<--	dented42 (~textual@174-23-44-2.slkc.qwest.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2017-02-01 21:54:08	<--	slemonide (~Thunderbi@dhcp-206-87-122-127.ubcsecure.wireless.ubc.ca) has quit (Ping timeout: 240 seconds)
+2017-02-01 22:02:17	-->	slemonide (~Thunderbi@dhcp-206-87-122-127.ubcsecure.wireless.ubc.ca) has joined #racket
+2017-02-01 22:04:07	<--	slemonide (~Thunderbi@dhcp-206-87-122-127.ubcsecure.wireless.ubc.ca) has quit (Client Quit)
+2017-02-01 22:07:07	-->	cemerick (~cemerick@c-24-34-140-98.hsd1.ma.comcast.net) has joined #racket
+2017-02-01 22:30:39	<--	mizu_no_oto (~textual@73.114.35.25) has quit (Quit: Computer has gone to sleep.)
+2017-02-01 22:38:09	<--	jshjsh (~jshjsh@172.58.91.212) has quit (Ping timeout: 248 seconds)
+2017-02-01 22:42:03	-->	arach (~fuguesque@2601:840:8300:2ea0:2507:fc3e:e23c:f78c) has joined #racket
+2017-02-01 22:52:30	-->	dented42 (~textual@makesaltlake.xwi.xmission.net) has joined #racket
+2017-02-01 22:55:44	<--	montanonic (~nicholas@209.216.165.145) has quit (Ping timeout: 252 seconds)
+2017-02-01 23:13:00	-->	mizu_no_oto (~textual@73.114.32.24) has joined #racket
+2017-02-01 23:13:26	<--	mizu_no_oto (~textual@73.114.32.24) has quit (Client Quit)
+2017-02-01 23:16:08	-->	mizu_no_oto (~textual@73.114.32.24) has joined #racket
+2017-02-01 23:16:11	<--	mizu_no_oto (~textual@73.114.32.24) has quit (Read error: Connection reset by peer)
+2017-02-01 23:18:38	-->	mizu_no_oto (~textual@73.114.32.24) has joined #racket
+2017-02-01 23:20:43	<--	dented42 (~textual@makesaltlake.xwi.xmission.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2017-02-01 23:21:28	<--	acarrico (~acarrico@pppoe-68-142-49-130.gmavt.net) has quit (Ping timeout: 240 seconds)
+2017-02-01 23:23:05	<--	mizu_no_oto (~textual@73.114.32.24) has quit (Ping timeout: 240 seconds)
+2017-02-01 23:24:05	-->	nomicflux (~nomicflux@cpe-174-103-183-220.wi.res.rr.com) has joined #racket
+2017-02-01 23:38:41	-->	acarrico (~acarrico@pppoe-68-142-49-130.gmavt.net) has joined #racket
+2017-02-01 23:43:34	-->	jeapostrophe (~jay@racket/jeapostrophe) has joined #racket
+2017-02-01 23:44:58	-->	montanonic (~nicholas@209.216.179.193) has joined #racket
+2017-02-01 23:46:10	<--	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has quit (Quit: Leaving.)
+2017-02-01 23:46:29	<--	nomicflux (~nomicflux@cpe-174-103-183-220.wi.res.rr.com) has quit (Quit: nomicflux)
+2017-02-01 23:47:00	-->	ptv (~pvirgo@pool-74-109-33-16.phlapa.fios.verizon.net) has joined #racket
+2017-02-01 23:51:34	-->	JoshS (~jshjsh@172.58.94.186) has joined #racket
+2017-02-01 23:52:18	-->	nomicflux (~nomicflux@cpe-174-103-183-220.wi.res.rr.com) has joined #racket
+2017-02-01 23:58:37	-->	badkins_ (~badkins@cpe-24-162-241-236.nc.res.rr.com) has joined #racket
+2017-02-02 00:00:33	<--	badkins (~badkins@cpe-2606-A000-111B-6B-C104-2665-8B86-F72A.dyn6.twc.com) has quit (Ping timeout: 255 seconds)
+2017-02-02 00:07:54	-->	dented42 (~textual@makesaltlake.xwi.xmission.net) has joined #racket

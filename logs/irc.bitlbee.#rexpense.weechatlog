@@ -1,0 +1,96 @@
+2017-12-08 11:04:50	-->	fschuindt (fschuindt@localhost) has joined #rexpense
+2017-12-08 11:04:50	--	Topic for #rexpense is "BitlBee groupchat: "21352_prestação_de_contas@conf.hipchat.com". Please keep in mind that root-commands won't work here. Have fun!"
+2017-12-08 11:04:50	--	Topic set by root (root@localhost) on Fri, 08 Dec 2017 11:04:50
+2017-12-08 11:04:50	--	Channel #rexpense: 12 nicks (2 ops, 0 halfops, 0 voices, 10 normals)
+2017-12-08 11:04:50	luizgustavo	[2017-12-01 16:20:43] estava fora e não pude participar da daily
+2017-12-08 11:04:50	rodrigo	[2017-12-01 16:24:10] @eduardo curti
+2017-12-08 11:04:50	eduardo	[2017-12-01 16:24:19] (thumbsup) 
+2017-12-08 11:04:50	alana	[2017-12-01 17:48:43] @all recebi uma solicitação de reembolso do Uber no Rexpense, e vi que o mapa não está aparecendo
+2017-12-08 11:04:50	alana	[2017-12-01 17:48:51] File uploaded: https://s3.amazonaws.com/uploads.hipchat.com/21352/624026/Bd59Wk78Esd2yRe/Captura%20de%20Tela%202017-12-01%20a%CC%80s%2017.47.58.png
+2017-12-08 11:04:50	eduardo	[2017-12-01 19:17:11] @all iniciando deploy do webapp Rexpense para rexpense-sandbox a partir do branch release-candidate em 1e8e7ebdb8d26aa1ffb4a995c9c9b50fcae1b2eb
+2017-12-08 11:04:50	Heroku	[2017-12-01 19:21:18] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v386) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/1e8e7ebdb8d26aa1ffb4a995c9c9b50fcae1b2eb">1e8e7ebd</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:50	eduardo	[2017-12-01 19:24:53] @all pessoal, as funcionalidades de política e de autorização estão em sandbox
+2017-12-08 11:04:50	eduardo	[2017-12-01 19:25:03] /cc @rodrigo @arnaldo @anaclaudia @adalberto 
+2017-12-08 11:04:50	eduardo	[2017-12-01 19:28:38] usem e abusem! :)
+2017-12-08 11:04:50	eduardo	[2017-12-01 19:28:47] aguardo feedback de vocês de melhorias/erros
+2017-12-08 11:04:50	anaclaudia	[2017-12-04 09:24:59] @all bom dia pessoal não estou conseguindo acessar o sandbox 
+2017-12-08 11:04:50	anaclaudia	[2017-12-04 09:25:03] File uploaded: https://s3.amazonaws.com/uploads.hipchat.com/21352/4017828/QwGD1KYh6Ex5830/upload.png
+2017-12-08 11:04:50	dante	[2017-12-04 10:05:50] Vou dar uma olhada @anaclaudia 
+2017-12-08 11:04:50	eduardo	[2017-12-04 10:09:49] Bom dia, pessoal. Vou atrasar pois estou fazendo um orçamento com um pedreiro. e daqui a pouco chego na empresa.
+2017-12-08 11:04:50	RodrigoAndrade	[2017-12-04 10:26:41] @all Pessoal estou indo a uma consulta médica agora, ficarei ausente por 40 min acredito eu, brb!
+2017-12-08 11:04:50	dante	[2017-12-04 10:27:55] @rodrigo o passaport web ta funcionando?
+2017-12-08 11:04:50	dante	[2017-12-04 10:36:07] nah, fiz login em production
+2017-12-08 11:04:50	dante	[2017-12-04 10:37:09] só não funciona pra dev e sandbox
+2017-12-08 11:04:50	eduardo	[2017-12-04 15:17:29] @all daily?
+2017-12-08 11:04:50	RodrigoAndrade	[2017-12-04 15:17:39] (thumbsup) 
+2017-12-08 11:04:50	eduardo	[2017-12-04 15:19:12] faltando o @dante e o @kobylinski 
+2017-12-08 11:04:50	dante	[2017-12-04 15:19:17] entrando
+2017-12-08 11:04:50	RodrigoAndrade	[2017-12-04 15:28:15] @all Iniciando deploy do app Rexpense(iOS) para sandbox a partir do branch 'expense-tracking' em ' b85eb26df739cbd92e7c945300400f8a2a2493bb'
+2017-12-08 11:04:50	eduardo	[2017-12-04 15:29:01] @all iniciando deploy do webapp Rexpense para rexpense-sandbox a partir do branch master em d1f7f3ac08183e4f8da771e53ad2fb133d6ce0ab
+2017-12-08 11:04:50	dante	[2017-12-04 15:31:55] Galera, vou pegar meu carro na oficina, volto já já, coisa de 30 minutos
+2017-12-08 11:04:50	Heroku	[2017-12-04 15:33:56] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v387) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/d1f7f3ac08183e4f8da771e53ad2fb133d6ce0ab">d1f7f3ac</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:50	RodrigoAndrade	[2017-12-04 15:34:34] @all deploy finalizado 
+2017-12-08 11:04:50	RodrigoAndrade	[2017-12-04 15:37:57] @all iniciando deploy do app Rexpense(iOS) para production a partir do branch 'master' em '0065394ef40e199853b172ed9a73f7fdb664ca20'
+2017-12-08 11:04:50	Heroku	[2017-12-04 15:39:42] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v388) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/46664e6e4024feddfd05ff262ce0cc98ce0c0ef8">46664e6e</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:50	RodrigoAndrade	[2017-12-04 15:49:16] @all deploy finalizado
+2017-12-08 11:04:50	eduardo	[2017-12-04 18:53:51] @all iniciando deploy do webapp Rexpense para rexpense-sandbox a partir do branch release-candidate em 9c99738db8d1cf3be681afc0972818349273d3dc
+2017-12-08 11:04:50	Heroku	[2017-12-04 18:56:16] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v389) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/9c99738db8d1cf3be681afc0972818349273d3dc">9c99738d</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:51	Heroku	[2017-12-04 20:21:27] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v390) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/0b20e9b8c7fb90e0b1c8d77a0042345d6da8f5fc">0b20e9b8</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:51	Heroku	[2017-12-04 20:29:04] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v391) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/12becffbabb1dbe9b4d8b8efbf3052fae2be4b90">12becffb</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:51	luizgustavo	[2017-12-05 10:27:33] Bom dia pessoal, estou resolvendo alguns problemas familiares e me atrasei um pouco, estarei na empresa daqui a pouco
+2017-12-08 11:04:51	eduardo	[2017-12-05 11:44:34] @all iniciando deploy do webapp Rexpense para rexpense-sandbox a partir do branch release-candidate em 7f8c5dc484ecb6d91c3f9eda63e8fce38e3923bc
+2017-12-08 11:04:51	Heroku	[2017-12-05 11:48:25] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v394) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/7f8c5dc484ecb6d91c3f9eda63e8fce38e3923bc">7f8c5dc4</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-05 11:56:20] @all app Rexpense versão 2.2 build 184 disponivel para testes via testflight em sandbox, detalhes sobre o teste estão incluídos também /cc @rodrigo @arnaldo 
+2017-12-08 11:04:51	rodrigo	[2017-12-05 11:57:23] valeu @RodrigoAndrade 
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-05 12:10:04] @all app Rexpense versão 2.1.8 build 190 disponivel para testes via testflight em production, detalhes sobre o teste estão incluídos  /cc @rodrigo @arnaldo 
+2017-12-08 11:04:51	eduardo	[2017-12-05 13:17:08] @all iniciando deploy do webapp Rexpense para rexpense-sandbox a partir do branch release-candidate em 32d19b819d1e7c5a1a0a796bbc9d3466460611f6
+2017-12-08 11:04:51	Heroku	[2017-12-05 13:19:02] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v395) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/32d19b819d1e7c5a1a0a796bbc9d3466460611f6">32d19b81</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:51	eduardo	[2017-12-05 15:28:56] @all iniciando deploy do webapp Rexpense para rexpense-production a partir do branch master em cf8fea66ebd8e12cd36ab347de4842c570afb458
+2017-12-08 11:04:51	Heroku	[2017-12-05 15:31:02] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para PRODUCTION no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-production">rexpense-production</a>, release v177) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/cf8fea66ebd8e12cd36ab347de4842c570afb458">cf8fea66</a>. Acesse o sistema via: <a href="https://app.rexpense.com">https://app.rexpense.com</a>
+2017-12-08 11:04:51	eduardo	[2017-12-05 15:37:59] @all deploy do app rexpense para production terminado, release: https://github.com/myfreecomm/rexpense/releases/tag/production-2017-12-05-15-31
+2017-12-08 11:04:51	rodrigo	[2017-12-06 11:23:08] @alexandre @RodrigoAndrade creio que as histórias deste epic que estão aguardando merge pro master e deploy para production já estão prontas para isso, não? https://app.clubhouse.io/nexaas/epic/2542/rexpense-despesas-de-dist%C3%A2ncia-percorrida-tracking-via-mobile-apps
+2017-12-08 11:04:51	rodrigo	[2017-12-06 11:23:29] tem duas como accepted ainda
+2017-12-08 11:04:51	alexandre	[2017-12-06 11:28:07] @rodrigo sim, a tracking está em accepted pq está esperando a funcionalidade do iOS estar pronta para ir a produção juntos. Assim que as funcionalidades de tracking forem disponibilizadas aos usuário as stories serão movidas para finished
+2017-12-08 11:04:51	rodrigo	[2017-12-06 11:32:13] ok, @RodrigoAndrade dá um gás no bugfix que falta por favor em https://app.clubhouse.io/nexaas/story/6647/9-bug-fixes-tracking
+2017-12-08 11:04:51	rodrigo	[2017-12-06 11:33:22] e @eduardo @dante @alexandre @RodrigoAndrade tem muitas histórias em Verify, Accepted e Merged, vamos focar em mandar para produção o quanto antes
+2017-12-08 11:04:51	eduardo	[2017-12-06 12:49:14] @rodrigo os cards em verify o @dante terminou essa semana e tá fazendo algumas modificações sugeridas. Os cards em accepted já estão em sandbox aguardando feedback do pessoal de algum bug (que já foi reportado e corrigido no início da semana)
+2017-12-08 11:04:51	eduardo	[2017-12-06 12:49:24] caso não tenha mais bug, mandaremos amanhã pra produção
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 16:07:35] @all iniciando deploy do app Rexpense(iOS) para sandbox a partir do branch 'expense-tracking' em '96f50cf64710134dda1f49694eecb702f89978bf'
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 16:24:47] @all deploy finalizado
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 17:32:23] @all app Rexpense(iOS) versão 2.2 build 186 disponível para testes via testflight em sandbox, detalhes sobre o teste incluídos /cc @rodrigo Assim que possível, testa para verificar se o valor estimado está calculando corretamente por favor e se possui mais bugs para serem corrigidos 
+2017-12-08 11:04:51	rodrigo	[2017-12-06 17:45:10] blz
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 17:47:50] @all iniciando deploy do app Rexpense(iOS) para production-testflight a partir do branch 'expense-tracking' em '60730cb6b22c5edaeb5e4928f7f5708e6865f385'
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 18:02:19] @all deploy finalizado
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 18:02:51] @all iniciando deploy do app Rexpense(iOS) para sandbox a partir do branch 'expense-tracking' em '60730cb6b22c5edaeb5e4928f7f5708e6865f385'
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 20:31:02] @all iniciando deploy do app Rexpense(iOS) para sandbox a partir do branch 'expense-tracking' em 'f59e9a83ae204dc453b8cde52e7118e147d4c6ec'
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 20:59:01] @all deploy finalizado
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 20:59:17] @all iniciando deploy do app Rexpense(iOS) para production-testflight a partir do branch 'expense-tracking' em 'f59e9a83ae204dc453b8cde52e7118e147d4c6ec
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-06 21:11:04] @all deploy finalizado
+2017-12-08 11:04:51	luizgustavo	[2017-12-07 09:34:46] @all Bom dia pessoal, acordei me sentindo meio mal e estou indo ao médico.
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-07 12:49:29] @all Iniciando deploy do app Rexpense(iOS) para sandbox a partir do branch 'master' em '6db862802f2c9fec332c8e331c024f0f5d20f8a5'
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-07 13:11:42] @all deploy finalizado
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-07 13:11:49] @all Iniciando deploy do app Rexpense(iOS) para production a partir do branch 'master' em '6db862802f2c9fec332c8e331c024f0f5d20f8a5'
+2017-12-08 11:04:51	RodrigoAndrade	[2017-12-07 13:32:09] @all deploy finalizado
+2017-12-08 11:04:51	eduardo	[2017-12-07 18:31:17] @all iniciando deploy do webapp Rexpense para rexpense-sandbox a partir do branch master em 0a858a17785877a04d0437e05c9469c0fbc53f13
+2017-12-08 11:04:51	Heroku	[2017-12-07 18:33:30] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para SANDBOX no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-sandbox">rexpense-sandbox</a>, release v396) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/0a858a17785877a04d0437e05c9469c0fbc53f13">0a858a17</a>. Acesse o sistema via: <a href="https://sandbox.rexpense.com">https://sandbox.rexpense.com</a>
+2017-12-08 11:04:51	eduardo	[2017-12-07 22:28:06] @all iniciando deploy do webapp Rexpense para rexpense-production a partir do branch master em 0a858a17785877a04d0437e05c9469c0fbc53f13
+2017-12-08 11:04:51	Heroku	[2017-12-07 22:34:05] eduardo.hertz@myfreecomm.com.br fez deploy do Rexpense para PRODUCTION no Heroku (app <a href="https://dashboard.heroku.com/apps/rexpense-production">rexpense-production</a>, release v178) a partir do commit <a href="https://github.com/myfreecomm/rexpense/commit/0a858a17785877a04d0437e05c9469c0fbc53f13">0a858a17</a>. Acesse o sistema via: <a href="https://app.rexpense.com">https://app.rexpense.com</a>
+2017-12-08 11:04:51	eduardo	[2017-12-07 22:42:36] @all deploy do app rexpense para production terminado, release: https://github.com/myfreecomm/rexpense/releases/tag/production-2017-12-07-22-34
+2017-12-08 11:04:51	eduardo	[2017-12-07 22:43:56] @all tudo certo e finalizado no deploy. até amanhã!
+2017-12-08 11:04:51	--	root has changed topic for #rexpense from "BitlBee groupchat: "21352_prestação_de_contas@conf.hipchat.com". Please keep in mind that root-commands won't work here. Have fun!" to "(rexpense) daily meeting: 15:00h / hangouts: https://hangouts.google.com/hangouts/_/myfreecomm.com.br/rexpense"
+2017-12-08 11:07:30	-->	jander (21352_105419@chat.hipchat.com) has joined #rexpense
+2017-12-08 11:09:06	<--	marcelo (21352_105422@chat.hipchat.com) has left #rexpense (hc-timeout)
+2017-12-08 11:12:18	-->	marcelo (21352_105422@chat.hipchat.com) has joined #rexpense
+2017-12-08 11:16:22	-->	lhalegria (21352_4485146@chat.hipchat.com) has joined #rexpense
+2017-12-08 11:16:46	<--	marcelo (21352_105422@chat.hipchat.com) has left #rexpense (hc-disconnect)
+2017-12-08 11:20:43	<--	luciana (21352_433869@chat.hipchat.com) has left #rexpense (hc-disconnect)
+2017-12-08 11:25:05	<--	RodrigoAndrade (21352_4502029@chat.hipchat.com) has left #rexpense (hc-timeout)
+2017-12-08 11:25:11	-->	RodrigoAndrade (21352_4502029@chat.hipchat.com) has joined #rexpense
+2017-12-08 11:26:22	-->	luciana (21352_433869@chat.hipchat.com) has joined #rexpense
+2017-12-08 11:27:55	-->	marcelo (21352_105422@chat.hipchat.com) has joined #rexpense
+2017-12-08 11:31:22	<--	marcelo (21352_105422@chat.hipchat.com) has left #rexpense (hc-timeout)
+2017-12-08 11:36:09	<--	RodrigoAndrade (21352_4502029@chat.hipchat.com) has left #rexpense (hc-timeout)
+2017-12-08 11:36:15	-->	RodrigoAndrade (21352_4502029@chat.hipchat.com) has joined #rexpense
+2017-12-08 11:37:20	<--	lhalegria (21352_4485146@chat.hipchat.com) has left #rexpense (hc-disconnect)
+2017-12-08 11:40:43	<--	RodrigoAndrade (21352_4502029@chat.hipchat.com) has left #rexpense (hc-disconnect)
+2017-12-08 11:43:29	-->	lhalegria (21352_4485146@chat.hipchat.com) has joined #rexpense

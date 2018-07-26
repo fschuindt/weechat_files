@@ -1,0 +1,31 @@
+2017-12-11 15:47:17	-->	fschuindt (~fschuindt@187.102.174.134) has joined ##openssl
+2017-12-11 15:47:17	--	Topic for ##openssl is "LATEST RELEASES: 1.1.0g (2-Nov-2017), 1.0.2n (7-Dec-2017) | SECURITY ADVISORY: https://www.openssl.org/news/secadv/20171207.txt"
+2017-12-11 15:47:17	--	Topic set by byte_bucket (~byte_buck@pdpc/supporter/professional/bytebucket) on Thu, 07 Dec 2017 12:28:22
+2017-12-11 15:47:17	--	Channel ##openssl: 173 nicks (1 op, 0 voices, 172 normals)
+2017-12-11 15:47:17	--	PvNotice(ChanServ): 02-Jan-2017: The OpenSSL 1.0.1 series of releases are now out of support. Please upgrade to 1.1.0 or 1.0.2
+2017-12-11 15:47:19	--	Channel created on Tue, 13 May 2014 20:24:59
+2017-12-11 15:48:49	fschuindt	There's any clever/fast way to install a old Openssl release version in my Mac OS? Homebrew seems not to support legacy versions. I've tried to compile from source. I was able to compile but not to install. Any tip?
+2017-12-11 15:51:12	<--	chachasmooth (~chachasmo@unaffiliated/chachasmooth) has quit (Ping timeout: 240 seconds)
+2017-12-11 15:51:42	-->	chachasmooth (~chachasmo@unaffiliated/chachasmooth) has joined ##openssl
+2017-12-11 15:57:51	-->	xemdetia (~xemdetia@104.247.39.34) has joined ##openssl
+2017-12-11 15:57:51	--	Mode ##openssl [+v xemdetia] by ChanServ
+2017-12-11 16:11:15	<--	NotSecwitter (~NonSecwit@unaffiliated/nonsecwitter) has quit (Ping timeout: 268 seconds)
+2017-12-11 16:12:41	-->	GTAXL (~gtaxlnetw@unaffiliated/gtaxl) has joined ##openssl
+2017-12-11 16:13:47	GTAXL	What is the recommended public key format for S/MIME certs that all e-mail clients can import? .crt .pem .der .p7c ?
+2017-12-11 16:14:31	GTAXL	I have a p12, how can I pull the public key out of it?
+2017-12-11 16:17:55	-->	NotSecwitter (~NonSecwit@unaffiliated/nonsecwitter) has joined ##openssl
+2017-12-11 16:31:34	<--	johnny56_ (~johnny56@CPE6805ca067aae-CMac202e08d8b0.cpe.net.cable.rogers.com) has quit (Ping timeout: 264 seconds)
+2017-12-11 16:33:13	<--	xemdetia (~xemdetia@104.247.39.34) has quit (Quit: Leaving)
+2017-12-11 16:33:44	-->	johnny56_ (~johnny56@unaffiliated/johnny56) has joined ##openssl
+2017-12-11 16:34:15	<--	vdamewood (~vdamewood@unaffiliated/vdamewood) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2017-12-11 16:53:29	-->	ebarretto_ (~ebarretto@187.106.45.208) has joined ##openssl
+2017-12-11 16:55:52	<--	ebarretto (~ebarretto@187.106.45.208) has quit (Ping timeout: 251 seconds)
+2017-12-11 17:04:54	--	ebarretto_ is now known as ebarretto
+2017-12-11 17:17:48	-->	Xylitol (~temari@unaffiliated/xylitol) has joined ##openssl
+2017-12-11 17:28:19	<--	hays (~quassel@fsf/member/hays) has quit (Read error: Connection reset by peer)
+2017-12-11 17:29:27	-->	hays (~quassel@93.171.217.42) has joined ##openssl
+2017-12-11 17:29:28	<--	hays (~quassel@93.171.217.42) has quit (Changing host)
+2017-12-11 17:29:28	-->	hays (~quassel@fsf/member/hays) has joined ##openssl
+2017-12-11 17:41:57	-->	b0l3x (bolex@gateway/shell/xshellz/x-rebwkelivqryetso) has joined ##openssl
+2017-12-11 17:54:52	<--	prg318 (~prg@deadcodersociety/prg318) has quit (Ping timeout: 250 seconds)
+2017-12-11 17:57:28	-->	prg318 (~prg@deadcodersociety/prg318) has joined ##openssl

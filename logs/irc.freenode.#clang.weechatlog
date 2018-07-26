@@ -1,0 +1,368 @@
+2018-03-08 22:14:57	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-08 22:14:57	--	Channel #clang: 43 nicks (0 ops, 0 voices, 43 normals)
+2018-03-08 22:15:00	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-08 22:15:35	fschuindt	Folks, I've implemented the same math formula in C and in Elixir. The Elixir version returns 21.000000000000004, the C one returns 23.478714. I've elaborated here: https://gist.github.com/fschuindt/edc3369c16a741e2253acff1ad2d8cad I'm probably making something stupid. Any tip is welcome, cheers!
+2018-03-08 22:17:50	eyepatch	How do I determine which version of the standard library is being used for linking?
+2018-03-08 22:18:19	eyepatch	##c++ helped me figure out that the issue was that I was linking to an old std library with a new version of lang.
+2018-03-08 22:23:27	eyepatch	fschuindt: A quick calculation in Python suggests that the answer should be 23.4787....
+2018-03-08 22:24:34	eyepatch	I don't know Elixir, but I noticed that in your C code, your types and literals are all over the place. You're using integers in some places, doubles in other, etc. Is it possible that you're doing integer arithmetic in Elixir somewhere?
+2018-03-08 22:26:31	fschuindt	eyepatch: I'm not quite sure. Elixir is suposed to handle the types for me. I'm doing a hand calculation right now.
+2018-03-08 22:26:54	eyepatch	(x_of(n) - y_of(n)) / @golden_n
+2018-03-08 22:26:57	fschuindt	When you say "all over the place", isn't suposed to be that way? Sorry, I'm learning C, this is my first program.
+2018-03-08 22:26:57	eyepatch	This looks suspect
+2018-03-08 22:27:24	fschuindt	why?
+2018-03-08 22:27:26	eyepatch	In C, you have "return (XOf(n) - YOf(n)) / 2;"
+2018-03-08 22:27:49	fschuindt	yes
+2018-03-08 22:27:58	fschuindt	isn't the same thing?
+2018-03-08 22:28:01	eyepatch	That first calculation is simply labeled of, but if it's supposed to be "fib of" you're simply using two different calculations.
+2018-03-08 22:28:07	eyepatch	golden_n != 2
+2018-03-08 22:28:46	fschuindt	I'm kinda confused :/
+2018-03-08 22:28:47	eyepatch	I don't know what the correct answer should be, but try substituting (XOf(n) - YOf(n)) / GOLDEN_N; in FibOf
+2018-03-08 22:29:08	fschuindt	or
+2018-03-08 22:29:09	fschuindt	man
+2018-03-08 22:29:11	fschuindt	I got it
+2018-03-08 22:29:21	fschuindt	thanks very much eyepatch 
+2018-03-08 22:29:33	eyepatch	In one language, you're dividing by 2. In another, you're dividing by 2.236. I'm not surprised if you're getting different results.
+2018-03-08 22:30:13	fschuindt	yes, me too. haha, I knew it was something stupid
+2018-03-08 22:31:44	eyepatch	Re: types, Take a look at "return powl((numerator / 2), n);"
+2018-03-08 22:32:16	eyepatch	Here, you're taking a double, dividing it by an integer, and then using it in a function that takes a long double with another integer, then casting the result to a long double for the return.
+2018-03-08 22:32:47	eyepatch	I'm not sure if I got that right either, so I usually try to avoid mixing types like that this much.
+2018-03-08 22:34:09	fschuindt	I understand, I will improve this. I'm just starting my journey in C. And thank you again. Really helpful.
+2018-03-08 22:34:25	fschuindt	And about the correct formula: https://fschuindt.github.io/blog/2017/09/21/concurrent-calculation-of-fibonacci-in-elixir.html
+2018-03-08 22:34:57	fschuindt	This is a post by me. It's suposed to divide by sqrt(5) (aka golden_n), not by 2.
+2018-03-08 22:35:13	fschuindt	And the awnser is 21, becuase is the 8th Fibonacci term position
+2018-03-08 22:38:35	eyepatch	https://pastebin.com/n58Vxfbr
+2018-03-08 22:39:14	eyepatch	I've changed the types and made the implicit return cast explicit here. I don't usually use a long double type, usually doubles are plenty precise for me, but I thought I'd keep with your convention.
+2018-03-08 22:40:13	eyepatch	https://pastebin.com/877xM4Vy
+2018-03-08 22:40:18	eyepatch	Here's a version that uses doubles
+2018-03-08 22:41:05	eyepatch	Oops. I used <cmath> (which is a C++) thing. I meant to use <math.h>. You may need to fix other C++-isms.
+2018-03-08 22:41:23	fschuindt	eyepatch: Sir, you're amazing. Thank you again. I will implement your way, or if you want: https://github.com/fschuindt/cfib feel free to do it yourself (for proper credits)
+2018-03-08 22:44:33	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 248 seconds)
+2018-03-08 23:04:28	<--	zautomata1 (~zautomata@41.232.209.16) has quit (Quit: WeeChat 1.9.1)
+2018-03-08 23:04:54	-->	zautomata (~zautomata@41.232.209.16) has joined #clang
+2018-03-08 23:04:54	<--	zautomata (~zautomata@41.232.209.16) has quit (Changing host)
+2018-03-08 23:04:54	-->	zautomata (~zautomata@unaffiliated/zautomata) has joined #clang
+2018-03-08 23:07:44	<--	eyepatch (48210296@gateway/web/freenode/ip.72.33.2.150) has left #clang
+2018-03-08 23:43:11	<--	rdwampler (~rdwampler@2602:30a:2c92:4f30:18df:6d81:923:88d3) has quit (Remote host closed the connection)
+2018-03-08 23:45:43	-->	beata (~john@pool-74-107-114-184.bltmmd.fios.verizon.net) has joined #clang
+2018-03-08 23:46:48	<--	beata (~john@pool-74-107-114-184.bltmmd.fios.verizon.net) has quit (Quit: Leaving)
+2018-03-09 01:03:59	--	irc: disconnected from server
+2018-03-09 01:04:26	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-09 01:04:26	--	Channel #clang: 39 nicks (0 ops, 0 voices, 39 normals)
+2018-03-09 01:04:27	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-09 02:04:45	--	irc: disconnected from server
+2018-03-09 02:05:12	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-09 02:05:13	--	Channel #clang: 39 nicks (0 ops, 0 voices, 39 normals)
+2018-03-09 02:05:13	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-09 03:05:32	--	irc: disconnected from server
+2018-03-09 03:06:00	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-09 03:06:00	--	Channel #clang: 39 nicks (0 ops, 0 voices, 39 normals)
+2018-03-09 03:06:00	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-09 03:10:28	--	irc: disconnected from server
+2018-03-09 09:01:57	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-09 09:01:57	--	Channel #clang: 40 nicks (0 ops, 0 voices, 40 normals)
+2018-03-09 09:01:57	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-09 09:21:57	<--	orbiter (~orbiter@ipservice-092-217-000-227.092.217.pools.vodafone-ip.de) has quit
+2018-03-09 10:00:03	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-09 10:31:54	-->	rdwampler (~rdwampler@144.121.163.210) has joined #clang
+2018-03-09 10:32:37	<--	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has quit (Ping timeout: 268 seconds)
+2018-03-09 10:38:41	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-09 11:02:32	-->	orbiter (~orbiter@ipservice-092-217-000-227.092.217.pools.vodafone-ip.de) has joined #clang
+2018-03-09 11:14:36	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 256 seconds)
+2018-03-09 11:16:09	<--	interop_madness (~interop_m@unaffiliated/interop-madness/x-8858653) has quit (Read error: Connection reset by peer)
+2018-03-09 11:30:35	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-09 11:47:02	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 256 seconds)
+2018-03-09 12:15:22	<--	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has quit (Ping timeout: 256 seconds)
+2018-03-09 13:09:08	-->	proteus-guy (~proteus-g@cm-134-196-84-176.revip18.asianet.co.th) has joined #clang
+2018-03-09 13:14:45	-->	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-09 13:20:11	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-09 15:37:20	-->	rdwample_ (~rdwampler@144.121.163.210) has joined #clang
+2018-03-09 15:37:53	<--	rdwampler (~rdwampler@144.121.163.210) has quit (Ping timeout: 240 seconds)
+2018-03-09 15:38:30	<--	elldekaa (93532ad3@gateway/web/freenode/ip.147.83.42.211) has quit (Ping timeout: 260 seconds)
+2018-03-09 17:28:30	<--	rdwample_ (~rdwampler@144.121.163.210) has quit (Remote host closed the connection)
+2018-03-09 17:30:31	-->	rdwampler (~rdwampler@144.121.163.210) has joined #clang
+2018-03-09 17:30:34	<--	rdwampler (~rdwampler@144.121.163.210) has quit (Remote host closed the connection)
+2018-03-09 17:31:08	-->	rdwampler (~rdwampler@144.121.163.210) has joined #clang
+2018-03-09 18:23:45	<--	rdwampler (~rdwampler@144.121.163.210) has quit (Ping timeout: 248 seconds)
+2018-03-09 19:28:23	<--	snkcld (sid54536@gateway/web/irccloud.com/x-eeleiqubpkhutelr) has quit (Read error: Connection reset by peer)
+2018-03-09 19:29:24	-->	snkcld (sid54536@gateway/web/irccloud.com/x-sxwfxrhfixodotax) has joined #clang
+2018-03-09 19:29:33	<--	l1x (sid1954@gateway/web/irccloud.com/x-thcrygsqxfdepqxb) has quit (Ping timeout: 256 seconds)
+2018-03-09 19:31:25	-->	l1x (sid1954@gateway/web/irccloud.com/x-ostxfyjeptauqegx) has joined #clang
+2018-03-09 19:44:34	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-09 20:47:01	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 265 seconds)
+2018-03-09 23:06:34	<--	epony (~nym@77-85-134-248.ip.btc-net.bg) has quit (Remote host closed the connection)
+2018-03-09 23:17:24	-->	epony (~nym@77-85-134-248.ip.btc-net.bg) has joined #clang
+2018-03-10 00:32:01	--	irc: disconnected from server
+2018-03-10 00:50:12	--	irc: disconnected from server
+2018-03-10 00:50:40	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-10 00:50:40	--	Channel #clang: 40 nicks (0 ops, 0 voices, 40 normals)
+2018-03-10 00:50:40	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-10 01:56:43	--	irc: disconnected from server
+2018-03-10 01:57:10	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-10 01:57:10	--	Channel #clang: 40 nicks (0 ops, 0 voices, 40 normals)
+2018-03-10 01:57:10	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-10 03:57:32	--	irc: disconnected from server
+2018-03-10 03:58:00	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-10 03:58:00	--	Channel #clang: 39 nicks (0 ops, 0 voices, 39 normals)
+2018-03-10 03:58:00	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-10 09:01:18	--	irc: disconnected from server
+2018-03-10 09:01:45	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-10 09:01:45	--	Channel #clang: 39 nicks (0 ops, 0 voices, 39 normals)
+2018-03-10 09:01:45	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-10 11:49:32	--	irc: disconnected from server
+2018-03-10 11:50:00	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-10 11:50:00	--	Channel #clang: 39 nicks (0 ops, 0 voices, 39 normals)
+2018-03-10 11:50:01	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-10 12:07:38	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 240 seconds)
+2018-03-10 13:10:30	-->	rdwampler (~rdwampler@2602:30a:2c92:4f30:d92f:3db8:67dc:1648) has joined #clang
+2018-03-10 13:26:31	<--	zone117x (sid117212@gateway/web/irccloud.com/x-ssgeotptqpiucchd) has quit (Read error: Connection reset by peer)
+2018-03-10 13:26:48	-->	zone117x (sid117212@gateway/web/irccloud.com/x-fwmoikqtbchqfqqt) has joined #clang
+2018-03-10 13:59:53	<--	rdwampler (~rdwampler@2602:30a:2c92:4f30:d92f:3db8:67dc:1648) has quit (Remote host closed the connection)
+2018-03-10 14:50:56	-->	orbiter (~orbiter@ipservice-092-217-000-227.092.217.pools.vodafone-ip.de) has joined #clang
+2018-03-10 15:19:32	<--	eponym (~nym@77-85-141-14.ip.btc-net.bg) has quit (Remote host closed the connection)
+2018-03-10 15:33:08	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-10 15:48:26	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Read error: Connection reset by peer)
+2018-03-10 15:52:45	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-10 16:53:31	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-10 20:01:24	<--	cYmen (~simon2@squint.a-oben.org) has quit (Ping timeout: 260 seconds)
+2018-03-10 20:01:40	-->	cYmen (~simon2@squint.a-oben.org) has joined #clang
+2018-03-10 20:31:39	-->	salamanderrake (~quassel@2605:a000:122a:1c8:dcbf:19f:a4b1:8ef3) has joined #clang
+2018-03-10 21:00:04	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Quit: QUIT)
+2018-03-10 21:02:48	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-10 21:32:06	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 255 seconds)
+2018-03-10 23:14:45	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-11 01:14:58	-->	hgoel (uid175521@gateway/web/irccloud.com/x-jwjxffvygkhnofcw) has joined #clang
+2018-03-11 05:21:00	--	irc: disconnected from server
+2018-03-11 05:21:26	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-11 05:21:26	--	Channel #clang: 43 nicks (0 ops, 0 voices, 43 normals)
+2018-03-11 05:21:26	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-11 06:21:55	--	irc: disconnected from server
+2018-03-11 06:22:22	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-11 06:22:22	--	Channel #clang: 43 nicks (0 ops, 0 voices, 43 normals)
+2018-03-11 06:22:22	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-11 08:23:21	--	irc: disconnected from server
+2018-03-11 08:23:49	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-11 08:23:49	--	Channel #clang: 43 nicks (0 ops, 0 voices, 43 normals)
+2018-03-11 08:23:50	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-11 09:24:07	--	irc: disconnected from server
+2018-03-11 09:24:31	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-11 09:24:31	--	Channel #clang: 42 nicks (0 ops, 0 voices, 42 normals)
+2018-03-11 09:24:31	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-11 10:24:53	--	irc: disconnected from server
+2018-03-11 10:25:20	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-11 10:25:20	--	Channel #clang: 41 nicks (0 ops, 0 voices, 41 normals)
+2018-03-11 10:25:20	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-11 11:25:45	--	irc: disconnected from server
+2018-03-11 11:26:11	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-11 11:26:11	--	Channel #clang: 40 nicks (0 ops, 0 voices, 40 normals)
+2018-03-11 11:26:11	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-11 12:18:28	--	irc: disconnected from server
+2018-03-11 12:19:00	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-11 12:19:00	--	Channel #clang: 41 nicks (0 ops, 0 voices, 41 normals)
+2018-03-11 12:19:01	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-11 16:27:34	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 260 seconds)
+2018-03-11 17:16:01	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Quit: QUIT)
+2018-03-11 17:24:43	-->	dev1990 (~dev@78.9.128.90) has joined #clang
+2018-03-11 17:26:41	<--	dev1990_ (~dev@78.9.128.90) has quit (Ping timeout: 248 seconds)
+2018-03-11 18:16:10	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-11 22:31:41	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-12 01:32:42	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Remote host closed the connection)
+2018-03-12 01:58:40	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-12 02:27:37	--	irc: disconnected from server
+2018-03-12 02:35:18	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-12 02:35:18	--	Channel #clang: 41 nicks (0 ops, 0 voices, 41 normals)
+2018-03-12 02:35:18	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-12 10:58:57	--	irc: disconnected from server
+2018-03-12 10:59:21	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-12 10:59:21	--	Channel #clang: 42 nicks (0 ops, 0 voices, 42 normals)
+2018-03-12 10:59:21	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-12 11:17:28	<--	pdobrogost (uid195495@gateway/web/irccloud.com/x-xwgmllbbhusbtjlj) has quit (Quit: Connection closed for inactivity)
+2018-03-12 12:14:48	-->	orbiter (~orbiter@ipservice-092-217-000-227.092.217.pools.vodafone-ip.de) has joined #clang
+2018-03-12 12:25:12	-->	maketo (~user@24.149.72.92) has joined #clang
+2018-03-12 12:25:17	<--	maketo (~user@24.149.72.92) has left #clang
+2018-03-12 13:00:14	-->	cr4zyg3n3 (~crazygene@201.187.47.201) has joined #clang
+2018-03-12 13:07:44	<--	interop_madness (~interop_m@unaffiliated/interop-madness/x-8858653) has quit (Quit: Leaving)
+2018-03-12 14:57:48	-->	pdobrogost_ (uid195495@gateway/web/irccloud.com/x-tygnmbkzgqtpxwlw) has joined #clang
+2018-03-12 15:14:03	-->	mouthbreather (~orbiter@ipservice-092-211-140-224.092.211.pools.vodafone-ip.de) has joined #clang
+2018-03-12 15:14:05	<--	orbiter (~orbiter@ipservice-092-217-000-227.092.217.pools.vodafone-ip.de) has quit (Ping timeout: 240 seconds)
+2018-03-12 15:30:35	Kronuz	Hello, hey, I have a question ... while using clang 5 and compiling my code with -fsanitize=thread ... do I need to instrument libc++ or anything else?
+2018-03-12 15:31:36	Kronuz	also, other libraries I use in the code (such zlib and others, those do need to have been compiled using -fsanitize=thread, right?
+2018-03-12 17:00:22	<--	rdwampler (~rdwampler@144.121.163.210) has quit (Ping timeout: 264 seconds)
+2018-03-12 18:50:44	<--	cr4zyg3n3 (~crazygene@201.187.47.201) has quit (Ping timeout: 260 seconds)
+2018-03-12 18:51:07	-->	cr4zyg3n3 (~crazygene@201.187.47.201) has joined #clang
+2018-03-12 19:00:45	-->	zarzar (~zarzar@cpe-75-177-76-187.triad.res.rr.com) has joined #clang
+2018-03-12 19:01:36	<--	zarzar (~zarzar@cpe-75-177-76-187.triad.res.rr.com) has quit (Remote host closed the connection)
+2018-03-12 19:49:13	<--	zzarr_ (~zzarr@h83-209-217-68.cust.se.alltele.net) has quit (Ping timeout: 240 seconds)
+2018-03-12 20:25:18	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 265 seconds)
+2018-03-12 21:00:12	<--	cr4zyg3n3 (~crazygene@201.187.47.201) has quit (Read error: Connection reset by peer)
+2018-03-12 21:49:20	-->	rdwampler (~rdwampler@2602:30a:2c92:4f30:b408:406a:4142:7b8e) has joined #clang
+2018-03-13 10:09:54	--	irc: disconnected from server
+2018-03-13 10:10:19	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-13 10:10:19	--	Channel #clang: 41 nicks (0 ops, 0 voices, 41 normals)
+2018-03-13 10:10:19	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-13 11:20:21	-->	talin_ (~talin@hydra.org) has joined #clang
+2018-03-13 11:20:30	<--	talin_ (~talin@hydra.org) has left #clang
+2018-03-13 11:27:30	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 240 seconds)
+2018-03-13 11:42:34	-->	rdwampler (~rdwampler@96-64-131-75-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-13 12:57:57	-->	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-13 12:58:25	<--	rdwampler (~rdwampler@96-64-131-75-static.hfc.comcastbusiness.net) has quit (Remote host closed the connection)
+2018-03-13 13:21:22	<--	interop_madness (~interop_m@unaffiliated/interop-madness/x-8858653) has quit (Quit: Leaving)
+2018-03-13 13:37:07	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-13 13:55:38	<--	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has quit (Read error: Connection reset by peer)
+2018-03-13 13:56:49	-->	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-13 14:53:30	<--	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has quit (Ping timeout: 256 seconds)
+2018-03-13 16:23:11	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-13 16:26:31	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Client Quit)
+2018-03-13 16:31:46	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-13 16:35:27	<--	salamanderrake (~quassel@2605:a000:122a:1c8:dcbf:19f:a4b1:8ef3) has quit (Ping timeout: 252 seconds)
+2018-03-13 18:34:22	-->	MacMogIn_ (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-13 18:34:22	<--	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has quit (Read error: Connection reset by peer)
+2018-03-13 18:58:07	-->	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has joined #clang
+2018-03-13 19:06:33	<--	MacMogIn_ (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has quit (Ping timeout: 240 seconds)
+2018-03-13 19:21:55	<--	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has quit (Remote host closed the connection)
+2018-03-13 19:34:57	-->	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has joined #clang
+2018-03-13 20:12:09	<--	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has quit (Remote host closed the connection)
+2018-03-13 20:30:40	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 256 seconds)
+2018-03-13 21:33:45	--	irc: disconnected from server
+2018-03-13 21:34:13	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-13 21:34:13	--	Channel #clang: 38 nicks (0 ops, 0 voices, 38 normals)
+2018-03-13 21:34:14	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-14 09:01:10	--	irc: disconnected from server
+2018-03-14 09:01:37	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-14 09:01:37	--	Channel #clang: 39 nicks (0 ops, 0 voices, 39 normals)
+2018-03-14 09:01:37	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-14 09:33:50	-->	rdwampler (~rdwampler@144.121.163.210) has joined #clang
+2018-03-14 11:08:04	-->	windblow (~bliss@177.86.193.119) has joined #clang
+2018-03-14 11:15:14	<--	windblow (~bliss@177.86.193.119) has quit
+2018-03-14 11:15:27	-->	windblow (~bliss@177.86.193.119) has joined #clang
+2018-03-14 11:20:06	<--	windblow (~bliss@177.86.193.119) has quit (Read error: Connection reset by peer)
+2018-03-14 11:20:58	-->	windblow (~bliss@177.86.193.119) has joined #clang
+2018-03-14 11:55:22	-->	talin_ (~talin@hydra.org) has joined #clang
+2018-03-14 11:55:56	talin_	hello. i am trying to use a program that uses clang-check, but it can't find a bunch of headers, such as exception, memory etc (C++)
+2018-03-14 11:56:04	talin_	where would these files typically be located?
+2018-03-14 12:37:21	-->	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-14 13:06:17	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Quit: QUIT)
+2018-03-14 13:22:16	<--	windblow (~bliss@177.86.193.119) has quit
+2018-03-14 13:22:36	-->	windblow (~bliss@177.86.193.119) has joined #clang
+2018-03-14 13:22:53	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-14 13:58:08	<--	interop_madness (~interop_m@unaffiliated/interop-madness/x-8858653) has quit (Ping timeout: 268 seconds)
+2018-03-14 17:14:23	<--	windblow (~bliss@177.86.193.119) has quit
+2018-03-14 17:26:02	<--	rdwampler (~rdwampler@144.121.163.210) has quit (Ping timeout: 245 seconds)
+2018-03-14 17:57:10	-->	orbiter (~orbiter@ipservice-092-211-140-224.092.211.pools.vodafone-ip.de) has joined #clang
+2018-03-14 18:27:14	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-14 18:56:04	-->	rdwampler (~rdwampler@12.109.95.98) has joined #clang
+2018-03-14 19:14:47	<--	rdwampler (~rdwampler@12.109.95.98) has quit (Remote host closed the connection)
+2018-03-14 19:20:47	-->	rdwampler (~rdwampler@12.109.95.98) has joined #clang
+2018-03-14 19:27:09	<--	rdwampler (~rdwampler@12.109.95.98) has quit (Remote host closed the connection)
+2018-03-14 21:59:43	<--	pdobrogost_ (uid195495@gateway/web/irccloud.com/x-tygnmbkzgqtpxwlw) has quit (Quit: Connection closed for inactivity)
+2018-03-14 22:10:13	-->	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has joined #clang
+2018-03-14 22:12:35	<--	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has quit (Ping timeout: 240 seconds)
+2018-03-14 22:30:34	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 260 seconds)
+2018-03-14 22:31:51	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Read error: Connection reset by peer)
+2018-03-14 22:32:05	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-14 22:34:31	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Remote host closed the connection)
+2018-03-14 22:44:15	-->	scientes (~shawn@unaffiliated/scientes) has joined #clang
+2018-03-14 23:17:30	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-14 23:46:56	<--	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has quit (Remote host closed the connection)
+2018-03-15 08:06:53	--	irc: disconnected from server
+2018-03-15 08:07:16	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-15 08:07:16	--	Channel #clang: 40 nicks (0 ops, 0 voices, 40 normals)
+2018-03-15 08:07:17	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-15 08:20:21	-->	mitsuhiko_ (sid155833@ubuntu/member/mitsuhiko) has joined #clang
+2018-03-15 08:21:13	-->	caw_______ (sid70005@gateway/web/irccloud.com/session) has joined #clang
+2018-03-15 08:22:49	-->	unlord_ (unlord@mf4-xiph.osuosl.org) has joined #clang
+2018-03-15 08:26:24	-->	Drajwer_ (~Drajwer@46.101.119.200) has joined #clang
+2018-03-15 08:27:21	<--	mitsuhiko (sid155833@ubuntu/member/mitsuhiko) has quit (*.net *.split)
+2018-03-15 08:27:21	<--	caw______ (sid70005@gateway/web/irccloud.com/x-chtifrcbiclxxajk) has quit (*.net *.split)
+2018-03-15 08:27:22	<--	Drajwer (~Drajwer@46.101.119.200) has quit (*.net *.split)
+2018-03-15 08:27:22	<--	unlord (unlord@mf4-xiph.osuosl.org) has quit (*.net *.split)
+2018-03-15 08:27:30	--	mitsuhiko_ is now known as mitsuhiko
+2018-03-15 08:28:56	<--	caw_______ (sid70005@gateway/web/irccloud.com/session) has quit (Changing host)
+2018-03-15 08:28:56	-->	caw_______ (sid70005@gateway/web/irccloud.com/x-pwldultqoneaszig) has joined #clang
+2018-03-15 08:41:44	<--	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has quit (Ping timeout: 256 seconds)
+2018-03-15 09:08:02	--	Drajwer_ is now known as Drajwer
+2018-03-15 09:24:15	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-15 11:49:17	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Remote host closed the connection)
+2018-03-15 12:02:14	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-15 12:27:18	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Read error: Connection reset by peer)
+2018-03-15 12:31:41	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-15 12:34:32	<--	pdobrogost_ (uid195495@gateway/web/irccloud.com/x-qkqmxzvctcttlrrh) has quit
+2018-03-15 12:36:46	-->	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-15 12:36:47	-->	pdobrogost_ (uid195495@gateway/web/irccloud.com/x-wsewpuzvhmsrrugn) has joined #clang
+2018-03-15 12:40:17	-->	scientes (~shawn@c-76-28-220-121.hsd1.wa.comcast.net) has joined #clang
+2018-03-15 12:40:18	<--	scientes (~shawn@c-76-28-220-121.hsd1.wa.comcast.net) has quit (Changing host)
+2018-03-15 12:40:18	-->	scientes (~shawn@unaffiliated/scientes) has joined #clang
+2018-03-15 13:03:27	<--	scientes (~shawn@unaffiliated/scientes) has quit (Ping timeout: 240 seconds)
+2018-03-15 13:19:12	-->	SIGILL (~SIGILL@pdpc/supporter/student/jascal) has joined #clang
+2018-03-15 13:19:39	<--	SIGILL (~SIGILL@pdpc/supporter/student/jascal) has left #clang ("WeeChat 1.9.1")
+2018-03-15 13:24:55	-->	orbiter (~orbiter@ipservice-092-211-140-224.092.211.pools.vodafone-ip.de) has joined #clang
+2018-03-15 14:13:13	<--	interop_madness (~interop_m@unaffiliated/interop-madness/x-8858653) has quit (Quit: Leaving)
+2018-03-15 14:45:50	-->	rdwampler (~rdwampler@2602:30a:2c92:4f30:68a9:ec6:edab:a5e9) has joined #clang
+2018-03-15 15:01:06	<--	rdwampler (~rdwampler@2602:30a:2c92:4f30:68a9:ec6:edab:a5e9) has quit (Remote host closed the connection)
+2018-03-15 15:50:03	--	irc: disconnected from server
+2018-03-15 15:52:50	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-15 15:52:50	--	Channel #clang: 41 nicks (0 ops, 0 voices, 41 normals)
+2018-03-15 15:52:50	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-15 16:10:05	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 240 seconds)
+2018-03-15 16:27:17	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-15 16:38:07	-->	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has joined #clang
+2018-03-15 16:43:34	<--	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has quit (Remote host closed the connection)
+2018-03-15 17:12:56	-->	rdwampler (~rdwampler@12.179.103.234) has joined #clang
+2018-03-15 17:23:29	<--	rdwampler (~rdwampler@12.179.103.234) has quit (Ping timeout: 248 seconds)
+2018-03-15 18:28:27	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 240 seconds)
+2018-03-15 20:20:21	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-15 21:48:26	-->	scientes (~shawn@c-76-28-220-121.hsd1.wa.comcast.net) has joined #clang
+2018-03-15 21:48:26	<--	scientes (~shawn@c-76-28-220-121.hsd1.wa.comcast.net) has quit (Changing host)
+2018-03-15 21:48:26	-->	scientes (~shawn@unaffiliated/scientes) has joined #clang
+2018-03-15 21:50:55	-->	rdwampler (~rdwampler@162-201-36-243.lightspeed.iplsin.sbcglobal.net) has joined #clang
+2018-03-15 22:14:58	-->	MacMogIn_ (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-15 22:16:58	<--	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has quit (Ping timeout: 240 seconds)
+2018-03-15 22:18:57	<--	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has quit (Ping timeout: 248 seconds)
+2018-03-15 22:21:51	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-15 22:32:37	<--	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has quit (Ping timeout: 246 seconds)
+2018-03-15 22:37:41	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-15 23:17:40	--	irc: disconnected from server
+2018-03-15 23:18:09	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-15 23:18:09	--	Channel #clang: 42 nicks (0 ops, 0 voices, 42 normals)
+2018-03-15 23:18:10	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-16 00:18:26	--	irc: disconnected from server
+2018-03-16 00:18:52	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-16 00:18:52	--	Channel #clang: 40 nicks (0 ops, 0 voices, 40 normals)
+2018-03-16 00:18:52	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-16 01:25:34	<--	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has quit (Ping timeout: 264 seconds)
+2018-03-16 05:28:46	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-16 05:35:25	-->	interop_madness (~interop_m@unaffiliated/interop-madness/x-8858653) has joined #clang
+2018-03-16 08:42:53	<--	pdobrogost_ (uid195495@gateway/web/irccloud.com/x-wsewpuzvhmsrrugn) has quit (Quit: Connection closed for inactivity)
+2018-03-16 09:01:05	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 240 seconds)
+2018-03-16 09:47:16	-->	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has joined #clang
+2018-03-16 09:50:03	-->	JikanDNWYNV (~yxdcj@162.223.10.10) has joined #clang
+2018-03-16 09:50:04	<--	JikanDNWYNV (~yxdcj@162.223.10.10) has quit (Client Quit)
+2018-03-16 10:18:13	-->	rdwampler (~rdwampler@144.121.163.210) has joined #clang
+2018-03-16 11:23:02	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-16 11:56:41	-->	salamanderrake (~quassel@2605:a000:122a:1c8:998c:b293:b2ea:7cf9) has joined #clang
+2018-03-16 12:00:47	<--	Guest17694 (lkurusa@gateway/shell/elitebnc/x-bqpbjfxfxjshprsy) has quit (Quit: EliteBNC - http://elitebnc.org (Auto-Removal: idle account/not being used))
+2018-03-16 12:12:03	-->	proteusguy (~proteus-g@cm-134-196-84-65.revip18.asianet.co.th) has joined #clang
+2018-03-16 12:48:13	--	unlord_ is now known as unlord
+2018-03-16 13:19:35	-->	MacMogInExile (~MacMogInE@50-235-35-58-static.hfc.comcastbusiness.net) has joined #clang
+2018-03-16 14:22:55	--	irc: disconnected from server
+2018-03-16 14:23:20	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-16 14:23:20	--	Channel #clang: 43 nicks (0 ops, 0 voices, 43 normals)
+2018-03-16 14:23:22	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-16 14:34:29	<--	epony (~nym@77-85-141-14.ip.btc-net.bg) has quit (Read error: Connection reset by peer)
+2018-03-16 14:39:14	-->	epony (~nym@77-85-141-14.ip.btc-net.bg) has joined #clang
+2018-03-16 14:39:39	<--	interop_madness (~interop_m@unaffiliated/interop-madness/x-8858653) has quit (Quit: Leaving)
+2018-03-16 16:18:22	<--	rdwampler (~rdwampler@144.121.163.210) has quit (Ping timeout: 246 seconds)
+2018-03-16 19:14:45	--	irc: disconnected from server
+2018-03-16 19:15:15	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-16 19:15:15	--	Channel #clang: 41 nicks (0 ops, 0 voices, 41 normals)
+2018-03-16 19:15:15	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-16 19:33:27	-->	cottoneyejim (~cottoneye@77.222.2.110) has joined #clang
+2018-03-16 19:48:05	--	irc: disconnected from server
+2018-03-16 19:48:32	-->	fschuindt (~fschuindt@179.35.90.142) has joined #clang
+2018-03-16 19:48:32	--	Channel #clang: 42 nicks (0 ops, 0 voices, 42 normals)
+2018-03-16 19:48:32	--	Channel created on Fri, 27 Jul 2012 17:28:20
+2018-03-16 20:36:27	<--	cottoneyejim (~cottoneye@77.222.2.110) has quit (Ping timeout: 240 seconds)
+2018-03-17 00:16:38	<--	DJDan (~DJDan@115-64-177-188.static.tpgi.com.au) has quit (Remote host closed the connection)
+2018-06-19 09:12:33	-->	fschuindt (~fschuindt@179.35.100.64) has joined #clang
+2018-06-19 09:12:33	--	Channel #clang: 39 nicks (0 ops, 0 voices, 39 normals)
+2018-06-19 09:12:34	--	Channel created on Fri, 27 Jul 2012 17:28:20

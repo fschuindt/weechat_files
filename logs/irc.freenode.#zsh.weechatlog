@@ -1,0 +1,25 @@
+2018-02-20 14:58:55	-->	fschuindt (~fschuindt@187.99.248.184) has joined #zsh
+2018-02-20 14:58:55	--	Topic for #zsh is "Due to recent spam, only identified users are allowed to talk, please register with nickserv if you have trouble talking | v5.4.2 | http://zsh.sf.net/ | http://zshwiki.org/ | http://zsh.sf.net/FAQ/ | http://zshwiki.org/home/docs/wikifaq | http://tinyurl.com/zsh-refcard-pdf | Just ask. | Nobody here or everybody clueless? try the zsh-users mailinglist: http://www.zsh.org/mla"
+2018-02-20 14:58:55	--	Topic set by Mikachu (~Mikachu@zsh/developer/Mikachu) on Tue, 26 Dec 2017 12:01:00
+2018-02-20 14:58:55	--	Channel #zsh: 449 nicks (0 ops, 0 voices, 449 normals)
+2018-02-20 14:58:55	--	PvNotice(ChanServ): Welcome to #zsh! Discussion of the Z Shell and sharing of configs highly encouraged. Enjoy your stay and come back soon!
+2018-02-20 14:58:55	--	URL for #zsh: http://www.zsh.org/
+2018-02-20 14:58:56	--	Channel created on Tue, 02 Sep 2003 12:34:53
+2018-02-20 14:59:03	-->	ahmed_elgabri (~ahmedelga@2a02:a441:9f5:1:6517:64c6:cde1:f127) has joined #zsh
+2018-02-20 15:01:42	fschuindt	Folks, I'm trying to improve my zsh-them: https://gist.github.com/fschuindt/d12a509a2135fe0b848b262a779a54b1 to include the current Github username, prompting git config. Is that possible? Any tips?
+2018-02-20 15:01:52	fschuindt	zsh-theme*
+2018-02-20 15:03:55	<--	BourzRoss (~bourz_ros@130.180.210.165) has quit (Read error: Connection reset by peer)
+2018-02-20 15:04:15	-->	BourzRoss (~bourz_ros@130.180.210.165) has joined #zsh
+2018-02-20 15:07:59	-->	Rodya_ (~Rodya_@2601:46:4001:e0b4:d96c:1929:8519:6ce8) has joined #zsh
+2018-02-20 15:08:12	llua	ditching omz
+2018-02-20 15:08:59	llua	and using the prompt escapes that has been around for 10 or so years, not the $fg, $bg stuff
+2018-02-20 15:11:26	llua	you may want see #oh-my-zsh for help with your omz theme tho
+2018-02-20 15:11:40	<--	dmc (~dmc@unaffiliated/polyzen) has quit (Quit: WeeChat 2.0.1)
+2018-02-20 15:12:42	<--	Rodya_ (~Rodya_@2601:46:4001:e0b4:d96c:1929:8519:6ce8) has quit (Ping timeout: 260 seconds)
+2018-02-20 15:16:51	-->	dmc (~dmc@unaffiliated/polyzen) has joined #zsh
+2018-02-20 15:19:17	-->	jacobmenke (~jacobmenk@107-0-228-218-ip-static.hfc.comcastbusiness.net) has joined #zsh
+2018-02-20 15:26:18	<--	BourzRoss (~bourz_ros@130.180.210.165) has quit (Ping timeout: 268 seconds)
+2018-02-20 15:29:42	<--	ikcerog_ (~ikcerog@12.165.188.172) has quit (Quit: (⚆_⚆))
+2018-02-20 15:31:03	fschuindt	llua: thank you
+2018-02-20 15:31:04	-->	BourzRoss (~bourz_ros@130.180.210.165) has joined #zsh
+2018-02-20 15:32:32	<--	jacobmenke (~jacobmenk@107-0-228-218-ip-static.hfc.comcastbusiness.net) has quit (Ping timeout: 248 seconds)

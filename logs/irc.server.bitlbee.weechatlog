@@ -1,0 +1,32 @@
+2017-12-08 10:51:47	--	irc: connecting to server 127.0.0.1/6667...
+2017-12-08 10:51:47	--	irc: connected to 127.0.0.1/6667 (127.0.0.1)
+2017-12-08 10:51:47	--	localhost: BitlBee-IRCd initialized, please go on
+2017-12-08 10:51:47	--	Welcome to the BitlBee gateway, fschuindt
+2017-12-08 10:51:47	--	Host localhost is running BitlBee 3.5.1.
+2017-12-08 10:51:47	--	BitlBee <http://www.bitlbee.org/>
+2017-12-08 10:51:47	--	localhost 3.5.1 abiswRo ntC
+2017-12-08 10:51:47	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2017-12-08 10:51:47	--	- localhost Message Of The Day -
+2017-12-08 10:51:47	--	- Welcome to the BitlBee server at localhost.
+2017-12-08 10:51:47	--	-
+2017-12-08 10:51:47	--	- This server is running BitlBee version 3.5.1.
+2017-12-08 10:51:47	--	- The newest version can be found on http://www.bitlbee.org/
+2017-12-08 10:51:47	--	-
+2017-12-08 10:51:47	--	- You are getting this message because the server administrator has not
+2017-12-08 10:51:47	--	- yet had the time (or need) to change it.
+2017-12-08 10:51:47	--	-
+2017-12-08 10:51:47	--	- For those who don't know it yet, this is not quite a regular Internet
+2017-12-08 10:51:47	--	- Relay Chat server. Please see the site mentioned above for more
+2017-12-08 10:51:47	--	- information.
+2017-12-08 10:51:47	--	-
+2017-12-08 10:51:47	--	- The developers of the Bee hope you have a buzzing time.
+2017-12-08 10:51:47	--	- -- BitlBee development team.
+2017-12-08 10:51:47	--	-
+2017-12-08 10:51:47	--	- ... Buzzing, haha, get it?
+2017-12-08 10:51:47	--	End of MOTD
+2017-12-08 10:51:47	--	User mode [+s] by fschuindt
+2017-12-08 10:53:33	--	User mode [+R] by fschuindt
+2017-12-08 11:03:49	--	MSG(@joao): teste
+2017-12-08 11:03:49	--	@joao: No such nick/channel
+2017-12-08 11:04:46	--	rexpense :Invalid channel name
+2017-12-08 11:13:49	--	You have been invited to #fschuindt_ by fschuindt_

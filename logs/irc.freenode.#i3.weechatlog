@@ -1,0 +1,269 @@
+2017-12-12 09:50:40	-->	fschuindt (~fschuindt@187.102.174.134) has joined #i3
+2017-12-12 09:50:40	--	Topic for #i3 is "i3 v4.14.1 released | i3status 2.11 released | i3lock 2.9.1 released | http://code.i3wm.org/ | http://i3wm.org/ | http://faq.i3wm.org/ | https://bintray.com/i3/i3-autobuild/i3-wm#statistics | paste at http://p.nnev.de/ | file upload at https://transfer.sh/ | Container tutorial: https://youtu.be/AWA8Pl57UBY | #i3-offtopic"
+2017-12-12 09:50:40	--	Topic set by sECuRE (~sECuRE@midna.zekjur.net) on Sun, 24 Sep 2017 14:33:43
+2017-12-12 09:50:40	--	Channel #i3: 432 nicks (4 ops, 0 voices, 428 normals)
+2017-12-12 09:50:41	--	Channel created on Thu, 22 Jul 2010 16:58:13
+2017-12-12 09:58:48	<--	GrandApe (~caveman@unaffiliated/mahmoud) has quit (Quit: brb)
+2017-12-12 10:01:37	-->	alex`` (~alex@2a01cb000bb310000e31f98b4cdf4eae.ipv6.abo.wanadoo.fr) has joined #i3
+2017-12-12 10:01:42	--	alex`` is now known as alexherbo2
+2017-12-12 10:02:10	--	alexherbo2 is now known as alex``
+2017-12-12 10:02:45	neops	hi
+2017-12-12 10:02:48	neops	i3wm change default terminal please
+2017-12-12 10:02:49	Eyo	hello!
+2017-12-12 10:06:34	-->	Ricaz (~Ricaz@nobelnet.dk) has joined #i3
+2017-12-12 10:08:00	-->	somis (~somis@149.56.153.188) has joined #i3
+2017-12-12 10:09:55	-->	peder (4822@nordur.ifi.uio.no) has joined #i3
+2017-12-12 10:12:16	-->	lordhavens (~lordhaven@CPEc46e1faa506b-CM0c473de78dc0.cpe.net.cable.rogers.com) has joined #i3
+2017-12-12 10:19:13	okraits	neops: You need to adjust your configuration
+2017-12-12 10:19:26	kjetilho	i3wm order more toilet paper please
+2017-12-12 10:19:41	kjetilho	hmm, no.  i3wm home assistant doesn't work for me :/
+2017-12-12 10:20:43	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 10:21:52	<--	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Read error: Connection reset by peer)
+2017-12-12 10:22:14	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 10:24:52	-->	mitz_ (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 10:25:41	-->	mitz- (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 10:25:59	-->	nac (~nac@p200300ECEBD0DD002E884AC48F12F02F.dip0.t-ipconnect.de) has joined #i3
+2017-12-12 10:26:50	-->	mitz| (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 10:27:34	fschuindt	pfhahaha
+2017-12-12 10:28:48	<--	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 248 seconds)
+2017-12-12 10:29:22	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 10:29:23	<--	mitz_ (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 255 seconds)
+2017-12-12 10:29:34	neops	hello I would like to change the terminal by default but I do not have a folder ~ / .i3 / config file.
+2017-12-12 10:30:12	<--	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Read error: Connection reset by peer)
+2017-12-12 10:30:12	--	danielhuman is now known as cookiecutter
+2017-12-12 10:30:22	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 10:30:22	nimaje	the config should normally be in ~/.config/i3
+2017-12-12 10:30:25	<--	mitz- (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 248 seconds)
+2017-12-12 10:32:11	<--	lordhavens (~lordhaven@CPEc46e1faa506b-CM0c473de78dc0.cpe.net.cable.rogers.com) has quit (Ping timeout: 260 seconds)
+2017-12-12 10:32:58	<--	mitz| (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 240 seconds)
+2017-12-12 10:36:19	<--	dddddd (~dddddd@unaffiliated/dddddd) has quit (Ping timeout: 268 seconds)
+2017-12-12 10:39:58	<--	Guest7300 (matthiaskr@gateway/shell/panicbnc/x-ikhtrnyzqbcimyzh) has quit (Changing host)
+2017-12-12 10:39:59	-->	Guest7300 (matthiaskr@unaffiliated/matthiaskrgr) has joined #i3
+2017-12-12 10:39:59	<--	Guest7300 (matthiaskr@unaffiliated/matthiaskrgr) has quit (Changing host)
+2017-12-12 10:39:59	-->	Guest7300 (matthiaskr@gateway/shell/panicbnc/x-ikhtrnyzqbcimyzh) has joined #i3
+2017-12-12 10:40:03	--	Guest7300 is now known as matthiaskrgr
+2017-12-12 10:42:33	-->	CPrompt^ (~CPrompt^@cpe-45-36-165-193.triad.res.rr.com) has joined #i3
+2017-12-12 10:45:38	-->	Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) has joined #i3
+2017-12-12 10:47:18	neops	minaje thx
+2017-12-12 10:50:09	-->	skontar (skontar@nat/redhat/x-dkcghftgxxwoxrgu) has joined #i3
+2017-12-12 10:59:05	<--	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 240 seconds)
+2017-12-12 11:01:51	<--	nac (~nac@p200300ECEBD0DD002E884AC48F12F02F.dip0.t-ipconnect.de) has quit (Ping timeout: 250 seconds)
+2017-12-12 11:02:21	-->	choki (~weechat@unaffiliated/choki) has joined #i3
+2017-12-12 11:05:08	-->	GitHub145 (~GitHub145@192.30.252.45) has joined #i3
+2017-12-12 11:05:08	--	Notice(GitHub145): [i3] orestisf1993 opened pull request #3085: [wip] Tiling drag, take 3 (next...issue-2643) https://git.io/vbuy7
+2017-12-12 11:05:08	<--	GitHub145 (~GitHub145@192.30.252.45) has left #i3
+2017-12-12 11:05:45	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 11:09:27	<--	okraits (okraits@nohostname.de) has left #i3
+2017-12-12 11:11:31	<--	moldy (~rene@unaffiliated/moldy) has left #i3
+2017-12-12 11:14:27	<--	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 240 seconds)
+2017-12-12 11:15:42	-->	ggVGc (~http_ggvg@unaffiliated/walt) has joined #i3
+2017-12-12 11:16:04	ggVGc	does i3 support having a slight overlap between tiled windows that are not currently focused?
+2017-12-12 11:16:22	-->	indeedwatson (~yama@host92.201-253-190.telecom.net.ar) has joined #i3
+2017-12-12 11:18:56	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 11:20:20	<--	jarvick (~jarvick@31-208-156-62.cust.bredband2.com) has quit (Quit: WeeChat 2.0)
+2017-12-12 11:20:36	neops	hi ..I can not split xterm lol
+2017-12-12 11:20:53	@DaveDavenport	xterm does not support splitting?
+2017-12-12 11:23:19	<--	stfn (~stfn@unaffiliated/stfn) has quit (Remote host closed the connection)
+2017-12-12 11:23:33	<--	ToffeeYogurtPots (~ToffeeYog@gateway/tor-sasl/toffeeyogurtpots) has quit (Remote host closed the connection)
+2017-12-12 11:23:43	neops	I do not know, but I can put what else
+2017-12-12 11:23:57	-->	stfn (~stfn@unaffiliated/stfn) has joined #i3
+2017-12-12 11:24:00	neops	I think he can
+2017-12-12 11:24:08	neops	I'm sure
+2017-12-12 11:24:31	neops	I just do not think I have the right shortcuts
+2017-12-12 11:28:45	<--	lord| (~solenodic@unaffiliated/solenodic) has quit (Quit: WeeChat 1.9.1)
+2017-12-12 11:32:52	<--	Sigyn (sigyn@freenode/utility-bot/sigyn) has quit (Quit: NO HEARTBEAT, NO SERVICE.)
+2017-12-12 11:33:25	-->	Sigyn (sigyn@freenode/utility-bot/sigyn) has joined #i3
+2017-12-12 11:34:41	-->	bfernando (~bruno@185.23.92.11) has joined #i3
+2017-12-12 11:35:42	-->	DVS[1] (~r3-s0urce@37.142.13.98) has joined #i3
+2017-12-12 11:37:32	<--	wsdjeg (~wsdjeg@180.112.31.115) has left #i3
+2017-12-12 11:45:37	<--	choki (~weechat@unaffiliated/choki) has quit (Ping timeout: 248 seconds)
+2017-12-12 11:58:03	<--	magnetophon (~user@a83-163-205-75.adsl.xs4all.nl) has quit (Remote host closed the connection)
+2017-12-12 11:58:33	-->	magnetophon (~user@a83-163-205-75.adsl.xs4all.nl) has joined #i3
+2017-12-12 11:59:15	-->	spire (~spire@officef.d-ns.fr) has joined #i3
+2017-12-12 12:08:05	<--	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 240 seconds)
+2017-12-12 12:08:14	<--	ChunkzZ (uid233645@gateway/web/irccloud.com/x-ktfesvczkrigkdsx) has quit (Quit: Connection closed for inactivity)
+2017-12-12 12:09:01	<--	grafzepp (~grafzepp@84.53.196.110) has quit (Ping timeout: 260 seconds)
+2017-12-12 12:09:19	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 12:15:48	-->	justanotheruser (~justanoth@unaffiliated/justanotheruser) has joined #i3
+2017-12-12 12:17:24	<--	justanotheruser (~justanoth@unaffiliated/justanotheruser) has quit (Client Quit)
+2017-12-12 12:18:03	-->	justanotheruser (~justanoth@unaffiliated/justanotheruser) has joined #i3
+2017-12-12 12:20:33	<--	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 255 seconds)
+2017-12-12 12:26:17	<--	tesseract (~tesseract@2a00:1028:83a2:66c6:5ee0:c5ff:fe71:efb2) has quit (Quit: ♪♫•*¨*•.¸¸♫♪♪♫•*¨*•.¸¸♫♪♪♫•*¨*•.¸¸♫♪♪♫•*¨*•.¸¸♫♪)
+2017-12-12 12:28:40	-->	iderik (~idk@h-0-97.A147.priv.bahnhof.se) has joined #i3
+2017-12-12 12:29:19	-->	grafzepp (~grafzepp@213.33.157.202) has joined #i3
+2017-12-12 12:30:05	-->	dymatick (~nate@static-100-34-0-178.phlapa.fios.verizon.net) has joined #i3
+2017-12-12 12:34:41	-->	Amanas (~Amanas@cpe-24-162-249-230.nc.res.rr.com) has joined #i3
+2017-12-12 12:37:52	<--	ChrisLane (~irc@cpc110357-king13-2-0-cust10.19-1.cable.virginm.net) has quit (Ping timeout: 240 seconds)
+2017-12-12 12:39:42	<--	vichib (~vichib@190.80.179.16) has quit (Remote host closed the connection)
+2017-12-12 12:40:09	-->	vichib (~vichib@190.80.179.16) has joined #i3
+2017-12-12 12:42:28	-->	ChrisLane (~irc@cpc110357-king13-2-0-cust10.19-1.cable.virginm.net) has joined #i3
+2017-12-12 12:49:04	-->	ChunkzZ (uid233645@gateway/web/irccloud.com/x-kpwxkiyylzwlbpth) has joined #i3
+2017-12-12 12:50:35	<--	ChrisLane (~irc@cpc110357-king13-2-0-cust10.19-1.cable.virginm.net) has quit (Ping timeout: 240 seconds)
+2017-12-12 12:53:28	nervengift	ggVGc: i3 does not do any overlap except for floating windows. I don't really understand what you want to do, though
+2017-12-12 12:54:29	<--	watered (~dagger@gateway/tor-sasl/watered) has quit (Remote host closed the connection)
+2017-12-12 12:55:40	-->	watered (~dagger@gateway/tor-sasl/watered) has joined #i3
+2017-12-12 12:55:47	<--	spire (~spire@officef.d-ns.fr) has quit (Remote host closed the connection)
+2017-12-12 12:56:19	nervengift	neops: mod+h should split a window/container horizontally, mod+v vertically, but that's in the userguide and the video mentioned before...
+2017-12-12 12:57:03	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 13:00:22	-->	ChrisLane (~irc@cpc110357-king13-2-0-cust10.19-1.cable.virginm.net) has joined #i3
+2017-12-12 13:08:44	-->	Oni-Satoshi (~Oni@185.172.110.117) has joined #i3
+2017-12-12 13:15:12	<--	fantoro (~fantoro@user-94-254-238-6.play-internet.pl) has quit (Remote host closed the connection)
+2017-12-12 13:19:15	neops	thx nervengift
+2017-12-12 13:31:36	<--	p1tty76 (~patty@host-188-174-211-168.customer.m-online.net) has quit (Quit: leaving)
+2017-12-12 13:36:21	-->	Bloodythorn (~Bloodytho@c-76-27-46-75.hsd1.ut.comcast.net) has joined #i3
+2017-12-12 13:36:41	<--	Bloodythorn (~Bloodytho@c-76-27-46-75.hsd1.ut.comcast.net) has left #i3
+2017-12-12 13:38:29	<--	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has quit (Ping timeout: 276 seconds)
+2017-12-12 13:42:10	-->	alexpbrown (~alex.brow@38.97.68.126) has joined #i3
+2017-12-12 13:43:55	<--	DVS[1] (~r3-s0urce@37.142.13.98) has quit (Ping timeout: 250 seconds)
+2017-12-12 13:47:04	-->	mitz (~mitz@KD124211220030.ppp-bb.dion.ne.jp) has joined #i3
+2017-12-12 13:47:09	-->	DVS[1] (~r3-s0urce@37.142.13.98) has joined #i3
+2017-12-12 13:50:02	-->	GitHub126 (~GitHub126@192.30.252.40) has joined #i3
+2017-12-12 13:50:02	--	Notice(GitHub126): [i3] Airblader closed pull request #3079:  generate-command-parser.pl: remove trailing characters (next...generate-command-parser) https://git.io/vbRrv
+2017-12-12 13:50:02	<--	GitHub126 (~GitHub126@192.30.252.40) has left #i3
+2017-12-12 13:50:06	-->	GitHub149 (~GitHub149@192.30.252.40) has joined #i3
+2017-12-12 13:50:06	--	Notice(GitHub149): [i3] Airblader pushed 3 new commits to next: https://git.io/vbzUf
+2017-12-12 13:50:06	--	Notice(GitHub149): i3/next de3c122 Orestis Floros: generate-command-parser.pl: remove trailing comma
+2017-12-12 13:50:06	--	Notice(GitHub149): i3/next 5225e34 Orestis Floros: generate-command-parser.pl: remove trailing whitespace
+2017-12-12 13:50:06	--	Notice(GitHub149): i3/next 36449ba Ingo Bürk: Merge pull request #3079 from orestisf1993/generate-command-parser...
+2017-12-12 13:50:06	<--	GitHub149 (~GitHub149@192.30.252.40) has left #i3
+2017-12-12 13:53:26	<--	DVS[1] (~r3-s0urce@37.142.13.98) has quit (Ping timeout: 276 seconds)
+2017-12-12 13:57:01	-->	choru (~choru@78-62-157-12.static.zebra.lt) has joined #i3
+2017-12-12 14:00:51	-->	anon28 (~textual@c-73-220-41-176.hsd1.ca.comcast.net) has joined #i3
+2017-12-12 14:01:42	<--	Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) has quit (Read error: Connection reset by peer)
+2017-12-12 14:03:25	<--	watered (~dagger@gateway/tor-sasl/watered) has quit (Ping timeout: 248 seconds)
+2017-12-12 14:04:14	-->	watered (~dagger@gateway/tor-sasl/watered) has joined #i3
+2017-12-12 14:08:29	-->	Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) has joined #i3
+2017-12-12 14:09:16	-->	aydio (~adem@unaffiliated/aydio) has joined #i3
+2017-12-12 14:10:18	aydio	Hi, I have a 14 inch WQHD display and tried setting a DPI of 192 on several places, but the i3 bar remains tiny. Where is the scaling of i3bar controlled?
+2017-12-12 14:11:44	nimaje	try setting dpi with xrandr
+2017-12-12 14:13:41	-->	FRWB_ (~FRWB@c-98-223-145-123.hsd1.il.comcast.net) has joined #i3
+2017-12-12 14:14:51	endre	i scale it using the font size
+2017-12-12 14:14:55	-->	holden- (~holden-@unaffiliated/holden-) has joined #i3
+2017-12-12 14:15:59	ralpheeee	is there anyway to have terminal float in a certain size? I dont mean the max min floating size (i have set those up) i would just like the terminal to have a certain size when its floating...
+2017-12-12 14:16:56	endre	it's up to the terminal
+2017-12-12 14:18:00	ralpheeee	endre: sorry i dont follow...what do you mean exactly..
+2017-12-12 14:19:30	endre	mcc(main):10036:0 cisco-ios > fgrep URxvt.geometry: ~/.Xdefaults && echo $COLUMNS $LINES
+2017-12-12 14:19:34	endre	URxvt.geometry: 80x25
+2017-12-12 14:19:36	endre	80 25
+2017-12-12 14:20:07	endre	i specified urxvt to be 80x25 when non floating. it goes to 80x25 by itself when i toggle it from tiled to floating
+2017-12-12 14:20:49	ralpheeee	ahhh cool ...will try that
+2017-12-12 14:23:04	kjetilho	printf '\e[8;25;80t'
+2017-12-12 14:23:12	kjetilho	man -s 7 urxvt has lots of tips
+2017-12-12 14:23:22	ralpheeee	thxs!
+2017-12-12 14:23:25	-->	firc5c7e4635 (~ksjk1998@2601:589:8000:dcec::650f) has joined #i3
+2017-12-12 14:24:47	ralpheeee	kjetilho: that's pretty dope...didnt know about that
+2017-12-12 14:25:19	kjetilho	but I wonder - how do I actually use the report escape sequences?
+2017-12-12 14:27:25	endre	urxvt is best
+2017-12-12 14:27:34	endre	only iterm2 is better in terms of features
+2017-12-12 14:27:40	kjetilho	I mean, I can do printf '\e[18t'; read -s foo   - but I have to press Return myself
+2017-12-12 14:28:02	kjetilho	but I guess I should ask in #rxvt-unicode instead :)
+2017-12-12 14:32:45	endre	what would you like to achieve?
+2017-12-12 14:35:07	 *	rouji had nothing but troubles with proper font rendering in urxvt :(
+2017-12-12 14:35:41	<--	Oni-Satoshi (~Oni@185.172.110.117) has quit (Ping timeout: 276 seconds)
+2017-12-12 14:43:11	-->	Oni-Satoshi (~Oni@185.172.110.117) has joined #i3
+2017-12-12 14:43:12	-->	netvor_ (amahdal@nat/redhat/x-zxlllkeqnwfkowoq) has joined #i3
+2017-12-12 14:47:37	kjetilho	endre: to know the current size in pixels and in columns
+2017-12-12 14:48:25	<--	firc5c7e4635 (~ksjk1998@2601:589:8000:dcec::650f) has quit (Read error: No route to host)
+2017-12-12 14:48:47	-->	firc277df381 (~ksjk1998@2601:589:8000:dcec::650f) has joined #i3
+2017-12-12 14:50:08	<--	skontar (skontar@nat/redhat/x-dkcghftgxxwoxrgu) has quit (Ping timeout: 248 seconds)
+2017-12-12 14:58:42	<--	bfernando (~bruno@185.23.92.11) has quit (Quit: Quitte)
+2017-12-12 15:07:07	-->	Jesin (~Jesin@pool-108-51-89-131.washdc.fios.verizon.net) has joined #i3
+2017-12-12 15:07:35	-->	GitHub141 (GitHub141@gateway/service/github.com/x-tvnrzheovcrkmoxy) has joined #i3
+2017-12-12 15:07:36	--	Notice(GitHub141): [i3status] Airblader closed pull request #255: Get rid of the SLOC comment (master...update_readme) https://git.io/vbEKf
+2017-12-12 15:07:36	<--	GitHub141 (GitHub141@gateway/service/github.com/x-tvnrzheovcrkmoxy) has left #i3
+2017-12-12 15:07:37	-->	GitHub126 (GitHub126@gateway/service/github.com/x-ybqvzvjygkxgwsur) has joined #i3
+2017-12-12 15:07:37	--	Notice(GitHub126): [i3status] Airblader pushed 2 new commits to master: https://git.io/vbzGP
+2017-12-12 15:07:37	--	Notice(GitHub126): i3status/master 73620dc eplanet: Get rid of the SLOC comment
+2017-12-12 15:07:37	--	Notice(GitHub126): i3status/master ef8f9dd Ingo Bürk: Merge pull request #255 from eplanet/update_readme...
+2017-12-12 15:07:37	<--	GitHub126 (GitHub126@gateway/service/github.com/x-ybqvzvjygkxgwsur) has left #i3
+2017-12-12 15:11:37	-->	kry1 (~name@178.115.129.59.wireless.dyn.drei.com) has joined #i3
+2017-12-12 15:11:47	<--	kry1 (~name@178.115.129.59.wireless.dyn.drei.com) has left #i3
+2017-12-12 15:15:07	<--	vdl (~vivien@147.ip-167-114-97.net) has quit (Quit: WeeChat 1.6)
+2017-12-12 15:15:46	-->	vdl (~vivien@147.ip-167-114-97.net) has joined #i3
+2017-12-12 15:24:20	-->	plexigras (~plexigras@gateway/vpn/privateinternetaccess/plexigras) has joined #i3
+2017-12-12 15:27:44	<--	watered (~dagger@gateway/tor-sasl/watered) has quit (Remote host closed the connection)
+2017-12-12 15:28:24	-->	watered (~dagger@gateway/tor-sasl/watered) has joined #i3
+2017-12-12 15:28:27	-->	silverhom (~silverhom@c83-252-239-43.bredband.comhem.se) has joined #i3
+2017-12-12 15:32:56	-->	rkta (~kt@pD9E4B32E.dip0.t-ipconnect.de) has joined #i3
+2017-12-12 15:36:06	<--	aydio (~adem@unaffiliated/aydio) has quit (Ping timeout: 246 seconds)
+2017-12-12 15:39:17	-->	jstvz (~jstvz@157.130.196.214) has joined #i3
+2017-12-12 15:40:35	<--	eplanet (~emeric@2a01cb0802bc37006ef049fffe2a8c24.ipv6.abo.wanadoo.fr) has quit (Ping timeout: 258 seconds)
+2017-12-12 15:40:35	<--	bailon (~fnord@icarus.whatbox.ca) has quit (Ping timeout: 258 seconds)
+2017-12-12 15:42:54	-->	bailon (~fnord@icarus.whatbox.ca) has joined #i3
+2017-12-12 15:43:08	-->	eplanet (~emeric@2a01cb0802bc37006ef049fffe2a8c24.ipv6.abo.wanadoo.fr) has joined #i3
+2017-12-12 15:45:29	-->	skontar (~skontar@ip4-83-240-125-108.cust.nbox.cz) has joined #i3
+2017-12-12 15:46:56	<--	rkta (~kt@pD9E4B32E.dip0.t-ipconnect.de) has quit (Remote host closed the connection)
+2017-12-12 15:52:00	-->	rkta (~kt@pD9E4B32E.dip0.t-ipconnect.de) has joined #i3
+2017-12-12 15:53:18	-->	thy0 (~thy0@2607:b400:26:0:4f50:f0d3:ced9:ce8) has joined #i3
+2017-12-12 16:06:09	-->	m0u (~m0u@unaffiliated/m0u) has joined #i3
+2017-12-12 16:09:56	<--	inaki (~inaki@181.164.143.248) has quit (Ping timeout: 260 seconds)
+2017-12-12 16:12:15	<--	djb-irc (~djb-irc@129.13.154.138) has quit (Quit: Leaving)
+2017-12-12 16:12:44	-->	tunekey (~tunekey@unaffiliated/tunekey) has joined #i3
+2017-12-12 16:16:51	-->	notis (~notis@178.128.21.105.dsl.dyn.forthnet.gr) has joined #i3
+2017-12-12 16:22:57	<--	i336 (~i336@CPE-101-161-14-91.lnse6.cht.bigpond.net.au) has quit (Ping timeout: 240 seconds)
+2017-12-12 16:29:59	-->	i336_ (~i336@CPE-121-217-104-112.lnse2.cht.bigpond.net.au) has joined #i3
+2017-12-12 16:31:12	-->	michaelrose (~michael@75-172-0-132.tukw.qwest.net) has joined #i3
+2017-12-12 16:31:49	<--	mikearr (~mikearr@betsy.evilbint.org) has quit (Quit: ZNC - http://znc.in)
+2017-12-12 16:31:50	<--	gregf (~gregf@unaffiliated/gregf) has quit (Quit: ZNC - http://znc.in)
+2017-12-12 16:32:28	-->	gregf (~gregf@unaffiliated/gregf) has joined #i3
+2017-12-12 16:34:19	<--	m0u (~m0u@unaffiliated/m0u) has quit (Quit: WeeChat 1.9.1)
+2017-12-12 16:36:54	-->	mikearr (~mikearr@betsy.evilbint.org) has joined #i3
+2017-12-12 16:37:47	<--	gregf (~gregf@unaffiliated/gregf) has quit (Quit: ZNC - http://znc.in)
+2017-12-12 16:37:47	<--	mikearr (~mikearr@betsy.evilbint.org) has quit (Client Quit)
+2017-12-12 16:39:44	<--	i336_ (~i336@CPE-121-217-104-112.lnse2.cht.bigpond.net.au) has quit (Ping timeout: 255 seconds)
+2017-12-12 16:40:12	-->	gregf (~gregf@unaffiliated/gregf) has joined #i3
+2017-12-12 16:41:12	-->	kalbasit (~kalbasit@unaffiliated/kalbasit) has joined #i3
+2017-12-12 16:41:26	-->	i336 (~i336@CPE-121-216-21-15.lnse1.ken.bigpond.net.au) has joined #i3
+2017-12-12 16:42:53	<--	thy0 (~thy0@2607:b400:26:0:4f50:f0d3:ced9:ce8) has quit (Quit: TTFN)
+2017-12-12 16:46:40	-->	mikearr (~mikearr@betsy.evilbint.org) has joined #i3
+2017-12-12 16:53:50	neops	.
+2017-12-12 17:00:08	<--	robattila256 (~robattila@S0106f0f24908d2a3.vf.shawcable.net) has quit (Quit: WeeChat 2.0)
+2017-12-12 17:06:08	<--	n35xdxb0_ (~n35xdxb0@94.197.121.119.threembb.co.uk) has quit (Ping timeout: 248 seconds)
+2017-12-12 17:06:13	<--	steven (~steven@unaffiliated/steven) has quit (Read error: Connection reset by peer)
+2017-12-12 17:07:38	<--	aviau (~aviau@modemcable101.74-163-184.mc.videotron.ca) has quit (Read error: Connection reset by peer)
+2017-12-12 17:07:50	-->	aviau (~aviau@modemcable101.74-163-184.mc.videotron.ca) has joined #i3
+2017-12-12 17:08:43	-->	n35xdxb0_ (~n35xdxb0@cpc130684-camd16-2-0-cust846.know.cable.virginm.net) has joined #i3
+2017-12-12 17:11:52	-->	steven (~steven@unaffiliated/steven) has joined #i3
+2017-12-12 17:13:05	<--	hardbot (~hardbot@LPuteaux-656-1-75-52.w92-154.abo.wanadoo.fr) has quit (Ping timeout: 240 seconds)
+2017-12-12 17:13:26	-->	im0nde (~im0nde@2a0a-a541-9802-0-6236-ddff-fe81-acd6.ipv6dyn.netcologne.de) has joined #i3
+2017-12-12 17:17:35	<--	seebs (~seebs@24.196.59.174) has quit (Quit: Leaving)
+2017-12-12 17:18:41	-->	frakturfreak (~frakturfr@unaffiliated/frakturfreak) has joined #i3
+2017-12-12 17:18:46	--	cookiecutter is now known as danielhuman
+2017-12-12 17:20:07	--	danielhuman is now known as cookiecutter
+2017-12-12 17:21:34	--	cookiecutter is now known as danielhuman
+2017-12-12 17:24:41	<--	im0nde (~im0nde@2a0a-a541-9802-0-6236-ddff-fe81-acd6.ipv6dyn.netcologne.de) has quit (Ping timeout: 276 seconds)
+2017-12-12 17:30:36	<--	Neo-- (~neo@2001:15c2:10:220:e981:c623:78c9:3c48) has quit (Ping timeout: 255 seconds)
+2017-12-12 17:33:56	<--	FRWB_ (~FRWB@c-98-223-145-123.hsd1.il.comcast.net) has quit (Ping timeout: 260 seconds)
+2017-12-12 17:34:01	-->	seebs (~seebs@24.196.59.174) has joined #i3
+2017-12-12 17:36:56	<--	txthur (~tx@unaffiliated/txthur) has quit (Read error: Connection reset by peer)
+2017-12-12 17:38:56	<--	netvor_ (amahdal@nat/redhat/x-zxlllkeqnwfkowoq) has quit (Quit: WeeChat 1.9.1)
+2017-12-12 17:47:14	-->	txthur (~tx@unaffiliated/txthur) has joined #i3
+2017-12-12 17:48:27	-->	art-solopov (~art-solop@broadband-46-242-12-7.moscow.rt.ru) has joined #i3
+2017-12-12 17:52:34	<--	art-solopov (~art-solop@broadband-46-242-12-7.moscow.rt.ru) has quit (Remote host closed the connection)
+2017-12-12 17:55:44	-->	art-solopov (~art-solop@broadband-46-242-12-7.moscow.rt.ru) has joined #i3
+2017-12-12 17:56:20	@DaveDavenport	.
+2017-12-12 17:57:23	@squigz	.
+2017-12-12 17:57:35	<--	untitled (~edge563@unaffiliated/edge563) has quit (Ping timeout: 255 seconds)
+2017-12-12 17:57:37	matthiaskrgr	.
+2017-12-12 17:58:16	<--	anon28 (~textual@c-73-220-41-176.hsd1.ca.comcast.net) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2017-12-12 17:58:37	-->	choki (~weechat@unaffiliated/choki) has joined #i3
+2017-12-12 17:58:51	art-solopov	Hello. I have a problem regarding dmenu/rofi. I tried all the recipes I found (replaced the basic dmenu with j4-dmenu-desktop with rofi as a dmenu display) but it still takes about a second to launch rofi.
+2017-12-12 17:59:17	art-solopov	I launched rofi "bare" once and it still took around 1 second to launch.
+2017-12-12 17:59:23	-->	untitled (~edge563@gateway/vpn/privateinternetaccess/edge563) has joined #i3
+2017-12-12 17:59:32	<--	plexigras (~plexigras@gateway/vpn/privateinternetaccess/plexigras) has quit (Ping timeout: 240 seconds)
+2017-12-12 17:59:43	art-solopov	"Bare" as in with `echo -e "first\nsecond\nthird" | rofi -dmenu`
+2017-12-12 17:59:50	fschuindt	just a dumb question, I've faced similar issues, are you using SSD as main storage?
+2017-12-12 18:00:17	art-solopov	Yes.
+2017-12-12 18:00:25	art-solopov	All my programs are currently on SSD.
+2017-12-12 18:00:42	fschuindt	hm, that's odd, I have the same issue with rofi, but I thought it was related with my HDD
+2017-12-12 18:00:44	art-solopov	That's why I'm so baffled, even KDE's runner gave me better results.
+2017-12-12 18:01:15	art-solopov	And it's not quite related to rofi either, bare j4-dmenu-desktop takes slightly less time but it's not nearly instantaneous.
+2017-12-12 18:03:57	<--	michaelrose (~michael@75-172-0-132.tukw.qwest.net) has quit (Ping timeout: 240 seconds)
+2017-12-12 18:04:59	<--	Schmantinski (~cmantsch@f0rtytw0.mants.ch) has quit (Ping timeout: 255 seconds)
+2017-12-12 18:05:15	<--	untitled (~edge563@gateway/vpn/privateinternetaccess/edge563) has quit (Ping timeout: 268 seconds)
+2017-12-12 18:06:24	-->	Schmantinski (~cmantsch@f0rtytw0.mants.ch) has joined #i3
+2017-12-12 18:06:40	hassoon	i like it when mpv is in floatting mode and resized like that on top of my work window https://i.imgur.com/cqqewo3.png
+2017-12-12 18:06:47	-->	untitled (~edge563@unaffiliated/edge563) has joined #i3
+2017-12-12 18:09:54	blackbeard420	thats odd, rofi is fast as hell for me
+2017-12-12 18:10:22	@squigz	hassoon: Why geany? :P
+2017-12-12 18:10:22	-->	Damni (~Damni@host141-71-dynamic.40-79-r.retail.telecomitalia.it) has joined #i3

@@ -1,0 +1,172 @@
+2017-12-08 10:51:47	-->	fschuindt (fschuindt@localhost) has joined &bitlbee
+2017-12-08 10:51:47	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2017-12-08 10:51:47	--	Topic set by root (root@localhost) on Fri, 08 Dec 2017 10:51:47
+2017-12-08 10:51:47	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2017-12-08 10:51:47	@root	Welcome to the BitlBee gateway!
+2017-12-08 10:51:47	@root	 
+2017-12-08 10:51:47	@root	Running BitlBee 3.5.1
+2017-12-08 10:51:47	@root	 
+2017-12-08 10:51:47	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2017-12-08 10:51:47	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2017-12-08 10:52:56	@fschuindt	account add hipchat fernando.schuindt@nexaas.com monitor722
+2017-12-08 10:52:56	@root	Account successfully added with tag hipchat
+2017-12-08 10:53:06	@fschuindt	account hipchat on
+2017-12-08 10:53:06	@root	hipchat - Logging in: Connecting
+2017-12-08 10:53:06	@root	hipchat - Logging in: Connected to server, logging in
+2017-12-08 10:53:07	@root	hipchat - Logging in: Converting stream to TLS
+2017-12-08 10:53:07	@root	hipchat - Logging in: Connected to server, logging in
+2017-12-08 10:53:07	@root	hipchat - Logging in: Authentication finished
+2017-12-08 10:53:07	@root	hipchat - Logging in: Setting Hipchat JID to 21352_5366646@chat.hipchat.com
+2017-12-08 10:53:07	@root	hipchat - Logging in: Authenticated, requesting buddy list
+2017-12-08 10:53:07	@root	hipchat - Logging in: Fetching hipchat profile for 21352_5366646@chat.hipchat.com
+2017-12-08 10:53:08	@root	hipchat - Logging in: Logged in
+2017-12-08 10:53:08	-->	fschuindt_ (21352_5366646@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v fschuindt_] by localhost
+2017-12-08 10:53:08	-->	luciana (21352_433869@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v luciana] by localhost
+2017-12-08 10:53:08	-->	thiago (21352_4912004@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v thiago] by localhost
+2017-12-08 10:53:08	-->	rodolfo (21352_4452108@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v rodolfo] by localhost
+2017-12-08 10:53:08	-->	RodrigoAndrade (21352_4502029@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v RodrigoAndrade] by localhost
+2017-12-08 10:53:08	-->	pauloroberto (21352_5337358@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v pauloroberto] by localhost
+2017-12-08 10:53:08	-->	marcostagomori (21352_1610520@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v marcostagomori] by localhost
+2017-12-08 10:53:08	-->	hugo (21352_2733635@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	-->	guilhermeFranco (21352_846922@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v guilhermeFranco] by localhost
+2017-12-08 10:53:08	-->	claudiamoura (21352_5110549@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v claudiamoura] by localhost
+2017-12-08 10:53:08	-->	cenoura (21352_4859929@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v cenoura] by localhost
+2017-12-08 10:53:08	-->	tiago (21352_3456664@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v tiago] by localhost
+2017-12-08 10:53:08	-->	dante (21352_4485145@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v dante] by localhost
+2017-12-08 10:53:08	-->	neto (21352_3557157@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v neto] by localhost
+2017-12-08 10:53:08	-->	bianca (21352_4259878@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v bianca] by localhost
+2017-12-08 10:53:08	-->	bruno (21352_4933111@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v bruno] by localhost
+2017-12-08 10:53:08	-->	tainara (21352_4259881@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v tainara] by localhost
+2017-12-08 10:53:08	-->	rodrigo (21352_105373@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v rodrigo] by localhost
+2017-12-08 10:53:08	-->	gabi (21352_2030260@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v gabi] by localhost
+2017-12-08 10:53:08	-->	heidi (21352_4401694@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v heidi] by localhost
+2017-12-08 10:53:08	-->	cleiton (21352_4616500@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v cleiton] by localhost
+2017-12-08 10:53:08	-->	luisfernando (21352_5095994@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v luisfernando] by localhost
+2017-12-08 10:53:08	-->	luiz (21352_2103228@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v luiz] by localhost
+2017-12-08 10:53:08	-->	marcoantonio (21352_3824964@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v marcoantonio] by localhost
+2017-12-08 10:53:08	-->	roberta (21352_4870602@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v roberta] by localhost
+2017-12-08 10:53:08	-->	jane (21352_105421@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v jane] by localhost
+2017-12-08 10:53:08	-->	victor (21352_3545552@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v victor] by localhost
+2017-12-08 10:53:08	-->	raul (21352_5369806@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v raul] by localhost
+2017-12-08 10:53:08	-->	anaclaudia (21352_4017828@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v anaclaudia] by localhost
+2017-12-08 10:53:08	-->	anderson (21352_4777309@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v anderson] by localhost
+2017-12-08 10:53:08	-->	Neuber (21352_5362782@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v Neuber] by localhost
+2017-12-08 10:53:08	-->	guilhermedallanol (21352_5031903@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v guilhermedallanol] by localhost
+2017-12-08 10:53:08	-->	arnaldo (21352_2888105@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v arnaldo] by localhost
+2017-12-08 10:53:08	-->	joao (21352_3596907@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v joao] by localhost
+2017-12-08 10:53:08	-->	georgia (21352_2306412@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v georgia] by localhost
+2017-12-08 10:53:08	-->	kobylinski (21352_142260@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v kobylinski] by localhost
+2017-12-08 10:53:08	-->	eduardo (21352_206589@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v eduardo] by localhost
+2017-12-08 10:53:08	-->	alex (21352_5019902@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:53:08	--	Mode &bitlbee [+v alex] by localhost
+2017-12-08 10:53:33	@fschuindt	register 123qwe
+2017-12-08 10:53:33	@root	Account successfully created
+2017-12-08 10:57:20	-->	JulianaMartins (21352_105420@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:57:20	--	Mode &bitlbee [+v JulianaMartins] by localhost
+2017-12-08 10:57:33	-->	AnaDoring (21352_144005@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:57:33	--	Mode &bitlbee [+v AnaDoring] by localhost
+2017-12-08 10:57:43	-->	lucasmansur (21352_4542711@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:57:43	--	Mode &bitlbee [+v lucasmansur] by localhost
+2017-12-08 10:58:10	-->	lhalegria (21352_4485146@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:58:10	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 10:58:18	-->	alana (21352_624026@chat.hipchat.com) has joined &bitlbee
+2017-12-08 10:58:18	--	Mode &bitlbee [+v alana] by localhost
+2017-12-08 10:58:29	@fschuindt	chat add hipchat 21352_prestação_de_contas@conf.hipchat.com #rexpense
+2017-12-08 10:58:29	@root	Chatroom successfully added.
+2017-12-08 10:59:20	@fschuindt	chat add hipchat 21352_iou_(notificações)@conf.hipchat.com #rexpense_notifications
+2017-12-08 10:59:20	@root	Chatroom successfully added.
+2017-12-08 10:59:53	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:00:00	@fschuindt	chat add hipchat 21352_ruby@conf.hipchat.com #ruby
+2017-12-08 11:00:00	@root	Chatroom successfully added.
+2017-12-08 11:00:06	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:00:20	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:00:24	@fschuindt	chat add hipchat 21352_myfreecomm@conf.hipchat.com #off
+2017-12-08 11:00:24	@root	Chatroom successfully added.
+2017-12-08 11:00:50	@fschuindt	channel list
+2017-12-08 11:00:50	@root	 0. &bitlbee, control channel (joined)
+2017-12-08 11:00:50	@root	 1. #rexpense, chat channel
+2017-12-08 11:00:50	@root	 2. #rexpense_notifications, chat channel
+2017-12-08 11:00:50	@root	 3. #ruby, chat channel
+2017-12-08 11:00:50	@root	 4. #off, chat channel
+2017-12-08 11:00:50	@root	End of channel list
+2017-12-08 11:01:39	@fschuindt	channel 2 set auto_join true
+2017-12-08 11:01:39	@root	auto_join = `true'
+2017-12-08 11:01:45	@fschuindt	channel 3 set auto_join true
+2017-12-08 11:01:45	@root	auto_join = `true'
+2017-12-08 11:01:54	@fschuindt	channel 4 set auto_join true
+2017-12-08 11:01:54	@root	auto_join = `true'
+2017-12-08 11:02:05	@fschuindt	channel 1 set auto_join true
+2017-12-08 11:02:05	@root	auto_join = `true'
+2017-12-08 11:03:08	<--	lhalegria (21352_4485146@chat.hipchat.com) has quit (Leaving...)
+2017-12-08 11:03:08	-->	marcelo (21352_105422@chat.hipchat.com) has joined &bitlbee
+2017-12-08 11:03:08	--	Mode &bitlbee [+v marcelo] by localhost
+2017-12-08 11:05:20	--	Mode &bitlbee [-v marcelo] by localhost
+2017-12-08 11:07:29	-->	jander (21352_105419@chat.hipchat.com) has joined &bitlbee
+2017-12-08 11:07:29	--	Mode &bitlbee [+v jander] by localhost
+2017-12-08 11:09:07	--	Mode &bitlbee [+v marcelo] by localhost
+2017-12-08 11:16:21	-->	lhalegria (21352_4485146@chat.hipchat.com) has joined &bitlbee
+2017-12-08 11:16:21	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:17:38	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:18:11	-->	brian (21352_2701369@chat.hipchat.com) has joined &bitlbee
+2017-12-08 11:18:11	--	Mode &bitlbee [+v brian] by localhost
+2017-12-08 11:22:16	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:22:18	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:23:05	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:24:18	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:27:27	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:28:58	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:33:05	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:33:12	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:33:44	<--	JulianaMartins (21352_105420@chat.hipchat.com) has quit (Leaving...)
+2017-12-08 11:34:21	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:34:23	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:34:43	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:34:56	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:37:20	<--	lhalegria (21352_4485146@chat.hipchat.com) has quit (Leaving...)
+2017-12-08 11:43:28	-->	lhalegria (21352_4485146@chat.hipchat.com) has joined &bitlbee
+2017-12-08 11:43:28	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:44:03	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:47:43	-->	marcusvinicius (21352_4881620@chat.hipchat.com) has joined &bitlbee
+2017-12-08 11:47:43	--	Mode &bitlbee [+v marcusvinicius] by localhost
+2017-12-08 11:48:39	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:48:42	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:50:45	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:50:59	--	Mode &bitlbee [-v lhalegria] by localhost
+2017-12-08 11:52:08	--	Mode &bitlbee [+v lhalegria] by localhost
+2017-12-08 11:52:10	--	Mode &bitlbee [-v lhalegria] by localhost
