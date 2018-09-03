@@ -17426,3 +17426,439 @@
 2018-06-21 20:57:42	mahmudov	solved: mix archive.uninstall phx_new-1.3.2 && mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
 2018-06-21 21:06:28	-->	averell (~averell@unaffiliated/averell) has joined #elixir-lang
 2018-06-21 21:06:32	-->	codestorm (~codestorm@2605:e000:9196:e300:e192:377:437d:bd5d) has joined #elixir-lang
+2018-08-16 13:00:32	-->	fschuindt (~fschuindt@179.35.66.238) has joined #elixir-lang
+2018-08-16 13:00:32	--	Topic for #elixir-lang is "Elixir and ecosystem channel | http://elixir-lang.org | ElixirConf EU 2018: http://www.elixirconf.eu | ElixirConf US 2017 videos: http://bit.ly/2hMgxdi | This channel is logged"
+2018-08-16 13:00:32	--	Topic set by josevalim on Tue, 27 Feb 2018 13:45:14
+2018-08-16 13:00:32	--	Channel #elixir-lang: 472 nicks (0 ops, 0 voices, 472 normals)
+2018-08-16 13:00:34	--	Channel created on Sat, 04 Jun 2011 12:38:13
+2018-08-16 13:04:05	<--	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has quit (Ping timeout: 240 seconds)
+2018-08-16 13:05:06	<--	ur5us (~ur5us@219.88.232.186) has quit (Ping timeout: 256 seconds)
+2018-08-16 13:06:00	-->	sunaku (~weechat@45-28-141-215.lightspeed.sntcca.sbcglobal.net) has joined #elixir-lang
+2018-08-16 13:09:46	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 13:10:05	<--	mozzarella (~sam@unaffiliated/sam113101) has quit (Remote host closed the connection)
+2018-08-16 13:10:40	-->	mozzarella (~sam@unaffiliated/sam113101) has joined #elixir-lang
+2018-08-16 13:11:59	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 13:12:30	<--	sevenseacat (~sevenseac@144.136.101.114) has quit (Quit: .)
+2018-08-16 13:14:31	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 13:17:04	<--	cschneid_ (~cschneid@c-73-229-189-202.hsd1.co.comcast.net) has quit (Remote host closed the connection)
+2018-08-16 13:17:25	-->	cschneid_ (~cschneid@c-73-229-189-202.hsd1.co.comcast.net) has joined #elixir-lang
+2018-08-16 13:19:33	<--	sunaku (~weechat@45-28-141-215.lightspeed.sntcca.sbcglobal.net) has quit (Ping timeout: 260 seconds)
+2018-08-16 13:20:15	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 13:23:01	-->	hauleth (~hauleth@aeag137.neoplus.adsl.tpnet.pl) has joined #elixir-lang
+2018-08-16 13:23:37	hauleth	Is there way to extract @doc attribute in macro?
+2018-08-16 13:24:06	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 13:24:55	-->	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has joined #elixir-lang
+2018-08-16 13:25:00	hauleth	Currently I am using `Module.get_attribute(__MODULE__, :doc)` but this returns only one value instead of everything
+2018-08-16 13:26:38	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 13:27:03	<--	shmink (~shmink@82-68-88-141.dsl.in-addr.zen.co.uk) has quit (Ping timeout: 244 seconds)
+2018-08-16 13:28:49	-->	kevinsjoberg (~textual@h-189-229.A147.priv.bahnhof.se) has joined #elixir-lang
+2018-08-16 13:29:06	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 13:34:16	-->	jeffweiss (~jeffweiss@2601:1c2:4c01:2b7c:1001:d6ad:abd1:109d) has joined #elixir-lang
+2018-08-16 13:36:11	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 13:36:28	-->	papachan (~papachan@200.122.248.202) has joined #elixir-lang
+2018-08-16 13:37:54	<--	nd__ (~nd@HSI-KBW-5-158-135-147.hsi19.kabel-badenwuerttemberg.de) has quit (Ping timeout: 244 seconds)
+2018-08-16 13:40:44	-->	mercerist (uid258790@gateway/web/irccloud.com/x-vvfntjgwevcalwtq) has joined #elixir-lang
+2018-08-16 13:42:49	<--	chrismccord (~chrismcco@138.197.137.178) has quit (Quit: ZNC 1.6.3+deb1 - http://znc.in)
+2018-08-16 13:44:10	-->	cagomez (~cagomez@172.56.40.113) has joined #elixir-lang
+2018-08-16 13:44:15	-->	demio (~eldemio@104.142.62.94.rev.vodafone.pt) has joined #elixir-lang
+2018-08-16 13:44:56	-->	hypercore (~user@gateway/tor-sasl/hypercore) has joined #elixir-lang
+2018-08-16 13:45:03	hypercore	when is phoenix 1.4 out?
+2018-08-16 13:46:20	-->	cagomez_ (~cagomez@207.71.230.50) has joined #elixir-lang
+2018-08-16 13:48:15	Nicd-	when it's ready
+2018-08-16 13:50:12	<--	cagomez (~cagomez@172.56.40.113) has quit (Ping timeout: 272 seconds)
+2018-08-16 13:51:13	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 13:51:19	-->	chrismccord (~chrismcco@138.197.137.178) has joined #elixir-lang
+2018-08-16 13:51:55	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 13:52:08	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 13:52:25	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 13:55:09	<--	hauleth (~hauleth@aeag137.neoplus.adsl.tpnet.pl) has quit (Quit: WeeChat 2.2)
+2018-08-16 14:00:31	<--	cagomez_ (~cagomez@207.71.230.50) has quit (Remote host closed the connection)
+2018-08-16 14:00:54	<--	jeffweiss (~jeffweiss@2601:1c2:4c01:2b7c:1001:d6ad:abd1:109d) has quit
+2018-08-16 14:02:59	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 14:05:17	-->	sunaku (~weechat@searspoint.nvidia.com) has joined #elixir-lang
+2018-08-16 14:06:07	gamache	but in the meantime, we can drool over the changelog https://github.com/phoenixframework/phoenix/blob/master/CHANGELOG.md
+2018-08-16 14:06:10	-->	Labu (~Labu@labu.pck.nerim.net) has joined #elixir-lang
+2018-08-16 14:11:25	-->	lexmag (~lexmag@h-82-196-108-249.NA.cust.bahnhof.se) has joined #elixir-lang
+2018-08-16 14:11:45	<--	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has quit (Ping timeout: 272 seconds)
+2018-08-16 14:11:49	-->	Saukk (~Saukk@91-156-130-28.elisa-laajakaista.fi) has joined #elixir-lang
+2018-08-16 14:12:47	--	karreiro_afk is now known as karreiro
+2018-08-16 14:12:48	-->	amclain (~amclain@c-67-170-113-187.hsd1.wa.comcast.net) has joined #elixir-lang
+2018-08-16 14:14:43	<--	sunaku (~weechat@searspoint.nvidia.com) has quit (Ping timeout: 265 seconds)
+2018-08-16 14:17:08	<--	amclain (~amclain@c-67-170-113-187.hsd1.wa.comcast.net) has quit (Client Quit)
+2018-08-16 14:27:39	-->	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has joined #elixir-lang
+2018-08-16 14:27:46	<--	nineczar (~nate@c-24-61-9-46.hsd1.ma.comcast.net) has quit (Ping timeout: 265 seconds)
+2018-08-16 14:29:28	<--	MuffinPimp (mokou@box.mokou.io) has quit (Quit: Goodbye.)
+2018-08-16 14:31:57	-->	ariedler (~ariedler@64.137.151.146) has joined #elixir-lang
+2018-08-16 14:32:28	<--	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has quit (Ping timeout: 260 seconds)
+2018-08-16 14:34:41	-->	MuffinPimp (mokou@box.mokou.io) has joined #elixir-lang
+2018-08-16 14:39:15	-->	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has joined #elixir-lang
+2018-08-16 14:39:26	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 14:39:31	-->	nineczar (~nate@c-73-149-18-222.hsd1.ma.comcast.net) has joined #elixir-lang
+2018-08-16 14:40:53	<--	za1b1tsu (~bogdan@79.112.67.13) has quit (Ping timeout: 272 seconds)
+2018-08-16 14:41:30	<--	ariedler (~ariedler@64.137.151.146) has quit (Remote host closed the connection)
+2018-08-16 14:41:41	-->	ariedler (~ariedler@64.137.151.146) has joined #elixir-lang
+2018-08-16 14:41:42	<--	rodolfojcj (~rodolfojc@190-36-175-52.dyn.dsl.cantv.net) has quit (Remote host closed the connection)
+2018-08-16 14:42:05	<--	nathamanath (~nathamana@82-69-163-200.dsl.in-addr.zen.co.uk) has quit (Remote host closed the connection)
+2018-08-16 14:44:38	-->	kapil___ (uid36151@gateway/web/irccloud.com/x-asrmbxrhbtwvezga) has joined #elixir-lang
+2018-08-16 14:45:26	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit
+2018-08-16 14:46:56	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 14:47:51	<--	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has quit (Ping timeout: 272 seconds)
+2018-08-16 14:48:52	-->	paidhi (~paidhi@84-114-239-56.cable.dynamic.surfer.at) has joined #elixir-lang
+2018-08-16 14:49:16	<--	paidhi (~paidhi@84-114-239-56.cable.dynamic.surfer.at) has left #elixir-lang
+2018-08-16 14:49:49	<--	Saukk (~Saukk@91-156-130-28.elisa-laajakaista.fi) has quit (Remote host closed the connection)
+2018-08-16 14:51:22	-->	narendra` (~user@106.198.214.253) has joined #elixir-lang
+2018-08-16 14:53:30	-->	Tica2 (~Tica2@79.112.202.46) has joined #elixir-lang
+2018-08-16 14:56:50	<--	narendra` (~user@106.198.214.253) has quit (Remote host closed the connection)
+2018-08-16 14:57:51	-->	ur5us (~ur5us@219.88.232.186) has joined #elixir-lang
+2018-08-16 14:57:59	-->	narendra` (~user@106.199.81.61) has joined #elixir-lang
+2018-08-16 14:58:13	<--	narendra` (~user@106.199.81.61) has quit (Remote host closed the connection)
+2018-08-16 14:59:04	-->	narendraj9 (~user@106.199.81.61) has joined #elixir-lang
+2018-08-16 15:01:11	<--	narendraj9 (~user@106.199.81.61) has quit (Client Quit)
+2018-08-16 15:01:47	<--	ariedler (~ariedler@64.137.151.146) has quit (Ping timeout: 272 seconds)
+2018-08-16 15:02:24	<--	ur5us (~ur5us@219.88.232.186) has quit (Ping timeout: 256 seconds)
+2018-08-16 15:03:54	-->	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has joined #elixir-lang
+2018-08-16 15:04:26	-->	squalloster (~fkdsiafgk@200116b82208f600bde432cee94f7cd9.dip.versatel-1u1.de) has joined #elixir-lang
+2018-08-16 15:08:38	<--	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has quit (Ping timeout: 256 seconds)
+2018-08-16 15:09:43	--	toure is now known as toure|biab
+2018-08-16 15:10:02	-->	aalmazan (uid180785@gateway/web/irccloud.com/x-czetutetfltidmcg) has joined #elixir-lang
+2018-08-16 15:10:54	-->	ariedler (~ariedler@64.137.151.146) has joined #elixir-lang
+2018-08-16 15:14:44	-->	nickgartmann (~nodebot@104.190.120.58) has joined #elixir-lang
+2018-08-16 15:15:07	-->	nickgrtman (68be783a@gateway/web/freenode/ip.104.190.120.58) has joined #elixir-lang
+2018-08-16 15:16:08	-->	hauleth (~hauleth@aedl26.neoplus.adsl.tpnet.pl) has joined #elixir-lang
+2018-08-16 15:16:18	<--	nickgartmann (~nodebot@104.190.120.58) has quit (Remote host closed the connection)
+2018-08-16 15:16:35	-->	nickgartmann (~nodebot@104.190.120.58) has joined #elixir-lang
+2018-08-16 15:16:49	<--	nickgartmann (~nodebot@104.190.120.58) has quit (Remote host closed the connection)
+2018-08-16 15:17:10	-->	nickgartmann (~nodebot@104.190.120.58) has joined #elixir-lang
+2018-08-16 15:17:57	<--	nickgartmann (~nodebot@104.190.120.58) has quit (Remote host closed the connection)
+2018-08-16 15:24:33	-->	yo_ (d80f79b6@gateway/web/freenode/ip.216.15.121.182) has joined #elixir-lang
+2018-08-16 15:24:40	yo_	Hi all.
+2018-08-16 15:24:44	yo_	I have a quick question.
+2018-08-16 15:24:55	-->	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has joined #elixir-lang
+2018-08-16 15:25:01	yo_	How do I completely ignore if a function throws an error?
+2018-08-16 15:25:17	yo_	like Process.register(0, :test)
+2018-08-16 15:25:32	yo_	I'm not concerned with if this function call succeeded or not.
+2018-08-16 15:25:47	yo_	How do I ignore the error?
+2018-08-16 15:26:09	<--	noegip (~noegip@ec2-52-28-26-123.eu-central-1.compute.amazonaws.com) has quit (Quit: bye)
+2018-08-16 15:26:50	yo_	PLEASE SOMEONE
+2018-08-16 15:27:41	-->	noegip (~noegip@ec2-52-28-26-123.eu-central-1.compute.amazonaws.com) has joined #elixir-lang
+2018-08-16 15:27:49	<--	yo_ (d80f79b6@gateway/web/freenode/ip.216.15.121.182) has quit (Client Quit)
+2018-08-16 15:28:47	gamache	yo_: you can trap errors, exits, and throws with try/rescue/catch
+2018-08-16 15:29:38	gamache	I wrote a library called Stifle around this, check the source for stifle/1 https://github.com/appcues/stifle/blob/master/lib/stifle.ex
+2018-08-16 15:30:16	<--	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has quit (Ping timeout: 272 seconds)
+2018-08-16 15:31:20	-->	inoas (~leo@unaffiliated/ionas) has joined #elixir-lang
+2018-08-16 15:31:20	<--	inoas (~leo@unaffiliated/ionas) has quit (Client Quit)
+2018-08-16 15:31:57	<--	mbuf (~Shakthi@106.51.22.95) has quit (Quit: Leaving)
+2018-08-16 15:34:36	hauleth	Does anyone know answer to this https://stackoverflow.com/q/51883342/1017941
+2018-08-16 15:35:02	<--	nickgrtman (68be783a@gateway/web/freenode/ip.104.190.120.58) has quit (Quit: Page closed)
+2018-08-16 15:35:59	-->	srxa (~srxa@cable-188-2-98-34.dynamic.sbb.rs) has joined #elixir-lang
+2018-08-16 15:37:00	<--	srxa (~srxa@cable-188-2-98-34.dynamic.sbb.rs) has quit (Client Quit)
+2018-08-16 15:38:21	-->	za1b1tsu (~bogdan@79.112.67.13) has joined #elixir-lang
+2018-08-16 15:40:33	-->	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has joined #elixir-lang
+2018-08-16 15:42:56	<--	za1b1tsu (~bogdan@79.112.67.13) has quit (Ping timeout: 244 seconds)
+2018-08-16 15:43:27	-->	peel (uid145489@gateway/web/irccloud.com/x-btxgpqmbeecxfmiu) has joined #elixir-lang
+2018-08-16 15:43:36	ariedler	@hauleth hmmm interesting
+2018-08-16 15:46:20	ariedler	hauleth: could be because  'module attribute @doc was set but no definition follows it' (for @doc "Test")
+2018-08-16 15:47:19	ariedler	hauleth: where are you trying to attach the doc to
+2018-08-16 15:48:50	hauleth	ariedler: there you have full example that throws no warnings and works, but if you pass any tag it will be discarded http://ix.io/1knG
+2018-08-16 15:48:57	<--	Tica2 (~Tica2@79.112.202.46) has quit (Quit: Tica2)
+2018-08-16 15:50:19	hauleth	ariedler: generate docs for this http://ix.io/1knI
+2018-08-16 15:50:33	hauleth	And you will see that there is no deprecation warning
+2018-08-16 15:51:20	ariedler	hauleth: shouldn't that be a moduledoc ?
+2018-08-16 15:51:59	ariedler	oh i see, nevermind. your trying to attach the doc to the defstruct ?
+2018-08-16 15:52:11	hauleth	More or less
+2018-08-16 15:52:32	ariedler	you could attach those directly to the module; by doing no work....
+2018-08-16 15:52:42	hauleth	How
+2018-08-16 15:52:51	ariedler	cause moduledoc will attach to the expanded module from your macro
+2018-08-16 15:53:15	hauleth	No, moduledoc will attach to wrapper module
+2018-08-16 15:53:57	<--	nineczar (~nate@c-73-149-18-222.hsd1.ma.comcast.net) has quit (Ping timeout: 240 seconds)
+2018-08-16 15:54:02	hauleth	I want moduledoc on Kokon.Event.SubmissionCreated not on Kokon.Event
+2018-08-16 15:55:18	hauleth	This is how it is now https://cl.ly/1a1E3G27170g
+2018-08-16 15:55:53	hauleth	This is how it is when I change @doc to moduledoc https://cl.ly/0M3Q1P2q3f0u
+2018-08-16 15:56:16	hauleth	Documentation lands where it shouldn't be
+2018-08-16 16:02:33	<--	noegip (~noegip@ec2-52-28-26-123.eu-central-1.compute.amazonaws.com) has quit (Quit: bye)
+2018-08-16 16:03:45	ariedler	ah I see :D
+2018-08-16 16:03:56	ariedler	I need to expand this macro to understand lol
+2018-08-16 16:03:56	-->	noegip (~noegip@ec2-52-28-26-123.eu-central-1.compute.amazonaws.com) has joined #elixir-lang
+2018-08-16 16:04:56	-->	nineczar (~nate@c-24-61-9-46.hsd1.ma.comcast.net) has joined #elixir-lang
+2018-08-16 16:06:47	ariedler	hauleth: I am trying to wonder if this is actually possible; since '@' tags attach to the following element
+2018-08-16 16:07:51	hauleth	It should be possible, as I can easily replicate the same behaviour by using @eventdoc attribute that I can create on my own
+2018-08-16 16:08:42	hauleth	This works http://ix.io/1knL
+2018-08-16 16:09:08	hauleth	https://cl.ly/1g0d3q152Y1D
+2018-08-16 16:09:18	ariedler	0-0
+2018-08-16 16:09:28	ariedler	that is unexpected be me
+2018-08-16 16:15:55	<--	lexmag (~lexmag@h-82-196-108-249.NA.cust.bahnhof.se) has quit (Read error: Connection reset by peer)
+2018-08-16 16:18:06	-->	lexmag (~lexmag@h-82-196-108-249.NA.cust.bahnhof.se) has joined #elixir-lang
+2018-08-16 16:18:17	-->	PragTob (~PragTob@x4db4a868.dyn.telefonica.de) has joined #elixir-lang
+2018-08-16 16:23:17	<--	tomterl (~tomterl@p200300DE8BE40F00021132FFFE1C4362.dip0.t-ipconnect.de) has quit (Ping timeout: 265 seconds)
+2018-08-16 16:25:33	--	toure|biab is now known as toure
+2018-08-16 16:27:07	ariedler	hauleth: I am starting to think the compiler is getting to it before you and deleting the doc
+2018-08-16 16:27:48	ariedler	https://github.com/elixir-lang/elixir/blob/d76f150274352dd207cb82abca523ae73bb21b40/lib/elixir/src/elixir_module.erl#L278
+2018-08-16 16:28:14	hauleth	I assume so, but it need to store it somewhere in case if I would define function in macro body. Question is where it is stored
+2018-08-16 16:28:31	-->	tomterl (~tomterl@p200300DE8F14EA00021132FFFE1C4362.dip0.t-ipconnect.de) has joined #elixir-lang
+2018-08-16 16:33:09	-->	thy0 (~thy0@207.244.78.74) has joined #elixir-lang
+2018-08-16 16:34:39	-->	netrino (~netrino@185.159.156.20) has joined #elixir-lang
+2018-08-16 16:37:51	-->	ujhghgvjhg (5a9c1691@gateway/web/freenode/ip.90.156.22.145) has joined #elixir-lang
+2018-08-16 16:38:17	hauleth	ariedler: I have improved code even more http://ix.io/1knT, but this still do not support tags. But see the code you have linked works on definition, so if there would be def/defp/defmacro/defmacrop then it would work
+2018-08-16 16:38:24	hauleth	But there is none
+2018-08-16 16:38:31	hauleth	so it should keep this as is
+2018-08-16 16:39:09	<--	ujhghgvjhg (5a9c1691@gateway/web/freenode/ip.90.156.22.145) has quit (Client Quit)
+2018-08-16 16:42:20	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-nnixdmavfkupjyqo) has joined #elixir-lang
+2018-08-16 16:42:21	--	Notice(elixir-lang-repo): [elixir] fertapric opened pull request #8093: Remove check for legacy @export_type attribute (master...fertapric-remove-legacy-export-type-check) https://git.io/fNhGb
+2018-08-16 16:42:21	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-nnixdmavfkupjyqo) has left #elixir-lang
+2018-08-16 16:42:35	<--	demio (~eldemio@104.142.62.94.rev.vodafone.pt) has quit (Ping timeout: 240 seconds)
+2018-08-16 16:44:43	ariedler	hauleth: shouldn't that be Module.put_attribute(unquote(module), :moduledoc, docs) ?
+2018-08-16 16:44:45	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-sqqhygpfcufxqtna) has joined #elixir-lang
+2018-08-16 16:44:45	--	Notice(elixir-lang-repo): [elixir] devonestes opened pull request #8094: Add missing key to type in `ExUnit.Test` (master...missing-key-in-type) https://git.io/fNhZZ
+2018-08-16 16:44:45	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-sqqhygpfcufxqtna) has left #elixir-lang
+2018-08-16 16:44:56	ariedler	oh nvm; those are equivalent
+2018-08-16 16:47:20	-->	sunaku (~weechat@45-28-141-215.lightspeed.sntcca.sbcglobal.net) has joined #elixir-lang
+2018-08-16 16:56:59	ariedler	hauleth: okay, yeah ... tags on doc annotation are thrown into metadata
+2018-08-16 17:01:09	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-zisuszjmmdklomiy) has joined #elixir-lang
+2018-08-16 17:01:09	--	Notice(elixir-lang-repo): [elixir] josevalim pushed 1 new commit to master: https://git.io/fNhnK
+2018-08-16 17:01:09	--	Notice(elixir-lang-repo): elixir/master 43f641a Devon Estes: Add missing key to type in `ExUnit.Test` (#8094)...
+2018-08-16 17:01:09	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-zisuszjmmdklomiy) has left #elixir-lang
+2018-08-16 17:01:14	-->	cagomez (~cagomez@207.71.230.50) has joined #elixir-lang
+2018-08-16 17:01:42	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-cpgqgtjwoqhzwkmn) has joined #elixir-lang
+2018-08-16 17:01:42	--	Notice(elixir-lang-repo): [elixir] josevalim closed pull request #8093: Remove check for legacy @export_type attribute (master...fertapric-remove-legacy-export-type-check) https://git.io/fNhGb
+2018-08-16 17:01:42	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-cpgqgtjwoqhzwkmn) has left #elixir-lang
+2018-08-16 17:03:42	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 17:03:57	-->	za1b1tsu (~bogdan@79.112.67.13) has joined #elixir-lang
+2018-08-16 17:04:02	-->	demio (~eldemio@104.142.62.94.rev.vodafone.pt) has joined #elixir-lang
+2018-08-16 17:05:22	<--	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has quit (Ping timeout: 256 seconds)
+2018-08-16 17:05:53	<--	sunaku (~weechat@45-28-141-215.lightspeed.sntcca.sbcglobal.net) has quit (Ping timeout: 260 seconds)
+2018-08-16 17:09:37	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 17:10:22	hauleth	ariedler: achieved it using very hacky solution http://ix.io/1ko4
+2018-08-16 17:10:44	ariedler	@hauleth yeah ... i was going down that path as well
+2018-08-16 17:11:28	<--	havenwood (~Havenn@ruby/staff/havenwood) has left #elixir-lang ("Textual IRC Client: www.textualapp.com")
+2018-08-16 17:12:09	christianpoveda	Is there any default library for writing REPLs in elixir?
+2018-08-16 17:13:20	-->	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has joined #elixir-lang
+2018-08-16 17:13:39	ariedler	@christianpoveda not that I can think of
+2018-08-16 17:14:06	ariedler	christianpoveda: you are not meaning writing a command line program are you (just verifying)
+2018-08-16 17:14:30	christianpoveda	No, i'm doing an small interpreter
+2018-08-16 17:15:52	ariedler	christianpoveda: might be able to reuse parts of IEx (since its just a library + extras)
+2018-08-16 17:16:56	-->	kwiat (kwiat@kernel.panic.pl) has joined #elixir-lang
+2018-08-16 17:17:18	hauleth	ariedler: cleaned it a little http://ix.io/1ko9, unfortunately I cannot change `{:doc, :meta}` fetcher as `Module.get_attribute` allows only atoms as keys
+2018-08-16 17:22:22	<--	za1b1tsu (~bogdan@79.112.67.13) has quit (Ping timeout: 272 seconds)
+2018-08-16 17:22:38	<--	cagomez (~cagomez@207.71.230.50) has quit (Remote host closed the connection)
+2018-08-16 17:22:44	christianpoveda	ariedler: for the moment it would be enough to be able to move using the arrow keys
+2018-08-16 17:23:05	<--	fmcgeough (~fmcgeough@12.29.252.5) has quit (Quit: fmcgeough)
+2018-08-16 17:23:50	ariedler	hauleth: probably want to use lookup instead of take; and probably get_ instead of delete_ as well
+2018-08-16 17:24:16	<--	wonko77 (~wonko7@176.160.19.79) has quit (Quit: See You Space Cowboy..)
+2018-08-16 17:24:24	hauleth	ariedler: as I am clearing them later anyway, there is no difference
+2018-08-16 17:26:24	ariedler	christianpoveda: https://erldocs.com/r16a/kernel/user_drv.html might be your friend
+2018-08-16 17:28:42	hypercore	what's webpack performance like in 1.4?
+2018-08-16 17:30:27	christianpoveda	ariedler: thank you I'll check it out :)
+2018-08-16 17:32:31	ariedler	hypercore: wrong room?
+2018-08-16 17:32:42	-->	Pooa (5463a17c@gateway/web/freenode/ip.84.99.161.124) has joined #elixir-lang
+2018-08-16 17:33:01	Pooa	Hey there, any simple regex to remove all non alphabetic characters ?
+2018-08-16 17:33:11	Pooa	just a-zA-Z
+2018-08-16 17:33:57	ariedler	[a-zA-Z]+ ?
+2018-08-16 17:34:16	ariedler	(missing the question mark obviously; weird question is all)
+2018-08-16 17:34:39	ariedler	oh you mean everything except a-zA-Z
+2018-08-16 17:35:08	Pooa	Yes :)
+2018-08-16 17:35:28	Pooa	I did this     |> String.replace(~r/^[a-zA-Z]+/, ""), though I still have some wierd characters
+2018-08-16 17:37:25	josevalim	~r/^[a-zA-Z]+/u
+2018-08-16 17:37:30	josevalim	you need to add the unicode modifier at the end
+2018-08-16 17:38:41	<--	squalloster (~fkdsiafgk@200116b82208f600bde432cee94f7cd9.dip.versatel-1u1.de) has quit (Ping timeout: 265 seconds)
+2018-08-16 17:39:24	Pooa	Thanks, though I think I still miss something. String.replace("Hello", ~r/^[a-zA-Z]+/u, "") returns "", seems like my regex is wrong
+2018-08-16 17:39:25	ariedler	yeah; unicode modifier; and you want [^a-zA-Z]+
+2018-08-16 17:39:33	Pooa	Ah, thanks :)
+2018-08-16 17:40:42	josevalim	hauleth: :O at all of the compiler internal access
+2018-08-16 17:41:04	josevalim	hauleth: isn't it a bit misleading to pretend that it will define a function while in practice it will define a module?
+2018-08-16 17:41:57	ariedler	josevalim: in reference to hauleth's work ; yes I agree they should be moduledoc but even then he will have same issue cause it is thrown into metadata :(
+2018-08-16 17:42:23	josevalim	@ariedler using @eventdoc would immediately solve it
+2018-08-16 17:42:28	--	toure is now known as toure|gone
+2018-08-16 17:43:39	hauleth	josevalim: as this isn't library but for internal use in my project I do not think it will be much of the problem. While it can be misleading a little when it comes to browsing docs, I do not think it would be a big problem as it would be use almost like definition of the function
+2018-08-16 17:43:41	-->	ventures (~ventures@unaffiliated/ventures) has joined #elixir-lang
+2018-08-16 17:44:08	ariedler	^ I agree with josevalim here :) it would make more sense just to eventdoc
+2018-08-16 17:44:47	hauleth	I kind of agree
+2018-08-16 17:45:20	ariedler	it would also allow you to annotate other parts with different docs if you decided to split up the macro
+2018-08-16 17:45:34	hauleth	But I still think that there could be valid usecases for having access to documentation metadata in macros
+2018-08-16 17:46:25	<--	craigp (~craigp@144.132.65.226) has quit (Ping timeout: 265 seconds)
+2018-08-16 17:47:01	josevalim	hauleth: sure, but i would rather wait for the valid use cases to show up :)
+2018-08-16 17:47:08	josevalim	and then discuss the best format to read it
+2018-08-16 17:47:35	hauleth	Because right now it seems a little bit "odd" that @doc is a little bit "special care" attribute
+2018-08-16 17:48:09	hauleth	It is just surprising that it works differently from any other attribute
+2018-08-16 17:48:13	<--	cschneid_ (~cschneid@c-73-229-189-202.hsd1.co.comcast.net) has quit (Remote host closed the connection)
+2018-08-16 17:48:23	josevalim	it has to be done because of backwards compatibility though
+2018-08-16 17:48:33	<--	Pooa (5463a17c@gateway/web/freenode/ip.84.99.161.124) has quit (Ping timeout: 252 seconds)
+2018-08-16 17:48:45	hauleth	josevalim: I understand why it is working that way
+2018-08-16 17:48:59	<--	svennidal (~svennidal@157.157.69.18) has quit (Quit: leaving)
+2018-08-16 17:49:08	josevalim	otherwise i would have made `@doc` be a list of binaries and metadata, as an accumulate attribute
+2018-08-16 17:50:14	josevalim	although I think the generalization of this would either be to allow custom code to be invoked when an attribute is set
+2018-08-16 17:50:41	hauleth	josevalim: yeah, that would be on one hand strange on other expected.  I do not know which is worse.  However I would <3 to see some way to have access to that data without such hacks
+2018-08-16 17:50:48	josevalim	which then means `@foo :bar` could not store anything on `@foo` at all
+2018-08-16 17:50:58	josevalim	hauleth: those hacks are not even meant to be possible
+2018-08-16 17:51:04	josevalim	there is no guarantee they will work even on patch releases
+2018-08-16 17:52:19	josevalim	I almost feel like randomizing the compiler modules on each release to make this harder, haha
+2018-08-16 17:52:28	josevalim	elixir_module_uyua.erl
+2018-08-16 17:53:38	<--	PragTob (~PragTob@x4db4a868.dyn.telefonica.de) has quit (Remote host closed the connection)
+2018-08-16 17:54:52	hauleth	xD
+2018-08-16 17:55:01	hauleth	josevalim: I was fuly aware of that
+2018-08-16 17:55:14	hauleth	That is why this was called "ugly hack"
+2018-08-16 17:56:28	-->	PragTob (~PragTob@x4db4a868.dyn.telefonica.de) has joined #elixir-lang
+2018-08-16 17:58:43	<--	Jaguara (~Jaguara@189.112.171.233) has quit (Remote host closed the connection)
+2018-08-16 18:00:52	josevalim	hahaha
+2018-08-16 18:01:22	josevalim	hauleth: i would like to hear more use cases on how this feature should look like. at the moment, i still think you would be better of using @eventdoc, even if we had a mechanism to access the docs
+2018-08-16 18:01:57	<--	kapil___ (uid36151@gateway/web/irccloud.com/x-asrmbxrhbtwvezga) has quit (Quit: Connection closed for inactivity)
+2018-08-16 18:02:15	hypercore	josevalim, what's webpack 4 performance like in phoenix 1.4?
+2018-08-16 18:02:29	josevalim	no idea, try it out :)
+2018-08-16 18:03:03	hypercore	josevalim: from master branch?
+2018-08-16 18:03:21	josevalim	hypercore: yes, i think in the README or installer/README there are instructions to run from master
+2018-08-16 18:03:29	josevalim	but you can also just try webpack 4 outside of phoenix
+2018-08-16 18:03:32	josevalim	it should be the same performance
+2018-08-16 18:03:38	josevalim	phoenix doesn't change anything
+2018-08-16 18:04:08	hypercore	josevalim: that's the reason i ask, in anticipation of phoenix 1.4 i thought i would familiarize myself with webpack, however the hot reloading seemed really slow
+2018-08-16 18:04:26	hypercore	brunch seems way quicker when chaning css files for exapmle
+2018-08-16 18:04:26	josevalim	hypercore: we bypass webpack reloading though, since phoenix has its own
+2018-08-16 18:04:38	chrismccord	hypercore : we don't worry about HMR in webpack so not related
+2018-08-16 18:04:52	hypercore	oh ok, great to hear
+2018-08-16 18:05:03	chrismccord	our code reloader watches the compiled app.js and app.css for changes and either refreshes the page or re-applies the css
+2018-08-16 18:05:05	chrismccord	nothing more
+2018-08-16 18:05:28	chrismccord	you can of course use webpacks hot reload with wahtever their instructions are, but not something we do out of the box for you
+2018-08-16 18:05:35	hypercore	got you, i assumed it would be using webpack's reloading featuresr
+2018-08-16 18:05:57	chrismccord	nope, we are js lib agnostic
+2018-08-16 18:06:01	hypercore	phoenix's reloader seems way faster, definitely sticking with that
+2018-08-16 18:07:50	hypercore	also, when do you guys anticipate phoenix will optimize its deployment code?
+2018-08-16 18:08:04	hypercore	is that planned for v2?
+2018-08-16 18:08:49	chrismccord	hypercore phoenix will never be part of the elixir deployment story
+2018-08-16 18:09:09	hypercore	oh
+2018-08-16 18:09:11	chrismccord	so follow the efforts on the distillery side if you are interested in elixir deployment tooling
+2018-08-16 18:09:23	chrismccord	which phoenix of course works with, just like any other elixir application
+2018-08-16 18:09:55	-->	cschneid_ (~cschneid@c-73-78-144-189.hsd1.co.comcast.net) has joined #elixir-lang
+2018-08-16 18:10:22	-->	za1b1tsu (~bogdan@79.112.67.13) has joined #elixir-lang
+2018-08-16 18:10:31	hypercore	chrismccord: should have been more specific, i guess i was asking more generally about elixir deployment. From what i recall, there was some difficutly in loading configuration at run-time?
+2018-08-16 18:11:32	hypercore	will it be possible to create a binary and just run it on a server?
+2018-08-16 18:11:50	hauleth	josevalim: I have found first usecase for accessing `@deprecated` in Elixir code: deprecation of structures
+2018-08-16 18:13:25	hauleth	Currently it doesn't work to do http://ix.io/1koo
+2018-08-16 18:13:59	hauleth	It deprecates only Foo.__struct__/0 while Foo.__struct__/1 is still accessible
+2018-08-16 18:14:50	<--	za1b1tsu (~bogdan@79.112.67.13) has quit (Ping timeout: 244 seconds)
+2018-08-16 18:15:23	-->	cagomez (~cagomez@207.71.230.50) has joined #elixir-lang
+2018-08-16 18:18:16	hauleth	josevalim: it also makes sense then when one want to generate few functions (for example with different arity) in macro and want to keep documentation (or at least some tags) between them (for example it makes sense to keep `:since` and `:deprecated` tag)
+2018-08-16 18:20:40	hypercore	chrismccord: just to clarify, do you still plan on deprecating distillery after merging it into mix?
+2018-08-16 18:20:51	asonge	hypercore: the releases stuff is really basic. distillery has a self-extracing/self-running thing.
+2018-08-16 18:20:58	--	karreiro is now known as karreiro_afk
+2018-08-16 18:21:12	hypercore	asonge: can you elaborate?
+2018-08-16 18:21:59	josevalim	hauleth: @deprecated works just fine
+2018-08-16 18:22:08	josevalim	the @deprecated attribute is not the same thing as the metadata
+2018-08-16 18:22:31	hauleth	josevalim: but :since or :deprecated in @doc will not work
+2018-08-16 18:22:34	josevalim	and __struct__/1 is private, so none of the metadata matters anyway
+2018-08-16 18:22:44	asonge	hypercore: on what? the config problem (which is a few barely related problems that require a lot of thought to resolve all of them together) or the self-extracting/self-executing tarball thing?
+2018-08-16 18:22:45	josevalim	private in the sense you don't call it directly
+2018-08-16 18:22:53	hauleth	Yeah, but imagine other usecases
+2018-08-16 18:23:14	-->	__charly__ (~charly@104-184-3-192.lightspeed.austtx.sbcglobal.net) has joined #elixir-lang
+2018-08-16 18:23:24	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-clgtsemxsjbmpuag) has joined #elixir-lang
+2018-08-16 18:23:24	--	Notice(elixir-lang-repo): [elixir] atomkirk opened pull request #8096: Update logger.ex (master...kirk-fix-logger-docs) https://git.io/fNhRN
+2018-08-16 18:23:24	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-clgtsemxsjbmpuag) has left #elixir-lang
+2018-08-16 18:23:28	hypercore	asonge: the latter
+2018-08-16 18:23:28	hypercore	asonge: for example, will it ever be as simple as it is with Go?
+2018-08-16 18:23:32	josevalim	i agree this should be made possible, i don't think that's the disagreemnt
+2018-08-16 18:23:35	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-hoycitpmsqgnuhxu) has joined #elixir-lang
+2018-08-16 18:23:35	--	Notice(elixir-lang-repo): [elixir] hauleth opened pull request #8097: Allow deprecation of structures (master...allow-deprecations-of-structures) https://git.io/fNhRx
+2018-08-16 18:23:35	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-hoycitpmsqgnuhxu) has left #elixir-lang
+2018-08-16 18:23:47	asonge	hypercore: unless someone puts in some serious work, no. but how hard is untar-and-run a shell script?
+2018-08-16 18:23:47	hypercore	where you generate a binary and can just copy it to your server and run it
+2018-08-16 18:23:56	asonge	it's 1 extra command
+2018-08-16 18:24:16	asonge	(the self-extracting bit fixes the extra command piece, though)
+2018-08-16 18:24:28	tristan__	if you really want you can turn a release into an executable binary with third party programs like upx
+2018-08-16 18:25:45	-->	dstrunk (~dstrunk@24.42.203.94) has joined #elixir-lang
+2018-08-16 18:27:19	<--	karreiro_afk (~karreiro@redhat/jboss/karreiro) has quit (Quit: ...)
+2018-08-16 18:29:14	hypercore	where is the tarball located when i run distillery release?
+2018-08-16 18:29:14	hypercore	i.e. what do i copy to my server?
+2018-08-16 18:30:18	hypercore	or do i have to run under production to generate the tar?
+2018-08-16 18:30:49	asonge	you don't have to run it under production, but you do need a compatible libc
+2018-08-16 18:31:12	--	oojacobo_ is now known as oojacoboo
+2018-08-16 18:31:34	hypercore	asonge: not sure i understand what you mean
+2018-08-16 18:32:06	hypercore	so after creating a new elixir app, installing distillery, and running mix release.init and mix release, where do i go from there?
+2018-08-16 18:32:18	-->	ssswitch (~ssswitch@unaffiliated/ssswitch) has joined #elixir-lang
+2018-08-16 18:32:32	hypercore	(specifically how do i run that app on a server)
+2018-08-16 18:34:25	-->	sunaku (~weechat@searspoint.nvidia.com) has joined #elixir-lang
+2018-08-16 18:34:33	<--	tuacker (~Adium@192-164-62-128.adsl.highway.telekom.at) has quit (Quit: Leaving.)
+2018-08-16 18:35:17	-->	za1b1tsu (~bogdan@79.112.67.13) has joined #elixir-lang
+2018-08-16 18:36:57	josevalim	hauleth: also, since we have your attention, any news on https://github.com/elixir-lang/elixir/pull/7923? :)
+2018-08-16 18:36:59	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 18:37:31	hauleth	josevalim: yeah, I have commit pending. I will push it tomorrow morning
+2018-08-16 18:38:19	josevalim	cool
+2018-08-16 18:41:51	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 18:45:38	<--	PragTob (~PragTob@x4db4a868.dyn.telefonica.de) has quit (Remote host closed the connection)
+2018-08-16 18:46:33	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 18:47:22	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 18:50:03	hypercore	figured it out
+2018-08-16 18:51:56	<--	cagomez (~cagomez@207.71.230.50) has quit (Remote host closed the connection)
+2018-08-16 18:56:46	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-owahjghkvccfyjef) has joined #elixir-lang
+2018-08-16 18:56:46	--	Notice(elixir-lang-repo): [elixir] josevalim closed pull request #8097: Allow deprecation of structures (master...allow-deprecations-of-structures) https://git.io/fNhRx
+2018-08-16 18:56:46	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-owahjghkvccfyjef) has left #elixir-lang
+2018-08-16 18:57:24	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-nvednesgdmaomawr) has joined #elixir-lang
+2018-08-16 18:57:25	--	Notice(elixir-lang-repo): [elixir] josevalim closed pull request #8096: Update logger.ex (master...kirk-fix-logger-docs) https://git.io/fNhRN
+2018-08-16 18:57:25	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-nvednesgdmaomawr) has left #elixir-lang
+2018-08-16 18:57:43	<--	pera (~pera@unaffiliated/pera) has quit (Ping timeout: 244 seconds)
+2018-08-16 18:58:56	<--	demio (~eldemio@104.142.62.94.rev.vodafone.pt) has quit (Quit: Computer has gone to sleep.)
+2018-08-16 19:00:08	-->	cagomez (~cagomez@207.71.230.50) has joined #elixir-lang
+2018-08-16 19:01:32	Sentreen	Is there any reason why an application would take longer to process the same data when extra nodes are added?
+2018-08-16 19:01:37	-->	ur5us (~ur5us@103.247.155.66) has joined #elixir-lang
+2018-08-16 19:01:54	-->	demio (~eldemio@104.142.62.94.rev.vodafone.pt) has joined #elixir-lang
+2018-08-16 19:01:56	Sentreen	Context: I'm dividing some work over a cluster. At the moment execution time is dominated by message sending (which is to be expected)
+2018-08-16 19:02:26	Sentreen	However, when I add new nodes, the program takes significantly longer to finish, even though I send the same data around. (data is sent to a random node for processing)
+2018-08-16 19:02:44	<--	demio (~eldemio@104.142.62.94.rev.vodafone.pt) has quit (Client Quit)
+2018-08-16 19:03:38	Sentreen	I get why it becomes slower when I need to send data over the network, but I cannot see how adding more potential nodes to process the same amount of data makes my application noticeably slower.
+2018-08-16 19:06:05	<--	za1b1tsu (~bogdan@79.112.67.13) has quit (Ping timeout: 240 seconds)
+2018-08-16 19:07:23	<--	cagomez (~cagomez@207.71.230.50) has quit (Remote host closed the connection)
+2018-08-16 19:09:25	<--	iAmerikan (~dwshrewt@unaffiliated/iamerikan) has quit (Ping timeout: 272 seconds)
+2018-08-16 19:11:08	-->	pera (~pera@unaffiliated/pera) has joined #elixir-lang
+2018-08-16 19:16:16	<--	mahmutov (~milisman@unaffiliated/mahmutov) has quit (Remote host closed the connection)
+2018-08-16 19:16:50	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 19:19:33	-->	miwa_ (~miwa@90-231-35-71-no154.tbcn.telia.com) has joined #elixir-lang
+2018-08-16 19:19:34	<--	miwa_ (~miwa@90-231-35-71-no154.tbcn.telia.com) has quit (Changing host)
+2018-08-16 19:19:34	-->	miwa_ (~miwa@unaffiliated/miwa) has joined #elixir-lang
+2018-08-16 19:22:25	<--	miwa (~miwa@unaffiliated/miwa) has quit (Ping timeout: 248 seconds)
+2018-08-16 19:23:47	-->	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has joined #elixir-lang
+2018-08-16 19:26:31	<--	jhlusk (~jhl@c-98-230-240-33.hsd1.sc.comcast.net) has quit (Ping timeout: 272 seconds)
+2018-08-16 19:27:22	<--	jerel (~jerel@rrcs-98-6-18-132.sw.biz.rr.com) has quit (Remote host closed the connection)
+2018-08-16 19:27:44	-->	jhlusk (~jhl@c-98-230-240-33.hsd1.sc.comcast.net) has joined #elixir-lang
+2018-08-16 19:27:47	<--	papachan (~papachan@200.122.248.202) has quit (Quit: WeeChat 2.2)
+2018-08-16 19:28:27	sms	Anybody here used this? https://github.com/samueljseay/recaptcha
+2018-08-16 19:29:08	sms	Seems to be adding the form in my markup but the recaptcha isn't rendering
+2018-08-16 19:30:23	Radar	What advice would people give me about how to run a docker container by invoking some Elixir code? Should I just shell out or is there going to be a better approach than that?
+2018-08-16 19:32:17	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-qiwjsoxijnqlqtgk) has joined #elixir-lang
+2018-08-16 19:32:17	--	Notice(elixir-lang-repo): [elixir] fertapric opened pull request #8099: Use ETS instead of ets in documentation (master...fertapric-ets) https://git.io/fNh2h
+2018-08-16 19:32:17	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-qiwjsoxijnqlqtgk) has left #elixir-lang
+2018-08-16 19:33:33	sms	Ahhh, nevermind
+2018-08-16 19:36:06	-->	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-vcghticjuusjsdqq) has joined #elixir-lang
+2018-08-16 19:36:06	--	Notice(elixir-lang-repo): [elixir] josevalim closed pull request #8099: Use ETS instead of ets in documentation (master...fertapric-ets) https://git.io/fNh2h
+2018-08-16 19:36:06	<--	elixir-lang-repo (elixir-lan@gateway/service/github.com/x-vcghticjuusjsdqq) has left #elixir-lang
+2018-08-16 19:41:45	-->	mahmudov (~milisman@151.135.226.169) has joined #elixir-lang
+2018-08-16 19:44:44	<--	lexmag (~lexmag@h-82-196-108-249.NA.cust.bahnhof.se) has quit (Ping timeout: 268 seconds)
+2018-08-16 19:46:45	<--	kevinsjoberg (~textual@h-189-229.A147.priv.bahnhof.se) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-08-16 19:48:35	<--	kwiat (kwiat@kernel.panic.pl) has quit (Quit: leaving)
+2018-08-16 19:52:22	<--	netrino (~netrino@185.159.156.20) has quit (Quit: netrino)
+2018-08-16 19:52:41	<--	peel (uid145489@gateway/web/irccloud.com/x-btxgpqmbeecxfmiu) has quit (Quit: Connection closed for inactivity)
+2018-08-16 19:54:08	<--	cschneid_ (~cschneid@c-73-78-144-189.hsd1.co.comcast.net) has quit (Remote host closed the connection)
+2018-08-16 19:55:39	-->	lexmag (~lexmag@h-82-196-108-249.NA.cust.bahnhof.se) has joined #elixir-lang
+2018-08-16 19:58:47	<--	dstrunk (~dstrunk@24.42.203.94) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-08-16 19:59:22	-->	dstrunk (~dstrunk@24.42.203.94) has joined #elixir-lang
+2018-08-16 20:00:32	-->	jerel (~jerel@2605:6000:8d53:2c00:c4ea:c723:1bb7:b3b5) has joined #elixir-lang
+2018-08-16 20:03:18	<--	lexmag (~lexmag@h-82-196-108-249.NA.cust.bahnhof.se) has quit (Ping timeout: 256 seconds)
+2018-08-16 20:05:08	<--	jerel (~jerel@2605:6000:8d53:2c00:c4ea:c723:1bb7:b3b5) has quit (Ping timeout: 265 seconds)
+2018-08-16 20:17:48	<--	mahmudov (~milisman@151.135.226.169) has quit (Ping timeout: 272 seconds)
+2018-08-16 20:22:27	<--	drincruz (~drincruz@144.121.100.66) has quit (Ping timeout: 240 seconds)
+2018-08-16 20:26:27	<--	hauleth (~hauleth@aedl26.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 240 seconds)
+2018-08-16 20:29:00	<--	ephemeron (~ephemeron@unaffiliated/ephemeron) has quit (Quit: Disconnected)
+2018-08-16 20:34:49	-->	cschneid_ (~cschneid@c-73-78-144-189.hsd1.co.comcast.net) has joined #elixir-lang
+2018-08-16 20:38:52	-->	craigp (~craigp@125.253.50.118) has joined #elixir-lang
+2018-08-16 20:43:27	<--	sunaku (~weechat@searspoint.nvidia.com) has quit (Ping timeout: 240 seconds)
+2018-08-16 20:57:13	-->	isubasti (~isubasti@203-206-140-243.perm.iinet.net.au) has joined #elixir-lang
+2018-08-16 21:04:49	<--	cschneid_ (~cschneid@c-73-78-144-189.hsd1.co.comcast.net) has quit (Ping timeout: 244 seconds)
+2018-08-16 21:04:55	<--	nighty- (~nighty@s229123.ppp.asahi-net.or.jp) has quit (Quit: Disappears in a puff of smoke)
+2018-08-16 21:06:58	<--	ssswitch (~ssswitch@unaffiliated/ssswitch) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-08-16 21:08:44	-->	kevwil (~kevwil@c-71-237-106-232.hsd1.co.comcast.net) has joined #elixir-lang
+2018-08-16 21:13:49	<--	kevwil (~kevwil@c-71-237-106-232.hsd1.co.comcast.net) has quit (Quit: WeeChat 2.2)
+2018-08-16 21:18:28	-->	jinkies (~user@2606:6000:608b:3500:a916:9885:e6cb:5696) has joined #elixir-lang
+2018-08-16 21:23:04	<--	TheNet (uid313265@gateway/web/irccloud.com/x-luskapfaknoxdcul) has quit (Quit: Connection closed for inactivity)
+2018-08-16 21:29:40	-->	cschneid_ (~cschneid@c-73-78-144-189.hsd1.co.comcast.net) has joined #elixir-lang
+2018-08-16 21:33:08	<--	dstrunk (~dstrunk@24.42.203.94) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2018-08-16 21:40:24	-->	isubasti_ (~isubasti@120.21.49.205) has joined #elixir-lang
+2018-08-16 21:41:54	<--	isubasti (~isubasti@203-206-140-243.perm.iinet.net.au) has quit (Ping timeout: 268 seconds)
+2018-08-16 21:55:37	-->	dstrunk (~dstrunk@24.42.203.94) has joined #elixir-lang
+2018-08-16 21:58:46	<--	__charly__ (~charly@104-184-3-192.lightspeed.austtx.sbcglobal.net) has quit (Quit: ZZZ)
+2018-08-16 22:02:18	-->	sevenseacat (~sevenseac@144.136.101.114) has joined #elixir-lang
+2018-08-16 22:05:23	-->	tapeinos (~ephemeron@unaffiliated/ephemeron) has joined #elixir-lang

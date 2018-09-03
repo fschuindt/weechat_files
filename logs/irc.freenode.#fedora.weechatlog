@@ -118,3 +118,627 @@
 2018-03-26 03:53:36	-->	mariosp (mariosp@nat/redhat/x-dbbxcltmimciufwl) has joined #fedora
 2018-03-26 03:57:08	-->	onosek (onosek@nat/redhat/x-cesyhdydcxihtnfs) has joined #fedora
 2018-03-26 03:57:53	-->	rkratky (~rkratky@ip-62-245-112-127.net.upcbroadband.cz) has joined #fedora
+2018-08-02 11:38:31	-->	fschuindt1 (~fschuindt@179.35.66.238) has joined #fedora
+2018-08-02 11:38:31	--	Topic for #fedora is "/Fedora 27,F28 end-user support || Please READ: http://tinyurl.com/chanfaq || Common bugs: http://tinyurl.com/F27bugs https://tinyurl.com/F28Bugs ||Only Use Fedora,rpmfusion and Copr Repos || IRC Feedback: http://tinyurl.com/fedoraircsig || Updated F28 Live isos: http://tinyurl.com/Live-respins2 || Default to OPEN: https://tinyurl.com/defualt2open"
+2018-08-02 11:38:31	--	Topic set by kk4ewt (~notfred2@fedora/Southern-Gentleman) on Sun, 10 Jun 2018 14:25:29
+2018-08-02 11:38:31	--	Channel #fedora: 669 nicks (2 ops, 0 voices, 667 normals)
+2018-08-02 11:38:31	--	PvNotice(ChanServ): "Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Freenode, Fedora or Red Hat. This channel may be logged"
+2018-08-02 11:38:32	--	Channel created on Sun, 01 Feb 2004 02:59:18
+2018-08-02 11:38:36	nekocentral	so dd and other usb
+2018-08-02 11:39:04	abiswas	nekocentral use dd to write the iso.
+2018-08-02 11:39:15	-->	kamdard (~kamdard@cpe-76-187-196-41.tx.res.rr.com) has joined #fedora
+2018-08-02 11:39:16	nekocentral	doing atm
+2018-08-02 11:39:46	nekocentral	dding to a 2.0 usb
+2018-08-02 11:41:03	fschuindt1	Hi there, folks. Some libs here in my system are facing odd behaviours regarding Shell scripts. I'm getting syntax errors near \n, \r and ^M characters from different 3rd party libs that seems to work just fine on other people's systems. Any clue of what might be going on here? Thanks!
+2018-08-02 11:43:27	<--	mindCrime (~mindCrime@cpe-98-27-61-219.nc.res.rr.com) has quit (Ping timeout: 240 seconds)
+2018-08-02 11:44:05	<--	langdon (~langdon@209-6-157-225.s479.c3-0.sbo-ubr1.sbo.ma.cable.rcncustomer.com) has quit (Ping timeout: 265 seconds)
+2018-08-02 11:45:00	-->	redi_ (~jwakely@april-fools/2014/fifth/redi) has joined #fedora
+2018-08-02 11:45:19	nekocentral	media check fail at 5%
+2018-08-02 11:45:26	<--	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has quit (Ping timeout: 276 seconds)
+2018-08-02 11:46:24	nekocentral	just ignoring and booting
+2018-08-02 11:47:30	fschuindt1	nekocentral: what's the matter? I'm experienced in making Fedora boot lol
+2018-08-02 11:47:57	nekocentral	it refuses to boot and goes to dracut
+2018-08-02 11:47:58	rdieter	fschuindt1: to be on the safe side, simply ensure such scripts are 'unix' style text files (with \n line endings).  tools to help conversion include sed,tr,dos2unix,mac2unix
+2018-08-02 11:48:25	nekocentral	and now the cpu softlocks and and stalls
+2018-08-02 11:48:31	nekocentral	forgot nomodeset
+2018-08-02 11:48:57	abiswas	nekocentral There you go .
+2018-08-02 11:49:05	fschuindt1	nekocentral: and do you think it's the media or the machine?
+2018-08-02 11:49:37	nekocentral	media as arch works
+2018-08-02 11:49:40	fschuindt1	rdieter: Check this https://github.com/asdf-vm/asdf/issues/345 Lots of Unix folks use it with no issue at all.
+2018-08-02 11:49:47	nekocentral	OMG I HAVE GUI
+2018-08-02 11:50:00	Southern_Gentlem	great
+2018-08-02 11:50:05	abiswas	Awesome
+2018-08-02 11:50:06	nekocentral	it was the fucking media writed
+2018-08-02 11:50:07	Khaytsus	nekocentral: This is a family channel, such language is not acceptable.  Please remember children and their grandmothers may be watching.
+2018-08-02 11:50:12	nekocentral	sorry
+2018-08-02 11:50:33	nekocentral	khaytsus is bloody fine?
+2018-08-02 11:50:43	fschuindt1	Is he a bot?
+2018-08-02 11:50:44	Southern_Gentlem	yep
+2018-08-02 11:50:49	Southern_Gentlem	nope
+2018-08-02 11:50:56	fschuindt1	ok
+2018-08-02 11:51:05	nekocentral	the bloody media writer
+2018-08-02 11:51:06	Southern_Gentlem	nekocentral, yes  fschuindt1 nope
+2018-08-02 11:51:07	abiswas	I didn't know that even kids uses IRC these days :P
+2018-08-02 11:51:21	<--	goldfish (~goldfish@91.215.166.4) has quit (Read error: Connection reset by peer)
+2018-08-02 11:51:37	-->	bexelbie (~bexelbie@fedora/bexelbie) has joined #fedora
+2018-08-02 11:51:37	-->	goldfish (~goldfish@91.215.166.4) has joined #fedora
+2018-08-02 11:51:41	fschuindt1	abiswas: they have GUI nowadays
+2018-08-02 11:51:51	nekocentral	same
+2018-08-02 11:51:59	Southern_Gentlem	abiswas,  the point is we know we have children in here, so we try to keep the channel to the "G" rating
+2018-08-02 11:52:00	sdgathman	abiswas: it is quite dangerous for kids, and should always be with supervision
+2018-08-02 11:52:47	abiswas	Ah okay. Got it.
+2018-08-02 11:52:58	<--	mreznik (mreznik@nat/redhat/x-jgcffxzzcfaejtoq) has quit (Quit: Leaving)
+2018-08-02 11:53:16	nekocentral	lets replace arch with fedora
+2018-08-02 11:53:18	fschuindt1	Let's warn kids that by using IRC at that age they will eventually became nerds. No one told me back then.
+2018-08-02 11:54:01	sdgathman	fschuindt1: I was thinking of child trafficking, and luring them to lonely meeting spots.
+2018-08-02 11:54:06	abiswas	I think I need to change my ban reason :3
+2018-08-02 11:54:12	bdelay	kids these days use discord. :0)
+2018-08-02 11:54:22	rdieter	fschuindt1: did you verify the file types?  unix text files vs others?
+2018-08-02 11:54:22	<--	Tazmain (~Tazmain@unaffiliated/tazmain) has quit (Quit: Leaving)
+2018-08-02 11:54:35	<--	mschorm (mschorm@nat/redhat/x-vllqfjhomwbfbcnb) has quit (Ping timeout: 240 seconds)
+2018-08-02 11:55:12	rdieter	fschuindt1: it may be ok in certain circumstances, but mixing-n-matching can sometimes cause issues (though honestly I haven't run into that in a long time)
+2018-08-02 11:55:42	nekocentral	sdgathman they use facebook for :P
+2018-08-02 11:56:54	-->	Eniax (~Eniax@2600:8800:4b80:a700::7) has joined #fedora
+2018-08-02 11:57:21	fschuindt1	rdieter: I'm worried 'cause a software from my company is also giving me such issues. And this software in particular is used by 30+ other guys ranging from mac OS, to Arch, Fedora, Ubuntu and Windows. No one ever faced it.
+2018-08-02 11:58:01	<--	zefferno (~zefferno@unaffiliated/zefferno) has quit (Remote host closed the connection)
+2018-08-02 11:58:07	rdieter	fschuindt1: I was able to create a simple test case showing same issue.  create 1 script in unix format, and 'sources' another that is in 'dos' format
+2018-08-02 11:58:31	rdieter	fschuindt1: file 1 sources file 2, and gets error: ./2: line 2: $'\r': command not found
+2018-08-02 11:59:44	rdieter	look familiar? :)
+2018-08-02 12:00:02	fschuindt1	rdieter: Dude, you remind me something, I had "git config --global core.autocrlf true" before. Thank you! It might be the issue.
+2018-08-02 12:01:48	fschuindt1	rdieter: LOL, it worked!! Love you s2
+2018-08-02 12:02:11	rdieter	glad to help
+2018-08-02 12:02:11	fschuindt1	I have set "git config --global core.autocrlf false" and cloned it again. Worked like a charm. :)
+2018-08-02 12:03:21	Southern_Gentlem	fschuindt1, we have had some great nerds come through over the years
+2018-08-02 12:03:44	-->	_0bitcount (~Big_Byte@90.162.105.206) has joined #fedora
+2018-08-02 12:05:21	-->	jiwang (~jiwang@113.210.115.248) has joined #fedora
+2018-08-02 12:06:57	-->	ramses (~ramses@nat-35.starnet.cz) has joined #fedora
+2018-08-02 12:07:17	<--	Eniax (~Eniax@2600:8800:4b80:a700::7) has quit (Ping timeout: 265 seconds)
+2018-08-02 12:07:36	<--	jgu (~jgu@109.77.159.143.dyn.plus.net) has quit (Quit: jgu)
+2018-08-02 12:07:42	-->	pbokoc (~pbokoc@46.227.11.208) has joined #fedora
+2018-08-02 12:07:59	fschuindt1	Agreed, but do they know where it ends? lmao
+2018-08-02 12:09:05	<--	fathurhoho (~Thunderbi@202.62.16.139) has quit (Ping timeout: 240 seconds)
+2018-08-02 12:10:03	-->	cfoch (uid153227@gateway/web/irccloud.com/x-jcayyeunstrxokzb) has joined #fedora
+2018-08-02 12:11:34	nekocentral	Damn install finished and its in low res mode
+2018-08-02 12:12:24	<--	mariosp (mariosp@nat/redhat/x-ovotwsaavlolddbs) has quit (Quit: Leaving)
+2018-08-02 12:12:34	-->	fathurhoho (~Thunderbi@114.124.165.154) has joined #fedora
+2018-08-02 12:13:20	<--	bexelbie (~bexelbie@fedora/bexelbie) has left #fedora ("Leaving")
+2018-08-02 12:13:27	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 12:13:27	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 12:13:59	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 12:13:59	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 12:14:40	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 12:14:40	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 12:15:01	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 12:15:02	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 12:15:16	nekocentral	retrying using the normal version now, again thank you for help
+2018-08-02 12:15:33	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 12:15:33	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 12:15:45	<--	jiwang (~jiwang@113.210.115.248) has quit (Ping timeout: 248 seconds)
+2018-08-02 12:15:46	abiswas	nekocentral cool
+2018-08-02 12:16:06	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 12:16:07	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 12:16:32	Southern_Gentlem	nekocentral, look at the adding the rpmfusiion repos
+2018-08-02 12:16:39	Southern_Gentlem	nekocentral take a look at " http://rpmfusion.org/Howto/nVidia?highlight=nekocentral8CategoryHowtonekocentral9 "
+2018-08-02 12:16:45	Southern_Gentlem	nekocentral take a look at http://rpmfusion.org/Configuration
+2018-08-02 12:17:03	nekocentral	thank you
+2018-08-02 12:17:29	<--	bartmon (~bartmon@89-212-95-222.link.t-2.net) has quit (Quit: Leaving)
+2018-08-02 12:18:27	Southern_Gentlem	they have nvida and optimus howtos
+2018-08-02 12:18:37	nekocentral	yea first thing i saw
+2018-08-02 12:19:16	Southern_Gentlem	and you have about 400M of updates as well
+2018-08-02 12:19:28	Southern_Gentlem	sudo dnf update
+2018-08-02 12:19:32	-->	jiwang (~jiwang@2001:d08:1a00:5f5f:6a5d:43ff:fe2f:17c3) has joined #fedora
+2018-08-02 12:20:12	-->	valerio (~valerio@unaffiliated/valerio/x-9242161) has joined #fedora
+2018-08-02 12:20:23	Southern_Gentlem	well 200-400M
+2018-08-02 12:21:09	Southern_Gentlem	we will try to release a new set of updated isos hopefully next week (waiting on the 4.17.11 kernel)
+2018-08-02 12:21:26	nekocentral	is it worth to keep using respin or should i use the normal normal to test if it was the writer?
+2018-08-02 12:21:50	abiswas	Southern_Gentlem 400M oof updates? That's too much.
+2018-08-02 12:22:25	nekocentral	pff my 250mbps down is good eneugh for that
+2018-08-02 12:24:51	-->	XrD (~CoreISP@simplemachines/rootadmin/CoreISP) has joined #fedora
+2018-08-02 12:25:02	<--	CoreISP (~CoreISP@simplemachines/rootadmin/CoreISP) has quit (Disconnected by services)
+2018-08-02 12:25:05	--	XrD is now known as CoreISP
+2018-08-02 12:26:01	-->	Eniax (~Eniax@2600:8800:4b80:a700::7) has joined #fedora
+2018-08-02 12:26:22	<--	abiswas (~hp-nb@103.216.206.79) has quit (Quit: Mata ne)
+2018-08-02 12:26:43	-->	hellbanger (~hp-nb@103.216.206.79) has joined #fedora
+2018-08-02 12:27:39	<--	hellbanger (~hp-nb@103.216.206.79) has quit (Client Quit)
+2018-08-02 12:31:22	-->	hellbanger (~hp-nb@103.216.206.79) has joined #fedora
+2018-08-02 12:34:20	<--	zdohnal (zdohnal@nat/redhat/x-rsgiklafawldleiq) has quit (Quit: Leaving.)
+2018-08-02 12:35:43	<--	garrett (~garrett@ipbcc292b8.dynamic.kabel-deutschland.de) has quit (Quit: garrett)
+2018-08-02 12:41:02	-->	mindCrime (~mindCrime@216.85.170.147) has joined #fedora
+2018-08-02 12:44:43	<--	mtoman (~mtoman@ip-89-102-34-177.net.upcbroadband.cz) has quit (Quit: Leaving.)
+2018-08-02 12:45:06	<--	chinosoliard (~chinosoli@fedora/chinosoliard) has quit (Remote host closed the connection)
+2018-08-02 12:46:05	<--	HorusHorrendus (~horrendus@089144220249.atnat0029.highway.webapn.at) has quit (Ping timeout: 240 seconds)
+2018-08-02 12:49:36	<--	sgtlion (~sgtsomebo@214.15.90.146.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 12:50:04	<--	bkabrda (bkabrda@nat/redhat/x-rxhyypqxtvyfgbiq) has quit (Quit: Leaving.)
+2018-08-02 12:52:27	<--	infides_afk (~infides@host114-2.natpool.mwn.de) has quit (Ping timeout: 240 seconds)
+2018-08-02 12:53:45	<--	onosek (onosek@nat/redhat/x-esgwvtrilwldlhth) has quit (Quit: Leaving)
+2018-08-02 12:54:13	-->	tmoney (~tbowling@108.245.221.246) has joined #fedora
+2018-08-02 12:54:51	-->	HorusHorrendus (~horrendus@089144220249.atnat0029.highway.webapn.at) has joined #fedora
+2018-08-02 12:55:24	<--	pbabinca (~pbabinca@ip-89-102-34-81.net.upcbroadband.cz) has quit (Quit: Leaving)
+2018-08-02 12:55:52	-->	vwbusguy (~scott@fedora/vwbusguy) has joined #fedora
+2018-08-02 12:55:58	-->	mschorm (~mschorm@2a00:1028:83a6:6b0a:32f4:9a2d:d2da:a63d) has joined #fedora
+2018-08-02 12:57:39	-->	yohnnyjoe (~yohnnyjoe@c-73-129-2-10.hsd1.dc.comcast.net) has joined #fedora
+2018-08-02 12:58:49	<--	rkratky (rkratky@nat/redhat/x-igleangvawiezjwx) has quit (Ping timeout: 244 seconds)
+2018-08-02 13:02:46	<--	yohnnyjoe (~yohnnyjoe@c-73-129-2-10.hsd1.dc.comcast.net) has quit (Ping timeout: 264 seconds)
+2018-08-02 13:04:17	<--	srisri (~srisri@202.95.77.83) has quit (Ping timeout: 248 seconds)
+2018-08-02 13:04:32	<--	tmoney (~tbowling@108.245.221.246) has quit (Quit: Leaving)
+2018-08-02 13:04:52	<--	fedelibre (~fede@host110-2-static.20-80-b.business.telecomitalia.it) has quit (Read error: Connection reset by peer)
+2018-08-02 13:05:33	-->	fedelibre (~fede@host110-2-static.20-80-b.business.telecomitalia.it) has joined #fedora
+2018-08-02 13:05:47	-->	srisri (~srisri@202.95.77.83) has joined #fedora
+2018-08-02 13:08:54	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Quit: aday)
+2018-08-02 13:09:21	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 13:09:42	<--	fedelibre (~fede@host110-2-static.20-80-b.business.telecomitalia.it) has quit (Client Quit)
+2018-08-02 13:10:14	-->	fedelibre (~fede@host110-2-static.20-80-b.business.telecomitalia.it) has joined #fedora
+2018-08-02 13:11:00	Southern_Gentlem	nekocentral,  yes otherwise if you use the gold iso 4.16.4 there is close to 1Gb of updates
+2018-08-02 13:11:51	<--	vwbusguy (~scott@fedora/vwbusguy) has quit (Ping timeout: 268 seconds)
+2018-08-02 13:13:07	<--	mschorm (~mschorm@2a00:1028:83a6:6b0a:32f4:9a2d:d2da:a63d) has quit (Ping timeout: 245 seconds)
+2018-08-02 13:13:09	-->	rkratky (rkratky@nat/redhat/x-ncdfhcisnqkfxzog) has joined #fedora
+2018-08-02 13:13:25	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Client Quit)
+2018-08-02 13:13:49	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 13:15:35	<--	fedelibre (~fede@host110-2-static.20-80-b.business.telecomitalia.it) has quit (Ping timeout: 240 seconds)
+2018-08-02 13:16:06	-->	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has joined #fedora
+2018-08-02 13:16:09	<--	cstratak (cstratak@nat/redhat/x-tunpkiofbqsjrsqi) has quit (Quit: Leaving)
+2018-08-02 13:18:34	-->	tmoney (~tbowling@108.245.221.246) has joined #fedora
+2018-08-02 13:19:51	nekocentral	already added the fusions and updated the respin
+2018-08-02 13:23:02	Southern_Gentlem	so you should be ready to go
+2018-08-02 13:24:18	nekocentral	fuuuuuu how do i update package list xD
+2018-08-02 13:24:25	nekocentral	dnf update?
+2018-08-02 13:28:08	M_aD	dnf --refresh upgrade
+2018-08-02 13:28:35	nekocentral	looks like the fusions didnt add properly readded them now nvidia is installing
+2018-08-02 13:29:01	nekocentral	dammit i need this switching working fast its getting hot in here no joke, +4c since i started
+2018-08-02 13:29:55	-->	dcb (~dcb@c-24-4-102-250.hsd1.ca.comcast.net) has joined #fedora
+2018-08-02 13:31:33	<--	srisri (~srisri@202.95.77.83) has quit (Ping timeout: 264 seconds)
+2018-08-02 13:31:52	<--	rkratky (rkratky@nat/redhat/x-ncdfhcisnqkfxzog) has quit (Ping timeout: 265 seconds)
+2018-08-02 13:32:11	<--	bdelay (~bdelay@redhat/bdelay) has quit (Quit: Leaving)
+2018-08-02 13:32:21	<--	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has quit (Ping timeout: 265 seconds)
+2018-08-02 13:32:59	<--	mrl32 (~mrl@187.95.126.46) has quit (Ping timeout: 260 seconds)
+2018-08-02 13:33:22	-->	sdoubleyou (~sdoubleyo@unaffiliated/sdouble25) has joined #fedora
+2018-08-02 13:33:53	<--	Jenetrix (~Jen@regi.rocks) has quit (Ping timeout: 276 seconds)
+2018-08-02 13:34:54	-->	cstratak (~cstratak@83.240.61.34) has joined #fedora
+2018-08-02 13:35:42	-->	carl- (~carl-@2a00:801:291:2c57:49fd:9f02:4970:99ef) has joined #fedora
+2018-08-02 13:35:49	nekocentral	VICTORY working gpu switching
+2018-08-02 13:35:54	nekocentral	thank you thank you
+2018-08-02 13:40:29	<--	skontar_ (skontar@nat/redhat/x-hcjkclnwzxpdxvnz) has quit (Remote host closed the connection)
+2018-08-02 13:40:56	<--	pbokoc (~pbokoc@46.227.11.208) has quit (Quit: Leaving)
+2018-08-02 13:42:16	-->	plarsen (~plarsen@redhat/jboss/pdpc.professional.plarsen) has joined #fedora
+2018-08-02 13:42:46	nekocentral	hmmm, without nomodeset i get cpu soft locks, with i have non but low res graphics
+2018-08-02 13:46:07	-->	wadadli (~wadadli@fedora/wadadli) has joined #fedora
+2018-08-02 13:46:40	-->	carl-- (~carl-@m77-218-254-43.cust.tele2.se) has joined #fedora
+2018-08-02 13:46:48	<--	carl- (~carl-@2a00:801:291:2c57:49fd:9f02:4970:99ef) has quit (Remote host closed the connection)
+2018-08-02 13:47:23	<--	komusubi (~komusubi@p5417072-ipngn1602marunouchi.tokyo.ocn.ne.jp) has quit (Quit: komusubi)
+2018-08-02 13:47:44	Khaytsus	You really can't use nomodeset on anything modern
+2018-08-02 13:48:24	nekocentral	what is the best way to make sure the soft locks dont happen as the oops plugins are geting anoying when they come every 30 secs xD
+2018-08-02 13:48:41	nekocentral	plugins* popups
+2018-08-02 13:53:06	hellbanger	nekocentral Did you try installing the binary driver? I wonder how you are getting soft locks.
+2018-08-02 13:53:33	nekocentral	does intel also have binary drivers?
+2018-08-02 13:53:49	Khaytsus	No
+2018-08-02 13:53:50	nekocentral	Intel 6700HQ
+2018-08-02 13:54:01	nekocentral	that one is getting the soft locks
+2018-08-02 13:54:34	<--	carl-- (~carl-@m77-218-254-43.cust.tele2.se) has quit (Ping timeout: 260 seconds)
+2018-08-02 13:54:53	<--	jp (ayy@cpe-76-173-133-37.hawaii.res.rr.com) has quit (Quit: https://ptpb.pw/~docrivers.gif)
+2018-08-02 13:55:35	bugs_	try disabling hyperthreading to get rid of the soft locks
+2018-08-02 13:55:45	nekocentral	ok
+2018-08-02 13:56:10	-->	jp (ayy@cpe-76-173-133-37.hawaii.res.rr.com) has joined #fedora
+2018-08-02 13:56:16	nekocentral	and pci buss errors, need to find on arch how i fixed that
+2018-08-02 13:57:34	-->	fatalhalt (~fatalhalt@c-67-163-60-93.hsd1.il.comcast.net) has joined #fedora
+2018-08-02 13:58:24	<--	hellbanger (~hp-nb@103.216.206.79) has quit (Quit: tata ;))
+2018-08-02 13:58:52	-->	bdelay (~bdelay@redhat/bdelay) has joined #fedora
+2018-08-02 13:59:39	nekocentral	note to others, dont get MSI laptops
+2018-08-02 14:00:55	-->	hellbanger (~dark_drag@2405:204:4026:2b24::11e1:20b0) has joined #fedora
+2018-08-02 14:01:28	-->	hellbanger2 (~dark_drag@103.216.206.79) has joined #fedora
+2018-08-02 14:01:30	-->	mthacker_rh (~mthacker@cpe-2606-A000-7A4F-8300-0-0-0-9.dyn6.twc.com) has joined #fedora
+2018-08-02 14:01:41	nekocentral	bugs_ didnt work
+2018-08-02 14:02:03	-->	carl- (~carl-@2a00:801:291:2c57:49fd:9f02:4970:99ef) has joined #fedora
+2018-08-02 14:02:05	<--	morscho (~morscho@x55b63b7f.dyn.telefonica.de) has quit (Ping timeout: 240 seconds)
+2018-08-02 14:02:10	<--	carl- (~carl-@2a00:801:291:2c57:49fd:9f02:4970:99ef) has quit (Remote host closed the connection)
+2018-08-02 14:02:17	<--	mthacker (~mthacker@cpe-2606-A000-7A4F-8300-0-0-0-9.dyn6.twc.com) has quit (Read error: Connection reset by peer)
+2018-08-02 14:02:34	bugs_	rats
+2018-08-02 14:02:51	nekocentral	yea, its a fun game find the problem
+2018-08-02 14:03:01	nekocentral	i gave up on it when i went for arch
+2018-08-02 14:03:39	<--	rvgate (uid308852@gateway/web/irccloud.com/x-ziobxjxnmktqfbbm) has quit (Quit: Connection closed for inactivity)
+2018-08-02 14:03:43	bugs_	is this an asus laptop?
+2018-08-02 14:03:47	nekocentral	msi
+2018-08-02 14:03:50	nekocentral	even worse
+2018-08-02 14:04:02	bugs_	heh so it has the hybrid intel/nvidia graphics thing right?
+2018-08-02 14:04:06	nekocentral	yep
+2018-08-02 14:04:10	Khaytsus	oh, ick
+2018-08-02 14:04:14	nekocentral	it is already working as i see it switching
+2018-08-02 14:04:23	nekocentral	after installing the nvidia drivers
+2018-08-02 14:04:31	bugs_	i have an asus gamer laptop that i bought cheap (probably because of the
+2018-08-02 14:04:43	bugs_	hybrid graphics) - i think i just disabled the nvidia.
+2018-08-02 14:04:44	nekocentral	i wish mine was cheap xD
+2018-08-02 14:05:22	<--	hellbanger (~dark_drag@2405:204:4026:2b24::11e1:20b0) has quit (Ping timeout: 260 seconds)
+2018-08-02 14:05:53	-->	Oatmeal (Suzeanne@gateway/vpn/privateinternetaccess/suzeanne) has joined #fedora
+2018-08-02 14:06:21	nekocentral	i cant need to have my bios modded to do that
+2018-08-02 14:06:25	nekocentral	which i will do soon
+2018-08-02 14:06:25	bugs_	yes that is what i did with mine - are you running wayland
+2018-08-02 14:06:34	bugs_	or xorg/gnome
+2018-08-02 14:06:43	nekocentral	i had it modded but due to the microcode update i lost it
+2018-08-02 14:06:50	nekocentral	i think xorg as i use kde
+2018-08-02 14:07:20	bugs_	ah there is an xorg.conf trick i found in Section "ServerLayout"
+2018-08-02 14:07:39	bugs_	you can say Screen      0  "intel" 0 0 and then Inactive       "nvidia"
+2018-08-02 14:08:03	nekocentral	interesting, but lets say if i start a game like csgo will it use intel than?
+2018-08-02 14:08:10	bugs_	unfortunately
+2018-08-02 14:08:17	nekocentral	as the switching is working its just my cpu softlocking
+2018-08-02 14:08:48	bugs_	i had to disable hyperthreading AND do inactive nvidia to get it to work
+2018-08-02 14:09:11	nekocentral	with hyperthreading on i was able to boot in gui but without it locks faster
+2018-08-02 14:09:27	bugs_	oh.....bizarre
+2018-08-02 14:10:07	nekocentral	yea
+2018-08-02 14:10:20	nekocentral	i swear * nvidia
+2018-08-02 14:10:26	<--	andy-burns (~Thunderbi@router.adslpipe.co.uk) has quit (Read error: Connection reset by peer)
+2018-08-02 14:10:33	bugs_	is it soft locking when you run an application or does it do it with just KDE
+2018-08-02 14:10:38	-->	andy-burns (~Thunderbi@router.adslpipe.co.uk) has joined #fedora
+2018-08-02 14:10:46	nekocentral	just kde
+2018-08-02 14:11:15	nekocentral	but i can run things
+2018-08-02 14:12:14	-->	Demos (~quassel@2607:f018:802:1:8ab8:ac12:a29c:b2db) has joined #fedora
+2018-08-02 14:12:33	bugs_	one last thought - cpu c states and irqbalance
+2018-08-02 14:13:05	bugs_	there are potential problems with idle cpu's being put into suspend low power mode
+2018-08-02 14:13:20	bugs_	and irqbalance assigning an important IRQ (like the intel graphics) to
+2018-08-02 14:13:27	bugs_	a sleeping cpu
+2018-08-02 14:13:40	Demos	hmmm
+2018-08-02 14:13:45	Demos	how does this interact with NUMA
+2018-08-02 14:13:56	nekocentral	idk
+2018-08-02 14:14:08	nekocentral	its CPU#5 that is stuck everytime
+2018-08-02 14:14:26	Demos	I guess you don't typically care about power usage as much with big NUMA systems
+2018-08-02 14:15:15	bugs_	now wait a minute if you actually disabled hyperthreading there can't
+2018-08-02 14:15:17	bugs_	be a cpu #5
+2018-08-02 14:15:59	nekocentral	with it on its 5, with it off its 2
+2018-08-02 14:16:23	nekocentral	let me try sometime
+2018-08-02 14:16:49	bugs_	oh ok wew scary
+2018-08-02 14:17:41	bugs_	so another thing to try is to disable intel c states in bios, blacklist the intel c state module, and recompile a new irqbalance
+2018-08-02 14:18:12	bugs_	i am not sure the latest irqbalance (which fixes a bunch of this) is in
+2018-08-02 14:18:14	bugs_	your fedora yet
+2018-08-02 14:18:21	nekocentral	i just tried to disable nouvou
+2018-08-02 14:18:27	nekocentral	its the respin
+2018-08-02 14:18:30	bugs_	now that is always worth doing (rofl)
+2018-08-02 14:18:55	nekocentral	with that disabled it just uses nvidia drivers right?
+2018-08-02 14:19:09	nekocentral	it got the nvidia card working but cpu still here
+2018-08-02 14:19:29	bugs_	i don't think nvidia proprietary drivers will install at all if it detect nouveau
+2018-08-02 14:19:37	nekocentral	now its cpu4
+2018-08-02 14:19:52	bugs_	lsmod | grep nvidia
+2018-08-02 14:19:59	bugs_	would tell you if the module is loaded
+2018-08-02 14:20:49	bugs_	the c state thing (the suspend idle cores) is a good bet here
+2018-08-02 14:20:59	-->	WarK (~WarK@2a01:11df:331:9000:16da:e9ff:fea7:3542) has joined #fedora
+2018-08-02 14:21:12	bugs_	i gotta go grab some lunch before i get put in suspend mode
+2018-08-02 14:21:27	Demos	yes nouveau tends to take precidence, also note that if you have secure boot on the nvidia drivers won't load
+2018-08-02 14:21:27	nekocentral	yea will try that in a sec
+2018-08-02 14:21:28	bugs_	i will be back this afternoon if you are still fighting it
+2018-08-02 14:21:36	Demos	so turn that off, I've gotten bitten there before
+2018-08-02 14:21:48	nekocentral	interesting it is on and the drivers did work
+2018-08-02 14:21:58	nekocentral	damn now a stack trace from my wifi card
+2018-08-02 14:22:51	<--	snake2k (~snake2k@unaffiliated/snake2k) has quit (Ping timeout: 240 seconds)
+2018-08-02 14:23:14	bugs_	wellllllll have you run a memtest
+2018-08-02 14:23:19	bugs_	that could also 'splain it
+2018-08-02 14:23:22	bugs_	and that
+2018-08-02 14:24:09	WarK	hi, are there known issues with wifi and kernel 4.17? My wl broadcom wifi stopped working and now I got a new tp link usb wifi (r8188eu) and it's having issues on 4.17 as weel
+2018-08-02 14:24:17	WarK	it works ok on 4.16
+2018-08-02 14:24:25	nekocentral	o got no please not already have a bad experiance with running memtest on my desktop
+2018-08-02 14:26:05	<--	namyzarc (~namyzarc@c-73-187-86-216.hsd1.pa.comcast.net) has quit (Ping timeout: 240 seconds)
+2018-08-02 14:28:34	nekocentral	are you bloddy kidding me, now it hangs on a blank screenwhere kde was suposed to launch
+2018-08-02 14:28:57	nekocentral	c state was it right
+2018-08-02 14:31:20	<--	gnufied (~gnufied@75-44-151-71.lightspeed.tukrga.sbcglobal.net) has quit (Ping timeout: 255 seconds)
+2018-08-02 14:32:19	nekocentral	okay, secureboot is off, uefi is set to uefi+csm and nouveau is blacklisted
+2018-08-02 14:32:57	<--	Demos (~quassel@2607:f018:802:1:8ab8:ac12:a29c:b2db) has quit (Remote host closed the connection)
+2018-08-02 14:35:25	-->	tolland (~tolland@209.135.157.124) has joined #fedora
+2018-08-02 14:36:31	tolland	`bundle install` for ruby seems to be building native extensions into the wrong folder
+2018-08-02 14:40:15	<--	Eniax (~Eniax@2600:8800:4b80:a700::7) has quit (Quit: Leaving)
+2018-08-02 14:40:37	-->	ibiam (~ibiam@105.112.89.154) has joined #fedora
+2018-08-02 14:41:56	<--	fabior (~fabior@wikipedia/fabior1984) has quit (Remote host closed the connection)
+2018-08-02 14:46:33	-->	vwbusguy (~scott@fedora/vwbusguy) has joined #fedora
+2018-08-02 14:47:08	-->	gnufied (~gnufied@75-44-151-71.lightspeed.tukrga.sbcglobal.net) has joined #fedora
+2018-08-02 14:47:55	-->	Demos (~quassel@2607:f018:802:1:8ab8:ac12:a29c:b2db) has joined #fedora
+2018-08-02 14:49:57	<--	plarsen (~plarsen@redhat/jboss/pdpc.professional.plarsen) has quit (Ping timeout: 240 seconds)
+2018-08-02 14:50:24	-->	kathenas (~kathenas@82-132-226-5.dab.02.net) has joined #fedora
+2018-08-02 14:50:39	<--	jiwang (~jiwang@2001:d08:1a00:5f5f:6a5d:43ff:fe2f:17c3) has quit (Remote host closed the connection)
+2018-08-02 14:51:18	-->	jiwang (~jiwang@113.210.180.24) has joined #fedora
+2018-08-02 14:51:26	nekocentral	it seems i have borked the system already xD
+2018-08-02 14:51:40	-->	Poolmankase (~Poolmanka@107.14.56.130) has joined #fedora
+2018-08-02 14:51:50	-->	Something1 (~Something@D97B141B.cm-3-4a.dynamic.ziggo.nl) has joined #fedora
+2018-08-02 14:51:52	<--	jiwang (~jiwang@113.210.180.24) has quit (Remote host closed the connection)
+2018-08-02 14:51:59	<--	HarveyPwca (~HarveyPwc@ip-64-134-173-30.public.wayport.net) has quit (Quit: Leaving)
+2018-08-02 14:52:12	<--	themurph (themurph@nat/redhat/x-wjlwpxqfvpjraiqi) has quit (Ping timeout: 260 seconds)
+2018-08-02 14:52:27	nekocentral	lets have it cool off for now
+2018-08-02 14:52:30	-->	jiwang (~jiwang@113.210.180.24) has joined #fedora
+2018-08-02 14:53:31	-->	chinosoliard (~chinosoli@fedora/chinosoliard) has joined #fedora
+2018-08-02 14:53:35	-->	makomo (~makomo@93.140.20.246) has joined #fedora
+2018-08-02 14:54:48	<--	fathurhoho (~Thunderbi@114.124.165.154) has quit (Quit: fathurhoho)
+2018-08-02 14:54:57	-->	snake2k (~snake2k@unaffiliated/snake2k) has joined #fedora
+2018-08-02 14:55:38	<--	kathenas (~kathenas@82-132-226-5.dab.02.net) has quit (Quit: Leaving)
+2018-08-02 14:57:17	<--	Poolmankase (~Poolmanka@107.14.56.130) has quit (Quit: WeeChat 2.0.1)
+2018-08-02 14:57:32	-->	themurph (themurph@nat/redhat/x-frynicejwhuxfgwg) has joined #fedora
+2018-08-02 14:58:35	-->	yohnnyjoe (~yohnnyjoe@c-73-129-2-10.hsd1.dc.comcast.net) has joined #fedora
+2018-08-02 14:59:32	<--	ibiam (~ibiam@105.112.89.154) has quit (Read error: Connection reset by peer)
+2018-08-02 15:02:50	-->	kathenas (~kathenas@82-132-226-5.dab.02.net) has joined #fedora
+2018-08-02 15:03:42	<--	yohnnyjoe (~yohnnyjoe@c-73-129-2-10.hsd1.dc.comcast.net) has quit (Ping timeout: 265 seconds)
+2018-08-02 15:06:09	-->	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has joined #fedora
+2018-08-02 15:06:13	-->	def_jam (~eblip@unaffiliated/eblip) has joined #fedora
+2018-08-02 15:08:41	-->	wafugoy (~wafugoy@2601:803:4004:59c0:a8b4:fe46:90e3:2ccb) has joined #fedora
+2018-08-02 15:08:46	<--	eblip (~eblip@unaffiliated/eblip) has quit (Ping timeout: 256 seconds)
+2018-08-02 15:09:50	-->	desnesn (~desnesn@32.104.18.202) has joined #fedora
+2018-08-02 15:15:56	<--	Something1 (~Something@D97B141B.cm-3-4a.dynamic.ziggo.nl) has quit (Read error: Connection reset by peer)
+2018-08-02 15:17:29	<--	hellbanger2 (~dark_drag@103.216.206.79) has quit (Quit: Yaaic - Yet another Android IRC client - http://www.yaaic.org)
+2018-08-02 15:17:55	<--	r00tobo (~r00tobo@unaffiliated/r00tobo) has quit (Quit: See you later)
+2018-08-02 15:19:09	-->	uckelman (~uckelman@206.35.208.46.dyn.plus.net) has joined #fedora
+2018-08-02 15:20:30	<--	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has quit (Ping timeout: 260 seconds)
+2018-08-02 15:23:12	<--	rharrison (~rharriso@rrcs-24-199-156-138.midsouth.biz.rr.com) has quit (Ping timeout: 268 seconds)
+2018-08-02 15:23:37	<--	themurph (themurph@nat/redhat/x-frynicejwhuxfgwg) has quit (Quit: Where'd he go ??? Where'd who go !?!?!?!)
+2018-08-02 15:23:58	<--	sauvin (sauvin@about/linux/staff/sauvin) has quit (Read error: Connection reset by peer)
+2018-08-02 15:26:27	<--	leothrix (~leothrix@elastic/staff/leothrix) has quit (Remote host closed the connection)
+2018-08-02 15:27:13	-->	leothrix (~leothrix@elastic/staff/leothrix) has joined #fedora
+2018-08-02 15:28:22	-->	themurph (themurph@nat/redhat/x-oazlyvckrbtrkmxg) has joined #fedora
+2018-08-02 15:30:23	<--	makomo (~makomo@93.140.20.246) has quit (Quit: WeeChat 2.0.1)
+2018-08-02 15:30:46	<--	Py_mona (~Mona@unaffiliated/kumudini) has quit (Quit: Konversation terminated!)
+2018-08-02 15:36:05	<--	wadadli (~wadadli@fedora/wadadli) has quit (Ping timeout: 240 seconds)
+2018-08-02 15:36:27	<--	timahvo1 (~rogue@41.90.157.209) has quit (Ping timeout: 240 seconds)
+2018-08-02 15:37:37	-->	timahvo1 (~rogue@41.90.157.209) has joined #fedora
+2018-08-02 15:46:43	--	redi_ is now known as redi
+2018-08-02 15:46:43	<--	jiwang (~jiwang@113.210.180.24) has quit (Ping timeout: 268 seconds)
+2018-08-02 15:49:50	-->	rharrison (~rharriso@rrcs-98-101-137-62.midsouth.biz.rr.com) has joined #fedora
+2018-08-02 15:57:59	-->	chopskxw (~chopskxw@50.110.30.19) has joined #fedora
+2018-08-02 15:58:54	-->	Something1 (~Something@D97B141B.cm-3-4a.dynamic.ziggo.nl) has joined #fedora
+2018-08-02 16:02:12	<--	WarK (~WarK@2a01:11df:331:9000:16da:e9ff:fea7:3542) has quit (Quit: Tell the Captain, Air Marshal Carlin said 'Go F**k Yourself')
+2018-08-02 16:08:36	-->	r00tobo (~r00tobo@unaffiliated/r00tobo) has joined #fedora
+2018-08-02 16:09:46	-->	jerryq (~jerryq@32.97.110.51) has joined #fedora
+2018-08-02 16:09:55	<--	mthacker_rh (~mthacker@cpe-2606-A000-7A4F-8300-0-0-0-9.dyn6.twc.com) has quit (Ping timeout: 265 seconds)
+2018-08-02 16:11:58	<--	ledeni (~ledeni@c210-49-84-69.dandn3.vic.optusnet.com.au) has quit (Quit: Leaving😎)
+2018-08-02 16:12:16	-->	hellbanger (~dark_drag@2405:204:4202:9281::217d:b8b0) has joined #fedora
+2018-08-02 16:12:35	-->	bioinfornatics (~bioinforn@vir91-1-82-228-212-97.fbx.proxad.net) has joined #fedora
+2018-08-02 16:12:53	<--	hellbanger (~dark_drag@2405:204:4202:9281::217d:b8b0) has quit (Client Quit)
+2018-08-02 16:12:53	-->	plarsen (~plarsen@redhat/jboss/pdpc.professional.plarsen) has joined #fedora
+2018-08-02 16:13:02	-->	wadadli (~wadadli@fedora/wadadli) has joined #fedora
+2018-08-02 16:13:05	<--	bdelay (~bdelay@redhat/bdelay) has quit (Ping timeout: 240 seconds)
+2018-08-02 16:13:36	<--	redi (~jwakely@april-fools/2014/fifth/redi) has quit (Ping timeout: 244 seconds)
+2018-08-02 16:13:37	<--	rdieter (~rdieter@fedora/rdieter) has quit (Ping timeout: 248 seconds)
+2018-08-02 16:13:56	-->	hellbanger (~darkD@2405:204:4202:9281::217d:b8b0) has joined #fedora
+2018-08-02 16:14:07	-->	rdieter (~rdieter@fedora/rdieter) has joined #fedora
+2018-08-02 16:15:14	<--	hellbanger (~darkD@2405:204:4202:9281::217d:b8b0) has quit (Client Quit)
+2018-08-02 16:15:33	-->	hellbanger (~darkD@2405:204:4202:9281::217d:b8b0) has joined #fedora
+2018-08-02 16:15:33	<--	wafugoy (~wafugoy@2601:803:4004:59c0:a8b4:fe46:90e3:2ccb) has quit (Remote host closed the connection)
+2018-08-02 16:16:05	-->	ledeni (~ledeni@c210-49-84-69.dandn3.vic.optusnet.com.au) has joined #fedora
+2018-08-02 16:16:21	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 16:16:22	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 16:17:00	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 16:17:00	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 16:17:34	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 16:17:35	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 16:17:57	-->	fasten (~fasten@modemcable013.150-81-70.mc.videotron.ca) has joined #fedora
+2018-08-02 16:18:06	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 16:18:07	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 16:18:17	-->	wafugoy (~wafugoy@2601:803:4004:59c0:a8b4:fe46:90e3:2ccb) has joined #fedora
+2018-08-02 16:18:38	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 16:18:38	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 16:18:56	-->	rdieter_ (~rdieter@fedora/rdieter) has joined #fedora
+2018-08-02 16:19:08	-->	keitellf (~keitellf@fedora/keitellf) has joined #fedora
+2018-08-02 16:19:08	<--	keitellf (~keitellf@fedora/keitellf) has quit (Excess Flood)
+2018-08-02 16:19:17	<--	rdieter (~rdieter@fedora/rdieter) has quit (Ping timeout: 244 seconds)
+2018-08-02 16:19:36	<--	Something1 (~Something@D97B141B.cm-3-4a.dynamic.ziggo.nl) has quit (Ping timeout: 256 seconds)
+2018-08-02 16:21:24	<--	hellbanger (~darkD@2405:204:4202:9281::217d:b8b0) has quit (Quit: Cya! Yet Another Android Client(yaaic) disconnected!)
+2018-08-02 16:22:46	<--	fasten (~fasten@modemcable013.150-81-70.mc.videotron.ca) has quit (Client Quit)
+2018-08-02 16:23:58	-->	hellbanger (~darkD@2405:204:4202:9281::217d:b8b0) has joined #fedora
+2018-08-02 16:24:50	<--	tairikuookami (~ookami@unaffiliated/tairikuookami) has quit (Ping timeout: 245 seconds)
+2018-08-02 16:27:20	<--	gnufied (~gnufied@75-44-151-71.lightspeed.tukrga.sbcglobal.net) has quit (Ping timeout: 268 seconds)
+2018-08-02 16:27:32	<--	crobinso (~crobinso@redhat/crobinso) has quit (Ping timeout: 276 seconds)
+2018-08-02 16:28:40	<--	valerio (~valerio@unaffiliated/valerio/x-9242161) has quit (Ping timeout: 256 seconds)
+2018-08-02 16:30:18	<--	hellbanger (~darkD@2405:204:4202:9281::217d:b8b0) has quit (Quit: Cya! Yet Another Android Client(yaaic) disconnected!)
+2018-08-02 16:31:05	-->	hellbanger (~Android@2405:204:4202:9281::217d:b8b0) has joined #fedora
+2018-08-02 16:31:07	-->	tairikuookami (~ookami@unaffiliated/tairikuookami) has joined #fedora
+2018-08-02 16:31:57	<--	hellbanger (~Android@2405:204:4202:9281::217d:b8b0) has quit (Client Quit)
+2018-08-02 16:33:51	-->	redi (~jwakely@april-fools/2014/fifth/redi) has joined #fedora
+2018-08-02 16:34:09	<--	char_davide (~davide@net-188-218-17-223.cust.vodafonedsl.it) has quit (Quit: Leaving)
+2018-08-02 16:34:27	<--	rharrison (~rharriso@rrcs-98-101-137-62.midsouth.biz.rr.com) has quit (Ping timeout: 240 seconds)
+2018-08-02 16:35:35	<--	snake2k (~snake2k@unaffiliated/snake2k) has quit (Ping timeout: 240 seconds)
+2018-08-02 16:41:55	-->	gnufied (~gnufied@75-44-151-71.lightspeed.tukrga.sbcglobal.net) has joined #fedora
+2018-08-02 16:42:10	<--	wafugoy (~wafugoy@2601:803:4004:59c0:a8b4:fe46:90e3:2ccb) has quit (Quit: Leaving)
+2018-08-02 16:44:19	<--	agurenko (~agurenko@bzq-84-111-155-134.cablep.bezeqint.net) has quit (Quit: Konversation terminated!)
+2018-08-02 16:45:56	-->	short-bike (~short-bik@2603:9000:78e:d400:a708:8f58:8be8:76e0) has joined #fedora
+2018-08-02 16:48:46	-->	paulcarroty (~paul@93.75.234.120) has joined #fedora
+2018-08-02 16:50:30	-->	Something1 (~Something@D97B141B.cm-3-4a.dynamic.ziggo.nl) has joined #fedora
+2018-08-02 16:50:32	-->	crobinso (~crobinso@redhat/crobinso) has joined #fedora
+2018-08-02 16:53:36	-->	rharrison (~rharriso@rrcs-24-199-156-138.midsouth.biz.rr.com) has joined #fedora
+2018-08-02 16:54:33	-->	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has joined #fedora
+2018-08-02 16:54:48	-->	AsciiWolf (AsciiWolf@nat/redhat/x-nlpuhicwhnqpulrj) has joined #fedora
+2018-08-02 16:55:54	-->	mutin-s (~s-mutin@85.234.114.134) has joined #fedora
+2018-08-02 16:56:11	--	def_jam is now known as eblip
+2018-08-02 16:56:56	<--	amuck (~amuck@152.243.185.35.bc.googleusercontent.com) has quit (Ping timeout: 268 seconds)
+2018-08-02 16:57:32	nekocentral	fuuuuuuuuu
+2018-08-02 16:57:42	nekocentral	it seems that the testing broke my system
+2018-08-02 16:58:05	<--	ranzpirat (~anon@unaffiliated/ranzpirat) has quit (Ping timeout: 240 seconds)
+2018-08-02 16:58:47	<--	mutin-sa (~s-mutin@85.234.114.134) has quit (Ping timeout: 268 seconds)
+2018-08-02 16:58:58	-->	amuck (~amuck@152.243.185.35.bc.googleusercontent.com) has joined #fedora
+2018-08-02 16:59:07	-->	wafugoy (~wafugoy@2601:803:4004:59c0:a8b4:fe46:90e3:2ccb) has joined #fedora
+2018-08-02 16:59:41	-->	yohnnyjoe (~yohnnyjoe@c-73-129-2-10.hsd1.dc.comcast.net) has joined #fedora
+2018-08-02 17:01:00	-->	talonz (~talonz@180-150-92-249.NBN.mel.aussiebb.net) has joined #fedora
+2018-08-02 17:01:22	-->	ranzpirat (~anon@unaffiliated/ranzpirat) has joined #fedora
+2018-08-02 17:04:35	<--	yohnnyjoe (~yohnnyjoe@c-73-129-2-10.hsd1.dc.comcast.net) has quit (Ping timeout: 276 seconds)
+2018-08-02 17:04:44	<--	ripazha (ripazha@unaffiliated/ripazha) has quit (Quit: \0)
+2018-08-02 17:08:50	<--	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has quit (Ping timeout: 255 seconds)
+2018-08-02 17:09:16	<--	ranzpirat (~anon@unaffiliated/ranzpirat) has quit (Ping timeout: 268 seconds)
+2018-08-02 17:09:43	-->	ranzpirat (~anon@unaffiliated/ranzpirat) has joined #fedora
+2018-08-02 17:14:57	<--	cstratak (~cstratak@83.240.61.34) has quit (Ping timeout: 240 seconds)
+2018-08-02 17:15:32	-->	dynamicpulse (~dynamicpu@mx1.dynamicpulse.com) has joined #fedora
+2018-08-02 17:16:05	<--	wadadli (~wadadli@fedora/wadadli) has quit (Ping timeout: 240 seconds)
+2018-08-02 17:16:37	<--	_0bitcount (~Big_Byte@90.162.105.206) has quit (Remote host closed the connection)
+2018-08-02 17:16:56	-->	_0bitcount (~Big_Byte@90.162.105.206) has joined #fedora
+2018-08-02 17:18:05	-->	pgarcia (~pgarcia@2601:58b:8101:a03f::64) has joined #fedora
+2018-08-02 17:19:46	<--	pgarcia (~pgarcia@2601:58b:8101:a03f::64) has quit (Client Quit)
+2018-08-02 17:20:28	-->	dowdle (~dowdle@bz-cs-scott.msu.montana.edu) has joined #fedora
+2018-08-02 17:22:17	<--	wafugoy (~wafugoy@2601:803:4004:59c0:a8b4:fe46:90e3:2ccb) has quit (Remote host closed the connection)
+2018-08-02 17:22:34	<--	dynamicpulse (~dynamicpu@mx1.dynamicpulse.com) has quit (Quit: Leaving)
+2018-08-02 17:23:13	<--	rmanak (~rmanak@91.202.55.33) has quit (Remote host closed the connection)
+2018-08-02 17:24:05	-->	dynamicpulse (~dynamicpu@mx1.dynamicpulse.com) has joined #fedora
+2018-08-02 17:25:59	<--	repz (~quassel@unaffiliated/repz) has quit (Quit: http://quassel-irc.org - Discuter simplement. Partout.)
+2018-08-02 17:30:16	-->	babyflakes (uid171740@gateway/web/irccloud.com/x-bialzttkgnhulkzz) has joined #fedora
+2018-08-02 17:30:25	<--	babyflakes (uid171740@gateway/web/irccloud.com/x-bialzttkgnhulkzz) has quit (Excess Flood)
+2018-08-02 17:31:05	<--	andy-burns (~Thunderbi@router.adslpipe.co.uk) has quit (Ping timeout: 240 seconds)
+2018-08-02 17:31:21	-->	babyflakes (uid171740@gateway/web/irccloud.com/x-nakxbsspwmayfwev) has joined #fedora
+2018-08-02 17:31:32	<--	babyflakes (uid171740@gateway/web/irccloud.com/x-nakxbsspwmayfwev) has quit (Excess Flood)
+2018-08-02 17:31:48	-->	cstratak (~cstratak@95.82.135.130) has joined #fedora
+2018-08-02 17:33:44	--	rdieter_ is now known as rdieter
+2018-08-02 17:35:10	<--	chopskxw (~chopskxw@50.110.30.19) has quit (Ping timeout: 268 seconds)
+2018-08-02 17:35:19	-->	andy-burns (~Thunderbi@router.adslpipe.co.uk) has joined #fedora
+2018-08-02 17:37:37	-->	bdelay (~bdelay@redhat/bdelay) has joined #fedora
+2018-08-02 17:38:52	<--	dynamicpulse (~dynamicpu@mx1.dynamicpulse.com) has quit (Ping timeout: 268 seconds)
+2018-08-02 17:39:18	<--	ttyX (~ttyX@121.242.156.1) has quit (Remote host closed the connection)
+2018-08-02 17:39:44	<--	andy-burns (~Thunderbi@router.adslpipe.co.uk) has quit (Ping timeout: 260 seconds)
+2018-08-02 17:41:10	<--	themurph (themurph@nat/redhat/x-oazlyvckrbtrkmxg) has quit (Ping timeout: 264 seconds)
+2018-08-02 17:44:07	-->	chopskxw (~chopskxw@50.110.0.186) has joined #fedora
+2018-08-02 17:44:23	<--	paulcarroty (~paul@93.75.234.120) has quit (Quit: Leaving)
+2018-08-02 17:44:40	-->	andy-burns (~Thunderbi@router.adslpipe.co.uk) has joined #fedora
+2018-08-02 17:46:15	<--	ramses (~ramses@nat-35.starnet.cz) has quit (Quit: ramses)
+2018-08-02 17:47:07	<--	andy-burns (~Thunderbi@router.adslpipe.co.uk) has quit (Client Quit)
+2018-08-02 17:47:20	-->	andy-burns (~Thunderbi@router.adslpipe.co.uk) has joined #fedora
+2018-08-02 17:50:41	<--	razevedo (~razevedo@redhat/razevedo) has quit (Ping timeout: 248 seconds)
+2018-08-02 17:52:21	<--	sdoubleyou (~sdoubleyo@unaffiliated/sdouble25) has quit (Quit: sdoubleyou)
+2018-08-02 17:53:46	<--	cstratak (~cstratak@95.82.135.130) has quit (Quit: Leaving)
+2018-08-02 17:54:44	<--	alexdmccabe (~alexdmcca@99-159-209-97.lightspeed.dybhfl.sbcglobal.net) has quit (Quit: WeeChat 2.0.1)
+2018-08-02 17:55:32	<--	desnesn (~desnesn@32.104.18.202) has quit (Quit: WeeChat 1.9.1)
+2018-08-02 17:56:12	<--	linville (~linville@rrcs-70-61-120-60.midsouth.biz.rr.com) has quit (Quit: Leaving)
+2018-08-02 17:56:39	<--	rharrison (~rharriso@rrcs-24-199-156-138.midsouth.biz.rr.com) has quit (Ping timeout: 260 seconds)
+2018-08-02 17:57:16	-->	alexdmccabe (~alexdmcca@99-159-209-97.lightspeed.dybhfl.sbcglobal.net) has joined #fedora
+2018-08-02 17:59:10	<--	andy-burns (~Thunderbi@router.adslpipe.co.uk) has quit (Ping timeout: 264 seconds)
+2018-08-02 17:59:16	-->	andy-burns1 (~Thunderbi@router.adslpipe.co.uk) has joined #fedora
+2018-08-02 18:01:37	--	andy-burns1 is now known as andy-burns
+2018-08-02 18:03:04	<--	ufo (~neil@unaffiliated/ufo) has quit (Ping timeout: 260 seconds)
+2018-08-02 18:07:07	-->	vorpalblade77_ (~vorpalbla@98.127.110.44) has joined #fedora
+2018-08-02 18:07:50	-->	swift110 (~swift110@unaffiliated/swift110) has joined #fedora
+2018-08-02 18:09:43	nekocentral	okay how the f do i remove oops as its getting freaking anoying
+2018-08-02 18:14:40	--	jonez_ is now known as jonez
+2018-08-02 18:17:19	-->	DoKi (~dabzse@5403DF76.catv.pool.telekom.hu) has joined #fedora
+2018-08-02 18:17:52	<--	short-bike (~short-bik@2603:9000:78e:d400:a708:8f58:8be8:76e0) has quit (Read error: Connection reset by peer)
+2018-08-02 18:18:19	nekocentral	okay turning of nmi watchdog as this is just inhumane
+2018-08-02 18:18:57	<--	mindCrime (~mindCrime@216.85.170.147) has quit (Ping timeout: 240 seconds)
+2018-08-02 18:23:49	-->	mschorm (~mschorm@2a00:1028:83a6:6b0a:32f4:9a2d:d2da:a63d) has joined #fedora
+2018-08-02 18:25:04	nekocentral	I'm stopping for today
+2018-08-02 18:26:02	-->	elake (~etank@twil/staff/etank) has joined #fedora
+2018-08-02 18:26:32	<--	andy-burns (~Thunderbi@router.adslpipe.co.uk) has quit (Quit: gorn)
+2018-08-02 18:26:39	--	elake is now known as etank
+2018-08-02 18:26:57	-->	andy-burns (~Thunderbi@router.adslpipe.co.uk) has joined #fedora
+2018-08-02 18:27:29	<--	tmoney (~tbowling@108.245.221.246) has quit (Quit: Leaving)
+2018-08-02 18:27:43	<--	Jesin (~Jesin@2601:152:4603:cb81::76aa) has quit (Remote host closed the connection)
+2018-08-02 18:31:18	<--	nekocentral (~nekocentr@dhcp-089-098-214-198.chello.nl) has quit (Read error: Connection reset by peer)
+2018-08-02 18:31:54	<--	BunnyApocalypse (~Bunny@198.161.143.221) has quit (Ping timeout: 268 seconds)
+2018-08-02 18:33:35	<--	andy-burns (~Thunderbi@router.adslpipe.co.uk) has quit (Ping timeout: 240 seconds)
+2018-08-02 18:34:22	-->	Jesin (~Jesin@2601:152:4603:cb81::76aa) has joined #fedora
+2018-08-02 18:36:30	-->	Scotty_Trees (~Scotty_Tr@2601:89:c500:fe2f::4ebf) has joined #fedora
+2018-08-02 18:36:49	-->	Caterpillar (~caterpill@unaffiliated/caterpillar) has joined #fedora
+2018-08-02 18:38:42	-->	pgarcia (~pgarcia@2601:58b:8101:a03f::64) has joined #fedora
+2018-08-02 18:39:33	<--	etank (~etank@twil/staff/etank) has quit (Quit: WeeChat 2.0.1)
+2018-08-02 18:40:07	<--	jerryq (~jerryq@32.97.110.51) has quit (Quit: Leaving)
+2018-08-02 18:40:48	-->	nostar (~nostar@173.239.199.196) has joined #fedora
+2018-08-02 18:40:59	-->	etank (~etank@twil/staff/etank) has joined #fedora
+2018-08-02 18:42:09	-->	strainwrld (~strainwrl@a79-168-47-139.cpe.netcabo.pt) has joined #fedora
+2018-08-02 18:42:15	<--	HorusHorrendus (~horrendus@089144220249.atnat0029.highway.webapn.at) has quit (Read error: Connection reset by peer)
+2018-08-02 18:43:07	-->	short-bike (~short-bik@2603:9000:78e:d400:a708:8f58:8be8:76e0) has joined #fedora
+2018-08-02 18:44:02	-->	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has joined #fedora
+2018-08-02 18:46:54	<--	etank (~etank@twil/staff/etank) has quit (Quit: WeeChat 2.0.1)
+2018-08-02 18:47:24	<--	nostar (~nostar@173.239.199.196) has quit (Ping timeout: 260 seconds)
+2018-08-02 18:47:52	<--	timothy (~tredaelli@redhat/timothy) has quit (Quit: Konversation terminated!)
+2018-08-02 18:49:35	<--	MrNeon (~quassel@a85-138-86-108.cpe.netcabo.pt) has quit (Ping timeout: 240 seconds)
+2018-08-02 18:50:27	<--	bdelay (~bdelay@redhat/bdelay) has quit (Quit: Leaving)
+2018-08-02 18:52:18	<--	r00tobo (~r00tobo@unaffiliated/r00tobo) has quit (Quit: See you later)
+2018-08-02 18:57:41	<--	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has quit (Ping timeout: 276 seconds)
+2018-08-02 18:59:28	-->	xor (~xor@unaffiliated/xor) has joined #fedora
+2018-08-02 19:00:16	-->	yohnnyjoe (~yohnnyjoe@c-73-129-2-10.hsd1.dc.comcast.net) has joined #fedora
+2018-08-02 19:02:58	<--	mchlumsky (~mchlumsky@216.98.59.214) has quit (Quit: Leaving)
+2018-08-02 19:04:49	<--	yohnnyjoe (~yohnnyjoe@c-73-129-2-10.hsd1.dc.comcast.net) has quit (Ping timeout: 248 seconds)
+2018-08-02 19:05:03	<--	bugs_ (~bugs@cpe-76-183-157-72.tx.res.rr.com) has quit (Quit: Leaving)
+2018-08-02 19:06:58	<--	rdieter (~rdieter@fedora/rdieter) has quit (Ping timeout: 264 seconds)
+2018-08-02 19:07:07	-->	altab (~altab@2a01:e35:8adc:92c0:412f:fc1c:50e6:86a0) has joined #fedora
+2018-08-02 19:07:50	<--	okra (~stephen@enlightenment/developer/okra) has quit (Quit: Going offline, see ya! (www.adiirc.com))
+2018-08-02 19:09:20	-->	r00tobo (~r00tobo@unaffiliated/r00tobo) has joined #fedora
+2018-08-02 19:10:36	<--	xor (~xor@unaffiliated/xor) has quit (Quit: Leaving)
+2018-08-02 19:11:20	<--	Scotty_Trees (~Scotty_Tr@2601:89:c500:fe2f::4ebf) has quit (Ping timeout: 276 seconds)
+2018-08-02 19:15:05	-->	razevedo (~razevedo@redhat/razevedo) has joined #fedora
+2018-08-02 19:18:21	-->	zulutango (~zulutango@static-n49-176-171-248.mas2.nsw.optusnet.com.au) has joined #fedora
+2018-08-02 19:18:26	-->	andy-burns (~Thunderbi@router.adslpipe.co.uk) has joined #fedora
+2018-08-02 19:19:28	<--	cfoch (uid153227@gateway/web/irccloud.com/x-jcayyeunstrxokzb) has quit (Quit: Connection closed for inactivity)
+2018-08-02 19:22:26	-->	kk4ewt (~notfred2@fedora/Southern-Gentleman) has joined #fedora
+2018-08-02 19:22:33	<--	razevedo (~razevedo@redhat/razevedo) has quit (Ping timeout: 264 seconds)
+2018-08-02 19:24:57	<--	andy-burns (~Thunderbi@router.adslpipe.co.uk) has quit (Ping timeout: 240 seconds)
+2018-08-02 19:25:55	--	Blaguvest is now known as semtex-h
+2018-08-02 19:26:21	-->	GrannyGoose (~GrannyGoo@2001:8003:c802:7300:4d2:d750:d6f7:b419) has joined #fedora
+2018-08-02 19:32:25	-->	latenite (~latenite@ip5b412136.dynamic.kabel-deutschland.de) has joined #fedora
+2018-08-02 19:36:22	<--	rromans (~rromans@unaffiliated/rrrobbb) has quit (Ping timeout: 256 seconds)
+2018-08-02 19:36:29	<--	nivag (~gavin@121.99.202.67) has quit (Remote host closed the connection)
+2018-08-02 19:43:31	-->	solicito (~liveuser@75.165.180.105) has joined #fedora
+2018-08-02 19:44:03	<--	DyDyMan (~DyDyMan@185.red-80-39-230.dynamicip.rima-tde.net) has quit (Ping timeout: 268 seconds)
+2018-08-02 19:44:15	solicito	anyone that can point me to a video/link that can show me how to dual boot fedora and windows 10 on the same hard drive?
+2018-08-02 19:44:27	<--	DoKi (~dabzse@5403DF76.catv.pool.telekom.hu) has quit (Ping timeout: 240 seconds)
+2018-08-02 19:44:37	<--	_0bitcount (~Big_Byte@90.162.105.206) has quit (Remote host closed the connection)
+2018-08-02 19:44:49	<--	futune (~futune@95.82.135.147) has quit (Remote host closed the connection)
+2018-08-02 19:44:57	-->	_0bitcount (~Big_Byte@90.162.105.206) has joined #fedora
+2018-08-02 19:45:05	solicito	or anyone that can show me how to resize/shrink fedora disk
+2018-08-02 19:45:07	solicito	?
+2018-08-02 19:45:16	-->	futune (~futune@95.82.135.147) has joined #fedora
+2018-08-02 19:45:19	solicito	i have tried several videos and links and no luck
+2018-08-02 19:45:28	linuxmodder	solicito,  what is the issue
+2018-08-02 19:45:37	linuxmodder	Uploading (2.6KiB)...
+2018-08-02 19:45:37	linuxmodder	https://paste.fedoraproject.org/paste/zx0pXR5jW2Mk4u1PVea9Lw
+2018-08-02 19:45:50	linuxmodder	I dual boot with dual crypto on same mSATA ssd
+2018-08-02 19:45:53	<--	latenite (~latenite@ip5b412136.dynamic.kabel-deutschland.de) has quit (Ping timeout: 248 seconds)
+2018-08-02 19:46:47	philipp64	dumb question… what's the easiest way to take a machine running Centos 7.4 to Fedora 28?
+2018-08-02 19:47:04	Phr33d0m	solicito this is a simple grub.cfg for dualbooting win10 and linux with UEFI https://bpaste.net/show/e0b18ac4fd33
+2018-08-02 19:47:17	Phr33d0m	solicito resizing/shrinking can be done with gparted from a livecd
+2018-08-02 19:47:32	solicito	 resizing/shrinking can be done with gparted from a livecd did not work
+2018-08-02 19:47:34	solicito	tried it
+2018-08-02 19:48:08	linuxmodder	solicito,  still on that machine?
+2018-08-02 19:48:14	linuxmodder	or is it handy at least?
+2018-08-02 19:48:14	Phr33d0m	what exactly did not work? what errors were you given? are you sure the affected partitions were unmounted?
+2018-08-02 19:48:58	solicito	when i click on the /dev/sda3 volume
+2018-08-02 19:49:09	solicito	it has a locked on it
+2018-08-02 19:49:10	<--	vwbusguy (~scott@fedora/vwbusguy) has quit (Quit: Ex-Chat)
+2018-08-02 19:49:21	solicito	but when trying to unmounted, it says that is not mounted
+2018-08-02 19:49:21	linuxmodder	solicito,  lsblk | fpaste from that machine and a live pls
+2018-08-02 19:52:02	solicito	lunuxmodder: i have to leave, but will be back in about two hours
+2018-08-02 19:52:28	solicito	https://paste.fedoraproject.org/paste/E6UDV3PUHJZ69p1IraqtnQ
+2018-08-02 19:52:31	-->	nivag (~gavin@121.99.202.67) has joined #fedora
+2018-08-02 19:52:36	solicito	here is the fpaste link
+2018-08-02 19:52:39	solicito	BRB
+2018-08-02 19:53:11	Phr33d0m	lvm...
+2018-08-02 19:53:31	solicito	yeah i am on a live cd
+2018-08-02 19:53:42	solicito	be back in about two hours
+2018-08-02 19:54:16	linuxmodder	Phr33d0m, that aught to be fun later :P
+2018-08-02 19:55:02	short-bike	Hope he can spell "backup'.
+2018-08-02 19:55:53	-->	nostar (~nostar@173.239.199.33) has joined #fedora
+2018-08-02 19:57:16	linuxmodder	lol
+2018-08-02 19:57:34	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Quit: aday)
+2018-08-02 19:57:50	philipp64	okay, going to try to install F28 directly over C7.4 without erasing first…
+2018-08-02 19:58:39	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 19:58:40	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 19:58:53	-->	jiwang (~jiwang@2001:d08:1811:bf59:6a5d:43ff:fe2f:17c3) has joined #fedora
+2018-08-02 19:59:28	linuxmodder	that is gonna be torture and pain ---just saying
+2018-08-02 19:59:36	linuxmodder	well minus leaving /home alone
+2018-08-02 20:00:15	philipp64	what's the better way then?
+2018-08-02 20:01:21	<--	swift110 (~swift110@unaffiliated/swift110) has quit (Ping timeout: 248 seconds)
+2018-08-02 20:01:49	short-bike	philipp64: you are trying to avoid a fresh install ?
+2018-08-02 20:01:51	linuxmodder	BACKUP you data you care about and nuke and pave
+2018-08-02 20:02:00	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 20:02:00	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 20:02:35	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 20:02:35	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 20:02:49	philipp64	short-bike: yeah…. I figured out which files I had *modified* using "rpm -Va"… but additional config files are harder to find.
+2018-08-02 20:03:44	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 20:03:44	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 20:04:42	linuxmodder	rpm -qf | grep '^...5' philipp64
+2018-08-02 20:04:56	linuxmodder	look for C in the output
+2018-08-02 20:05:05	<--	Something1 (~Something@D97B141B.cm-3-4a.dynamic.ziggo.nl) has quit (Ping timeout: 248 seconds)
+2018-08-02 20:05:24	linuxmodder	not -qf  rather -qVA
+2018-08-02 20:05:54	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 20:05:55	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 20:06:28	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 20:06:28	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 20:06:55	<--	loleary (~loleary@redhat/jboss/loleary) has quit (Quit: Did I do that?)
+2018-08-02 20:07:05	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 20:07:05	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 20:07:26	-->	aday (~aday@12.90.6.51.dyn.plus.net) has joined #fedora
+2018-08-02 20:07:35	<--	aday (~aday@12.90.6.51.dyn.plus.net) has quit (Remote host closed the connection)
+2018-08-02 20:08:16	-->	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has joined #fedora
+2018-08-02 20:11:16	<--	SideAngleSide (~rjerrido@2603:301d:1b65:8000::cf41) has quit (Quit: Leaving.)
+2018-08-02 20:11:59	-->	snake2k (~snake2k@unaffiliated/snake2k) has joined #fedora
+2018-08-02 20:13:44	<--	Sir_Designer (~Sir_Desig@unaffiliated/sir-designer/x-5975211) has quit (Ping timeout: 276 seconds)
+2018-08-02 20:14:44	-->	namyzarc (~namyzarc@c-73-187-86-216.hsd1.pa.comcast.net) has joined #fedora
+2018-08-02 20:15:27	<--	vorpalblade77_ (~vorpalbla@98.127.110.44) has quit (Remote host closed the connection)
+2018-08-02 20:15:40	-->	vorpalblade77_ (~vorpalbla@98.127.110.44) has joined #fedora
+2018-08-02 20:15:47	<--	jiwang (~jiwang@2001:d08:1811:bf59:6a5d:43ff:fe2f:17c3) has quit (Quit: Leaving)
+2018-08-02 20:16:57	<--	janos_ (~messy@static-71-176-211-4.rcmdva.fios.verizon.net) has quit (Ping timeout: 240 seconds)
+2018-08-02 20:17:14	<--	ayerlock (~ayersmj@pool-71-163-132-106.washdc.fios.verizon.net) has quit (Ping timeout: 260 seconds)
+2018-08-02 20:19:05	<--	uckelman (~uckelman@206.35.208.46.dyn.plus.net) has quit (Quit: Leaving.)

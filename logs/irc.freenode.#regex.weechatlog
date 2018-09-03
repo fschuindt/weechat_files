@@ -1791,3 +1791,65 @@
 2018-03-20 12:53:36	-->	loca (45462a1a@gateway/web/freenode/ip.69.70.42.26) has joined #regex
 2018-03-20 12:53:49	loca	!rehelp
 2018-03-20 12:53:49	+perlbot	Please post specific information to https://regex101.com/, click the Save button, and paste the link here. For extra tips on getting help fast, type !helptips
+2018-08-07 15:20:42	-->	fschuindt (~fschuindt@179.35.66.238) has joined #regex
+2018-08-07 15:20:42	--	Topic for #regex is "Need help? !rehelp | *** Notice: Due to spam, users will temporarily be required to use a registered nick in order to talk. ***"
+2018-08-07 15:20:42	--	Topic set by digitok on Sat, 04 Aug 2018 08:46:07
+2018-08-07 15:20:43	--	Channel #regex: 327 nicks (1 op, 17 voices, 309 normals)
+2018-08-07 15:20:43	--	PvNotice(ChanServ): Welcome to #regex. If you need help, please type !rehelp and follow the instructions. (Do not say "hello" and wait for a response.)
+2018-08-07 15:20:43	--	Channel created on Sun, 26 Nov 2006 04:43:02
+2018-08-07 15:22:09	+Ouims	https://regex101.com/r/53hbWA/2
+2018-08-07 15:22:38	+Ouims	problem is the website is quick to throw catastrophic backtracking at you
+2018-08-07 15:22:56	+Ouims	while what you're doing is ok, just very slow
+2018-08-07 15:23:08	fschuindt	Can someone understand this? https://regexr.com/3tjq0 A coworker sent me this regex but all tools say it's wrong. Am I doing something wrong or the regex is wrong itself? Thanks.
+2018-08-07 15:23:52	+rewt	there's a mix of double and single escapes in there
+2018-08-07 15:25:21	fschuindt	rewt: You mean the `\w`? Are you able to figure out what it's suposed to be instead?
+2018-08-07 15:26:13	+rewt	probably \\w+
+2018-08-07 15:26:53	fschuindt	rewt: I've tried it, but it complains about "invalid target for quantifier '?'"
+2018-08-07 15:26:59	fschuindt	right at the begining of the regex
+2018-08-07 15:27:16	<--	Adbray (~Adbray@2600-6c48-6f7f-dfe8-257d-8955-c8f3-f946.dhcp6.chtrptr.net) has quit (Quit: Quit)
+2018-08-07 15:27:47	+rewt	your regex engine may not support it
+2018-08-07 15:30:05	fschuindt	I wonder which one supports it, I'm trying many
+2018-08-07 15:30:43	+Ouims	pcre
+2018-08-07 15:32:28	<--	re101-impala-516 (a7b006f1@gateway/web/freenode/ip.167.176.6.241) has quit (Quit: Page closed)
+2018-08-07 15:33:15	+rewt	perl
+2018-08-07 15:34:23	<--	mneumark_ (~mneumark@38.99.32.126) has quit (Remote host closed the connection)
+2018-08-07 15:34:33	-->	ahmed_elgabri (~ahmedelga@2a02:a441:9f5:1:1073:fe35:82c2:577a) has joined #regex
+2018-08-07 15:34:57	-->	mneumark (~mneumark@38.99.32.126) has joined #regex
+2018-08-07 15:35:31	fschuindt	Ouims, rewt: Thanks, that makes things a little clear. I just need to understand what it's suposed to match agains. He said it's for telephone numbers, but I'm luckyless here .
+2018-08-07 15:36:49	--	ghoti_ is now known as ghoti
+2018-08-07 15:37:03	+rewt	you can remove all of "-mix" and that single space in the middle, and it will be identical
+2018-08-07 15:37:13	+rewt	m is pointless because there is no ^ or $
+2018-08-07 15:37:20	+rewt	i is pointless because there are only digits
+2018-08-07 15:37:35	+rewt	x is the only one that does anything, and that is to ignore that single space in the middle
+2018-08-07 15:37:56	fschuindt	I believe it's something close to the "(79) 99392-0403" string, those are Brazilian numbers"
+2018-08-07 15:38:12	+rewt	i'm talking about the regex, not the target string
+2018-08-07 15:38:42	fschuindt	I know, 'cause you mentioned "only digits", (, ) and - does not counts?
+2018-08-07 15:39:51	+rewt	yeah, same thing... there's no upper and lower case versions of those to for i to ignore the case
+2018-08-07 15:42:57	+rewt	that explanation at the bottom is way off... use regex101.com instead of that site
+2018-08-07 15:43:06	-->	lindylex (~lex@c-68-82-58-227.hsd1.pa.comcast.net) has joined #regex
+2018-08-07 15:43:21	fschuindt	rewt: I'm doing it now, thank you.
+2018-08-07 15:45:57	<--	foodSurprise (~foodSurpr@205.219.236.34) has quit (Ping timeout: 240 seconds)
+2018-08-07 15:48:09	-->	barschmade (~barschmad@191.110.142.241) has joined #regex
+2018-08-07 15:48:13	<--	barschmade (~barschmad@191.110.142.241) has quit (Killed (Sigyn (Spam is off topic on freenode.)))
+2018-08-07 15:49:36	fschuindt	rewt, Ouims: Thank you folks for the support. I've removed the \\ to \ and it works like a charm. Also removed the -mix entirely. It's working great.
+2018-08-07 15:50:00	fschuindt	https://regex101.com/r/NcPa65/1/
+2018-08-07 15:50:01	-->	Asorailahd (~Asorailah@41.239.47.77) has joined #regex
+2018-08-07 15:50:01	<--	Asorailahd (~Asorailah@41.239.47.77) has quit (Killed (Sigyn (Spam is off topic on freenode.)))
+2018-08-07 15:50:05	-->	Konsieur (~kabouik@ks3100825.kimsufi.com) has joined #regex
+2018-08-07 15:53:00	<--	Kabouik_ (~kabouik@158.38.1.70) has quit (Ping timeout: 268 seconds)
+2018-08-07 15:54:09	<--	lindylex (~lex@c-68-82-58-227.hsd1.pa.comcast.net) has quit (Quit: Leaving)
+2018-08-07 16:01:12	fschuindt	General Question: It is reliable to use Regex to match e-mail addresses?
+2018-08-07 16:01:22	+Ouims	yes
+2018-08-07 16:03:00	fschuindt	Even with all that RFC confusion?
+2018-08-07 16:03:44	+Ouims	yes.
+2018-08-07 16:05:05	<--	TinkerT (~putneyj@75-8-78-151.lightspeed.rlghnc.sbcglobal.net) has quit (Read error: Connection reset by peer)
+2018-08-07 16:05:52	fschuindt	Ouims: thank you
+2018-08-07 16:06:58	-->	TinkerT (~putneyj@75-8-78-151.lightspeed.rlghnc.sbcglobal.net) has joined #regex
+2018-08-07 16:32:25	-->	yehowyad_ (~yehowyada@50-204-201-214-static.hfc.comcastbusiness.net) has joined #regex
+2018-08-07 16:33:30	<--	yehowyada (~yehowyada@5.79.90.39) has quit (Ping timeout: 244 seconds)
+2018-08-07 16:34:22	-->	amospalla (~amospalla@unaffiliated/amospalla) has joined #regex
+2018-08-07 16:35:27	<--	the_gamer (~the_gamer@dslb-094-219-147-101.094.219.pools.vodafone-ip.de) has quit (Remote host closed the connection)
+2018-08-07 16:39:31	<--	bn_work (uid268505@gateway/web/irccloud.com/x-bwsngivkvogqcnfc) has quit (Quit: Connection closed for inactivity)
+2018-08-07 16:45:57	<--	Konsieur (~kabouik@ks3100825.kimsufi.com) has quit (Ping timeout: 240 seconds)
+2018-08-07 16:50:33	<--	bjpenn (~bjpenn@unaffiliated/brucelee) has quit (Ping timeout: 244 seconds)
+2018-08-07 16:51:51	-->	TikityTik (~TikityTik@162.223.44.49) has joined #regex
